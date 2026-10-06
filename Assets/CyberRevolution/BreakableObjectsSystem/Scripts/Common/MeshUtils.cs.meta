@@ -1,0 +1,10 @@
+﻿fileFormatVersion: 2
+guid: e7fea5988ef744909b903373b1b72747
+timeCreated: 1641572689
+AssetOrigin:
+  serializedVersion: 1
+  productId: 205206
+  packageName: 'Breakable glass and objects system: Simple procedural solution'
+  packageVersion: 1.2
+  assetPath: Assets/CyberRevolution/BreakableObjectsSystem/Scripts/Common/MeshUtils.cs
+  uploadId: 474285

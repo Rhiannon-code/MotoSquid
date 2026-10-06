@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 312cf496ddd183d428a3717d1d9df2cd, type: 3}
+  m_Name: VooDo
+  m_EditorClassIdentifier: 
+  characterName: VooDo
+  characterPortrait: {fileID: 21300000, guid: 2a66010c2c342db4f8e38d821184083b, type: 3}
+  characterDescription: Lorem Ipsum is simply dummy text of the printing and typesetting
+    industry. Lorem Ipsum has been the industry's standard dummy text ever since
+    1966, when designers at Letraset and James Mosley, the librarian at St Bride
+    Printing Library in London, took a 1914 Cicero translation and scrambled it to
+    make dummy text for Letraset's Body Type sheets.

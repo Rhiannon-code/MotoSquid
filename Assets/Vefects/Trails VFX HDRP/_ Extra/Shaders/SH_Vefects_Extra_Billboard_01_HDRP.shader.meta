@@ -1,0 +1,16 @@
+fileFormatVersion: 2
+guid: 33d87999878c714468aca38a4c892ab7
+ShaderImporter:
+  externalObjects: {}
+  defaultTextures: []
+  nonModifiableTextures: []
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 242573
+  packageName: Trails VFX - HDRP
+  packageVersion: 1.0.2026.067
+  assetPath: Assets/Vefects/Trails VFX HDRP/_ Extra/Shaders/SH_Vefects_Extra_Billboard_01_HDRP.shader
+  uploadId: 1002058

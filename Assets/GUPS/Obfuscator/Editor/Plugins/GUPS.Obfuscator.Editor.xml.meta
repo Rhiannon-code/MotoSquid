@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: d61efaa83aac78d43a5a461c6d171ef0
+TextScriptImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 89589
+  packageName: Obfuscator Pro | Plug and Play Code Protection | v2026
+  packageVersion: 2026.7.1
+  assetPath: Assets/GUPS/Obfuscator/Editor/Plugins/GUPS.Obfuscator.Editor.xml
+  uploadId: 1010556

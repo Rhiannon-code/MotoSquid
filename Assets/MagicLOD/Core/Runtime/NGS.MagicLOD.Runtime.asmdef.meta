@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: cf5448d688dbf879aecdedeba55d2454
+AssemblyDefinitionImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 402168
+  packageName: 'Magic LOD: Burst Mesh Optimizer'
+  packageVersion: 1.0.5
+  assetPath: Assets/MagicLOD/Core/Runtime/NGS.MagicLOD.Runtime.asmdef
+  uploadId: 997198

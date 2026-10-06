@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: abc36625e9091d74aad06d99ce8a4832, type: 3}
+  m_Name: BrokenCubeCollection
+  m_EditorClassIdentifier: 
+  _breakableObjectPrefabs:
+  - {fileID: 7458612422507544619, guid: 8689282cd6962954594599c6e436cac9, type: 3}
+  - {fileID: 2012697836757909412, guid: 900119ad8a9dec941953b1cb8bb61ace, type: 3}
+  - {fileID: 6767730374162130906, guid: 6b40efa6f13ce4f4789e65b5c127a86b, type: 3}
+  - {fileID: 6561396273930252228, guid: 6455aa144463734469f4c6051a22591c, type: 3}
+  - {fileID: 6903535007768047430, guid: a20fa8644aeb12a45b56f316683366b6, type: 3}
+  _poolCapacity: 5

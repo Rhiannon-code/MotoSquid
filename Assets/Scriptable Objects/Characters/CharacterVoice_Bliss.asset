@@ -1,0 +1,53 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9bfdbcd304175267cad4b81013c988da, type: 3}
+  m_Name: CharacterVoice_Bliss
+  m_EditorClassIdentifier: 
+  characterName: Bliss
+  startTaunt:
+  - {fileID: 8300000, guid: 10261bb5e7d7b6af6b6b9ed9274b8016, type: 3}
+  - {fileID: 8300000, guid: 8337971b4e868501f9632d0c3d1ad54e, type: 3}
+  - {fileID: 8300000, guid: 3dee7ce97aaab0d479b0c3c1a3266651, type: 3}
+  attacking:
+  - {fileID: 8300000, guid: 35fc79ac006b41372a21b42e783e8844, type: 3}
+  - {fileID: 8300000, guid: 211511036a54366ea83810c56d7c69f5, type: 3}
+  - {fileID: 8300000, guid: 7f495b5e293b7091baa7e4943ecaf00a, type: 3}
+  swingGrunt:
+  - {fileID: 8300000, guid: ddb2944c5e08fc3a59179dacffd26ecb, type: 3}
+  - {fileID: 8300000, guid: d7eec713f188b6eee9b1d3fe31a59326, type: 3}
+  - {fileID: 8300000, guid: f2f50e4bcd2197606aa1d9104c13cd9a, type: 3}
+  beingAttacked:
+  - {fileID: 8300000, guid: f55bb3d091071bfdfbbfa8ab81b0e490, type: 3}
+  - {fileID: 8300000, guid: 5502dd1c3c53430bb9bc5820d28c52e3, type: 3}
+  - {fileID: 8300000, guid: 326df09d3a44a6d82b302d06b32ddb91, type: 3}
+  - {fileID: 8300000, guid: 60302d6c911098ea6ab1f8ce3e86184e, type: 3}
+  - {fileID: 8300000, guid: 64d8d12b5d3da745792aeb0c31c079f2, type: 3}
+  - {fileID: 8300000, guid: a13ceb1738258d3f5bcf746ca3787215, type: 3}
+  overtaking:
+  - {fileID: 8300000, guid: 2898f9d6969e7ee89b3d67ee378659c4, type: 3}
+  - {fileID: 8300000, guid: afb27ddd88d3acc63b4cd743f34ec43d, type: 3}
+  - {fileID: 8300000, guid: f8a1ef7764b7df79c9a7b887bfc5a9f9, type: 3}
+  beingOvertaken:
+  - {fileID: 8300000, guid: 6276ecaf9779b8e4ebac2ec45bf82ad9, type: 3}
+  - {fileID: 8300000, guid: 07c3cd41dc15ef6069cd31c568f2545d, type: 3}
+  - {fileID: 8300000, guid: 2e6bf80270bfb04dcba7e36122e5bfae, type: 3}
+  crash:
+  - {fileID: 8300000, guid: 1cd5cab39d338505d9928b2b556c0831, type: 3}
+  loseRace:
+  - {fileID: 8300000, guid: e131a027a4f96bbe6874563ec8d601c1, type: 3}
+  - {fileID: 8300000, guid: 3ff10ae32ab93b165afb528a02bd6c73, type: 3}
+  - {fileID: 8300000, guid: ca507a901b1e434f580b96173da77707, type: 3}
+  - {fileID: 8300000, guid: 41b9cc145f3c6a21cb0b37e23c6f915e, type: 3}
+  winRace:
+  - {fileID: 8300000, guid: 47ad27649fc0436fa96b251448640a81, type: 3}
+  - {fileID: 8300000, guid: e9e91d8c9b014de9f9386ea412878605, type: 3}
+  - {fileID: 8300000, guid: 6e87c140fa7ce8e41a75dd4e61bbe338, type: 3}

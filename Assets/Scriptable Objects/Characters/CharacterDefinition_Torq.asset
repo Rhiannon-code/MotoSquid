@@ -1,0 +1,30 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e3f4d1ca0a079f991bfdbf1605cb11fa, type: 3}
+  m_Name: CharacterDefinition_Torq
+  m_EditorClassIdentifier: 
+  characterName: Torq
+  description: 
+  portrait: {fileID: 0}
+  riderPrefab: {fileID: 7805393740051686938, guid: 3359a7a0623c2d222bee09c2c3eca507, type: 3}
+  bikePrefab: {fileID: 4919369484447472873, guid: d723441c1ac7acfbca5b08d3545511cb, type: 3}
+  ragdollPrefab: {fileID: 0}
+  style: 1
+  defaultWeapon: {fileID: 11400000, guid: 34d0ea4cc2904dab7a7e942bd8c2c25e, type: 2}
+  voice: {fileID: 11400000, guid: 413d78e1742d3ec32aeb3f03af7578bf, type: 2}
+  score: {fileID: 0}
+  playerDonor: {fileID: 0}
+  aiDonor: {fileID: 0}
+  outputFolder: Assets/Collaborators/Rhiannon/Prefabs/Characters
+  builtPlayerPrefab: {fileID: 2858489854447315179, guid: 78cbe2a9dbc5b306b880ef7897da9a7b, type: 3}
+  builtAIPrefab: {fileID: 593543813896411085, guid: d987fe11085afd026a1ccf1a612e93cb, type: 3}
+  previewPrefab: {fileID: 0}

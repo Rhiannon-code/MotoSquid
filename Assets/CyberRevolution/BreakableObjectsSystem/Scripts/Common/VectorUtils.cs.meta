@@ -1,0 +1,10 @@
+﻿fileFormatVersion: 2
+guid: 2d9aa33be12b4e46be823074506a3fe7
+timeCreated: 1641578265
+AssetOrigin:
+  serializedVersion: 1
+  productId: 205206
+  packageName: 'Breakable glass and objects system: Simple procedural solution'
+  packageVersion: 1.2
+  assetPath: Assets/CyberRevolution/BreakableObjectsSystem/Scripts/Common/VectorUtils.cs
+  uploadId: 474285

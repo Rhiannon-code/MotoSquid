@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 8b5a65a2a8493c74d933980c00ab8953
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 11400000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 205206
+  packageName: 'Breakable glass and objects system: Simple procedural solution'
+  packageVersion: 1.2
+  assetPath: Assets/CyberRevolution/BreakableObjectsSystem/Examples/Example3/BrokenSphere/BrokenSphereCollection.asset
+  uploadId: 474285

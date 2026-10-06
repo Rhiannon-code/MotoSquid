@@ -1,0 +1,5549 @@
+{
+    "taken": "2026-09-20 16:37:33",
+    "poses": [
+        {
+            "bike": "ABP_Pro_Chopper / Mace_CharacterRigged",
+            "target": "hipIdleTarget",
+            "pos": {
+                "x": -4.624804656568808e-16,
+                "y": 0.7059999704360962,
+                "z": -0.40199995040893557
+            },
+            "euler": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            }
+        },
+        {
+            "bike": "ABP_Pro_Chopper / Mace_CharacterRigged",
+            "target": "hipNormalSpeedTarget",
+            "pos": {
+                "x": -4.624804656568808e-16,
+                "y": 0.7059999704360962,
+                "z": -0.4020042419433594
+            },
+            "euler": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            }
+        },
+        {
+            "bike": "ABP_Pro_Chopper / Mace_CharacterRigged",
+            "target": "hipHighSpeedTarget",
+            "pos": {
+                "x": -4.637901903515728e-16,
+                "y": 0.7079993486404419,
+                "z": -0.4000239372253418
+            },
+            "euler": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            }
+        },
+        {
+            "bike": "ABP_Pro_Chopper / Mace_CharacterRigged",
+            "target": "hipInAirTarget",
+            "pos": {
+                "x": 3.7994503264593998e-17,
+                "y": 0.8359994292259216,
+                "z": -0.3790241479873657
+            },
+            "euler": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            }
+        },
+        {
+            "bike": "ABP_Pro_Chopper / Mace_CharacterRigged",
+            "target": "hipReverseTarget",
+            "pos": {
+                "x": 1.4804635081501754e-16,
+                "y": 0.7189996838569641,
+                "z": -0.39598575234413149
+            },
+            "euler": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            }
+        },
+        {
+            "bike": "ABP_Pro_Chopper / Mace_CharacterRigged",
+            "target": "spineIdleTarget",
+            "pos": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            },
+            "euler": {
+                "x": 10.00000286102295,
+                "y": -2.7890341324107028e-30,
+                "z": -3.187879892266174e-29
+            }
+        },
+        {
+            "bike": "ABP_Pro_Chopper / Mace_CharacterRigged",
+            "target": "spineNormalSpeedTarget",
+            "pos": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            },
+            "euler": {
+                "x": 15.000000953674317,
+                "y": -6.377706478408948e-30,
+                "z": -4.844349367015546e-29
+            }
+        },
+        {
+            "bike": "ABP_Pro_Chopper / Mace_CharacterRigged",
+            "target": "spineHighSpeedTarget",
+            "pos": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            },
+            "euler": {
+                "x": 20.0000057220459,
+                "y": -1.1602936478096574e-29,
+                "z": -6.580350118818389e-29
+            }
+        },
+        {
+            "bike": "ABP_Pro_Chopper / Mace_CharacterRigged",
+            "target": "spineReverseTarget",
+            "pos": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            },
+            "euler": {
+                "x": 10.00000286102295,
+                "y": 0.0,
+                "z": 0.0
+            }
+        },
+        {
+            "bike": "ABP_Pro_Chopper / Mace_CharacterRigged",
+            "target": "leftlegIdleTarget",
+            "pos": {
+                "x": -0.2740001678466797,
+                "y": 0.1589999794960022,
+                "z": -0.16200017929077149
+            },
+            "euler": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            }
+        },
+        {
+            "bike": "ABP_Pro_Chopper / Mace_CharacterRigged",
+            "target": "leftlegInMotionTarget",
+            "pos": {
+                "x": -0.15999984741210938,
+                "y": 0.2660001516342163,
+                "z": 0.030005455017089845
+            },
+            "euler": {
+                "x": 340.0,
+                "y": -1.1602948515158727e-29,
+                "z": 6.580354331790142e-29
+            }
+        },
+        {
+            "bike": "ABP_Pro_Chopper / Mace_CharacterRigged",
+            "target": "rightlegIdleTarget",
+            "pos": {
+                "x": 0.15999984741210938,
+                "y": 0.26600003242492678,
+                "z": 0.029999732971191407
+            },
+            "euler": {
+                "x": 340.0,
+                "y": -1.1602948515158727e-29,
+                "z": 6.580354331790142e-29
+            }
+        },
+        {
+            "bike": "ABP_Pro_Chopper / Mace_CharacterRigged",
+            "target": "rightlegInMotionTarget",
+            "pos": {
+                "x": 0.15999984741210938,
+                "y": 0.26600003242492678,
+                "z": 0.029999732971191407
+            },
+            "euler": {
+                "x": 340.0,
+                "y": -1.1602948515158727e-29,
+                "z": 6.580354331790142e-29
+            }
+        },
+        {
+            "bike": "ABP_Pro_Chopper / Mace_CharacterRigged",
+            "target": "leftHandTarget",
+            "pos": {
+                "x": -0.19000005722045899,
+                "y": 0.8810000419616699,
+                "z": 0.2029998004436493
+            },
+            "euler": {
+                "x": 16.32604217529297,
+                "y": 85.25305938720703,
+                "z": 75.6761703491211
+            }
+        },
+        {
+            "bike": "ABP_Pro_Chopper / Mace_CharacterRigged",
+            "target": "rightHandTarget",
+            "pos": {
+                "x": 0.19000005722045899,
+                "y": 0.8810000419616699,
+                "z": 0.2029998004436493
+            },
+            "euler": {
+                "x": 13.266681671142579,
+                "y": 274.53326416015627,
+                "z": 284.29046630859377
+            }
+        },
+        {
+            "bike": "ABP_Pro_Chopper / Mace_CharacterRigged",
+            "target": "leftHandReverseTarget",
+            "pos": {
+                "x": -0.1899999976158142,
+                "y": 0.8809999823570252,
+                "z": 0.2029999941587448
+            },
+            "euler": {
+                "x": 16.326038360595704,
+                "y": 85.25305938720703,
+                "z": 75.6761703491211
+            }
+        },
+        {
+            "bike": "ABP_Pro_Chopper / Mace_CharacterRigged",
+            "target": "rightHandReverseTarget",
+            "pos": {
+                "x": 0.1899999976158142,
+                "y": 0.8809999823570252,
+                "z": 0.2029999941587448
+            },
+            "euler": {
+                "x": 13.266676902770996,
+                "y": 274.53326416015627,
+                "z": 284.29046630859377
+            }
+        },
+        {
+            "bike": "ABP_Pro_Chopper / VoodooRigged",
+            "target": "hipIdleTarget",
+            "pos": {
+                "x": -4.624804656568808e-16,
+                "y": 0.7059999704360962,
+                "z": -0.40199995040893557
+            },
+            "euler": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            }
+        },
+        {
+            "bike": "ABP_Pro_Chopper / VoodooRigged",
+            "target": "hipNormalSpeedTarget",
+            "pos": {
+                "x": -4.624804656568808e-16,
+                "y": 0.7059999704360962,
+                "z": -0.4020042419433594
+            },
+            "euler": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            }
+        },
+        {
+            "bike": "ABP_Pro_Chopper / VoodooRigged",
+            "target": "hipHighSpeedTarget",
+            "pos": {
+                "x": -4.637901903515728e-16,
+                "y": 0.7079993486404419,
+                "z": -0.4000239372253418
+            },
+            "euler": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            }
+        },
+        {
+            "bike": "ABP_Pro_Chopper / VoodooRigged",
+            "target": "hipInAirTarget",
+            "pos": {
+                "x": 3.7994503264593998e-17,
+                "y": 0.8359994292259216,
+                "z": -0.3790241479873657
+            },
+            "euler": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            }
+        },
+        {
+            "bike": "ABP_Pro_Chopper / VoodooRigged",
+            "target": "hipReverseTarget",
+            "pos": {
+                "x": 1.4804635081501754e-16,
+                "y": 0.7189996838569641,
+                "z": -0.39598575234413149
+            },
+            "euler": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            }
+        },
+        {
+            "bike": "ABP_Pro_Chopper / VoodooRigged",
+            "target": "spineIdleTarget",
+            "pos": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            },
+            "euler": {
+                "x": 10.00000286102295,
+                "y": -2.7890341324107028e-30,
+                "z": -3.187879892266174e-29
+            }
+        },
+        {
+            "bike": "ABP_Pro_Chopper / VoodooRigged",
+            "target": "spineNormalSpeedTarget",
+            "pos": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            },
+            "euler": {
+                "x": 15.000000953674317,
+                "y": -6.377706478408948e-30,
+                "z": -4.844349367015546e-29
+            }
+        },
+        {
+            "bike": "ABP_Pro_Chopper / VoodooRigged",
+            "target": "spineHighSpeedTarget",
+            "pos": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            },
+            "euler": {
+                "x": 20.0000057220459,
+                "y": -1.1602936478096574e-29,
+                "z": -6.580350118818389e-29
+            }
+        },
+        {
+            "bike": "ABP_Pro_Chopper / VoodooRigged",
+            "target": "spineReverseTarget",
+            "pos": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            },
+            "euler": {
+                "x": 10.00000286102295,
+                "y": 0.0,
+                "z": 0.0
+            }
+        },
+        {
+            "bike": "ABP_Pro_Chopper / VoodooRigged",
+            "target": "leftlegIdleTarget",
+            "pos": {
+                "x": -0.2740001678466797,
+                "y": 0.1589999794960022,
+                "z": -0.16200017929077149
+            },
+            "euler": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            }
+        },
+        {
+            "bike": "ABP_Pro_Chopper / VoodooRigged",
+            "target": "leftlegInMotionTarget",
+            "pos": {
+                "x": -0.15999984741210938,
+                "y": 0.2660001516342163,
+                "z": 0.030005455017089845
+            },
+            "euler": {
+                "x": 340.0,
+                "y": -1.1602948515158727e-29,
+                "z": 6.580354331790142e-29
+            }
+        },
+        {
+            "bike": "ABP_Pro_Chopper / VoodooRigged",
+            "target": "rightlegIdleTarget",
+            "pos": {
+                "x": 0.15999984741210938,
+                "y": 0.26600003242492678,
+                "z": 0.029999732971191407
+            },
+            "euler": {
+                "x": 340.0,
+                "y": -1.1602948515158727e-29,
+                "z": 6.580354331790142e-29
+            }
+        },
+        {
+            "bike": "ABP_Pro_Chopper / VoodooRigged",
+            "target": "rightlegInMotionTarget",
+            "pos": {
+                "x": 0.15999984741210938,
+                "y": 0.26600003242492678,
+                "z": 0.029999732971191407
+            },
+            "euler": {
+                "x": 340.0,
+                "y": -1.1602948515158727e-29,
+                "z": 6.580354331790142e-29
+            }
+        },
+        {
+            "bike": "ABP_Pro_Chopper / VoodooRigged",
+            "target": "leftHandTarget",
+            "pos": {
+                "x": -0.19000005722045899,
+                "y": 0.8810000419616699,
+                "z": 0.2029998004436493
+            },
+            "euler": {
+                "x": 16.32604217529297,
+                "y": 85.25305938720703,
+                "z": 75.6761703491211
+            }
+        },
+        {
+            "bike": "ABP_Pro_Chopper / VoodooRigged",
+            "target": "rightHandTarget",
+            "pos": {
+                "x": 0.19000005722045899,
+                "y": 0.8810000419616699,
+                "z": 0.2029998004436493
+            },
+            "euler": {
+                "x": 13.266681671142579,
+                "y": 274.53326416015627,
+                "z": 284.29046630859377
+            }
+        },
+        {
+            "bike": "ABP_Pro_Chopper / VoodooRigged",
+            "target": "leftHandReverseTarget",
+            "pos": {
+                "x": -0.1899999976158142,
+                "y": 0.8809999823570252,
+                "z": 0.2029999941587448
+            },
+            "euler": {
+                "x": 16.326038360595704,
+                "y": 85.25305938720703,
+                "z": 75.6761703491211
+            }
+        },
+        {
+            "bike": "ABP_Pro_Chopper / VoodooRigged",
+            "target": "rightHandReverseTarget",
+            "pos": {
+                "x": 0.1899999976158142,
+                "y": 0.8809999823570252,
+                "z": 0.2029999941587448
+            },
+            "euler": {
+                "x": 13.266676902770996,
+                "y": 274.53326416015627,
+                "z": 284.29046630859377
+            }
+        },
+        {
+            "bike": "ABP_Pro_Chopper",
+            "target": "leftHandHint",
+            "pos": {
+                "x": -0.4322727918624878,
+                "y": 1.3830064535140992,
+                "z": -0.30000001192092898
+            },
+            "euler": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            }
+        },
+        {
+            "bike": "ABP_Pro_Chopper",
+            "target": "rightHandHint",
+            "pos": {
+                "x": 0.4322717785835266,
+                "y": 1.3830076456069947,
+                "z": -0.30000001192092898
+            },
+            "euler": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            }
+        },
+        {
+            "bike": "ABP_ProFuturistic_Bike / Mace_CharacterRigged",
+            "target": "hipIdleTarget",
+            "pos": {
+                "x": -0.11899948120117188,
+                "y": 0.9450000524520874,
+                "z": -0.39799976348876955
+            },
+            "euler": {
+                "x": 25.0,
+                "y": -1.8690066774684406e-29,
+                "z": -8.430544071848812e-29
+            }
+        },
+        {
+            "bike": "ABP_ProFuturistic_Bike / Mace_CharacterRigged",
+            "target": "hipNormalSpeedTarget",
+            "pos": {
+                "x": -6.092166417909532e-16,
+                "y": 0.9300001859664917,
+                "z": -0.49300384521484377
+            },
+            "euler": {
+                "x": 25.0,
+                "y": -1.8690066774684406e-29,
+                "z": -8.430544071848812e-29
+            }
+        },
+        {
+            "bike": "ABP_ProFuturistic_Bike / Mace_CharacterRigged",
+            "target": "hipHighSpeedTarget",
+            "pos": {
+                "x": -6.092166417909532e-16,
+                "y": 0.9300001859664917,
+                "z": -0.49300384521484377
+            },
+            "euler": {
+                "x": 25.0,
+                "y": -1.8690066774684406e-29,
+                "z": -8.430544071848812e-29
+            }
+        },
+        {
+            "bike": "ABP_ProFuturistic_Bike / Mace_CharacterRigged",
+            "target": "hipInAirTarget",
+            "pos": {
+                "x": -9.826108275019468e-18,
+                "y": 1.1650002002716065,
+                "z": -0.4700014889240265
+            },
+            "euler": {
+                "x": 5.000024318695068,
+                "y": 2.547051876454512e-21,
+                "z": 6.1834129740393476e-21
+            }
+        },
+        {
+            "bike": "ABP_ProFuturistic_Bike / Mace_CharacterRigged",
+            "target": "hipReverseTarget",
+            "pos": {
+                "x": 0.0,
+                "y": 0.9449999928474426,
+                "z": -0.39800000190734866
+            },
+            "euler": {
+                "x": 5.000002861022949,
+                "y": 0.0,
+                "z": 0.0
+            }
+        },
+        {
+            "bike": "ABP_ProFuturistic_Bike / Mace_CharacterRigged",
+            "target": "spineIdleTarget",
+            "pos": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            },
+            "euler": {
+                "x": 20.000032424926759,
+                "y": 5.605161421231321e-22,
+                "z": 3.178840149860297e-21
+            }
+        },
+        {
+            "bike": "ABP_ProFuturistic_Bike / Mace_CharacterRigged",
+            "target": "spineNormalSpeedTarget",
+            "pos": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            },
+            "euler": {
+                "x": 35.00001907348633,
+                "y": -3.9914702495165486e-29,
+                "z": -1.2659315672977157e-28
+            }
+        },
+        {
+            "bike": "ABP_ProFuturistic_Bike / Mace_CharacterRigged",
+            "target": "spineHighSpeedTarget",
+            "pos": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            },
+            "euler": {
+                "x": 59.9999885559082,
+                "y": -1.807935800043786e-28,
+                "z": -3.1314369041272603e-28
+            }
+        },
+        {
+            "bike": "ABP_ProFuturistic_Bike / Mace_CharacterRigged",
+            "target": "spineReverseTarget",
+            "pos": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            },
+            "euler": {
+                "x": 20.000024795532228,
+                "y": 3.647227940544181e-21,
+                "z": -5.5169061370229934e-21
+            }
+        },
+        {
+            "bike": "ABP_ProFuturistic_Bike / Mace_CharacterRigged",
+            "target": "leftlegIdleTarget",
+            "pos": {
+                "x": -0.42800140380859377,
+                "y": 0.1589999794960022,
+                "z": -0.2969999313354492
+            },
+            "euler": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            }
+        },
+        {
+            "bike": "ABP_ProFuturistic_Bike / Mace_CharacterRigged",
+            "target": "leftlegInMotionTarget",
+            "pos": {
+                "x": -0.22999954223632813,
+                "y": 0.5110000371932983,
+                "z": -0.5809998512268066
+            },
+            "euler": {
+                "x": 45.000003814697269,
+                "y": -7.488717986354167e-29,
+                "z": -1.807936281526272e-28
+            }
+        },
+        {
+            "bike": "ABP_ProFuturistic_Bike / Mace_CharacterRigged",
+            "target": "rightlegIdleTarget",
+            "pos": {
+                "x": 0.22999954223632813,
+                "y": 0.5110000371932983,
+                "z": -0.5810031890869141
+            },
+            "euler": {
+                "x": 45.000003814697269,
+                "y": -7.488717986354167e-29,
+                "z": -1.807936281526272e-28
+            }
+        },
+        {
+            "bike": "ABP_ProFuturistic_Bike / Mace_CharacterRigged",
+            "target": "rightlegInMotionTarget",
+            "pos": {
+                "x": 0.22999954223632813,
+                "y": 0.5110000371932983,
+                "z": -0.5810031890869141
+            },
+            "euler": {
+                "x": 45.000003814697269,
+                "y": -7.488717986354167e-29,
+                "z": -1.807936281526272e-28
+            }
+        },
+        {
+            "bike": "ABP_ProFuturistic_Bike / Mace_CharacterRigged",
+            "target": "leftHandTarget",
+            "pos": {
+                "x": -0.2999992370605469,
+                "y": 1.1010000705718995,
+                "z": 0.2919999063014984
+            },
+            "euler": {
+                "x": 37.43640899658203,
+                "y": 94.78739929199219,
+                "z": 67.64598083496094
+            }
+        },
+        {
+            "bike": "ABP_ProFuturistic_Bike / Mace_CharacterRigged",
+            "target": "rightHandTarget",
+            "pos": {
+                "x": 0.2999992370605469,
+                "y": 1.1010000705718995,
+                "z": 0.2919999063014984
+            },
+            "euler": {
+                "x": 34.433685302734378,
+                "y": 264.4449768066406,
+                "z": 291.9245910644531
+            }
+        },
+        {
+            "bike": "ABP_ProFuturistic_Bike / Mace_CharacterRigged",
+            "target": "leftHandReverseTarget",
+            "pos": {
+                "x": -0.30000001192092898,
+                "y": 1.1009999513626099,
+                "z": 0.2919999957084656
+            },
+            "euler": {
+                "x": 37.43640899658203,
+                "y": 94.78739929199219,
+                "z": 67.64598083496094
+            }
+        },
+        {
+            "bike": "ABP_ProFuturistic_Bike / Mace_CharacterRigged",
+            "target": "rightHandReverseTarget",
+            "pos": {
+                "x": 0.30000001192092898,
+                "y": 1.1009999513626099,
+                "z": 0.2919999957084656
+            },
+            "euler": {
+                "x": 34.433685302734378,
+                "y": 264.4449768066406,
+                "z": 291.924560546875
+            }
+        },
+        {
+            "bike": "ABP_ProFuturistic_Bike / VoodooRigged",
+            "target": "hipIdleTarget",
+            "pos": {
+                "x": -0.11899948120117188,
+                "y": 0.9450000524520874,
+                "z": -0.39799976348876955
+            },
+            "euler": {
+                "x": 25.0,
+                "y": -1.8690066774684406e-29,
+                "z": -8.430544071848812e-29
+            }
+        },
+        {
+            "bike": "ABP_ProFuturistic_Bike / VoodooRigged",
+            "target": "hipNormalSpeedTarget",
+            "pos": {
+                "x": -6.092166417909532e-16,
+                "y": 0.9300001859664917,
+                "z": -0.49300384521484377
+            },
+            "euler": {
+                "x": 25.0,
+                "y": -1.8690066774684406e-29,
+                "z": -8.430544071848812e-29
+            }
+        },
+        {
+            "bike": "ABP_ProFuturistic_Bike / VoodooRigged",
+            "target": "hipHighSpeedTarget",
+            "pos": {
+                "x": -6.092166417909532e-16,
+                "y": 0.9300001859664917,
+                "z": -0.49300384521484377
+            },
+            "euler": {
+                "x": 25.0,
+                "y": -1.8690066774684406e-29,
+                "z": -8.430544071848812e-29
+            }
+        },
+        {
+            "bike": "ABP_ProFuturistic_Bike / VoodooRigged",
+            "target": "hipInAirTarget",
+            "pos": {
+                "x": -9.826108275019468e-18,
+                "y": 1.1650002002716065,
+                "z": -0.4700014889240265
+            },
+            "euler": {
+                "x": 5.000024318695068,
+                "y": 2.547051876454512e-21,
+                "z": 6.1834129740393476e-21
+            }
+        },
+        {
+            "bike": "ABP_ProFuturistic_Bike / VoodooRigged",
+            "target": "hipReverseTarget",
+            "pos": {
+                "x": 0.0,
+                "y": 0.9449999928474426,
+                "z": -0.39800000190734866
+            },
+            "euler": {
+                "x": 5.000002861022949,
+                "y": 0.0,
+                "z": 0.0
+            }
+        },
+        {
+            "bike": "ABP_ProFuturistic_Bike / VoodooRigged",
+            "target": "spineIdleTarget",
+            "pos": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            },
+            "euler": {
+                "x": 20.000032424926759,
+                "y": 5.605161421231321e-22,
+                "z": 3.178840149860297e-21
+            }
+        },
+        {
+            "bike": "ABP_ProFuturistic_Bike / VoodooRigged",
+            "target": "spineNormalSpeedTarget",
+            "pos": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            },
+            "euler": {
+                "x": 35.00001907348633,
+                "y": -3.9914702495165486e-29,
+                "z": -1.2659315672977157e-28
+            }
+        },
+        {
+            "bike": "ABP_ProFuturistic_Bike / VoodooRigged",
+            "target": "spineHighSpeedTarget",
+            "pos": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            },
+            "euler": {
+                "x": 59.9999885559082,
+                "y": -1.807935800043786e-28,
+                "z": -3.1314369041272603e-28
+            }
+        },
+        {
+            "bike": "ABP_ProFuturistic_Bike / VoodooRigged",
+            "target": "spineReverseTarget",
+            "pos": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            },
+            "euler": {
+                "x": 20.000024795532228,
+                "y": 3.647227940544181e-21,
+                "z": -5.5169061370229934e-21
+            }
+        },
+        {
+            "bike": "ABP_ProFuturistic_Bike / VoodooRigged",
+            "target": "leftlegIdleTarget",
+            "pos": {
+                "x": -0.42800140380859377,
+                "y": 0.1589999794960022,
+                "z": -0.2969999313354492
+            },
+            "euler": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            }
+        },
+        {
+            "bike": "ABP_ProFuturistic_Bike / VoodooRigged",
+            "target": "leftlegInMotionTarget",
+            "pos": {
+                "x": -0.22999954223632813,
+                "y": 0.5110000371932983,
+                "z": -0.5809998512268066
+            },
+            "euler": {
+                "x": 45.000003814697269,
+                "y": -7.488717986354167e-29,
+                "z": -1.807936281526272e-28
+            }
+        },
+        {
+            "bike": "ABP_ProFuturistic_Bike / VoodooRigged",
+            "target": "rightlegIdleTarget",
+            "pos": {
+                "x": 0.22999954223632813,
+                "y": 0.5110000371932983,
+                "z": -0.5810031890869141
+            },
+            "euler": {
+                "x": 45.000003814697269,
+                "y": -7.488717986354167e-29,
+                "z": -1.807936281526272e-28
+            }
+        },
+        {
+            "bike": "ABP_ProFuturistic_Bike / VoodooRigged",
+            "target": "rightlegInMotionTarget",
+            "pos": {
+                "x": 0.22999954223632813,
+                "y": 0.5110000371932983,
+                "z": -0.5810031890869141
+            },
+            "euler": {
+                "x": 45.000003814697269,
+                "y": -7.488717986354167e-29,
+                "z": -1.807936281526272e-28
+            }
+        },
+        {
+            "bike": "ABP_ProFuturistic_Bike / VoodooRigged",
+            "target": "leftHandTarget",
+            "pos": {
+                "x": -0.2999992370605469,
+                "y": 1.1010000705718995,
+                "z": 0.2919999063014984
+            },
+            "euler": {
+                "x": 37.43640899658203,
+                "y": 94.78739929199219,
+                "z": 67.64598083496094
+            }
+        },
+        {
+            "bike": "ABP_ProFuturistic_Bike / VoodooRigged",
+            "target": "rightHandTarget",
+            "pos": {
+                "x": 0.2999992370605469,
+                "y": 1.1010000705718995,
+                "z": 0.2919999063014984
+            },
+            "euler": {
+                "x": 34.433685302734378,
+                "y": 264.4449768066406,
+                "z": 291.9245910644531
+            }
+        },
+        {
+            "bike": "ABP_ProFuturistic_Bike / VoodooRigged",
+            "target": "leftHandReverseTarget",
+            "pos": {
+                "x": -0.30000001192092898,
+                "y": 1.1009999513626099,
+                "z": 0.2919999957084656
+            },
+            "euler": {
+                "x": 37.43640899658203,
+                "y": 94.78739929199219,
+                "z": 67.64598083496094
+            }
+        },
+        {
+            "bike": "ABP_ProFuturistic_Bike / VoodooRigged",
+            "target": "rightHandReverseTarget",
+            "pos": {
+                "x": 0.30000001192092898,
+                "y": 1.1009999513626099,
+                "z": 0.2919999957084656
+            },
+            "euler": {
+                "x": 34.433685302734378,
+                "y": 264.4449768066406,
+                "z": 291.924560546875
+            }
+        },
+        {
+            "bike": "ABP_ProFuturistic_Bike",
+            "target": "leftHandHint",
+            "pos": {
+                "x": -0.4322727918624878,
+                "y": 1.3830064535140992,
+                "z": -0.30000001192092898
+            },
+            "euler": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            }
+        },
+        {
+            "bike": "ABP_ProFuturistic_Bike",
+            "target": "rightHandHint",
+            "pos": {
+                "x": 0.4322717785835266,
+                "y": 1.3830076456069947,
+                "z": -0.30000001192092898
+            },
+            "euler": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            }
+        },
+        {
+            "bike": "ABP_Pro_Scooter / Mace_CharacterRigged",
+            "target": "hipIdleTarget",
+            "pos": {
+                "x": -6.282135790946174e-16,
+                "y": 0.9589999914169312,
+                "z": -0.22300004959106446
+            },
+            "euler": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            }
+        },
+        {
+            "bike": "ABP_Pro_Scooter / Mace_CharacterRigged",
+            "target": "hipNormalSpeedTarget",
+            "pos": {
+                "x": -6.28213473215499e-16,
+                "y": 0.9589998722076416,
+                "z": -0.22298812866210938
+            },
+            "euler": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            }
+        },
+        {
+            "bike": "ABP_Pro_Scooter / Mace_CharacterRigged",
+            "target": "hipHighSpeedTarget",
+            "pos": {
+                "x": -6.295232508497501e-16,
+                "y": 0.9609992504119873,
+                "z": -0.22100830078125
+            },
+            "euler": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            }
+        },
+        {
+            "bike": "ABP_Pro_Scooter / Mace_CharacterRigged",
+            "target": "hipInAirTarget",
+            "pos": {
+                "x": -1.2773847120679968e-16,
+                "y": 1.0889992713928223,
+                "z": -0.2000080943107605
+            },
+            "euler": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            }
+        },
+        {
+            "bike": "ABP_Pro_Scooter / Mace_CharacterRigged",
+            "target": "hipReverseTarget",
+            "pos": {
+                "x": -1.768664019998838e-17,
+                "y": 0.9719995260238648,
+                "z": -0.21696969866752625
+            },
+            "euler": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            }
+        },
+        {
+            "bike": "ABP_Pro_Scooter / Mace_CharacterRigged",
+            "target": "spineIdleTarget",
+            "pos": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            },
+            "euler": {
+                "x": 10.00000286102295,
+                "y": -2.7890341324107028e-30,
+                "z": -3.187879892266174e-29
+            }
+        },
+        {
+            "bike": "ABP_Pro_Scooter / Mace_CharacterRigged",
+            "target": "spineNormalSpeedTarget",
+            "pos": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            },
+            "euler": {
+                "x": 15.000000953674317,
+                "y": -6.377706478408948e-30,
+                "z": -4.844349367015546e-29
+            }
+        },
+        {
+            "bike": "ABP_Pro_Scooter / Mace_CharacterRigged",
+            "target": "spineHighSpeedTarget",
+            "pos": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            },
+            "euler": {
+                "x": 20.0000057220459,
+                "y": -1.1602936478096574e-29,
+                "z": -6.580350118818389e-29
+            }
+        },
+        {
+            "bike": "ABP_Pro_Scooter / Mace_CharacterRigged",
+            "target": "spineReverseTarget",
+            "pos": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            },
+            "euler": {
+                "x": 10.00000286102295,
+                "y": 0.0,
+                "z": 0.0
+            }
+        },
+        {
+            "bike": "ABP_Pro_Scooter / Mace_CharacterRigged",
+            "target": "leftlegIdleTarget",
+            "pos": {
+                "x": -0.2739982604980469,
+                "y": 0.1589999794960022,
+                "z": 0.03800010681152344
+            },
+            "euler": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            }
+        },
+        {
+            "bike": "ABP_Pro_Scooter / Mace_CharacterRigged",
+            "target": "leftlegInMotionTarget",
+            "pos": {
+                "x": -0.09999847412109375,
+                "y": 0.4490000009536743,
+                "z": 0.10400009155273438
+            },
+            "euler": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            }
+        },
+        {
+            "bike": "ABP_Pro_Scooter / Mace_CharacterRigged",
+            "target": "rightlegIdleTarget",
+            "pos": {
+                "x": 0.10000228881835938,
+                "y": 0.4490000009536743,
+                "z": 0.1040048599243164
+            },
+            "euler": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            }
+        },
+        {
+            "bike": "ABP_Pro_Scooter / Mace_CharacterRigged",
+            "target": "rightlegInMotionTarget",
+            "pos": {
+                "x": 0.10000228881835938,
+                "y": 0.4490000009536743,
+                "z": 0.1040048599243164
+            },
+            "euler": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            }
+        },
+        {
+            "bike": "ABP_Pro_Scooter / Mace_CharacterRigged",
+            "target": "leftHandTarget",
+            "pos": {
+                "x": -0.18999862670898438,
+                "y": 1.1200000047683716,
+                "z": 0.17099979519844056
+            },
+            "euler": {
+                "x": 35.95417404174805,
+                "y": 87.18219757080078,
+                "z": 79.98921966552735
+            }
+        },
+        {
+            "bike": "ABP_Pro_Scooter / Mace_CharacterRigged",
+            "target": "rightHandTarget",
+            "pos": {
+                "x": 0.19000244140625,
+                "y": 1.1200000047683716,
+                "z": 0.17099979519844056
+            },
+            "euler": {
+                "x": 32.88792037963867,
+                "y": 272.8446960449219,
+                "z": 280.04718017578127
+            }
+        },
+        {
+            "bike": "ABP_Pro_Scooter / Mace_CharacterRigged",
+            "target": "leftHandReverseTarget",
+            "pos": {
+                "x": -0.1899999976158142,
+                "y": 1.1200000047683716,
+                "z": 0.17100000381469727
+            },
+            "euler": {
+                "x": 35.95417404174805,
+                "y": 87.18219757080078,
+                "z": 79.98921966552735
+            }
+        },
+        {
+            "bike": "ABP_Pro_Scooter / Mace_CharacterRigged",
+            "target": "rightHandReverseTarget",
+            "pos": {
+                "x": 0.1899999976158142,
+                "y": 1.1200000047683716,
+                "z": 0.17100000381469727
+            },
+            "euler": {
+                "x": 32.88792037963867,
+                "y": 272.8446960449219,
+                "z": 280.04718017578127
+            }
+        },
+        {
+            "bike": "ABP_Pro_Scooter / VoodooRigged",
+            "target": "hipIdleTarget",
+            "pos": {
+                "x": -6.282135790946174e-16,
+                "y": 0.9589999914169312,
+                "z": -0.22300004959106446
+            },
+            "euler": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            }
+        },
+        {
+            "bike": "ABP_Pro_Scooter / VoodooRigged",
+            "target": "hipNormalSpeedTarget",
+            "pos": {
+                "x": -6.28213473215499e-16,
+                "y": 0.9589998722076416,
+                "z": -0.22298812866210938
+            },
+            "euler": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            }
+        },
+        {
+            "bike": "ABP_Pro_Scooter / VoodooRigged",
+            "target": "hipHighSpeedTarget",
+            "pos": {
+                "x": -6.295232508497501e-16,
+                "y": 0.9609992504119873,
+                "z": -0.22100830078125
+            },
+            "euler": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            }
+        },
+        {
+            "bike": "ABP_Pro_Scooter / VoodooRigged",
+            "target": "hipInAirTarget",
+            "pos": {
+                "x": -1.2773847120679968e-16,
+                "y": 1.0889992713928223,
+                "z": -0.2000080943107605
+            },
+            "euler": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            }
+        },
+        {
+            "bike": "ABP_Pro_Scooter / VoodooRigged",
+            "target": "hipReverseTarget",
+            "pos": {
+                "x": -1.768664019998838e-17,
+                "y": 0.9719995260238648,
+                "z": -0.21696969866752625
+            },
+            "euler": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            }
+        },
+        {
+            "bike": "ABP_Pro_Scooter / VoodooRigged",
+            "target": "spineIdleTarget",
+            "pos": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            },
+            "euler": {
+                "x": 10.00000286102295,
+                "y": -2.7890341324107028e-30,
+                "z": -3.187879892266174e-29
+            }
+        },
+        {
+            "bike": "ABP_Pro_Scooter / VoodooRigged",
+            "target": "spineNormalSpeedTarget",
+            "pos": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            },
+            "euler": {
+                "x": 15.000000953674317,
+                "y": -6.377706478408948e-30,
+                "z": -4.844349367015546e-29
+            }
+        },
+        {
+            "bike": "ABP_Pro_Scooter / VoodooRigged",
+            "target": "spineHighSpeedTarget",
+            "pos": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            },
+            "euler": {
+                "x": 20.0000057220459,
+                "y": -1.1602936478096574e-29,
+                "z": -6.580350118818389e-29
+            }
+        },
+        {
+            "bike": "ABP_Pro_Scooter / VoodooRigged",
+            "target": "spineReverseTarget",
+            "pos": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            },
+            "euler": {
+                "x": 10.00000286102295,
+                "y": 0.0,
+                "z": 0.0
+            }
+        },
+        {
+            "bike": "ABP_Pro_Scooter / VoodooRigged",
+            "target": "leftlegIdleTarget",
+            "pos": {
+                "x": -0.2739982604980469,
+                "y": 0.1589999794960022,
+                "z": 0.03800010681152344
+            },
+            "euler": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            }
+        },
+        {
+            "bike": "ABP_Pro_Scooter / VoodooRigged",
+            "target": "leftlegInMotionTarget",
+            "pos": {
+                "x": -0.09999847412109375,
+                "y": 0.4490000009536743,
+                "z": 0.10400009155273438
+            },
+            "euler": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            }
+        },
+        {
+            "bike": "ABP_Pro_Scooter / VoodooRigged",
+            "target": "rightlegIdleTarget",
+            "pos": {
+                "x": 0.10000228881835938,
+                "y": 0.4490000009536743,
+                "z": 0.1040048599243164
+            },
+            "euler": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            }
+        },
+        {
+            "bike": "ABP_Pro_Scooter / VoodooRigged",
+            "target": "rightlegInMotionTarget",
+            "pos": {
+                "x": 0.10000228881835938,
+                "y": 0.4490000009536743,
+                "z": 0.1040048599243164
+            },
+            "euler": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            }
+        },
+        {
+            "bike": "ABP_Pro_Scooter / VoodooRigged",
+            "target": "leftHandTarget",
+            "pos": {
+                "x": -0.18999862670898438,
+                "y": 1.1200000047683716,
+                "z": 0.17099979519844056
+            },
+            "euler": {
+                "x": 35.95417404174805,
+                "y": 87.18219757080078,
+                "z": 79.98921966552735
+            }
+        },
+        {
+            "bike": "ABP_Pro_Scooter / VoodooRigged",
+            "target": "rightHandTarget",
+            "pos": {
+                "x": 0.19000244140625,
+                "y": 1.1200000047683716,
+                "z": 0.17099979519844056
+            },
+            "euler": {
+                "x": 32.88792037963867,
+                "y": 272.8446960449219,
+                "z": 280.04718017578127
+            }
+        },
+        {
+            "bike": "ABP_Pro_Scooter / VoodooRigged",
+            "target": "leftHandReverseTarget",
+            "pos": {
+                "x": -0.1899999976158142,
+                "y": 1.1200000047683716,
+                "z": 0.17100000381469727
+            },
+            "euler": {
+                "x": 35.95417404174805,
+                "y": 87.18219757080078,
+                "z": 79.98921966552735
+            }
+        },
+        {
+            "bike": "ABP_Pro_Scooter / VoodooRigged",
+            "target": "rightHandReverseTarget",
+            "pos": {
+                "x": 0.1899999976158142,
+                "y": 1.1200000047683716,
+                "z": 0.17100000381469727
+            },
+            "euler": {
+                "x": 32.88792037963867,
+                "y": 272.8446960449219,
+                "z": 280.04718017578127
+            }
+        },
+        {
+            "bike": "ABP_Pro_Scooter",
+            "target": "leftHandHint",
+            "pos": {
+                "x": -0.4322727918624878,
+                "y": 1.3830064535140992,
+                "z": -0.30000001192092898
+            },
+            "euler": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            }
+        },
+        {
+            "bike": "ABP_Pro_Scooter",
+            "target": "rightHandHint",
+            "pos": {
+                "x": 0.4322717785835266,
+                "y": 1.3830076456069947,
+                "z": -0.30000001192092898
+            },
+            "euler": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            }
+        },
+        {
+            "bike": "ABP_Pro_Super_Moto / Mace_CharacterRigged",
+            "target": "hipIdleTarget",
+            "pos": {
+                "x": -0.15900039672851563,
+                "y": 1.0520000457763672,
+                "z": -0.10799980163574219
+            },
+            "euler": {
+                "x": 20.000003814697267,
+                "y": -1.1602932716514652e-29,
+                "z": -6.580349516965281e-29
+            }
+        },
+        {
+            "bike": "ABP_Pro_Super_Moto / Mace_CharacterRigged",
+            "target": "hipNormalSpeedTarget",
+            "pos": {
+                "x": -6.753789676361378e-16,
+                "y": 1.0310003757476807,
+                "z": -0.19601058959960938
+            },
+            "euler": {
+                "x": 20.000003814697267,
+                "y": -1.1602932716514652e-29,
+                "z": -6.580349516965281e-29
+            }
+        },
+        {
+            "bike": "ABP_Pro_Super_Moto / Mace_CharacterRigged",
+            "target": "hipHighSpeedTarget",
+            "pos": {
+                "x": -6.740687135458538e-16,
+                "y": 1.029000163078308,
+                "z": -0.28499603271484377
+            },
+            "euler": {
+                "x": 20.000003814697267,
+                "y": -1.1602932716514652e-29,
+                "z": -6.580349516965281e-29
+            }
+        },
+        {
+            "bike": "ABP_Pro_Super_Moto / Mace_CharacterRigged",
+            "target": "hipInAirTarget",
+            "pos": {
+                "x": 0.0,
+                "y": 1.215000033378601,
+                "z": -0.26600000262260439
+            },
+            "euler": {
+                "x": 5.000024318695068,
+                "y": 2.547051876454512e-21,
+                "z": 6.1834129740393476e-21
+            }
+        },
+        {
+            "bike": "ABP_Pro_Super_Moto / Mace_CharacterRigged",
+            "target": "hipReverseTarget",
+            "pos": {
+                "x": -6.485209822468024e-17,
+                "y": 1.0440000295639039,
+                "z": -0.18999220430850984
+            },
+            "euler": {
+                "x": 5.000002861022949,
+                "y": 0.0,
+                "z": 0.0
+            }
+        },
+        {
+            "bike": "ABP_Pro_Super_Moto / Mace_CharacterRigged",
+            "target": "spineIdleTarget",
+            "pos": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            },
+            "euler": {
+                "x": 10.00000286102295,
+                "y": -2.7890339443316066e-30,
+                "z": -3.187879892266174e-29
+            }
+        },
+        {
+            "bike": "ABP_Pro_Super_Moto / Mace_CharacterRigged",
+            "target": "spineNormalSpeedTarget",
+            "pos": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            },
+            "euler": {
+                "x": 20.000003814697267,
+                "y": -1.1602932716514652e-29,
+                "z": -6.580349516965281e-29
+            }
+        },
+        {
+            "bike": "ABP_Pro_Super_Moto / Mace_CharacterRigged",
+            "target": "spineHighSpeedTarget",
+            "pos": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            },
+            "euler": {
+                "x": 35.00000762939453,
+                "y": -3.991463629132365e-29,
+                "z": -1.265930483962122e-28
+            }
+        },
+        {
+            "bike": "ABP_Pro_Super_Moto / Mace_CharacterRigged",
+            "target": "spineReverseTarget",
+            "pos": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            },
+            "euler": {
+                "x": 5.000002861022949,
+                "y": 0.0,
+                "z": 0.0
+            }
+        },
+        {
+            "bike": "ABP_Pro_Super_Moto / Mace_CharacterRigged",
+            "target": "leftlegIdleTarget",
+            "pos": {
+                "x": -0.3079986572265625,
+                "y": 0.19999998807907105,
+                "z": -0.21899986267089845
+            },
+            "euler": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            }
+        },
+        {
+            "bike": "ABP_Pro_Super_Moto / Mace_CharacterRigged",
+            "target": "leftlegInMotionTarget",
+            "pos": {
+                "x": -0.18000030517578126,
+                "y": 0.48399996757507326,
+                "z": -0.12099981307983399
+            },
+            "euler": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            }
+        },
+        {
+            "bike": "ABP_Pro_Super_Moto / Mace_CharacterRigged",
+            "target": "rightlegIdleTarget",
+            "pos": {
+                "x": 0.18000030517578126,
+                "y": 0.48399996757507326,
+                "z": -0.12101173400878906
+            },
+            "euler": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            }
+        },
+        {
+            "bike": "ABP_Pro_Super_Moto / Mace_CharacterRigged",
+            "target": "rightlegInMotionTarget",
+            "pos": {
+                "x": 0.18000030517578126,
+                "y": 0.48399996757507326,
+                "z": -0.12101173400878906
+            },
+            "euler": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            }
+        },
+        {
+            "bike": "ABP_Pro_Super_Moto / Mace_CharacterRigged",
+            "target": "leftHandTarget",
+            "pos": {
+                "x": -0.2999992370605469,
+                "y": 1.0809999704360963,
+                "z": 0.20700004696846009
+            },
+            "euler": {
+                "x": 35.95417785644531,
+                "y": 102.18221282958985,
+                "z": 79.98922729492188
+            }
+        },
+        {
+            "bike": "ABP_Pro_Super_Moto / Mace_CharacterRigged",
+            "target": "rightHandTarget",
+            "pos": {
+                "x": 0.2999992370605469,
+                "y": 1.0809999704360963,
+                "z": 0.20700004696846009
+            },
+            "euler": {
+                "x": 32.887916564941409,
+                "y": 257.84466552734377,
+                "z": 280.04718017578127
+            }
+        },
+        {
+            "bike": "ABP_Pro_Super_Moto / Mace_CharacterRigged",
+            "target": "leftHandReverseTarget",
+            "pos": {
+                "x": -0.30000001192092898,
+                "y": 1.0809999704360963,
+                "z": 0.2070000022649765
+            },
+            "euler": {
+                "x": 35.95417785644531,
+                "y": 102.18221282958985,
+                "z": 79.98922729492188
+            }
+        },
+        {
+            "bike": "ABP_Pro_Super_Moto / Mace_CharacterRigged",
+            "target": "rightHandReverseTarget",
+            "pos": {
+                "x": 0.30000001192092898,
+                "y": 1.0809999704360963,
+                "z": 0.2070000022649765
+            },
+            "euler": {
+                "x": 32.887916564941409,
+                "y": 257.84466552734377,
+                "z": 280.04718017578127
+            }
+        },
+        {
+            "bike": "ABP_Pro_Super_Moto / VoodooRigged",
+            "target": "hipIdleTarget",
+            "pos": {
+                "x": -0.15900039672851563,
+                "y": 1.0520000457763672,
+                "z": -0.10799980163574219
+            },
+            "euler": {
+                "x": 20.000003814697267,
+                "y": -1.1602932716514652e-29,
+                "z": -6.580349516965281e-29
+            }
+        },
+        {
+            "bike": "ABP_Pro_Super_Moto / VoodooRigged",
+            "target": "hipNormalSpeedTarget",
+            "pos": {
+                "x": -6.753789676361378e-16,
+                "y": 1.0310003757476807,
+                "z": -0.19601058959960938
+            },
+            "euler": {
+                "x": 20.000003814697267,
+                "y": -1.1602932716514652e-29,
+                "z": -6.580349516965281e-29
+            }
+        },
+        {
+            "bike": "ABP_Pro_Super_Moto / VoodooRigged",
+            "target": "hipHighSpeedTarget",
+            "pos": {
+                "x": -6.740687135458538e-16,
+                "y": 1.029000163078308,
+                "z": -0.28499603271484377
+            },
+            "euler": {
+                "x": 20.000003814697267,
+                "y": -1.1602932716514652e-29,
+                "z": -6.580349516965281e-29
+            }
+        },
+        {
+            "bike": "ABP_Pro_Super_Moto / VoodooRigged",
+            "target": "hipInAirTarget",
+            "pos": {
+                "x": 0.0,
+                "y": 1.215000033378601,
+                "z": -0.26600000262260439
+            },
+            "euler": {
+                "x": 5.000024318695068,
+                "y": 2.547051876454512e-21,
+                "z": 6.1834129740393476e-21
+            }
+        },
+        {
+            "bike": "ABP_Pro_Super_Moto / VoodooRigged",
+            "target": "hipReverseTarget",
+            "pos": {
+                "x": -6.485209822468024e-17,
+                "y": 1.0440000295639039,
+                "z": -0.18999220430850984
+            },
+            "euler": {
+                "x": 5.000002861022949,
+                "y": 0.0,
+                "z": 0.0
+            }
+        },
+        {
+            "bike": "ABP_Pro_Super_Moto / VoodooRigged",
+            "target": "spineIdleTarget",
+            "pos": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            },
+            "euler": {
+                "x": 10.00000286102295,
+                "y": -2.7890339443316066e-30,
+                "z": -3.187879892266174e-29
+            }
+        },
+        {
+            "bike": "ABP_Pro_Super_Moto / VoodooRigged",
+            "target": "spineNormalSpeedTarget",
+            "pos": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            },
+            "euler": {
+                "x": 20.000003814697267,
+                "y": -1.1602932716514652e-29,
+                "z": -6.580349516965281e-29
+            }
+        },
+        {
+            "bike": "ABP_Pro_Super_Moto / VoodooRigged",
+            "target": "spineHighSpeedTarget",
+            "pos": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            },
+            "euler": {
+                "x": 35.00000762939453,
+                "y": -3.991463629132365e-29,
+                "z": -1.265930483962122e-28
+            }
+        },
+        {
+            "bike": "ABP_Pro_Super_Moto / VoodooRigged",
+            "target": "spineReverseTarget",
+            "pos": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            },
+            "euler": {
+                "x": 5.000002861022949,
+                "y": 0.0,
+                "z": 0.0
+            }
+        },
+        {
+            "bike": "ABP_Pro_Super_Moto / VoodooRigged",
+            "target": "leftlegIdleTarget",
+            "pos": {
+                "x": -0.3079986572265625,
+                "y": 0.19999998807907105,
+                "z": -0.21899986267089845
+            },
+            "euler": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            }
+        },
+        {
+            "bike": "ABP_Pro_Super_Moto / VoodooRigged",
+            "target": "leftlegInMotionTarget",
+            "pos": {
+                "x": -0.18000030517578126,
+                "y": 0.48399996757507326,
+                "z": -0.12099981307983399
+            },
+            "euler": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            }
+        },
+        {
+            "bike": "ABP_Pro_Super_Moto / VoodooRigged",
+            "target": "rightlegIdleTarget",
+            "pos": {
+                "x": 0.18000030517578126,
+                "y": 0.48399996757507326,
+                "z": -0.12101173400878906
+            },
+            "euler": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            }
+        },
+        {
+            "bike": "ABP_Pro_Super_Moto / VoodooRigged",
+            "target": "rightlegInMotionTarget",
+            "pos": {
+                "x": 0.18000030517578126,
+                "y": 0.48399996757507326,
+                "z": -0.12101173400878906
+            },
+            "euler": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            }
+        },
+        {
+            "bike": "ABP_Pro_Super_Moto / VoodooRigged",
+            "target": "leftHandTarget",
+            "pos": {
+                "x": -0.2999992370605469,
+                "y": 1.0809999704360963,
+                "z": 0.20700004696846009
+            },
+            "euler": {
+                "x": 35.95417785644531,
+                "y": 102.18221282958985,
+                "z": 79.98922729492188
+            }
+        },
+        {
+            "bike": "ABP_Pro_Super_Moto / VoodooRigged",
+            "target": "rightHandTarget",
+            "pos": {
+                "x": 0.2999992370605469,
+                "y": 1.0809999704360963,
+                "z": 0.20700004696846009
+            },
+            "euler": {
+                "x": 32.887916564941409,
+                "y": 257.84466552734377,
+                "z": 280.04718017578127
+            }
+        },
+        {
+            "bike": "ABP_Pro_Super_Moto / VoodooRigged",
+            "target": "leftHandReverseTarget",
+            "pos": {
+                "x": -0.30000001192092898,
+                "y": 1.0809999704360963,
+                "z": 0.2070000022649765
+            },
+            "euler": {
+                "x": 35.95417785644531,
+                "y": 102.18221282958985,
+                "z": 79.98922729492188
+            }
+        },
+        {
+            "bike": "ABP_Pro_Super_Moto / VoodooRigged",
+            "target": "rightHandReverseTarget",
+            "pos": {
+                "x": 0.30000001192092898,
+                "y": 1.0809999704360963,
+                "z": 0.2070000022649765
+            },
+            "euler": {
+                "x": 32.887916564941409,
+                "y": 257.84466552734377,
+                "z": 280.04718017578127
+            }
+        },
+        {
+            "bike": "ABP_Pro_Super_Moto",
+            "target": "leftHandHint",
+            "pos": {
+                "x": -0.4322727918624878,
+                "y": 1.3830064535140992,
+                "z": -0.30000001192092898
+            },
+            "euler": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            }
+        },
+        {
+            "bike": "ABP_Pro_Super_Moto",
+            "target": "rightHandHint",
+            "pos": {
+                "x": 0.4322717785835266,
+                "y": 1.3830076456069947,
+                "z": -0.30000001192092898
+            },
+            "euler": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            }
+        },
+        {
+            "bike": "ABP_Pro_SportBike / Mace_CharacterRigged",
+            "target": "hipIdleTarget",
+            "pos": {
+                "x": -0.12000656127929688,
+                "y": 0.9410003423690796,
+                "z": -0.2789936065673828
+            },
+            "euler": {
+                "x": 30.00000762939453,
+                "y": -2.7968884283126146e-29,
+                "z": -1.0438126223640775e-28
+            }
+        },
+        {
+            "bike": "ABP_Pro_SportBike / Mace_CharacterRigged",
+            "target": "hipNormalSpeedTarget",
+            "pos": {
+                "x": -6.354193942560281e-16,
+                "y": 0.9700000286102295,
+                "z": -0.35200023651123049
+            },
+            "euler": {
+                "x": 30.00000762939453,
+                "y": -2.7968884283126146e-29,
+                "z": -1.0438126223640775e-28
+            }
+        },
+        {
+            "bike": "ABP_Pro_SportBike / Mace_CharacterRigged",
+            "target": "hipHighSpeedTarget",
+            "pos": {
+                "x": -6.354193942560281e-16,
+                "y": 0.9700000286102295,
+                "z": -0.4070000648498535
+            },
+            "euler": {
+                "x": 30.00000762939453,
+                "y": -2.7968884283126146e-29,
+                "z": -1.0438126223640775e-28
+            }
+        },
+        {
+            "bike": "ABP_Pro_SportBike / Mace_CharacterRigged",
+            "target": "hipInAirTarget",
+            "pos": {
+                "x": 0.0,
+                "y": 1.0839999914169312,
+                "z": -0.3050000071525574
+            },
+            "euler": {
+                "x": 10.00000286102295,
+                "y": 0.0,
+                "z": 0.0
+            }
+        },
+        {
+            "bike": "ABP_Pro_SportBike / Mace_CharacterRigged",
+            "target": "hipReverseTarget",
+            "pos": {
+                "x": -0.0010000000474974514,
+                "y": 0.9409999847412109,
+                "z": -0.27900001406669619
+            },
+            "euler": {
+                "x": 5.000003337860107,
+                "y": 0.0,
+                "z": 0.0
+            }
+        },
+        {
+            "bike": "ABP_Pro_SportBike / Mace_CharacterRigged",
+            "target": "spineIdleTarget",
+            "pos": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            },
+            "euler": {
+                "x": 40.000003814697269,
+                "y": -1.354255817565912e-21,
+                "z": -3.7207872383374464e-21
+            }
+        },
+        {
+            "bike": "ABP_Pro_SportBike / Mace_CharacterRigged",
+            "target": "spineNormalSpeedTarget",
+            "pos": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            },
+            "euler": {
+                "x": 45.00000762939453,
+                "y": -7.488720393766597e-29,
+                "z": -1.807936522267515e-28
+            }
+        },
+        {
+            "bike": "ABP_Pro_SportBike / Mace_CharacterRigged",
+            "target": "spineHighSpeedTarget",
+            "pos": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            },
+            "euler": {
+                "x": 70.0,
+                "y": -3.632335054447175e-21,
+                "z": -2.543388936525194e-21
+            }
+        },
+        {
+            "bike": "ABP_Pro_SportBike / Mace_CharacterRigged",
+            "target": "spineReverseTarget",
+            "pos": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            },
+            "euler": {
+                "x": 20.000024795532228,
+                "y": 3.647227940544181e-21,
+                "z": -5.5169061370229934e-21
+            }
+        },
+        {
+            "bike": "ABP_Pro_SportBike / Mace_CharacterRigged",
+            "target": "leftlegIdleTarget",
+            "pos": {
+                "x": -0.25,
+                "y": 0.1589999794960022,
+                "z": -0.2969999313354492
+            },
+            "euler": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            }
+        },
+        {
+            "bike": "ABP_Pro_SportBike / Mace_CharacterRigged",
+            "target": "leftlegInMotionTarget",
+            "pos": {
+                "x": -0.15999984741210938,
+                "y": 0.4190000295639038,
+                "z": -0.2519998550415039
+            },
+            "euler": {
+                "x": 30.00000762939453,
+                "y": -2.7968884283126146e-29,
+                "z": -1.0438126223640775e-28
+            }
+        },
+        {
+            "bike": "ABP_Pro_SportBike / Mace_CharacterRigged",
+            "target": "rightlegIdleTarget",
+            "pos": {
+                "x": 0.15999984741210938,
+                "y": 0.4190000295639038,
+                "z": -0.25202369689941409
+            },
+            "euler": {
+                "x": 30.00000762939453,
+                "y": -2.7968884283126146e-29,
+                "z": -1.0438126223640775e-28
+            }
+        },
+        {
+            "bike": "ABP_Pro_SportBike / Mace_CharacterRigged",
+            "target": "rightlegInMotionTarget",
+            "pos": {
+                "x": 0.15999984741210938,
+                "y": 0.4190000295639038,
+                "z": -0.25202369689941409
+            },
+            "euler": {
+                "x": 30.00000762939453,
+                "y": -2.7968884283126146e-29,
+                "z": -1.0438126223640775e-28
+            }
+        },
+        {
+            "bike": "ABP_Pro_SportBike / Mace_CharacterRigged",
+            "target": "leftHandTarget",
+            "pos": {
+                "x": -0.2999992370605469,
+                "y": 0.9130000472068787,
+                "z": 0.28460007905960085
+            },
+            "euler": {
+                "x": 334.1556091308594,
+                "y": 75.20025634765625,
+                "z": 83.86798858642578
+            }
+        },
+        {
+            "bike": "ABP_Pro_SportBike / Mace_CharacterRigged",
+            "target": "rightHandTarget",
+            "pos": {
+                "x": 0.2999992370605469,
+                "y": 0.9129999279975891,
+                "z": 0.28460007905960085
+            },
+            "euler": {
+                "x": 356.4599914550781,
+                "y": 279.86846923828127,
+                "z": 268.4114074707031
+            }
+        },
+        {
+            "bike": "ABP_Pro_SportBike / Mace_CharacterRigged",
+            "target": "leftHandReverseTarget",
+            "pos": {
+                "x": -0.30000001192092898,
+                "y": 0.9129999876022339,
+                "z": 0.28459998965263369
+            },
+            "euler": {
+                "x": 35.95417785644531,
+                "y": 102.18221282958985,
+                "z": 79.98921966552735
+            }
+        },
+        {
+            "bike": "ABP_Pro_SportBike / Mace_CharacterRigged",
+            "target": "rightHandReverseTarget",
+            "pos": {
+                "x": 0.30000001192092898,
+                "y": 0.9129999876022339,
+                "z": 0.28459998965263369
+            },
+            "euler": {
+                "x": 32.887916564941409,
+                "y": 257.84466552734377,
+                "z": 280.04718017578127
+            }
+        },
+        {
+            "bike": "ABP_Pro_SportBike / VoodooRigged",
+            "target": "hipIdleTarget",
+            "pos": {
+                "x": -0.12000656127929688,
+                "y": 0.9410003423690796,
+                "z": -0.2789936065673828
+            },
+            "euler": {
+                "x": 30.00000762939453,
+                "y": -2.7968884283126146e-29,
+                "z": -1.0438126223640775e-28
+            }
+        },
+        {
+            "bike": "ABP_Pro_SportBike / VoodooRigged",
+            "target": "hipNormalSpeedTarget",
+            "pos": {
+                "x": -6.354193942560281e-16,
+                "y": 0.9700000286102295,
+                "z": -0.35200023651123049
+            },
+            "euler": {
+                "x": 30.00000762939453,
+                "y": -2.7968884283126146e-29,
+                "z": -1.0438126223640775e-28
+            }
+        },
+        {
+            "bike": "ABP_Pro_SportBike / VoodooRigged",
+            "target": "hipHighSpeedTarget",
+            "pos": {
+                "x": -6.354193942560281e-16,
+                "y": 0.9700000286102295,
+                "z": -0.4070000648498535
+            },
+            "euler": {
+                "x": 30.00000762939453,
+                "y": -2.7968884283126146e-29,
+                "z": -1.0438126223640775e-28
+            }
+        },
+        {
+            "bike": "ABP_Pro_SportBike / VoodooRigged",
+            "target": "hipInAirTarget",
+            "pos": {
+                "x": 0.0,
+                "y": 1.0839999914169312,
+                "z": -0.3050000071525574
+            },
+            "euler": {
+                "x": 10.00000286102295,
+                "y": 0.0,
+                "z": 0.0
+            }
+        },
+        {
+            "bike": "ABP_Pro_SportBike / VoodooRigged",
+            "target": "hipReverseTarget",
+            "pos": {
+                "x": -0.0010000000474974514,
+                "y": 0.9409999847412109,
+                "z": -0.27900001406669619
+            },
+            "euler": {
+                "x": 5.000003337860107,
+                "y": 0.0,
+                "z": 0.0
+            }
+        },
+        {
+            "bike": "ABP_Pro_SportBike / VoodooRigged",
+            "target": "spineIdleTarget",
+            "pos": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            },
+            "euler": {
+                "x": 40.000003814697269,
+                "y": -1.354255817565912e-21,
+                "z": -3.7207872383374464e-21
+            }
+        },
+        {
+            "bike": "ABP_Pro_SportBike / VoodooRigged",
+            "target": "spineNormalSpeedTarget",
+            "pos": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            },
+            "euler": {
+                "x": 45.00000762939453,
+                "y": -7.488720393766597e-29,
+                "z": -1.807936522267515e-28
+            }
+        },
+        {
+            "bike": "ABP_Pro_SportBike / VoodooRigged",
+            "target": "spineHighSpeedTarget",
+            "pos": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            },
+            "euler": {
+                "x": 70.0,
+                "y": -3.632335054447175e-21,
+                "z": -2.543388936525194e-21
+            }
+        },
+        {
+            "bike": "ABP_Pro_SportBike / VoodooRigged",
+            "target": "spineReverseTarget",
+            "pos": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            },
+            "euler": {
+                "x": 20.000024795532228,
+                "y": 3.647227940544181e-21,
+                "z": -5.5169061370229934e-21
+            }
+        },
+        {
+            "bike": "ABP_Pro_SportBike / VoodooRigged",
+            "target": "leftlegIdleTarget",
+            "pos": {
+                "x": -0.25,
+                "y": 0.1589999794960022,
+                "z": -0.2969999313354492
+            },
+            "euler": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            }
+        },
+        {
+            "bike": "ABP_Pro_SportBike / VoodooRigged",
+            "target": "leftlegInMotionTarget",
+            "pos": {
+                "x": -0.15999984741210938,
+                "y": 0.4190000295639038,
+                "z": -0.2519998550415039
+            },
+            "euler": {
+                "x": 30.00000762939453,
+                "y": -2.7968884283126146e-29,
+                "z": -1.0438126223640775e-28
+            }
+        },
+        {
+            "bike": "ABP_Pro_SportBike / VoodooRigged",
+            "target": "rightlegIdleTarget",
+            "pos": {
+                "x": 0.15999984741210938,
+                "y": 0.4190000295639038,
+                "z": -0.25202369689941409
+            },
+            "euler": {
+                "x": 30.00000762939453,
+                "y": -2.7968884283126146e-29,
+                "z": -1.0438126223640775e-28
+            }
+        },
+        {
+            "bike": "ABP_Pro_SportBike / VoodooRigged",
+            "target": "rightlegInMotionTarget",
+            "pos": {
+                "x": 0.15999984741210938,
+                "y": 0.4190000295639038,
+                "z": -0.25202369689941409
+            },
+            "euler": {
+                "x": 30.00000762939453,
+                "y": -2.7968884283126146e-29,
+                "z": -1.0438126223640775e-28
+            }
+        },
+        {
+            "bike": "ABP_Pro_SportBike / VoodooRigged",
+            "target": "leftHandTarget",
+            "pos": {
+                "x": -0.2999992370605469,
+                "y": 0.9130000472068787,
+                "z": 0.28460007905960085
+            },
+            "euler": {
+                "x": 334.1556091308594,
+                "y": 75.20025634765625,
+                "z": 83.86798858642578
+            }
+        },
+        {
+            "bike": "ABP_Pro_SportBike / VoodooRigged",
+            "target": "rightHandTarget",
+            "pos": {
+                "x": 0.2999992370605469,
+                "y": 0.9129999279975891,
+                "z": 0.28460007905960085
+            },
+            "euler": {
+                "x": 356.4599914550781,
+                "y": 279.86846923828127,
+                "z": 268.4114074707031
+            }
+        },
+        {
+            "bike": "ABP_Pro_SportBike / VoodooRigged",
+            "target": "leftHandReverseTarget",
+            "pos": {
+                "x": -0.30000001192092898,
+                "y": 0.9129999876022339,
+                "z": 0.28459998965263369
+            },
+            "euler": {
+                "x": 35.95417785644531,
+                "y": 102.18221282958985,
+                "z": 79.98921966552735
+            }
+        },
+        {
+            "bike": "ABP_Pro_SportBike / VoodooRigged",
+            "target": "rightHandReverseTarget",
+            "pos": {
+                "x": 0.30000001192092898,
+                "y": 0.9129999876022339,
+                "z": 0.28459998965263369
+            },
+            "euler": {
+                "x": 32.887916564941409,
+                "y": 257.84466552734377,
+                "z": 280.04718017578127
+            }
+        },
+        {
+            "bike": "ABP_Pro_SportBike",
+            "target": "leftHandHint",
+            "pos": {
+                "x": -0.4322727918624878,
+                "y": 1.3830064535140992,
+                "z": -0.30000001192092898
+            },
+            "euler": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            }
+        },
+        {
+            "bike": "ABP_Pro_SportBike",
+            "target": "rightHandHint",
+            "pos": {
+                "x": 0.4322717785835266,
+                "y": 1.3830076456069947,
+                "z": -0.30000001192092898
+            },
+            "euler": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            }
+        },
+        {
+            "bike": "ABP_Pro_Moto_Cross / Mace_CharacterRigged",
+            "target": "hipIdleTarget",
+            "pos": {
+                "x": -0.12100028991699219,
+                "y": 0.9279999732971191,
+                "z": -0.13700008392333985
+            },
+            "euler": {
+                "x": 14.999999046325684,
+                "y": -6.377705726092564e-30,
+                "z": -4.844349066088992e-29
+            }
+        },
+        {
+            "bike": "ABP_Pro_Moto_Cross / Mace_CharacterRigged",
+            "target": "hipNormalSpeedTarget",
+            "pos": {
+                "x": -6.0921685354919e-16,
+                "y": 0.9300005435943604,
+                "z": -0.22298812866210938
+            },
+            "euler": {
+                "x": 14.999999046325684,
+                "y": -6.377705726092564e-30,
+                "z": -4.844349066088992e-29
+            }
+        },
+        {
+            "bike": "ABP_Pro_Moto_Cross / Mace_CharacterRigged",
+            "target": "hipHighSpeedTarget",
+            "pos": {
+                "x": -6.111818641077015e-16,
+                "y": 0.9330002069473267,
+                "z": -0.2969784736633301
+            },
+            "euler": {
+                "x": 14.999999046325684,
+                "y": -6.377705726092564e-30,
+                "z": -4.844349066088992e-29
+            }
+        },
+        {
+            "bike": "ABP_Pro_Moto_Cross / Mace_CharacterRigged",
+            "target": "hipInAirTarget",
+            "pos": {
+                "x": 3.2753374406894708e-17,
+                "y": 1.1240003108978272,
+                "z": -0.22697849571704865
+            },
+            "euler": {
+                "x": 14.999999046325684,
+                "y": 0.0,
+                "z": 0.0
+            }
+        },
+        {
+            "bike": "ABP_Pro_Moto_Cross / Mace_CharacterRigged",
+            "target": "hipReverseTarget",
+            "pos": {
+                "x": 1.3100175166288057e-18,
+                "y": 0.9430001974105835,
+                "z": -0.21696971356868745
+            },
+            "euler": {
+                "x": 5.000002861022949,
+                "y": 0.0,
+                "z": 0.0
+            }
+        },
+        {
+            "bike": "ABP_Pro_Moto_Cross / Mace_CharacterRigged",
+            "target": "spineIdleTarget",
+            "pos": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            },
+            "euler": {
+                "x": 14.999999046325684,
+                "y": -6.377705726092564e-30,
+                "z": -4.844349066088992e-29
+            }
+        },
+        {
+            "bike": "ABP_Pro_Moto_Cross / Mace_CharacterRigged",
+            "target": "spineNormalSpeedTarget",
+            "pos": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            },
+            "euler": {
+                "x": 30.00000762939453,
+                "y": 9.065018008851253e-22,
+                "z": 3.3831101403082796e-21
+            }
+        },
+        {
+            "bike": "ABP_Pro_Moto_Cross / Mace_CharacterRigged",
+            "target": "spineHighSpeedTarget",
+            "pos": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            },
+            "euler": {
+                "x": 45.00000762939453,
+                "y": -7.488717384501059e-29,
+                "z": -1.807936281526272e-28
+            }
+        },
+        {
+            "bike": "ABP_Pro_Moto_Cross / Mace_CharacterRigged",
+            "target": "spineReverseTarget",
+            "pos": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            },
+            "euler": {
+                "x": 14.999999046325684,
+                "y": 0.0,
+                "z": 0.0
+            }
+        },
+        {
+            "bike": "ABP_Pro_Moto_Cross / Mace_CharacterRigged",
+            "target": "leftlegIdleTarget",
+            "pos": {
+                "x": -0.2740001678466797,
+                "y": 0.17500001192092896,
+                "z": -0.16200017929077149
+            },
+            "euler": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            }
+        },
+        {
+            "bike": "ABP_Pro_Moto_Cross / Mace_CharacterRigged",
+            "target": "leftlegInMotionTarget",
+            "pos": {
+                "x": -0.14999961853027345,
+                "y": 0.42100000381469729,
+                "z": -0.16900014877319337
+            },
+            "euler": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            }
+        },
+        {
+            "bike": "ABP_Pro_Moto_Cross / Mace_CharacterRigged",
+            "target": "rightlegIdleTarget",
+            "pos": {
+                "x": 0.14999961853027345,
+                "y": 0.4209998846054077,
+                "z": -0.16901493072509767
+            },
+            "euler": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            }
+        },
+        {
+            "bike": "ABP_Pro_Moto_Cross / Mace_CharacterRigged",
+            "target": "rightlegInMotionTarget",
+            "pos": {
+                "x": 0.14999961853027345,
+                "y": 0.4209998846054077,
+                "z": -0.16901493072509767
+            },
+            "euler": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            }
+        },
+        {
+            "bike": "ABP_Pro_Moto_Cross / Mace_CharacterRigged",
+            "target": "leftHandTarget",
+            "pos": {
+                "x": -0.3100013732910156,
+                "y": 1.0390000343322755,
+                "z": 0.2019999474287033
+            },
+            "euler": {
+                "x": 35.95417785644531,
+                "y": 102.18221282958985,
+                "z": 79.98922729492188
+            }
+        },
+        {
+            "bike": "ABP_Pro_Moto_Cross / Mace_CharacterRigged",
+            "target": "rightHandTarget",
+            "pos": {
+                "x": 0.3100013732910156,
+                "y": 1.0390000343322755,
+                "z": 0.2019999474287033
+            },
+            "euler": {
+                "x": 32.887916564941409,
+                "y": 257.84466552734377,
+                "z": 280.04718017578127
+            }
+        },
+        {
+            "bike": "ABP_Pro_Moto_Cross / Mace_CharacterRigged",
+            "target": "leftHandReverseTarget",
+            "pos": {
+                "x": -0.3100000023841858,
+                "y": 1.0390000343322755,
+                "z": 0.20200000703334809
+            },
+            "euler": {
+                "x": 35.95417785644531,
+                "y": 102.18221282958985,
+                "z": 79.98922729492188
+            }
+        },
+        {
+            "bike": "ABP_Pro_Moto_Cross / Mace_CharacterRigged",
+            "target": "rightHandReverseTarget",
+            "pos": {
+                "x": 0.3100000023841858,
+                "y": 1.0390000343322755,
+                "z": 0.20200000703334809
+            },
+            "euler": {
+                "x": 32.887916564941409,
+                "y": 257.84466552734377,
+                "z": 280.04718017578127
+            }
+        },
+        {
+            "bike": "ABP_Pro_Moto_Cross / VoodooRigged",
+            "target": "hipIdleTarget",
+            "pos": {
+                "x": -0.12100028991699219,
+                "y": 0.9279999732971191,
+                "z": -0.13700008392333985
+            },
+            "euler": {
+                "x": 14.999999046325684,
+                "y": -6.377705726092564e-30,
+                "z": -4.844349066088992e-29
+            }
+        },
+        {
+            "bike": "ABP_Pro_Moto_Cross / VoodooRigged",
+            "target": "hipNormalSpeedTarget",
+            "pos": {
+                "x": -6.0921685354919e-16,
+                "y": 0.9300005435943604,
+                "z": -0.22298812866210938
+            },
+            "euler": {
+                "x": 14.999999046325684,
+                "y": -6.377705726092564e-30,
+                "z": -4.844349066088992e-29
+            }
+        },
+        {
+            "bike": "ABP_Pro_Moto_Cross / VoodooRigged",
+            "target": "hipHighSpeedTarget",
+            "pos": {
+                "x": -6.111818641077015e-16,
+                "y": 0.9330002069473267,
+                "z": -0.2969784736633301
+            },
+            "euler": {
+                "x": 14.999999046325684,
+                "y": -6.377705726092564e-30,
+                "z": -4.844349066088992e-29
+            }
+        },
+        {
+            "bike": "ABP_Pro_Moto_Cross / VoodooRigged",
+            "target": "hipInAirTarget",
+            "pos": {
+                "x": 3.2753374406894708e-17,
+                "y": 1.1240003108978272,
+                "z": -0.22697849571704865
+            },
+            "euler": {
+                "x": 14.999999046325684,
+                "y": 0.0,
+                "z": 0.0
+            }
+        },
+        {
+            "bike": "ABP_Pro_Moto_Cross / VoodooRigged",
+            "target": "hipReverseTarget",
+            "pos": {
+                "x": 1.3100175166288057e-18,
+                "y": 0.9430001974105835,
+                "z": -0.21696971356868745
+            },
+            "euler": {
+                "x": 5.000002861022949,
+                "y": 0.0,
+                "z": 0.0
+            }
+        },
+        {
+            "bike": "ABP_Pro_Moto_Cross / VoodooRigged",
+            "target": "spineIdleTarget",
+            "pos": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            },
+            "euler": {
+                "x": 14.999999046325684,
+                "y": -6.377705726092564e-30,
+                "z": -4.844349066088992e-29
+            }
+        },
+        {
+            "bike": "ABP_Pro_Moto_Cross / VoodooRigged",
+            "target": "spineNormalSpeedTarget",
+            "pos": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            },
+            "euler": {
+                "x": 30.00000762939453,
+                "y": 9.065018008851253e-22,
+                "z": 3.3831101403082796e-21
+            }
+        },
+        {
+            "bike": "ABP_Pro_Moto_Cross / VoodooRigged",
+            "target": "spineHighSpeedTarget",
+            "pos": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            },
+            "euler": {
+                "x": 45.00000762939453,
+                "y": -7.488717384501059e-29,
+                "z": -1.807936281526272e-28
+            }
+        },
+        {
+            "bike": "ABP_Pro_Moto_Cross / VoodooRigged",
+            "target": "spineReverseTarget",
+            "pos": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            },
+            "euler": {
+                "x": 14.999999046325684,
+                "y": 0.0,
+                "z": 0.0
+            }
+        },
+        {
+            "bike": "ABP_Pro_Moto_Cross / VoodooRigged",
+            "target": "leftlegIdleTarget",
+            "pos": {
+                "x": -0.2740001678466797,
+                "y": 0.17500001192092896,
+                "z": -0.16200017929077149
+            },
+            "euler": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            }
+        },
+        {
+            "bike": "ABP_Pro_Moto_Cross / VoodooRigged",
+            "target": "leftlegInMotionTarget",
+            "pos": {
+                "x": -0.14999961853027345,
+                "y": 0.42100000381469729,
+                "z": -0.16900014877319337
+            },
+            "euler": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            }
+        },
+        {
+            "bike": "ABP_Pro_Moto_Cross / VoodooRigged",
+            "target": "rightlegIdleTarget",
+            "pos": {
+                "x": 0.14999961853027345,
+                "y": 0.4209998846054077,
+                "z": -0.16901493072509767
+            },
+            "euler": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            }
+        },
+        {
+            "bike": "ABP_Pro_Moto_Cross / VoodooRigged",
+            "target": "rightlegInMotionTarget",
+            "pos": {
+                "x": 0.14999961853027345,
+                "y": 0.4209998846054077,
+                "z": -0.16901493072509767
+            },
+            "euler": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            }
+        },
+        {
+            "bike": "ABP_Pro_Moto_Cross / VoodooRigged",
+            "target": "leftHandTarget",
+            "pos": {
+                "x": -0.3100013732910156,
+                "y": 1.0390000343322755,
+                "z": 0.2019999474287033
+            },
+            "euler": {
+                "x": 35.95417785644531,
+                "y": 102.18221282958985,
+                "z": 79.98922729492188
+            }
+        },
+        {
+            "bike": "ABP_Pro_Moto_Cross / VoodooRigged",
+            "target": "rightHandTarget",
+            "pos": {
+                "x": 0.3100013732910156,
+                "y": 1.0390000343322755,
+                "z": 0.2019999474287033
+            },
+            "euler": {
+                "x": 32.887916564941409,
+                "y": 257.84466552734377,
+                "z": 280.04718017578127
+            }
+        },
+        {
+            "bike": "ABP_Pro_Moto_Cross / VoodooRigged",
+            "target": "leftHandReverseTarget",
+            "pos": {
+                "x": -0.3100000023841858,
+                "y": 1.0390000343322755,
+                "z": 0.20200000703334809
+            },
+            "euler": {
+                "x": 35.95417785644531,
+                "y": 102.18221282958985,
+                "z": 79.98922729492188
+            }
+        },
+        {
+            "bike": "ABP_Pro_Moto_Cross / VoodooRigged",
+            "target": "rightHandReverseTarget",
+            "pos": {
+                "x": 0.3100000023841858,
+                "y": 1.0390000343322755,
+                "z": 0.20200000703334809
+            },
+            "euler": {
+                "x": 32.887916564941409,
+                "y": 257.84466552734377,
+                "z": 280.04718017578127
+            }
+        },
+        {
+            "bike": "ABP_Pro_Moto_Cross",
+            "target": "leftHandHint",
+            "pos": {
+                "x": -0.4322727918624878,
+                "y": 1.3830064535140992,
+                "z": -0.30000001192092898
+            },
+            "euler": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            }
+        },
+        {
+            "bike": "ABP_Pro_Moto_Cross",
+            "target": "rightHandHint",
+            "pos": {
+                "x": 0.4322717785835266,
+                "y": 1.3830076456069947,
+                "z": -0.30000001192092898
+            },
+            "euler": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            }
+        },
+        {
+            "bike": "ABP_Pro_Street_Bike / Mace_CharacterRigged",
+            "target": "hipIdleTarget",
+            "pos": {
+                "x": -0.12099838256835938,
+                "y": 0.9780000448226929,
+                "z": -0.2090001106262207
+            },
+            "euler": {
+                "x": 14.999999046325684,
+                "y": -6.377705726092564e-30,
+                "z": -4.844349066088992e-29
+            }
+        },
+        {
+            "bike": "ABP_Pro_Street_Bike / Mace_CharacterRigged",
+            "target": "hipNormalSpeedTarget",
+            "pos": {
+                "x": -6.419702411909745e-16,
+                "y": 0.9800002574920654,
+                "z": -0.2950096130371094
+            },
+            "euler": {
+                "x": 14.999999046325684,
+                "y": -6.377705726092564e-30,
+                "z": -4.844349066088992e-29
+            }
+        },
+        {
+            "bike": "ABP_Pro_Street_Bike / Mace_CharacterRigged",
+            "target": "hipHighSpeedTarget",
+            "pos": {
+                "x": -6.439352517494861e-16,
+                "y": 0.9829999208450317,
+                "z": -0.3689999580383301
+            },
+            "euler": {
+                "x": 14.999999046325684,
+                "y": -6.377705726092564e-30,
+                "z": -4.844349066088992e-29
+            }
+        },
+        {
+            "bike": "ABP_Pro_Street_Bike / Mace_CharacterRigged",
+            "target": "hipInAirTarget",
+            "pos": {
+                "x": 0.0,
+                "y": 1.1740000247955323,
+                "z": -0.29899999499320986
+            },
+            "euler": {
+                "x": 14.999999046325684,
+                "y": 0.0,
+                "z": 0.0
+            }
+        },
+        {
+            "bike": "ABP_Pro_Street_Bike / Mace_CharacterRigged",
+            "target": "hipReverseTarget",
+            "pos": {
+                "x": -3.1443358544627127e-17,
+                "y": 0.9929999113082886,
+                "z": -0.28899121284484866
+            },
+            "euler": {
+                "x": 5.000002861022949,
+                "y": 0.0,
+                "z": 0.0
+            }
+        },
+        {
+            "bike": "ABP_Pro_Street_Bike / Mace_CharacterRigged",
+            "target": "spineIdleTarget",
+            "pos": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            },
+            "euler": {
+                "x": 14.999999046325684,
+                "y": -6.377705726092564e-30,
+                "z": -4.844349066088992e-29
+            }
+        },
+        {
+            "bike": "ABP_Pro_Street_Bike / Mace_CharacterRigged",
+            "target": "spineNormalSpeedTarget",
+            "pos": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            },
+            "euler": {
+                "x": 30.00000762939453,
+                "y": 9.065018008851253e-22,
+                "z": 3.3831101403082796e-21
+            }
+        },
+        {
+            "bike": "ABP_Pro_Street_Bike / Mace_CharacterRigged",
+            "target": "spineHighSpeedTarget",
+            "pos": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            },
+            "euler": {
+                "x": 45.00000762939453,
+                "y": -7.488717384501059e-29,
+                "z": -1.807936281526272e-28
+            }
+        },
+        {
+            "bike": "ABP_Pro_Street_Bike / Mace_CharacterRigged",
+            "target": "spineReverseTarget",
+            "pos": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            },
+            "euler": {
+                "x": 14.999999046325684,
+                "y": 0.0,
+                "z": 0.0
+            }
+        },
+        {
+            "bike": "ABP_Pro_Street_Bike / Mace_CharacterRigged",
+            "target": "leftlegIdleTarget",
+            "pos": {
+                "x": -0.2739982604980469,
+                "y": 0.17500001192092896,
+                "z": -0.16200017929077149
+            },
+            "euler": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            }
+        },
+        {
+            "bike": "ABP_Pro_Street_Bike / Mace_CharacterRigged",
+            "target": "leftlegInMotionTarget",
+            "pos": {
+                "x": -0.15000152587890626,
+                "y": 0.505000114440918,
+                "z": -0.20998907089233399
+            },
+            "euler": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            }
+        },
+        {
+            "bike": "ABP_Pro_Street_Bike / Mace_CharacterRigged",
+            "target": "rightlegIdleTarget",
+            "pos": {
+                "x": 0.15000152587890626,
+                "y": 0.5049999952316284,
+                "z": -0.21000003814697267
+            },
+            "euler": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            }
+        },
+        {
+            "bike": "ABP_Pro_Street_Bike / Mace_CharacterRigged",
+            "target": "rightlegInMotionTarget",
+            "pos": {
+                "x": 0.15000152587890626,
+                "y": 0.5049999952316284,
+                "z": -0.21000003814697267
+            },
+            "euler": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            }
+        },
+        {
+            "bike": "ABP_Pro_Street_Bike / Mace_CharacterRigged",
+            "target": "leftHandTarget",
+            "pos": {
+                "x": -0.3300018310546875,
+                "y": 1.0390000343322755,
+                "z": 0.14700011909008027
+            },
+            "euler": {
+                "x": 35.95417785644531,
+                "y": 102.18221282958985,
+                "z": 79.98922729492188
+            }
+        },
+        {
+            "bike": "ABP_Pro_Street_Bike / Mace_CharacterRigged",
+            "target": "rightHandTarget",
+            "pos": {
+                "x": 0.3300018310546875,
+                "y": 1.0390000343322755,
+                "z": 0.14700011909008027
+            },
+            "euler": {
+                "x": 32.887916564941409,
+                "y": 257.84466552734377,
+                "z": 280.04718017578127
+            }
+        },
+        {
+            "bike": "ABP_Pro_Street_Bike / Mace_CharacterRigged",
+            "target": "leftHandReverseTarget",
+            "pos": {
+                "x": -0.33000001311302187,
+                "y": 1.0390000343322755,
+                "z": 0.1469999998807907
+            },
+            "euler": {
+                "x": 35.95417785644531,
+                "y": 102.18221282958985,
+                "z": 79.98922729492188
+            }
+        },
+        {
+            "bike": "ABP_Pro_Street_Bike / Mace_CharacterRigged",
+            "target": "rightHandReverseTarget",
+            "pos": {
+                "x": 0.33000001311302187,
+                "y": 1.0390000343322755,
+                "z": 0.1469999998807907
+            },
+            "euler": {
+                "x": 32.887916564941409,
+                "y": 257.84466552734377,
+                "z": 280.04718017578127
+            }
+        },
+        {
+            "bike": "ABP_Pro_Street_Bike / VoodooRigged",
+            "target": "hipIdleTarget",
+            "pos": {
+                "x": -0.12099838256835938,
+                "y": 0.9780000448226929,
+                "z": -0.2090001106262207
+            },
+            "euler": {
+                "x": 14.999999046325684,
+                "y": -6.377705726092564e-30,
+                "z": -4.844349066088992e-29
+            }
+        },
+        {
+            "bike": "ABP_Pro_Street_Bike / VoodooRigged",
+            "target": "hipNormalSpeedTarget",
+            "pos": {
+                "x": -6.419702411909745e-16,
+                "y": 0.9800002574920654,
+                "z": -0.2950096130371094
+            },
+            "euler": {
+                "x": 14.999999046325684,
+                "y": -6.377705726092564e-30,
+                "z": -4.844349066088992e-29
+            }
+        },
+        {
+            "bike": "ABP_Pro_Street_Bike / VoodooRigged",
+            "target": "hipHighSpeedTarget",
+            "pos": {
+                "x": -6.439352517494861e-16,
+                "y": 0.9829999208450317,
+                "z": -0.3689999580383301
+            },
+            "euler": {
+                "x": 14.999999046325684,
+                "y": -6.377705726092564e-30,
+                "z": -4.844349066088992e-29
+            }
+        },
+        {
+            "bike": "ABP_Pro_Street_Bike / VoodooRigged",
+            "target": "hipInAirTarget",
+            "pos": {
+                "x": 0.0,
+                "y": 1.1740000247955323,
+                "z": -0.29899999499320986
+            },
+            "euler": {
+                "x": 14.999999046325684,
+                "y": 0.0,
+                "z": 0.0
+            }
+        },
+        {
+            "bike": "ABP_Pro_Street_Bike / VoodooRigged",
+            "target": "hipReverseTarget",
+            "pos": {
+                "x": -3.1443358544627127e-17,
+                "y": 0.9929999113082886,
+                "z": -0.28899121284484866
+            },
+            "euler": {
+                "x": 5.000002861022949,
+                "y": 0.0,
+                "z": 0.0
+            }
+        },
+        {
+            "bike": "ABP_Pro_Street_Bike / VoodooRigged",
+            "target": "spineIdleTarget",
+            "pos": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            },
+            "euler": {
+                "x": 14.999999046325684,
+                "y": -6.377705726092564e-30,
+                "z": -4.844349066088992e-29
+            }
+        },
+        {
+            "bike": "ABP_Pro_Street_Bike / VoodooRigged",
+            "target": "spineNormalSpeedTarget",
+            "pos": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            },
+            "euler": {
+                "x": 30.00000762939453,
+                "y": 9.065018008851253e-22,
+                "z": 3.3831101403082796e-21
+            }
+        },
+        {
+            "bike": "ABP_Pro_Street_Bike / VoodooRigged",
+            "target": "spineHighSpeedTarget",
+            "pos": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            },
+            "euler": {
+                "x": 45.00000762939453,
+                "y": -7.488717384501059e-29,
+                "z": -1.807936281526272e-28
+            }
+        },
+        {
+            "bike": "ABP_Pro_Street_Bike / VoodooRigged",
+            "target": "spineReverseTarget",
+            "pos": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            },
+            "euler": {
+                "x": 14.999999046325684,
+                "y": 0.0,
+                "z": 0.0
+            }
+        },
+        {
+            "bike": "ABP_Pro_Street_Bike / VoodooRigged",
+            "target": "leftlegIdleTarget",
+            "pos": {
+                "x": -0.2739982604980469,
+                "y": 0.17500001192092896,
+                "z": -0.16200017929077149
+            },
+            "euler": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            }
+        },
+        {
+            "bike": "ABP_Pro_Street_Bike / VoodooRigged",
+            "target": "leftlegInMotionTarget",
+            "pos": {
+                "x": -0.15000152587890626,
+                "y": 0.505000114440918,
+                "z": -0.20998907089233399
+            },
+            "euler": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            }
+        },
+        {
+            "bike": "ABP_Pro_Street_Bike / VoodooRigged",
+            "target": "rightlegIdleTarget",
+            "pos": {
+                "x": 0.15000152587890626,
+                "y": 0.5049999952316284,
+                "z": -0.21000003814697267
+            },
+            "euler": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            }
+        },
+        {
+            "bike": "ABP_Pro_Street_Bike / VoodooRigged",
+            "target": "rightlegInMotionTarget",
+            "pos": {
+                "x": 0.15000152587890626,
+                "y": 0.5049999952316284,
+                "z": -0.21000003814697267
+            },
+            "euler": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            }
+        },
+        {
+            "bike": "ABP_Pro_Street_Bike / VoodooRigged",
+            "target": "leftHandTarget",
+            "pos": {
+                "x": -0.3300018310546875,
+                "y": 1.0390000343322755,
+                "z": 0.14700011909008027
+            },
+            "euler": {
+                "x": 35.95417785644531,
+                "y": 102.18221282958985,
+                "z": 79.98922729492188
+            }
+        },
+        {
+            "bike": "ABP_Pro_Street_Bike / VoodooRigged",
+            "target": "rightHandTarget",
+            "pos": {
+                "x": 0.3300018310546875,
+                "y": 1.0390000343322755,
+                "z": 0.14700011909008027
+            },
+            "euler": {
+                "x": 32.887916564941409,
+                "y": 257.84466552734377,
+                "z": 280.04718017578127
+            }
+        },
+        {
+            "bike": "ABP_Pro_Street_Bike / VoodooRigged",
+            "target": "leftHandReverseTarget",
+            "pos": {
+                "x": -0.33000001311302187,
+                "y": 1.0390000343322755,
+                "z": 0.1469999998807907
+            },
+            "euler": {
+                "x": 35.95417785644531,
+                "y": 102.18221282958985,
+                "z": 79.98922729492188
+            }
+        },
+        {
+            "bike": "ABP_Pro_Street_Bike / VoodooRigged",
+            "target": "rightHandReverseTarget",
+            "pos": {
+                "x": 0.33000001311302187,
+                "y": 1.0390000343322755,
+                "z": 0.1469999998807907
+            },
+            "euler": {
+                "x": 32.887916564941409,
+                "y": 257.84466552734377,
+                "z": 280.04718017578127
+            }
+        },
+        {
+            "bike": "ABP_Pro_Street_Bike",
+            "target": "leftHandHint",
+            "pos": {
+                "x": -0.4322727918624878,
+                "y": 1.3830064535140992,
+                "z": -0.30000001192092898
+            },
+            "euler": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            }
+        },
+        {
+            "bike": "ABP_Pro_Street_Bike",
+            "target": "rightHandHint",
+            "pos": {
+                "x": 0.4322717785835266,
+                "y": 1.3830076456069947,
+                "z": -0.30000001192092898
+            },
+            "euler": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            }
+        },
+        {
+            "bike": "ABP_Pro_Cruiser_MotorCycles / Mace_CharacterRigged",
+            "target": "hipIdleTarget",
+            "pos": {
+                "x": -4.991644567508397e-16,
+                "y": 0.7619999647140503,
+                "z": -0.40199995040893557
+            },
+            "euler": {
+                "x": 5.000002861022949,
+                "y": -6.906028840883199e-31,
+                "z": -1.5817399322517784e-29
+            }
+        },
+        {
+            "bike": "ABP_Pro_Cruiser_MotorCycles / Mace_CharacterRigged",
+            "target": "hipNormalSpeedTarget",
+            "pos": {
+                "x": -4.991644567508397e-16,
+                "y": 0.7619999647140503,
+                "z": -0.4020042419433594
+            },
+            "euler": {
+                "x": 5.000002861022949,
+                "y": -6.906028840883199e-31,
+                "z": -1.5817399322517784e-29
+            }
+        },
+        {
+            "bike": "ABP_Pro_Cruiser_MotorCycles / Mace_CharacterRigged",
+            "target": "hipHighSpeedTarget",
+            "pos": {
+                "x": -5.004741814455317e-16,
+                "y": 0.763999342918396,
+                "z": -0.4000244140625
+            },
+            "euler": {
+                "x": 5.000002861022949,
+                "y": -6.906028840883199e-31,
+                "z": -1.5817399322517784e-29
+            }
+        },
+        {
+            "bike": "ABP_Pro_Cruiser_MotorCycles / Mace_CharacterRigged",
+            "target": "hipInAirTarget",
+            "pos": {
+                "x": 1.3105084483223559e-18,
+                "y": 0.8919994235038757,
+                "z": -0.3790241777896881
+            },
+            "euler": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            }
+        },
+        {
+            "bike": "ABP_Pro_Cruiser_MotorCycles / Mace_CharacterRigged",
+            "target": "hipReverseTarget",
+            "pos": {
+                "x": 1.1136235972105866e-16,
+                "y": 0.7749996781349182,
+                "z": -0.39598578214645388
+            },
+            "euler": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            }
+        },
+        {
+            "bike": "ABP_Pro_Cruiser_MotorCycles / Mace_CharacterRigged",
+            "target": "spineIdleTarget",
+            "pos": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            },
+            "euler": {
+                "x": 10.000003814697266,
+                "y": -2.7890352608852796e-30,
+                "z": -3.187880193192728e-29
+            }
+        },
+        {
+            "bike": "ABP_Pro_Cruiser_MotorCycles / Mace_CharacterRigged",
+            "target": "spineNormalSpeedTarget",
+            "pos": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            },
+            "euler": {
+                "x": 14.999999046325684,
+                "y": -4.098800346928825e-22,
+                "z": -3.1133486903169077e-21
+            }
+        },
+        {
+            "bike": "ABP_Pro_Cruiser_MotorCycles / Mace_CharacterRigged",
+            "target": "spineHighSpeedTarget",
+            "pos": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            },
+            "euler": {
+                "x": 25.000001907348634,
+                "y": -1.8690068279317175e-29,
+                "z": -8.43054467370192e-29
+            }
+        },
+        {
+            "bike": "ABP_Pro_Cruiser_MotorCycles / Mace_CharacterRigged",
+            "target": "spineReverseTarget",
+            "pos": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            },
+            "euler": {
+                "x": 10.00000286102295,
+                "y": 0.0,
+                "z": 0.0
+            }
+        },
+        {
+            "bike": "ABP_Pro_Cruiser_MotorCycles / Mace_CharacterRigged",
+            "target": "leftlegIdleTarget",
+            "pos": {
+                "x": -0.2740001678466797,
+                "y": 0.17500001192092896,
+                "z": -0.16200017929077149
+            },
+            "euler": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            }
+        },
+        {
+            "bike": "ABP_Pro_Cruiser_MotorCycles / Mace_CharacterRigged",
+            "target": "leftlegInMotionTarget",
+            "pos": {
+                "x": -0.2199993133544922,
+                "y": 0.27200019359588625,
+                "z": 0.07001399993896485
+            },
+            "euler": {
+                "x": 340.0,
+                "y": -1.1602948515158727e-29,
+                "z": 6.580354331790142e-29
+            }
+        },
+        {
+            "bike": "ABP_Pro_Cruiser_MotorCycles / Mace_CharacterRigged",
+            "target": "rightlegIdleTarget",
+            "pos": {
+                "x": 0.2199993133544922,
+                "y": 0.2720000147819519,
+                "z": 0.07000017166137696
+            },
+            "euler": {
+                "x": 340.0,
+                "y": -1.1602948515158727e-29,
+                "z": 6.580354331790142e-29
+            }
+        },
+        {
+            "bike": "ABP_Pro_Cruiser_MotorCycles / Mace_CharacterRigged",
+            "target": "rightlegInMotionTarget",
+            "pos": {
+                "x": 0.2199993133544922,
+                "y": 0.2720000147819519,
+                "z": 0.07000017166137696
+            },
+            "euler": {
+                "x": 340.0,
+                "y": -1.1602948515158727e-29,
+                "z": 6.580354331790142e-29
+            }
+        },
+        {
+            "bike": "ABP_Pro_Cruiser_MotorCycles / Mace_CharacterRigged",
+            "target": "leftHandTarget",
+            "pos": {
+                "x": -0.3099994659423828,
+                "y": 1.0130000114440919,
+                "z": 0.1929999440908432
+            },
+            "euler": {
+                "x": 35.95417785644531,
+                "y": 102.18221282958985,
+                "z": 79.98922729492188
+            }
+        },
+        {
+            "bike": "ABP_Pro_Cruiser_MotorCycles / Mace_CharacterRigged",
+            "target": "rightHandTarget",
+            "pos": {
+                "x": 0.3099994659423828,
+                "y": 1.0130000114440919,
+                "z": 0.1929999440908432
+            },
+            "euler": {
+                "x": 32.887916564941409,
+                "y": 257.84466552734377,
+                "z": 280.04718017578127
+            }
+        },
+        {
+            "bike": "ABP_Pro_Cruiser_MotorCycles / Mace_CharacterRigged",
+            "target": "leftHandReverseTarget",
+            "pos": {
+                "x": -0.3100000023841858,
+                "y": 1.0130000114440919,
+                "z": 0.19300000369548798
+            },
+            "euler": {
+                "x": 35.95417785644531,
+                "y": 102.18221282958985,
+                "z": 79.98922729492188
+            }
+        },
+        {
+            "bike": "ABP_Pro_Cruiser_MotorCycles / Mace_CharacterRigged",
+            "target": "rightHandReverseTarget",
+            "pos": {
+                "x": 0.3100000023841858,
+                "y": 1.0130000114440919,
+                "z": 0.19300000369548798
+            },
+            "euler": {
+                "x": 32.887916564941409,
+                "y": 257.84466552734377,
+                "z": 280.04718017578127
+            }
+        },
+        {
+            "bike": "ABP_Pro_Cruiser_MotorCycles / VoodooRigged",
+            "target": "hipIdleTarget",
+            "pos": {
+                "x": -4.991644567508397e-16,
+                "y": 0.7619999647140503,
+                "z": -0.40199995040893557
+            },
+            "euler": {
+                "x": 5.000002861022949,
+                "y": -6.906028840883199e-31,
+                "z": -1.5817399322517784e-29
+            }
+        },
+        {
+            "bike": "ABP_Pro_Cruiser_MotorCycles / VoodooRigged",
+            "target": "hipNormalSpeedTarget",
+            "pos": {
+                "x": -4.991644567508397e-16,
+                "y": 0.7619999647140503,
+                "z": -0.4020042419433594
+            },
+            "euler": {
+                "x": 5.000002861022949,
+                "y": -6.906028840883199e-31,
+                "z": -1.5817399322517784e-29
+            }
+        },
+        {
+            "bike": "ABP_Pro_Cruiser_MotorCycles / VoodooRigged",
+            "target": "hipHighSpeedTarget",
+            "pos": {
+                "x": -5.004741814455317e-16,
+                "y": 0.763999342918396,
+                "z": -0.4000244140625
+            },
+            "euler": {
+                "x": 5.000002861022949,
+                "y": -6.906028840883199e-31,
+                "z": -1.5817399322517784e-29
+            }
+        },
+        {
+            "bike": "ABP_Pro_Cruiser_MotorCycles / VoodooRigged",
+            "target": "hipInAirTarget",
+            "pos": {
+                "x": 1.3105084483223559e-18,
+                "y": 0.8919994235038757,
+                "z": -0.3790241777896881
+            },
+            "euler": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            }
+        },
+        {
+            "bike": "ABP_Pro_Cruiser_MotorCycles / VoodooRigged",
+            "target": "hipReverseTarget",
+            "pos": {
+                "x": 1.1136235972105866e-16,
+                "y": 0.7749996781349182,
+                "z": -0.39598578214645388
+            },
+            "euler": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            }
+        },
+        {
+            "bike": "ABP_Pro_Cruiser_MotorCycles / VoodooRigged",
+            "target": "spineIdleTarget",
+            "pos": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            },
+            "euler": {
+                "x": 10.000003814697266,
+                "y": -2.7890352608852796e-30,
+                "z": -3.187880193192728e-29
+            }
+        },
+        {
+            "bike": "ABP_Pro_Cruiser_MotorCycles / VoodooRigged",
+            "target": "spineNormalSpeedTarget",
+            "pos": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            },
+            "euler": {
+                "x": 14.999999046325684,
+                "y": -4.098800346928825e-22,
+                "z": -3.1133486903169077e-21
+            }
+        },
+        {
+            "bike": "ABP_Pro_Cruiser_MotorCycles / VoodooRigged",
+            "target": "spineHighSpeedTarget",
+            "pos": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            },
+            "euler": {
+                "x": 25.000001907348634,
+                "y": -1.8690068279317175e-29,
+                "z": -8.43054467370192e-29
+            }
+        },
+        {
+            "bike": "ABP_Pro_Cruiser_MotorCycles / VoodooRigged",
+            "target": "spineReverseTarget",
+            "pos": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            },
+            "euler": {
+                "x": 10.00000286102295,
+                "y": 0.0,
+                "z": 0.0
+            }
+        },
+        {
+            "bike": "ABP_Pro_Cruiser_MotorCycles / VoodooRigged",
+            "target": "leftlegIdleTarget",
+            "pos": {
+                "x": -0.2740001678466797,
+                "y": 0.17500001192092896,
+                "z": -0.16200017929077149
+            },
+            "euler": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            }
+        },
+        {
+            "bike": "ABP_Pro_Cruiser_MotorCycles / VoodooRigged",
+            "target": "leftlegInMotionTarget",
+            "pos": {
+                "x": -0.2199993133544922,
+                "y": 0.27200019359588625,
+                "z": 0.07001399993896485
+            },
+            "euler": {
+                "x": 340.0,
+                "y": -1.1602948515158727e-29,
+                "z": 6.580354331790142e-29
+            }
+        },
+        {
+            "bike": "ABP_Pro_Cruiser_MotorCycles / VoodooRigged",
+            "target": "rightlegIdleTarget",
+            "pos": {
+                "x": 0.2199993133544922,
+                "y": 0.2720000147819519,
+                "z": 0.07000017166137696
+            },
+            "euler": {
+                "x": 340.0,
+                "y": -1.1602948515158727e-29,
+                "z": 6.580354331790142e-29
+            }
+        },
+        {
+            "bike": "ABP_Pro_Cruiser_MotorCycles / VoodooRigged",
+            "target": "rightlegInMotionTarget",
+            "pos": {
+                "x": 0.2199993133544922,
+                "y": 0.2720000147819519,
+                "z": 0.07000017166137696
+            },
+            "euler": {
+                "x": 340.0,
+                "y": -1.1602948515158727e-29,
+                "z": 6.580354331790142e-29
+            }
+        },
+        {
+            "bike": "ABP_Pro_Cruiser_MotorCycles / VoodooRigged",
+            "target": "leftHandTarget",
+            "pos": {
+                "x": -0.3099994659423828,
+                "y": 1.0130000114440919,
+                "z": 0.1929999440908432
+            },
+            "euler": {
+                "x": 35.95417785644531,
+                "y": 102.18221282958985,
+                "z": 79.98922729492188
+            }
+        },
+        {
+            "bike": "ABP_Pro_Cruiser_MotorCycles / VoodooRigged",
+            "target": "rightHandTarget",
+            "pos": {
+                "x": 0.3099994659423828,
+                "y": 1.0130000114440919,
+                "z": 0.1929999440908432
+            },
+            "euler": {
+                "x": 32.887916564941409,
+                "y": 257.84466552734377,
+                "z": 280.04718017578127
+            }
+        },
+        {
+            "bike": "ABP_Pro_Cruiser_MotorCycles / VoodooRigged",
+            "target": "leftHandReverseTarget",
+            "pos": {
+                "x": -0.3100000023841858,
+                "y": 1.0130000114440919,
+                "z": 0.19300000369548798
+            },
+            "euler": {
+                "x": 35.95417785644531,
+                "y": 102.18221282958985,
+                "z": 79.98922729492188
+            }
+        },
+        {
+            "bike": "ABP_Pro_Cruiser_MotorCycles / VoodooRigged",
+            "target": "rightHandReverseTarget",
+            "pos": {
+                "x": 0.3100000023841858,
+                "y": 1.0130000114440919,
+                "z": 0.19300000369548798
+            },
+            "euler": {
+                "x": 32.887916564941409,
+                "y": 257.84466552734377,
+                "z": 280.04718017578127
+            }
+        },
+        {
+            "bike": "ABP_Pro_Cruiser_MotorCycles",
+            "target": "leftHandHint",
+            "pos": {
+                "x": -0.4322727918624878,
+                "y": 1.3830064535140992,
+                "z": -0.30000001192092898
+            },
+            "euler": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            }
+        },
+        {
+            "bike": "ABP_Pro_Cruiser_MotorCycles",
+            "target": "rightHandHint",
+            "pos": {
+                "x": 0.4322717785835266,
+                "y": 1.3830076456069947,
+                "z": -0.30000001192092898
+            },
+            "euler": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            }
+        },
+        {
+            "bike": "ABP_Pro_VoodooBike_R / Mace_CharacterRigged",
+            "target": "hipIdleTarget",
+            "pos": {
+                "x": -0.12000274658203125,
+                "y": 0.784066379070282,
+                "z": -0.17882275581359864
+            },
+            "euler": {
+                "x": 30.00000762939453,
+                "y": -2.7968884283126146e-29,
+                "z": -1.0438126223640775e-28
+            }
+        },
+        {
+            "bike": "ABP_Pro_VoodooBike_R / Mace_CharacterRigged",
+            "target": "hipNormalSpeedTarget",
+            "pos": {
+                "x": -5.326163289367538e-16,
+                "y": 0.8130659461021423,
+                "z": -0.2518293857574463
+            },
+            "euler": {
+                "x": 30.00000762939453,
+                "y": -2.7968884283126146e-29,
+                "z": -1.0438126223640775e-28
+            }
+        },
+        {
+            "bike": "ABP_Pro_VoodooBike_R / Mace_CharacterRigged",
+            "target": "hipHighSpeedTarget",
+            "pos": {
+                "x": -5.326163289367538e-16,
+                "y": 0.8130659461021423,
+                "z": -0.30682921409606936
+            },
+            "euler": {
+                "x": 30.00000762939453,
+                "y": -2.7968884283126146e-29,
+                "z": -1.0438126223640775e-28
+            }
+        },
+        {
+            "bike": "ABP_Pro_VoodooBike_R / Mace_CharacterRigged",
+            "target": "hipInAirTarget",
+            "pos": {
+                "x": 0.0,
+                "y": 1.0839999914169312,
+                "z": -0.3050000071525574
+            },
+            "euler": {
+                "x": 10.00000286102295,
+                "y": 0.0,
+                "z": 0.0
+            }
+        },
+        {
+            "bike": "ABP_Pro_VoodooBike_R / Mace_CharacterRigged",
+            "target": "hipReverseTarget",
+            "pos": {
+                "x": -0.0010000000474974514,
+                "y": 0.7840659618377686,
+                "z": -0.1788293421268463
+            },
+            "euler": {
+                "x": 5.000003337860107,
+                "y": 0.0,
+                "z": 0.0
+            }
+        },
+        {
+            "bike": "ABP_Pro_VoodooBike_R / Mace_CharacterRigged",
+            "target": "spineIdleTarget",
+            "pos": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            },
+            "euler": {
+                "x": 46.000003814697269,
+                "y": 2.0096839677599893e-21,
+                "z": 8.530601979798744e-22
+            }
+        },
+        {
+            "bike": "ABP_Pro_VoodooBike_R / Mace_CharacterRigged",
+            "target": "spineNormalSpeedTarget",
+            "pos": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            },
+            "euler": {
+                "x": 51.000003814697269,
+                "y": 2.1751507864261387e-21,
+                "z": 1.0374937066753358e-21
+            }
+        },
+        {
+            "bike": "ABP_Pro_VoodooBike_R / Mace_CharacterRigged",
+            "target": "spineHighSpeedTarget",
+            "pos": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            },
+            "euler": {
+                "x": 76.0,
+                "y": -5.665288561390272e-28,
+                "z": -7.251237944554717e-28
+            }
+        },
+        {
+            "bike": "ABP_Pro_VoodooBike_R / Mace_CharacterRigged",
+            "target": "spineReverseTarget",
+            "pos": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            },
+            "euler": {
+                "x": 26.000024795532228,
+                "y": 3.6472275366473975e-21,
+                "z": -5.5169061370229934e-21
+            }
+        },
+        {
+            "bike": "ABP_Pro_VoodooBike_R / Mace_CharacterRigged",
+            "target": "leftlegIdleTarget",
+            "pos": {
+                "x": -0.25,
+                "y": 0.15900000929832459,
+                "z": -0.296999990940094
+            },
+            "euler": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            }
+        },
+        {
+            "bike": "ABP_Pro_VoodooBike_R / Mace_CharacterRigged",
+            "target": "leftlegInMotionTarget",
+            "pos": {
+                "x": -0.15999603271484376,
+                "y": 0.41899996995925906,
+                "z": -0.25199997425079348
+            },
+            "euler": {
+                "x": 30.00000762939453,
+                "y": -2.7968884283126146e-29,
+                "z": -1.0438126223640775e-28
+            }
+        },
+        {
+            "bike": "ABP_Pro_VoodooBike_R / Mace_CharacterRigged",
+            "target": "rightlegIdleTarget",
+            "pos": {
+                "x": 0.160003662109375,
+                "y": 0.4190000891685486,
+                "z": -0.2520238161087036
+            },
+            "euler": {
+                "x": 30.00000762939453,
+                "y": -2.7968884283126146e-29,
+                "z": -1.0438126223640775e-28
+            }
+        },
+        {
+            "bike": "ABP_Pro_VoodooBike_R / Mace_CharacterRigged",
+            "target": "rightlegInMotionTarget",
+            "pos": {
+                "x": 0.160003662109375,
+                "y": 0.4190000891685486,
+                "z": -0.2520238161087036
+            },
+            "euler": {
+                "x": 30.00000762939453,
+                "y": -2.7968884283126146e-29,
+                "z": -1.0438126223640775e-28
+            }
+        },
+        {
+            "bike": "ABP_Pro_VoodooBike_R / Mace_CharacterRigged",
+            "target": "leftHandTarget",
+            "pos": {
+                "x": -0.29999542236328127,
+                "y": 0.9130000472068787,
+                "z": 0.2845998704433441
+            },
+            "euler": {
+                "x": 334.1556091308594,
+                "y": 75.20025634765625,
+                "z": 83.86798095703125
+            }
+        },
+        {
+            "bike": "ABP_Pro_VoodooBike_R / Mace_CharacterRigged",
+            "target": "rightHandTarget",
+            "pos": {
+                "x": 0.3000030517578125,
+                "y": 0.9129998087882996,
+                "z": 0.2845998704433441
+            },
+            "euler": {
+                "x": 356.4599609375,
+                "y": 279.86846923828127,
+                "z": 268.4114074707031
+            }
+        },
+        {
+            "bike": "ABP_Pro_VoodooBike_R / Mace_CharacterRigged",
+            "target": "leftHandReverseTarget",
+            "pos": {
+                "x": -0.30000001192092898,
+                "y": 0.9129999876022339,
+                "z": 0.28459998965263369
+            },
+            "euler": {
+                "x": 35.95417785644531,
+                "y": 102.18221282958985,
+                "z": 79.98921966552735
+            }
+        },
+        {
+            "bike": "ABP_Pro_VoodooBike_R / Mace_CharacterRigged",
+            "target": "rightHandReverseTarget",
+            "pos": {
+                "x": 0.30000001192092898,
+                "y": 0.9129999876022339,
+                "z": 0.28459998965263369
+            },
+            "euler": {
+                "x": 32.887916564941409,
+                "y": 257.84466552734377,
+                "z": 280.04718017578127
+            }
+        },
+        {
+            "bike": "ABP_Pro_VoodooBike_R / VoodooRigged",
+            "target": "hipIdleTarget",
+            "pos": {
+                "x": -0.12000274658203125,
+                "y": 0.784066379070282,
+                "z": -0.17882275581359864
+            },
+            "euler": {
+                "x": 30.00000762939453,
+                "y": -2.7968884283126146e-29,
+                "z": -1.0438126223640775e-28
+            }
+        },
+        {
+            "bike": "ABP_Pro_VoodooBike_R / VoodooRigged",
+            "target": "hipNormalSpeedTarget",
+            "pos": {
+                "x": -5.326163289367538e-16,
+                "y": 0.8130659461021423,
+                "z": -0.2518293857574463
+            },
+            "euler": {
+                "x": 30.00000762939453,
+                "y": -2.7968884283126146e-29,
+                "z": -1.0438126223640775e-28
+            }
+        },
+        {
+            "bike": "ABP_Pro_VoodooBike_R / VoodooRigged",
+            "target": "hipHighSpeedTarget",
+            "pos": {
+                "x": -5.326163289367538e-16,
+                "y": 0.8130659461021423,
+                "z": -0.30682921409606936
+            },
+            "euler": {
+                "x": 30.00000762939453,
+                "y": -2.7968884283126146e-29,
+                "z": -1.0438126223640775e-28
+            }
+        },
+        {
+            "bike": "ABP_Pro_VoodooBike_R / VoodooRigged",
+            "target": "hipInAirTarget",
+            "pos": {
+                "x": 0.0,
+                "y": 1.0839999914169312,
+                "z": -0.3050000071525574
+            },
+            "euler": {
+                "x": 10.00000286102295,
+                "y": 0.0,
+                "z": 0.0
+            }
+        },
+        {
+            "bike": "ABP_Pro_VoodooBike_R / VoodooRigged",
+            "target": "hipReverseTarget",
+            "pos": {
+                "x": -0.0010000000474974514,
+                "y": 0.7840659618377686,
+                "z": -0.1788293421268463
+            },
+            "euler": {
+                "x": 5.000003337860107,
+                "y": 0.0,
+                "z": 0.0
+            }
+        },
+        {
+            "bike": "ABP_Pro_VoodooBike_R / VoodooRigged",
+            "target": "spineIdleTarget",
+            "pos": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            },
+            "euler": {
+                "x": 46.000003814697269,
+                "y": 2.0096839677599893e-21,
+                "z": 8.530601979798744e-22
+            }
+        },
+        {
+            "bike": "ABP_Pro_VoodooBike_R / VoodooRigged",
+            "target": "spineNormalSpeedTarget",
+            "pos": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            },
+            "euler": {
+                "x": 51.000003814697269,
+                "y": 2.1751507864261387e-21,
+                "z": 1.0374937066753358e-21
+            }
+        },
+        {
+            "bike": "ABP_Pro_VoodooBike_R / VoodooRigged",
+            "target": "spineHighSpeedTarget",
+            "pos": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            },
+            "euler": {
+                "x": 76.0,
+                "y": -5.665288561390272e-28,
+                "z": -7.251237944554717e-28
+            }
+        },
+        {
+            "bike": "ABP_Pro_VoodooBike_R / VoodooRigged",
+            "target": "spineReverseTarget",
+            "pos": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            },
+            "euler": {
+                "x": 26.000024795532228,
+                "y": 3.6472275366473975e-21,
+                "z": -5.5169061370229934e-21
+            }
+        },
+        {
+            "bike": "ABP_Pro_VoodooBike_R / VoodooRigged",
+            "target": "leftlegIdleTarget",
+            "pos": {
+                "x": -0.25,
+                "y": 0.15900000929832459,
+                "z": -0.296999990940094
+            },
+            "euler": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            }
+        },
+        {
+            "bike": "ABP_Pro_VoodooBike_R / VoodooRigged",
+            "target": "leftlegInMotionTarget",
+            "pos": {
+                "x": -0.15999603271484376,
+                "y": 0.41899996995925906,
+                "z": -0.25199997425079348
+            },
+            "euler": {
+                "x": 30.00000762939453,
+                "y": -2.7968884283126146e-29,
+                "z": -1.0438126223640775e-28
+            }
+        },
+        {
+            "bike": "ABP_Pro_VoodooBike_R / VoodooRigged",
+            "target": "rightlegIdleTarget",
+            "pos": {
+                "x": 0.160003662109375,
+                "y": 0.4190000891685486,
+                "z": -0.2520238161087036
+            },
+            "euler": {
+                "x": 30.00000762939453,
+                "y": -2.7968884283126146e-29,
+                "z": -1.0438126223640775e-28
+            }
+        },
+        {
+            "bike": "ABP_Pro_VoodooBike_R / VoodooRigged",
+            "target": "rightlegInMotionTarget",
+            "pos": {
+                "x": 0.160003662109375,
+                "y": 0.4190000891685486,
+                "z": -0.2520238161087036
+            },
+            "euler": {
+                "x": 30.00000762939453,
+                "y": -2.7968884283126146e-29,
+                "z": -1.0438126223640775e-28
+            }
+        },
+        {
+            "bike": "ABP_Pro_VoodooBike_R / VoodooRigged",
+            "target": "leftHandTarget",
+            "pos": {
+                "x": -0.29999542236328127,
+                "y": 0.9130000472068787,
+                "z": 0.2845998704433441
+            },
+            "euler": {
+                "x": 334.1556091308594,
+                "y": 75.20025634765625,
+                "z": 83.86798095703125
+            }
+        },
+        {
+            "bike": "ABP_Pro_VoodooBike_R / VoodooRigged",
+            "target": "rightHandTarget",
+            "pos": {
+                "x": 0.3000030517578125,
+                "y": 0.9129998087882996,
+                "z": 0.2845998704433441
+            },
+            "euler": {
+                "x": 356.4599609375,
+                "y": 279.86846923828127,
+                "z": 268.4114074707031
+            }
+        },
+        {
+            "bike": "ABP_Pro_VoodooBike_R / VoodooRigged",
+            "target": "leftHandReverseTarget",
+            "pos": {
+                "x": -0.30000001192092898,
+                "y": 0.9129999876022339,
+                "z": 0.28459998965263369
+            },
+            "euler": {
+                "x": 35.95417785644531,
+                "y": 102.18221282958985,
+                "z": 79.98921966552735
+            }
+        },
+        {
+            "bike": "ABP_Pro_VoodooBike_R / VoodooRigged",
+            "target": "rightHandReverseTarget",
+            "pos": {
+                "x": 0.30000001192092898,
+                "y": 0.9129999876022339,
+                "z": 0.28459998965263369
+            },
+            "euler": {
+                "x": 32.887916564941409,
+                "y": 257.84466552734377,
+                "z": 280.04718017578127
+            }
+        },
+        {
+            "bike": "ABP_Pro_VoodooBike_R",
+            "target": "leftHandHint",
+            "pos": {
+                "x": -0.4322727918624878,
+                "y": 1.3830064535140992,
+                "z": -0.30000001192092898
+            },
+            "euler": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            }
+        },
+        {
+            "bike": "ABP_Pro_VoodooBike_R",
+            "target": "rightHandHint",
+            "pos": {
+                "x": 0.4322717785835266,
+                "y": 1.3830076456069947,
+                "z": -0.30000001192092898
+            },
+            "euler": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            }
+        },
+        {
+            "bike": "ABP_Pro_Police_Bike / Mace_CharacterRigged",
+            "target": "hipIdleTarget",
+            "pos": {
+                "x": -6.02010720750424e-16,
+                "y": 0.9190000295639038,
+                "z": -0.4419999122619629
+            },
+            "euler": {
+                "x": 5.000002861022949,
+                "y": -6.906028840883199e-31,
+                "z": -1.5817399322517784e-29
+            }
+        },
+        {
+            "bike": "ABP_Pro_Police_Bike / Mace_CharacterRigged",
+            "target": "hipNormalSpeedTarget",
+            "pos": {
+                "x": -6.02010720750424e-16,
+                "y": 0.9190000295639038,
+                "z": -0.4419822692871094
+            },
+            "euler": {
+                "x": 5.000002861022949,
+                "y": -6.906028840883199e-31,
+                "z": -1.5817399322517784e-29
+            }
+        },
+        {
+            "bike": "ABP_Pro_Police_Bike / Mace_CharacterRigged",
+            "target": "hipHighSpeedTarget",
+            "pos": {
+                "x": -6.033204983846752e-16,
+                "y": 0.9209994077682495,
+                "z": -0.44000244140625
+            },
+            "euler": {
+                "x": 5.000002861022949,
+                "y": -6.906028840883199e-31,
+                "z": -1.5817399322517784e-29
+            }
+        },
+        {
+            "bike": "ABP_Pro_Police_Bike / Mace_CharacterRigged",
+            "target": "hipInAirTarget",
+            "pos": {
+                "x": -1.015357584463941e-16,
+                "y": 1.048999547958374,
+                "z": -0.4190022349357605
+            },
+            "euler": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            }
+        },
+        {
+            "bike": "ABP_Pro_Police_Bike / Mace_CharacterRigged",
+            "target": "hipReverseTarget",
+            "pos": {
+                "x": 8.516094894293725e-18,
+                "y": 0.9319997429847717,
+                "z": -0.43596383929252627
+            },
+            "euler": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            }
+        },
+        {
+            "bike": "ABP_Pro_Police_Bike / Mace_CharacterRigged",
+            "target": "spineIdleTarget",
+            "pos": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            },
+            "euler": {
+                "x": 10.000003814697266,
+                "y": -2.7890352608852796e-30,
+                "z": -3.187880193192728e-29
+            }
+        },
+        {
+            "bike": "ABP_Pro_Police_Bike / Mace_CharacterRigged",
+            "target": "spineNormalSpeedTarget",
+            "pos": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            },
+            "euler": {
+                "x": 14.999999046325684,
+                "y": -4.098800346928825e-22,
+                "z": -3.1133486903169077e-21
+            }
+        },
+        {
+            "bike": "ABP_Pro_Police_Bike / Mace_CharacterRigged",
+            "target": "spineHighSpeedTarget",
+            "pos": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            },
+            "euler": {
+                "x": 25.000001907348634,
+                "y": -1.8690068279317175e-29,
+                "z": -8.43054467370192e-29
+            }
+        },
+        {
+            "bike": "ABP_Pro_Police_Bike / Mace_CharacterRigged",
+            "target": "spineReverseTarget",
+            "pos": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            },
+            "euler": {
+                "x": 10.00000286102295,
+                "y": 0.0,
+                "z": 0.0
+            }
+        },
+        {
+            "bike": "ABP_Pro_Police_Bike / Mace_CharacterRigged",
+            "target": "leftlegIdleTarget",
+            "pos": {
+                "x": -0.2739982604980469,
+                "y": 0.17500001192092896,
+                "z": -0.16200017929077149
+            },
+            "euler": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            }
+        },
+        {
+            "bike": "ABP_Pro_Police_Bike / Mace_CharacterRigged",
+            "target": "leftlegInMotionTarget",
+            "pos": {
+                "x": -0.21999740600585938,
+                "y": 0.2980002164840698,
+                "z": 0.01098012924194336
+            },
+            "euler": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            }
+        },
+        {
+            "bike": "ABP_Pro_Police_Bike / Mace_CharacterRigged",
+            "target": "rightlegIdleTarget",
+            "pos": {
+                "x": 0.220001220703125,
+                "y": 0.2980000376701355,
+                "z": 0.010979175567626953
+            },
+            "euler": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            }
+        },
+        {
+            "bike": "ABP_Pro_Police_Bike / Mace_CharacterRigged",
+            "target": "rightlegInMotionTarget",
+            "pos": {
+                "x": 0.220001220703125,
+                "y": 0.2980000376701355,
+                "z": 0.010979175567626953
+            },
+            "euler": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            }
+        },
+        {
+            "bike": "ABP_Pro_Police_Bike / Mace_CharacterRigged",
+            "target": "leftHandTarget",
+            "pos": {
+                "x": -0.30999755859375,
+                "y": 1.0959999561309815,
+                "z": -0.02999993786215782
+            },
+            "euler": {
+                "x": 35.95417404174805,
+                "y": 52.18219757080078,
+                "z": 79.98922729492188
+            }
+        },
+        {
+            "bike": "ABP_Pro_Police_Bike / Mace_CharacterRigged",
+            "target": "rightHandTarget",
+            "pos": {
+                "x": 0.3100013732910156,
+                "y": 1.0959999561309815,
+                "z": -0.02999993786215782
+            },
+            "euler": {
+                "x": 32.88792419433594,
+                "y": 307.84466552734377,
+                "z": 280.04718017578127
+            }
+        },
+        {
+            "bike": "ABP_Pro_Police_Bike / Mace_CharacterRigged",
+            "target": "leftHandReverseTarget",
+            "pos": {
+                "x": -0.3100000023841858,
+                "y": 1.0959999561309815,
+                "z": -0.029999999329447748
+            },
+            "euler": {
+                "x": 35.95417022705078,
+                "y": 52.18220138549805,
+                "z": 79.98922729492188
+            }
+        },
+        {
+            "bike": "ABP_Pro_Police_Bike / Mace_CharacterRigged",
+            "target": "rightHandReverseTarget",
+            "pos": {
+                "x": 0.3100000023841858,
+                "y": 1.0959999561309815,
+                "z": -0.029999999329447748
+            },
+            "euler": {
+                "x": 32.88792419433594,
+                "y": 307.84466552734377,
+                "z": 280.04718017578127
+            }
+        },
+        {
+            "bike": "ABP_Pro_Police_Bike / VoodooRigged",
+            "target": "hipIdleTarget",
+            "pos": {
+                "x": -6.02010720750424e-16,
+                "y": 0.9190000295639038,
+                "z": -0.4419999122619629
+            },
+            "euler": {
+                "x": 5.000002861022949,
+                "y": -6.906028840883199e-31,
+                "z": -1.5817399322517784e-29
+            }
+        },
+        {
+            "bike": "ABP_Pro_Police_Bike / VoodooRigged",
+            "target": "hipNormalSpeedTarget",
+            "pos": {
+                "x": -6.02010720750424e-16,
+                "y": 0.9190000295639038,
+                "z": -0.4419822692871094
+            },
+            "euler": {
+                "x": 5.000002861022949,
+                "y": -6.906028840883199e-31,
+                "z": -1.5817399322517784e-29
+            }
+        },
+        {
+            "bike": "ABP_Pro_Police_Bike / VoodooRigged",
+            "target": "hipHighSpeedTarget",
+            "pos": {
+                "x": -6.033204983846752e-16,
+                "y": 0.9209994077682495,
+                "z": -0.44000244140625
+            },
+            "euler": {
+                "x": 5.000002861022949,
+                "y": -6.906028840883199e-31,
+                "z": -1.5817399322517784e-29
+            }
+        },
+        {
+            "bike": "ABP_Pro_Police_Bike / VoodooRigged",
+            "target": "hipInAirTarget",
+            "pos": {
+                "x": -1.015357584463941e-16,
+                "y": 1.048999547958374,
+                "z": -0.4190022349357605
+            },
+            "euler": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            }
+        },
+        {
+            "bike": "ABP_Pro_Police_Bike / VoodooRigged",
+            "target": "hipReverseTarget",
+            "pos": {
+                "x": 8.516094894293725e-18,
+                "y": 0.9319997429847717,
+                "z": -0.43596383929252627
+            },
+            "euler": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            }
+        },
+        {
+            "bike": "ABP_Pro_Police_Bike / VoodooRigged",
+            "target": "spineIdleTarget",
+            "pos": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            },
+            "euler": {
+                "x": 10.000003814697266,
+                "y": -2.7890352608852796e-30,
+                "z": -3.187880193192728e-29
+            }
+        },
+        {
+            "bike": "ABP_Pro_Police_Bike / VoodooRigged",
+            "target": "spineNormalSpeedTarget",
+            "pos": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            },
+            "euler": {
+                "x": 14.999999046325684,
+                "y": -4.098800346928825e-22,
+                "z": -3.1133486903169077e-21
+            }
+        },
+        {
+            "bike": "ABP_Pro_Police_Bike / VoodooRigged",
+            "target": "spineHighSpeedTarget",
+            "pos": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            },
+            "euler": {
+                "x": 25.000001907348634,
+                "y": -1.8690068279317175e-29,
+                "z": -8.43054467370192e-29
+            }
+        },
+        {
+            "bike": "ABP_Pro_Police_Bike / VoodooRigged",
+            "target": "spineReverseTarget",
+            "pos": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            },
+            "euler": {
+                "x": 10.00000286102295,
+                "y": 0.0,
+                "z": 0.0
+            }
+        },
+        {
+            "bike": "ABP_Pro_Police_Bike / VoodooRigged",
+            "target": "leftlegIdleTarget",
+            "pos": {
+                "x": -0.2739982604980469,
+                "y": 0.17500001192092896,
+                "z": -0.16200017929077149
+            },
+            "euler": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            }
+        },
+        {
+            "bike": "ABP_Pro_Police_Bike / VoodooRigged",
+            "target": "leftlegInMotionTarget",
+            "pos": {
+                "x": -0.21999740600585938,
+                "y": 0.2980002164840698,
+                "z": 0.01098012924194336
+            },
+            "euler": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            }
+        },
+        {
+            "bike": "ABP_Pro_Police_Bike / VoodooRigged",
+            "target": "rightlegIdleTarget",
+            "pos": {
+                "x": 0.220001220703125,
+                "y": 0.2980000376701355,
+                "z": 0.010979175567626953
+            },
+            "euler": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            }
+        },
+        {
+            "bike": "ABP_Pro_Police_Bike / VoodooRigged",
+            "target": "rightlegInMotionTarget",
+            "pos": {
+                "x": 0.220001220703125,
+                "y": 0.2980000376701355,
+                "z": 0.010979175567626953
+            },
+            "euler": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            }
+        },
+        {
+            "bike": "ABP_Pro_Police_Bike / VoodooRigged",
+            "target": "leftHandTarget",
+            "pos": {
+                "x": -0.30999755859375,
+                "y": 1.0959999561309815,
+                "z": -0.02999993786215782
+            },
+            "euler": {
+                "x": 35.95417404174805,
+                "y": 52.18219757080078,
+                "z": 79.98922729492188
+            }
+        },
+        {
+            "bike": "ABP_Pro_Police_Bike / VoodooRigged",
+            "target": "rightHandTarget",
+            "pos": {
+                "x": 0.3100013732910156,
+                "y": 1.0959999561309815,
+                "z": -0.02999993786215782
+            },
+            "euler": {
+                "x": 32.88792419433594,
+                "y": 307.84466552734377,
+                "z": 280.04718017578127
+            }
+        },
+        {
+            "bike": "ABP_Pro_Police_Bike / VoodooRigged",
+            "target": "leftHandReverseTarget",
+            "pos": {
+                "x": -0.3100000023841858,
+                "y": 1.0959999561309815,
+                "z": -0.029999999329447748
+            },
+            "euler": {
+                "x": 35.95417022705078,
+                "y": 52.18220138549805,
+                "z": 79.98922729492188
+            }
+        },
+        {
+            "bike": "ABP_Pro_Police_Bike / VoodooRigged",
+            "target": "rightHandReverseTarget",
+            "pos": {
+                "x": 0.3100000023841858,
+                "y": 1.0959999561309815,
+                "z": -0.029999999329447748
+            },
+            "euler": {
+                "x": 32.88792419433594,
+                "y": 307.84466552734377,
+                "z": 280.04718017578127
+            }
+        },
+        {
+            "bike": "ABP_Pro_Police_Bike",
+            "target": "leftHandHint",
+            "pos": {
+                "x": -0.4322727918624878,
+                "y": 1.3830064535140992,
+                "z": -0.30000001192092898
+            },
+            "euler": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            }
+        },
+        {
+            "bike": "ABP_Pro_Police_Bike",
+            "target": "rightHandHint",
+            "pos": {
+                "x": 0.4322717785835266,
+                "y": 1.3830076456069947,
+                "z": -0.30000001192092898
+            },
+            "euler": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            }
+        },
+        {
+            "bike": "ABP_Pro_Cafe_Racer / Mace_CharacterRigged",
+            "target": "hipIdleTarget",
+            "pos": {
+                "x": -5.797383070397274e-16,
+                "y": 0.8849999904632568,
+                "z": -0.26000022888183596
+            },
+            "euler": {
+                "x": 45.000003814697269,
+                "y": -7.488717986354167e-29,
+                "z": -1.807936281526272e-28
+            }
+        },
+        {
+            "bike": "ABP_Pro_Cafe_Racer / Mace_CharacterRigged",
+            "target": "hipNormalSpeedTarget",
+            "pos": {
+                "x": -5.797383070397274e-16,
+                "y": 0.8849999904632568,
+                "z": -0.2600059509277344
+            },
+            "euler": {
+                "x": 45.000003814697269,
+                "y": -7.488717986354167e-29,
+                "z": -1.807936281526272e-28
+            }
+        },
+        {
+            "bike": "ABP_Pro_Cafe_Racer / Mace_CharacterRigged",
+            "target": "hipHighSpeedTarget",
+            "pos": {
+                "x": -5.810480317344194e-16,
+                "y": 0.8869993686676025,
+                "z": -0.258026123046875
+            },
+            "euler": {
+                "x": 45.000003814697269,
+                "y": -7.488717986354167e-29,
+                "z": -1.807936281526272e-28
+            }
+        },
+        {
+            "bike": "ABP_Pro_Cafe_Racer / Mace_CharacterRigged",
+            "target": "hipInAirTarget",
+            "pos": {
+                "x": -7.926326532635869e-17,
+                "y": 1.0149993896484376,
+                "z": -0.2370259165763855
+            },
+            "euler": {
+                "x": 30.00000762939453,
+                "y": 0.0,
+                "z": 0.0
+            }
+        },
+        {
+            "bike": "ABP_Pro_Cafe_Racer / Mace_CharacterRigged",
+            "target": "hipReverseTarget",
+            "pos": {
+                "x": 3.07885855327873e-17,
+                "y": 0.89799964427948,
+                "z": -0.25398752093315127
+            },
+            "euler": {
+                "x": 20.000003814697267,
+                "y": 0.0,
+                "z": 0.0
+            }
+        },
+        {
+            "bike": "ABP_Pro_Cafe_Racer / Mace_CharacterRigged",
+            "target": "spineIdleTarget",
+            "pos": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            },
+            "euler": {
+                "x": 35.00000762939453,
+                "y": -3.991465133765134e-29,
+                "z": -1.2659306043327435e-28
+            }
+        },
+        {
+            "bike": "ABP_Pro_Cafe_Racer / Mace_CharacterRigged",
+            "target": "spineNormalSpeedTarget",
+            "pos": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            },
+            "euler": {
+                "x": 45.000003814697269,
+                "y": -7.488717986354167e-29,
+                "z": -1.807936281526272e-28
+            }
+        },
+        {
+            "bike": "ABP_Pro_Cafe_Racer / Mace_CharacterRigged",
+            "target": "spineHighSpeedTarget",
+            "pos": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            },
+            "euler": {
+                "x": 55.00000762939453,
+                "y": -2.441840803327589e-21,
+                "z": -4.690732439151164e-21
+            }
+        },
+        {
+            "bike": "ABP_Pro_Cafe_Racer / Mace_CharacterRigged",
+            "target": "spineReverseTarget",
+            "pos": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            },
+            "euler": {
+                "x": 30.00000762939453,
+                "y": 0.0,
+                "z": 0.0
+            }
+        },
+        {
+            "bike": "ABP_Pro_Cafe_Racer / Mace_CharacterRigged",
+            "target": "leftlegIdleTarget",
+            "pos": {
+                "x": -0.2740001678466797,
+                "y": 0.1589999794960022,
+                "z": -0.16200017929077149
+            },
+            "euler": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            }
+        },
+        {
+            "bike": "ABP_Pro_Cafe_Racer / Mace_CharacterRigged",
+            "target": "leftlegInMotionTarget",
+            "pos": {
+                "x": -0.15999984741210938,
+                "y": 0.2660001516342163,
+                "z": 0.030005455017089845
+            },
+            "euler": {
+                "x": 340.0,
+                "y": -1.1602948515158727e-29,
+                "z": 6.580354331790142e-29
+            }
+        },
+        {
+            "bike": "ABP_Pro_Cafe_Racer / Mace_CharacterRigged",
+            "target": "rightlegIdleTarget",
+            "pos": {
+                "x": 0.15999984741210938,
+                "y": 0.26600003242492678,
+                "z": 0.029999732971191407
+            },
+            "euler": {
+                "x": 340.0,
+                "y": -1.1602948515158727e-29,
+                "z": 6.580354331790142e-29
+            }
+        },
+        {
+            "bike": "ABP_Pro_Cafe_Racer / Mace_CharacterRigged",
+            "target": "rightlegInMotionTarget",
+            "pos": {
+                "x": 0.15999984741210938,
+                "y": 0.26600003242492678,
+                "z": 0.029999732971191407
+            },
+            "euler": {
+                "x": 340.0,
+                "y": -1.1602948515158727e-29,
+                "z": 6.580354331790142e-29
+            }
+        },
+        {
+            "bike": "ABP_Pro_Cafe_Racer / Mace_CharacterRigged",
+            "target": "leftHandTarget",
+            "pos": {
+                "x": -0.3000001907348633,
+                "y": 0.9110000729560852,
+                "z": 0.31300002336502077
+            },
+            "euler": {
+                "x": 35.95417785644531,
+                "y": 102.18221282958985,
+                "z": 79.98922729492188
+            }
+        },
+        {
+            "bike": "ABP_Pro_Cafe_Racer / Mace_CharacterRigged",
+            "target": "rightHandTarget",
+            "pos": {
+                "x": 0.3000001907348633,
+                "y": 0.9110000729560852,
+                "z": 0.31300002336502077
+            },
+            "euler": {
+                "x": 32.887916564941409,
+                "y": 257.84466552734377,
+                "z": 280.04718017578127
+            }
+        },
+        {
+            "bike": "ABP_Pro_Cafe_Racer / Mace_CharacterRigged",
+            "target": "leftHandReverseTarget",
+            "pos": {
+                "x": -0.30000001192092898,
+                "y": 0.9110000133514404,
+                "z": 0.31299999356269839
+            },
+            "euler": {
+                "x": 35.95417785644531,
+                "y": 102.18221282958985,
+                "z": 79.98922729492188
+            }
+        },
+        {
+            "bike": "ABP_Pro_Cafe_Racer / Mace_CharacterRigged",
+            "target": "rightHandReverseTarget",
+            "pos": {
+                "x": 0.30000001192092898,
+                "y": 0.9110000133514404,
+                "z": 0.31299999356269839
+            },
+            "euler": {
+                "x": 32.887916564941409,
+                "y": 257.84466552734377,
+                "z": 280.04718017578127
+            }
+        },
+        {
+            "bike": "ABP_Pro_Cafe_Racer / VoodooRigged",
+            "target": "hipIdleTarget",
+            "pos": {
+                "x": -5.797383070397274e-16,
+                "y": 0.8849999904632568,
+                "z": -0.26000022888183596
+            },
+            "euler": {
+                "x": 45.000003814697269,
+                "y": -7.488717986354167e-29,
+                "z": -1.807936281526272e-28
+            }
+        },
+        {
+            "bike": "ABP_Pro_Cafe_Racer / VoodooRigged",
+            "target": "hipNormalSpeedTarget",
+            "pos": {
+                "x": -5.797383070397274e-16,
+                "y": 0.8849999904632568,
+                "z": -0.2600059509277344
+            },
+            "euler": {
+                "x": 45.000003814697269,
+                "y": -7.488717986354167e-29,
+                "z": -1.807936281526272e-28
+            }
+        },
+        {
+            "bike": "ABP_Pro_Cafe_Racer / VoodooRigged",
+            "target": "hipHighSpeedTarget",
+            "pos": {
+                "x": -5.810480317344194e-16,
+                "y": 0.8869993686676025,
+                "z": -0.258026123046875
+            },
+            "euler": {
+                "x": 45.000003814697269,
+                "y": -7.488717986354167e-29,
+                "z": -1.807936281526272e-28
+            }
+        },
+        {
+            "bike": "ABP_Pro_Cafe_Racer / VoodooRigged",
+            "target": "hipInAirTarget",
+            "pos": {
+                "x": -7.926326532635869e-17,
+                "y": 1.0149993896484376,
+                "z": -0.2370259165763855
+            },
+            "euler": {
+                "x": 30.00000762939453,
+                "y": 0.0,
+                "z": 0.0
+            }
+        },
+        {
+            "bike": "ABP_Pro_Cafe_Racer / VoodooRigged",
+            "target": "hipReverseTarget",
+            "pos": {
+                "x": 3.07885855327873e-17,
+                "y": 0.89799964427948,
+                "z": -0.25398752093315127
+            },
+            "euler": {
+                "x": 20.000003814697267,
+                "y": 0.0,
+                "z": 0.0
+            }
+        },
+        {
+            "bike": "ABP_Pro_Cafe_Racer / VoodooRigged",
+            "target": "spineIdleTarget",
+            "pos": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            },
+            "euler": {
+                "x": 35.00000762939453,
+                "y": -3.991465133765134e-29,
+                "z": -1.2659306043327435e-28
+            }
+        },
+        {
+            "bike": "ABP_Pro_Cafe_Racer / VoodooRigged",
+            "target": "spineNormalSpeedTarget",
+            "pos": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            },
+            "euler": {
+                "x": 45.000003814697269,
+                "y": -7.488717986354167e-29,
+                "z": -1.807936281526272e-28
+            }
+        },
+        {
+            "bike": "ABP_Pro_Cafe_Racer / VoodooRigged",
+            "target": "spineHighSpeedTarget",
+            "pos": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            },
+            "euler": {
+                "x": 55.00000762939453,
+                "y": -2.441840803327589e-21,
+                "z": -4.690732439151164e-21
+            }
+        },
+        {
+            "bike": "ABP_Pro_Cafe_Racer / VoodooRigged",
+            "target": "spineReverseTarget",
+            "pos": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            },
+            "euler": {
+                "x": 30.00000762939453,
+                "y": 0.0,
+                "z": 0.0
+            }
+        },
+        {
+            "bike": "ABP_Pro_Cafe_Racer / VoodooRigged",
+            "target": "leftlegIdleTarget",
+            "pos": {
+                "x": -0.2740001678466797,
+                "y": 0.1589999794960022,
+                "z": -0.16200017929077149
+            },
+            "euler": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            }
+        },
+        {
+            "bike": "ABP_Pro_Cafe_Racer / VoodooRigged",
+            "target": "leftlegInMotionTarget",
+            "pos": {
+                "x": -0.15999984741210938,
+                "y": 0.2660001516342163,
+                "z": 0.030005455017089845
+            },
+            "euler": {
+                "x": 340.0,
+                "y": -1.1602948515158727e-29,
+                "z": 6.580354331790142e-29
+            }
+        },
+        {
+            "bike": "ABP_Pro_Cafe_Racer / VoodooRigged",
+            "target": "rightlegIdleTarget",
+            "pos": {
+                "x": 0.15999984741210938,
+                "y": 0.26600003242492678,
+                "z": 0.029999732971191407
+            },
+            "euler": {
+                "x": 340.0,
+                "y": -1.1602948515158727e-29,
+                "z": 6.580354331790142e-29
+            }
+        },
+        {
+            "bike": "ABP_Pro_Cafe_Racer / VoodooRigged",
+            "target": "rightlegInMotionTarget",
+            "pos": {
+                "x": 0.15999984741210938,
+                "y": 0.26600003242492678,
+                "z": 0.029999732971191407
+            },
+            "euler": {
+                "x": 340.0,
+                "y": -1.1602948515158727e-29,
+                "z": 6.580354331790142e-29
+            }
+        },
+        {
+            "bike": "ABP_Pro_Cafe_Racer / VoodooRigged",
+            "target": "leftHandTarget",
+            "pos": {
+                "x": -0.3000001907348633,
+                "y": 0.9110000729560852,
+                "z": 0.31300002336502077
+            },
+            "euler": {
+                "x": 35.95417785644531,
+                "y": 102.18221282958985,
+                "z": 79.98922729492188
+            }
+        },
+        {
+            "bike": "ABP_Pro_Cafe_Racer / VoodooRigged",
+            "target": "rightHandTarget",
+            "pos": {
+                "x": 0.3000001907348633,
+                "y": 0.9110000729560852,
+                "z": 0.31300002336502077
+            },
+            "euler": {
+                "x": 32.887916564941409,
+                "y": 257.84466552734377,
+                "z": 280.04718017578127
+            }
+        },
+        {
+            "bike": "ABP_Pro_Cafe_Racer / VoodooRigged",
+            "target": "leftHandReverseTarget",
+            "pos": {
+                "x": -0.30000001192092898,
+                "y": 0.9110000133514404,
+                "z": 0.31299999356269839
+            },
+            "euler": {
+                "x": 35.95417785644531,
+                "y": 102.18221282958985,
+                "z": 79.98922729492188
+            }
+        },
+        {
+            "bike": "ABP_Pro_Cafe_Racer / VoodooRigged",
+            "target": "rightHandReverseTarget",
+            "pos": {
+                "x": 0.30000001192092898,
+                "y": 0.9110000133514404,
+                "z": 0.31299999356269839
+            },
+            "euler": {
+                "x": 32.887916564941409,
+                "y": 257.84466552734377,
+                "z": 280.04718017578127
+            }
+        },
+        {
+            "bike": "ABP_Pro_Cafe_Racer",
+            "target": "leftHandHint",
+            "pos": {
+                "x": -0.4322727918624878,
+                "y": 1.3830064535140992,
+                "z": -0.30000001192092898
+            },
+            "euler": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            }
+        },
+        {
+            "bike": "ABP_Pro_Cafe_Racer",
+            "target": "rightHandHint",
+            "pos": {
+                "x": 0.4322717785835266,
+                "y": 1.3830076456069947,
+                "z": -0.30000001192092898
+            },
+            "euler": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            }
+        }
+    ]
+}

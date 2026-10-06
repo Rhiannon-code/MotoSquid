@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 60632b040551069419e2002a35487752
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 402168
+  packageName: 'Magic LOD: Burst Mesh Optimizer'
+  packageVersion: 1.0.5
+  assetPath: Assets/MagicLOD/Third-Party/Viking Village/Prefabs/Props/pf_fence_01.prefab
+  uploadId: 997198

@@ -1,0 +1,10 @@
+﻿fileFormatVersion: 2
+guid: ea95d70da41844059625e6a34d551d46
+timeCreated: 1639246999
+AssetOrigin:
+  serializedVersion: 1
+  productId: 205206
+  packageName: 'Breakable glass and objects system: Simple procedural solution'
+  packageVersion: 1.2
+  assetPath: Assets/CyberRevolution/BreakableObjectsSystem/Scripts/Breakable/ColliderType.cs
+  uploadId: 474285

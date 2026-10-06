@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: dbb97862e97253ccb4a17c5d0368bfe8
+DefaultImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 402168
+  packageName: 'Magic LOD: Burst Mesh Optimizer'
+  packageVersion: 1.0.5
+  assetPath: Assets/MagicLOD/Tutorials/04_Geometry_Protection/Geometry_Protection.unity
+  uploadId: 997198

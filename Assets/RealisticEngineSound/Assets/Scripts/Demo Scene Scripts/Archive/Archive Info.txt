@@ -1,0 +1,3 @@
+DemoController.cs uses the legacy UI Text system.
+In the latest demo scenes, new scripts are used to manage the demo scene UI, which is now based on TextMesh Pro. DemoController.cs and CarSimulator.cs are retained for add-on sound packs that still use the old scene type.
+These scripts will be removed once all add-on sound packs have been updated to support the latest version of RES2 (v2.2.0+).

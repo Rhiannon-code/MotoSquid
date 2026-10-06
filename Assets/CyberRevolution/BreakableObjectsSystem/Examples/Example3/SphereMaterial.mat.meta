@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: accb47b8baa06d54a9eac9c8ab85b0c7
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 2100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 205206
+  packageName: 'Breakable glass and objects system: Simple procedural solution'
+  packageVersion: 1.2
+  assetPath: Assets/CyberRevolution/BreakableObjectsSystem/Examples/Example3/SphereMaterial.mat
+  uploadId: 474285

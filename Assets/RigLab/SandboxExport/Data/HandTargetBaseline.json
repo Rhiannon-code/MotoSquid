@@ -1,0 +1,364 @@
+{
+    "entries": [
+        {
+            "bike": "ABP_Pro_Cruiser_MotorCycles",
+            "target": "leftHandTarget",
+            "euler": {
+                "x": 90.0,
+                "y": 0.0,
+                "z": 0.0
+            }
+        },
+        {
+            "bike": "ABP_Pro_Cruiser_MotorCycles",
+            "target": "leftHandReverseTarget",
+            "euler": {
+                "x": 90.0,
+                "y": 0.0,
+                "z": 0.0
+            }
+        },
+        {
+            "bike": "ABP_Pro_Cruiser_MotorCycles",
+            "target": "rightHandTarget",
+            "euler": {
+                "x": 90.0,
+                "y": 0.0,
+                "z": 0.0
+            }
+        },
+        {
+            "bike": "ABP_Pro_Cruiser_MotorCycles",
+            "target": "rightHandReverseTarget",
+            "euler": {
+                "x": 90.0,
+                "y": 0.0,
+                "z": 0.0
+            }
+        },
+        {
+            "bike": "ABP_Pro_Super_Moto",
+            "target": "leftHandTarget",
+            "euler": {
+                "x": 90.0,
+                "y": 0.0,
+                "z": 0.0
+            }
+        },
+        {
+            "bike": "ABP_Pro_Super_Moto",
+            "target": "leftHandReverseTarget",
+            "euler": {
+                "x": 90.0,
+                "y": 0.0,
+                "z": 0.0
+            }
+        },
+        {
+            "bike": "ABP_Pro_Super_Moto",
+            "target": "rightHandTarget",
+            "euler": {
+                "x": 90.0,
+                "y": 0.0,
+                "z": 0.0
+            }
+        },
+        {
+            "bike": "ABP_Pro_Super_Moto",
+            "target": "rightHandReverseTarget",
+            "euler": {
+                "x": 90.0,
+                "y": 0.0,
+                "z": 0.0
+            }
+        },
+        {
+            "bike": "ABP_Pro_Chopper",
+            "target": "leftHandTarget",
+            "euler": {
+                "x": 70.0,
+                "y": 74.99999237060547,
+                "z": 90.0
+            }
+        },
+        {
+            "bike": "ABP_Pro_Chopper",
+            "target": "leftHandReverseTarget",
+            "euler": {
+                "x": 70.0,
+                "y": 74.99999237060547,
+                "z": 90.0
+            }
+        },
+        {
+            "bike": "ABP_Pro_Chopper",
+            "target": "rightHandTarget",
+            "euler": {
+                "x": 70.0,
+                "y": 285.0,
+                "z": 270.0
+            }
+        },
+        {
+            "bike": "ABP_Pro_Chopper",
+            "target": "rightHandReverseTarget",
+            "euler": {
+                "x": 70.0,
+                "y": 285.0,
+                "z": 270.0
+            }
+        },
+        {
+            "bike": "ABP_ProFuturistic_Bike",
+            "target": "leftHandTarget",
+            "euler": {
+                "x": 80.00001525878906,
+                "y": 0.0,
+                "z": 0.0
+            }
+        },
+        {
+            "bike": "ABP_ProFuturistic_Bike",
+            "target": "leftHandReverseTarget",
+            "euler": {
+                "x": 80.00001525878906,
+                "y": 0.0,
+                "z": 0.0
+            }
+        },
+        {
+            "bike": "ABP_ProFuturistic_Bike",
+            "target": "rightHandTarget",
+            "euler": {
+                "x": 80.00001525878906,
+                "y": 0.0,
+                "z": 0.0
+            }
+        },
+        {
+            "bike": "ABP_ProFuturistic_Bike",
+            "target": "rightHandReverseTarget",
+            "euler": {
+                "x": 80.00001525878906,
+                "y": 0.0,
+                "z": 0.0
+            }
+        },
+        {
+            "bike": "ABP_Pro_Scooter",
+            "target": "leftHandTarget",
+            "euler": {
+                "x": 90.0,
+                "y": 345.0,
+                "z": 0.0
+            }
+        },
+        {
+            "bike": "ABP_Pro_Scooter",
+            "target": "leftHandReverseTarget",
+            "euler": {
+                "x": 90.0,
+                "y": 345.0,
+                "z": 0.0
+            }
+        },
+        {
+            "bike": "ABP_Pro_Scooter",
+            "target": "rightHandTarget",
+            "euler": {
+                "x": 90.0,
+                "y": 15.000009536743164,
+                "z": 0.0
+            }
+        },
+        {
+            "bike": "ABP_Pro_Scooter",
+            "target": "rightHandReverseTarget",
+            "euler": {
+                "x": 90.0,
+                "y": 15.000009536743164,
+                "z": 0.0
+            }
+        },
+        {
+            "bike": "ABP_Pro_SportBike",
+            "target": "leftHandTarget",
+            "euler": {
+                "x": 90.0,
+                "y": 0.0,
+                "z": 0.0
+            }
+        },
+        {
+            "bike": "ABP_Pro_SportBike",
+            "target": "leftHandReverseTarget",
+            "euler": {
+                "x": 90.0,
+                "y": 0.0,
+                "z": 0.0
+            }
+        },
+        {
+            "bike": "ABP_Pro_SportBike",
+            "target": "rightHandTarget",
+            "euler": {
+                "x": 90.0,
+                "y": 0.0,
+                "z": 0.0
+            }
+        },
+        {
+            "bike": "ABP_Pro_SportBike",
+            "target": "rightHandReverseTarget",
+            "euler": {
+                "x": 90.0,
+                "y": 0.0,
+                "z": 0.0
+            }
+        },
+        {
+            "bike": "ABP_Pro_Cafe_Racer",
+            "target": "leftHandTarget",
+            "euler": {
+                "x": 90.0,
+                "y": 0.0,
+                "z": 0.0
+            }
+        },
+        {
+            "bike": "ABP_Pro_Cafe_Racer",
+            "target": "leftHandReverseTarget",
+            "euler": {
+                "x": 90.0,
+                "y": 0.0,
+                "z": 0.0
+            }
+        },
+        {
+            "bike": "ABP_Pro_Cafe_Racer",
+            "target": "rightHandTarget",
+            "euler": {
+                "x": 90.0,
+                "y": 0.0,
+                "z": 0.0
+            }
+        },
+        {
+            "bike": "ABP_Pro_Cafe_Racer",
+            "target": "rightHandReverseTarget",
+            "euler": {
+                "x": 90.0,
+                "y": 0.0,
+                "z": 0.0
+            }
+        },
+        {
+            "bike": "ABP_Pro_Police_Bike",
+            "target": "leftHandTarget",
+            "euler": {
+                "x": 90.0,
+                "y": 310.0,
+                "z": 0.0
+            }
+        },
+        {
+            "bike": "ABP_Pro_Police_Bike",
+            "target": "leftHandReverseTarget",
+            "euler": {
+                "x": 90.0,
+                "y": 310.0,
+                "z": 0.0
+            }
+        },
+        {
+            "bike": "ABP_Pro_Police_Bike",
+            "target": "rightHandTarget",
+            "euler": {
+                "x": 90.0,
+                "y": 49.99999237060547,
+                "z": 0.0
+            }
+        },
+        {
+            "bike": "ABP_Pro_Police_Bike",
+            "target": "rightHandReverseTarget",
+            "euler": {
+                "x": 90.0,
+                "y": 49.99999237060547,
+                "z": 0.0
+            }
+        },
+        {
+            "bike": "ABP_Pro_Street_Bike",
+            "target": "leftHandTarget",
+            "euler": {
+                "x": 90.0,
+                "y": 0.0,
+                "z": 0.0
+            }
+        },
+        {
+            "bike": "ABP_Pro_Street_Bike",
+            "target": "leftHandReverseTarget",
+            "euler": {
+                "x": 90.0,
+                "y": 0.0,
+                "z": 0.0
+            }
+        },
+        {
+            "bike": "ABP_Pro_Street_Bike",
+            "target": "rightHandTarget",
+            "euler": {
+                "x": 90.0,
+                "y": 0.0,
+                "z": 0.0
+            }
+        },
+        {
+            "bike": "ABP_Pro_Street_Bike",
+            "target": "rightHandReverseTarget",
+            "euler": {
+                "x": 90.0,
+                "y": 0.0,
+                "z": 0.0
+            }
+        },
+        {
+            "bike": "ABP_Pro_Moto_Cross",
+            "target": "leftHandTarget",
+            "euler": {
+                "x": 90.0,
+                "y": 0.0,
+                "z": 0.0
+            }
+        },
+        {
+            "bike": "ABP_Pro_Moto_Cross",
+            "target": "leftHandReverseTarget",
+            "euler": {
+                "x": 90.0,
+                "y": 0.0,
+                "z": 0.0
+            }
+        },
+        {
+            "bike": "ABP_Pro_Moto_Cross",
+            "target": "rightHandTarget",
+            "euler": {
+                "x": 90.0,
+                "y": 0.0,
+                "z": 0.0
+            }
+        },
+        {
+            "bike": "ABP_Pro_Moto_Cross",
+            "target": "rightHandReverseTarget",
+            "euler": {
+                "x": 90.0,
+                "y": 0.0,
+                "z": 0.0
+            }
+        }
+    ]
+}

@@ -1,0 +1,18 @@
+fileFormatVersion: 2
+guid: 3c719d1da4304f34687889617f325421
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 288782
+  packageName: Arcade Bike Physics Pro - Fast Paced Fun Mechanism
+  packageVersion: 1.5
+  assetPath: Assets/Ash Assets/Arcade Bike Physics Pro/Scripts/Editor/BikerAnimationCreatorPro.cs
+  uploadId: 968076

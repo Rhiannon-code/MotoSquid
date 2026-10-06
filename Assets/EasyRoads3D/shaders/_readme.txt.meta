@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 50a69877f49943440bcf76ac1ee37ddc
+TextScriptImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 469
+  packageName: EasyRoads3D Pro v3
+  packageVersion: v3.2.4f5
+  assetPath: Assets/EasyRoads3D/shaders/_readme.txt
+  uploadId: 931332

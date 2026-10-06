@@ -1,0 +1,89 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d768bd4dd6442f23fbcd70f2d7e411b1, type: 3}
+  m_Name: PerformanceProfile
+  m_EditorClassIdentifier: Assembly-CSharp::MotoSquid.Performance.PerformanceProfile
+  tiers:
+  - qualityLevel: High Fidelity
+    gpuResidentDrawer: 1
+    gpuOcclusionCulling: 1
+    lodBias: 1
+    maximumLodLevel: 0
+    meshLodThreshold: 1
+    maxShadowsOnScreen: 48
+    dynamicShadowRescale: 1
+    directionalShadowFiltering: 2
+    punctualShadowFiltering: 1
+    maxPunctualLightsOnScreen: 128
+    screenSpaceReflections: 1
+    screenSpaceAmbientOcclusion: 1
+    screenSpaceGlobalIllumination: 0
+    volumetricFog: 1
+    lowResolutionTransparency: 1
+    decalDrawDistance: 150
+    adaptiveProbeVolumes: 1
+    probeVolumeGpuStreaming: 1
+    probeVolumeDiskStreaming: 1
+    textureStreaming: 1
+    textureStreamingBudgetMB: 4096
+    asyncUploadTimeSliceMs: 2
+    asyncUploadBufferMB: 64
+  - qualityLevel: Balanced
+    gpuResidentDrawer: 1
+    gpuOcclusionCulling: 1
+    lodBias: 0.8
+    maximumLodLevel: 0
+    meshLodThreshold: 1
+    maxShadowsOnScreen: 32
+    dynamicShadowRescale: 1
+    directionalShadowFiltering: 1
+    punctualShadowFiltering: 1
+    maxPunctualLightsOnScreen: 96
+    screenSpaceReflections: 1
+    screenSpaceAmbientOcclusion: 1
+    screenSpaceGlobalIllumination: 0
+    volumetricFog: 1
+    lowResolutionTransparency: 1
+    decalDrawDistance: 100
+    adaptiveProbeVolumes: 1
+    probeVolumeGpuStreaming: 1
+    probeVolumeDiskStreaming: 1
+    textureStreaming: 1
+    textureStreamingBudgetMB: 2048
+    asyncUploadTimeSliceMs: 2
+    asyncUploadBufferMB: 64
+  - qualityLevel: Performant
+    gpuResidentDrawer: 1
+    gpuOcclusionCulling: 1
+    lodBias: 0.6
+    maximumLodLevel: 0
+    meshLodThreshold: 1
+    maxShadowsOnScreen: 16
+    dynamicShadowRescale: 1
+    directionalShadowFiltering: 0
+    punctualShadowFiltering: 0
+    maxPunctualLightsOnScreen: 64
+    screenSpaceReflections: 0
+    screenSpaceAmbientOcclusion: 1
+    screenSpaceGlobalIllumination: 0
+    volumetricFog: 0
+    lowResolutionTransparency: 1
+    decalDrawDistance: 60
+    adaptiveProbeVolumes: 1
+    probeVolumeGpuStreaming: 1
+    probeVolumeDiskStreaming: 1
+    textureStreaming: 1
+    textureStreamingBudgetMB: 1536
+    asyncUploadTimeSliceMs: 2
+    asyncUploadBufferMB: 64
+  deferredOnly: 1
+  frameTimingStats: 1

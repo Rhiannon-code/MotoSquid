@@ -1,0 +1,30 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e3f4d1ca0a079f991bfdbf1605cb11fa, type: 3}
+  m_Name: CharacterDefinition_Soul
+  m_EditorClassIdentifier: 
+  characterName: Soul
+  description: 
+  portrait: {fileID: 0}
+  riderPrefab: {fileID: 7805393740051686938, guid: 3359a7a0623c2d222bee09c2c3eca507, type: 3}
+  bikePrefab: {fileID: 3330421155241449222, guid: da6d0369da5330955856656fdcb2c990, type: 3}
+  ragdollPrefab: {fileID: 0}
+  style: 0
+  defaultWeapon: {fileID: 11400000, guid: 35b0aad77d967082487598be64d60e62, type: 2}
+  voice: {fileID: 11400000, guid: 287248ac1186bffadb941f5e6506df2e, type: 2}
+  score: {fileID: 0}
+  playerDonor: {fileID: 0}
+  aiDonor: {fileID: 0}
+  outputFolder: Assets/Collaborators/Rhiannon/Prefabs/Characters
+  builtPlayerPrefab: {fileID: 5585615406442056319, guid: ad01cfac87e8ae973aff0b1f8c3f9085, type: 3}
+  builtAIPrefab: {fileID: 8022832704776787382, guid: b0eeeddf18a8943539c4f3fcf78b98d7, type: 3}
+  previewPrefab: {fileID: 0}

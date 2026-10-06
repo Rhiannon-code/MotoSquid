@@ -1,0 +1,19 @@
+{
+    "name": "NGS.MagicLOD.UI",
+    "rootNamespace": "",
+    "references": [
+        "GUID:cf5448d688dbf879aecdedeba55d2454",
+        "GUID:8885be1020ceac4f2202f4fd7f79043e"
+    ],
+    "includePlatforms": [
+        "Editor"
+    ],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": false,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

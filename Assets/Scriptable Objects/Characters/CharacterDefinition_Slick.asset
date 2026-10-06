@@ -1,0 +1,34 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e3f4d1ca0a079f991bfdbf1605cb11fa, type: 3}
+  m_Name: CharacterDefinition_Slick
+  m_EditorClassIdentifier: 
+  characterName: Slick
+  description: "Slick found motorbike racing the same way he found every great record:
+    through a friend, at an unreasonable hour, in a place he wasn\u2019t supposed
+    to be. The first time he rode a streetfighter at full throttle, the limiter bash
+    felt like a bass kick that started in his chest and didn\u2019t stop. He was
+    hooked."
+  portrait: {fileID: 0}
+  riderPrefab: {fileID: 8683911064820632782, guid: d44de0765b08a19f6a5f973a25e3b4f2, type: 3}
+  bikePrefab: {fileID: 3315552812638709812, guid: 38f4e510d3c75ba53aa3b0ef77f9f649, type: 3}
+  ragdollPrefab: {fileID: 374510274903421159, guid: 9309f92c7dd7ba9d29fbde7bb13f0475, type: 3}
+  style: 0
+  defaultWeapon: {fileID: 11400000, guid: 17be04ba5ef82512cae2a589c38b23b9, type: 2}
+  voice: {fileID: 11400000, guid: a86dc6862d0de22028988f78a655c934, type: 2}
+  score: {fileID: 0}
+  playerDonor: {fileID: 0}
+  aiDonor: {fileID: 0}
+  outputFolder: Assets/Collaborators/Rhiannon/Prefabs/Characters
+  builtPlayerPrefab: {fileID: 5746112726045924066, guid: 4985db29210acc0a38e83f9bba1ceeca, type: 3}
+  builtAIPrefab: {fileID: 5393570623827958430, guid: 2205fd130d55766e19bf33194e843cd7, type: 3}
+  previewPrefab: {fileID: 0}

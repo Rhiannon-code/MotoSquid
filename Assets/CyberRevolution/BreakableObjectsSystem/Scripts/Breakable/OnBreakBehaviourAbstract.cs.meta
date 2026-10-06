@@ -1,0 +1,10 @@
+﻿fileFormatVersion: 2
+guid: 837c36ea99884a8f8838b7c658f651d6
+timeCreated: 1634375945
+AssetOrigin:
+  serializedVersion: 1
+  productId: 205206
+  packageName: 'Breakable glass and objects system: Simple procedural solution'
+  packageVersion: 1.2
+  assetPath: Assets/CyberRevolution/BreakableObjectsSystem/Scripts/Breakable/OnBreakBehaviourAbstract.cs
+  uploadId: 474285

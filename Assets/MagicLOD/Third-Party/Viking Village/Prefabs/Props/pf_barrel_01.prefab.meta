@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: ddfd4e07d34580a4e89ee5d0f094307d
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 402168
+  packageName: 'Magic LOD: Burst Mesh Optimizer'
+  packageVersion: 1.0.5
+  assetPath: Assets/MagicLOD/Third-Party/Viking Village/Prefabs/Props/pf_barrel_01.prefab
+  uploadId: 997198

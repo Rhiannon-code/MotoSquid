@@ -1,0 +1,247 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:editor="UnityEditor.UIElements">
+    <ui:VisualElement class="magic-lod">
+        <ui:VisualElement class="magic-lod__header">
+            <ui:Label text="MAGIC LOD" class="magic-lod__title" />
+        </ui:VisualElement>
+
+        <ui:VisualElement name="error-banner" class="error-banner is-hidden">
+            <ui:Label text="!" class="error-banner__icon" />
+            <ui:VisualElement class="error-banner__content">
+                <ui:Label text="Generation completed with errors" class="error-banner__title" />
+                <ui:Label name="error-label" class="error-banner__message" />
+            </ui:VisualElement>
+        </ui:VisualElement>
+
+        <ui:VisualElement name="idle-view">
+            <ui:VisualElement class="mode-toolbar">
+                <ui:Button name="generate-lods-toggle" text="GENERATE LODS" class="mode-toolbar__item" />
+                <ui:Button name="simplify-toggle" text="SIMPLIFY" class="mode-toolbar__item" />
+            </ui:VisualElement>
+
+            <ui:VisualElement class="card">
+                <ui:VisualElement class="card__header">
+                    <ui:Label text="Settings" class="card__title" />
+                    <ui:Label text="Configure source and mesh fidelity" class="card__hint" />
+                </ui:VisualElement>
+
+                <editor:PropertyField name="sync-mode-field" label="Sync Mode" />
+                <editor:PropertyField name="sync-group-field" label="Sync Group ID" />
+                <editor:PropertyField name="include-children-field" label="Include Children" />
+
+                <ui:Foldout name="decimation-foldout" text="Decimation Settings" value="false" class="subsection">
+                    <ui:VisualElement class="subsection__body">
+                        <editor:PropertyField name="borders-penalty-field" label="Borders Penalty" />
+                        <editor:PropertyField name="uv-seams-penalty-field" label="UV Seams Penalty" />
+                        <editor:PropertyField name="normal-seams-penalty-field" label="Normal Seams Penalty" />
+
+                        <ui:Foldout text="Vertex Attributes" value="false" class="nested-foldout">
+                            <editor:PropertyField name="uv-mode-field" label="UV0" />
+                            <editor:PropertyField name="uv2-mode-field" label="UV1 / Lightmap" />
+                            <editor:PropertyField name="uv3-mode-field" label="UV2" />
+                            <editor:PropertyField name="uv4-mode-field" label="UV3" />
+                            <editor:PropertyField name="normals-mode-field" label="Normals" />
+                            <editor:PropertyField name="tangents-mode-field" label="Tangents" />
+                            <editor:PropertyField name="colors-mode-field" label="Colors" />
+                            <editor:PropertyField name="bone-weights-mode-field" label="Bone Weights" />
+                        </ui:Foldout>
+
+                        <ui:Foldout name="preservations-foldout" text="Preservation Volumes" value="true" class="nested-foldout">
+                            <ui:Toggle name="edit-preservations-toggle" label="Edit In Scene" value="false" class="preservation-edit-toggle" />
+                            <ui:ListView name="preservation-list" class="preservation-list" />
+                            <ui:VisualElement name="preservation-empty" class="empty-state">
+                                <ui:Label text="No preservation volumes" class="empty-state__title" />
+                                <ui:Label text="Add a volume to protect important geometry." class="empty-state__hint" />
+                            </ui:VisualElement>
+                            <ui:VisualElement class="list-actions">
+                                <ui:Button name="add-preservation-button" text="+  ADD VOLUME" class="button button--small button--positive list-actions__add" />
+                                <ui:Button name="remove-preservation-button" text="−  REMOVE" class="button button--small button--danger list-actions__remove" />
+                            </ui:VisualElement>
+                        </ui:Foldout>
+                    </ui:VisualElement>
+                </ui:Foldout>
+
+                <ui:Foldout name="lod-settings-foldout" text="LOD Settings" value="true" class="subsection">
+                    <ui:VisualElement class="subsection__body">
+                        <ui:VisualElement class="lod-configurator-mode">
+                            <ui:VisualElement class="lod-configurator-mode__copy">
+                                <ui:Label text="Manual Configuration" class="lod-configurator-mode__title" />
+                                <ui:Label text="Tune every LOD level and screen transition" class="lod-configurator-mode__hint" />
+                            </ui:VisualElement>
+                            <ui:Toggle name="manual-configurator-toggle" tooltip="Switch between automatic Screen Space settings and manual LOD configuration." class="standalone-toggle" />
+                        </ui:VisualElement>
+
+                        <ui:VisualElement name="screen-space-settings">
+                            <editor:PropertyField name="lod-fade-mode-field" label="Fade Mode" />
+                            <editor:PropertyField name="lod-target-triangles-field" label="Target Triangles / 100 px" />
+                            <editor:PropertyField name="lod-min-mesh-quality-field" label="Min Mesh Quality" />
+                            <editor:PropertyField name="lod-min-reduction-field" label="Min Reduction" />
+                            <editor:PropertyField name="lod-max-count-field" label="Max LODs" />
+                            <editor:PropertyField name="lod-cull-height-field" label="Cull Height" />
+                            <editor:PropertyField name="lod-never-cull-size-field" label="Never Cull Size" />
+                        </ui:VisualElement>
+
+                        <ui:VisualElement name="manual-lod-settings" class="manual-lod-settings is-hidden">
+                            <ui:VisualElement class="manual-lod-toolbar">
+                                <ui:VisualElement class="manual-lod-toolbar__summary">
+                                    <ui:Label text="LOD Levels" class="manual-lod-toolbar__title" />
+                                    <ui:Label name="manual-lod-count-label" text="3 LEVELS" class="value-pill manual-lod-count" />
+                                </ui:VisualElement>
+                                <ui:VisualElement class="manual-lod-stepper">
+                                    <ui:Button name="manual-remove-lod-button" text="−" tooltip="Remove the last LOD level." class="manual-lod-stepper__button" />
+                                    <ui:Button name="manual-add-lod-button" text="+" tooltip="Add another LOD level." class="manual-lod-stepper__button" />
+                                </ui:VisualElement>
+                            </ui:VisualElement>
+
+                            <ui:EnumField name="manual-fade-mode-field" label="Fade Mode" class="unity-base-field__aligned" />
+
+                            <ui:VisualElement class="manual-lod-bar-header">
+                                <ui:Label text="H — Transition Height · Q — Quality" class="manual-lod-bar-header__key" />
+                            </ui:VisualElement>
+                            <ui:VisualElement name="manual-lod-bar" class="manual-lod-bar" />
+                            <ui:VisualElement class="manual-lod-bar-legend">
+                                <ui:Label text="100% SCREEN" />
+                                <ui:Label text="CULLED" />
+                            </ui:VisualElement>
+                            <ui:VisualElement class="manual-lod-editor">
+                                <ui:VisualElement class="manual-lod-editor__header">
+                                    <ui:VisualElement>
+                                        <ui:Label name="manual-selected-lod-label" text="LOD 0" class="manual-lod-editor__title" />
+                                        <ui:Label text="Selected level settings" class="manual-lod-editor__hint" />
+                                    </ui:VisualElement>
+                                    <ui:Label name="manual-selected-range-label" text="100% – 70%" class="value-pill" />
+                                </ui:VisualElement>
+
+                                <ui:Slider name="manual-quality-slider" label="Quality" low-value="0" high-value="1" show-input-field="true" class="unity-base-field__aligned manual-lod-slider manual-lod-slider--quality" />
+                                <ui:VisualElement class="manual-lod-editor__slider-hint">
+                                    <ui:Label text="Target geometry retained" />
+                                </ui:VisualElement>
+
+                                <ui:Slider name="manual-transition-slider" label="Transition Height" low-value="0" high-value="1" show-input-field="true" class="unity-base-field__aligned manual-lod-slider manual-lod-slider--transition" />
+                                <ui:VisualElement class="manual-lod-editor__slider-hint">
+                                    <ui:Label name="manual-transition-hint" text="Switch to the next LOD below this screen height" />
+                                </ui:VisualElement>
+                            </ui:VisualElement>
+                        </ui:VisualElement>
+                    </ui:VisualElement>
+                </ui:Foldout>
+
+                <editor:PropertyField name="max-error-field" label="Max Simplification Error" />
+            </ui:VisualElement>
+
+            <ui:VisualElement class="card">
+                <ui:VisualElement class="card__header card__header--row">
+                    <ui:VisualElement>
+                        <ui:Label text="Preview" class="card__title" />
+                        <ui:Label name="preview-description" text="Inspect the generated result in Scene view" class="card__hint" />
+                    </ui:VisualElement>
+                    <ui:Label name="preview-lod-label" text="LOD 0 / 0" class="value-pill is-hidden" />
+                </ui:VisualElement>
+                <ui:SliderInt name="preview-slider" low-value="0" high-value="0" show-input-field="false" class="preview-slider is-hidden" />
+                <ui:VisualElement name="preview-stats" class="preview-stats is-hidden">
+                    <ui:VisualElement class="preview-stats__header">
+                        <ui:Label text="Preview statistics" class="preview-stats__title" />
+                        <ui:Label name="preview-reduction-label" text="0% REDUCTION" class="value-pill value-pill--positive" />
+                    </ui:VisualElement>
+                    <ui:VisualElement class="stat-grid">
+                        <ui:VisualElement class="stat">
+                            <ui:Label text="ORIGINAL" class="stat__label" />
+                            <ui:Label name="preview-original-triangles-label" text="0" class="stat__value" />
+                            <ui:Label text="tris" class="stat__unit" />
+                        </ui:VisualElement>
+                        <ui:VisualElement class="stat stat--right">
+                            <ui:Label name="preview-simplified-stat-label" text="SIMPLIFIED" class="stat__label" />
+                            <ui:Label name="preview-simplified-triangles-label" text="0" class="stat__value" />
+                            <ui:Label text="tris" class="stat__unit" />
+                        </ui:VisualElement>
+                    </ui:VisualElement>
+                </ui:VisualElement>
+                <ui:Button name="preview-button" text="START PREVIEW" class="button button--secondary" />
+            </ui:VisualElement>
+
+            <ui:VisualElement class="card card--compact">
+                <ui:VisualElement class="card__header card__header--row">
+                    <ui:VisualElement>
+                        <ui:Label text="Export" class="card__title" />
+                        <ui:Label text="Persist generated meshes as project assets" class="card__hint" />
+                    </ui:VisualElement>
+                    <ui:Toggle name="export-toggle" class="standalone-toggle" />
+                </ui:VisualElement>
+                <ui:VisualElement name="export-folder-row" class="path-row">
+                    <editor:PropertyField name="export-folder-field" label="Folder" class="path-row__field" />
+                    <ui:Button name="browse-export-button" text="BROWSE" class="button button--small button--secondary path-row__button" />
+                </ui:VisualElement>
+            </ui:VisualElement>
+
+            <ui:VisualElement class="card card--action">
+                <ui:Label text="Ready to process" class="action-card__eyebrow" />
+                <ui:Button name="decimate-button" text="GENERATE LODS" class="button button--primary button--large" />
+            </ui:VisualElement>
+        </ui:VisualElement>
+
+        <ui:VisualElement name="progress-view" class="is-hidden">
+            <ui:VisualElement class="card progress-card">
+                <ui:VisualElement class="card__header card__header--row">
+                    <ui:VisualElement>
+                        <ui:Label text="Processing meshes" class="card__title" />
+                        <ui:Label name="progress-detail-label" text="Preparing requests…" class="card__hint" />
+                    </ui:VisualElement>
+                    <ui:Label name="progress-percent-label" text="0%" class="progress-percent" />
+                </ui:VisualElement>
+                <ui:ProgressBar name="progress-bar" low-value="0" high-value="100" value="0" class="progress-bar" />
+                <ui:VisualElement class="progress-legend">
+                    <ui:Label text="0%" />
+                    <ui:Label text="100%" />
+                </ui:VisualElement>
+            </ui:VisualElement>
+
+            <ui:VisualElement class="card">
+                <ui:Label text="Actions" class="card__title" />
+                <ui:Label text="Complete immediately or stop all pending requests." class="card__hint" />
+                <ui:Button name="complete-button" text="COMPLETE NOW" class="button button--warning" />
+                <ui:Button name="cancel-button" text="CANCEL" class="button button--danger" />
+            </ui:VisualElement>
+        </ui:VisualElement>
+
+        <ui:VisualElement name="result-view" class="is-hidden">
+            <ui:VisualElement class="card">
+                <ui:VisualElement class="card__header card__header--row">
+                    <ui:VisualElement>
+                        <ui:Label text="Result" class="card__title" />
+                        <ui:Label name="result-description" text="Simplification completed" class="card__hint" />
+                    </ui:VisualElement>
+                    <ui:Label name="reduction-label" text="0% REDUCTION" class="value-pill value-pill--positive" />
+                </ui:VisualElement>
+                <ui:VisualElement name="result-simplify-stats" class="stat-grid">
+                    <ui:VisualElement class="stat">
+                        <ui:Label text="ORIGINAL" class="stat__label" />
+                        <ui:Label name="original-triangles-label" text="0" class="stat__value" />
+                        <ui:Label text="tris" class="stat__unit" />
+                    </ui:VisualElement>
+                    <ui:VisualElement class="stat stat--right">
+                        <ui:Label text="SIMPLIFIED" class="stat__label" />
+                        <ui:Label name="simplified-triangles-label" text="0" class="stat__value" />
+                        <ui:Label text="tris" class="stat__unit" />
+                    </ui:VisualElement>
+                </ui:VisualElement>
+                <ui:VisualElement name="result-lod-stats" class="lod-stats is-hidden">
+                    <ui:VisualElement class="lod-stats__summary">
+                        <ui:Label text="ORIGINAL" class="lod-stats__row-label" />
+                        <ui:VisualElement class="lod-stats__summary-value">
+                            <ui:Label name="result-lod-original-triangles-label" text="0" class="lod-stats__value" />
+                            <ui:Label text=" tris" class="lod-stats__unit" />
+                        </ui:VisualElement>
+                    </ui:VisualElement>
+                    <ui:VisualElement name="result-lod-list" />
+                </ui:VisualElement>
+                <ui:Button name="replace-button" text="APPLY SIMPLIFIED MESHES" class="button button--positive" />
+            </ui:VisualElement>
+
+            <ui:VisualElement class="card card--danger-zone">
+                <ui:Label text="Revert" class="card__title" />
+                <ui:Label text="Remove the generated result and restore the previous scene state." class="card__hint" />
+                <ui:Button name="revert-button" text="REVERT DECIMATION" class="button button--danger" />
+            </ui:VisualElement>
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>

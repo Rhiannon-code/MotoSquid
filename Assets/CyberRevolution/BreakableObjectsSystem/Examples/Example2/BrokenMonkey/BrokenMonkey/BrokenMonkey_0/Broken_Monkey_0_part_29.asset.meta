@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: eb9b1d9ec9831f34c98cc1ba8e60bc82
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 4300000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 205206
+  packageName: 'Breakable glass and objects system: Simple procedural solution'
+  packageVersion: 1.2
+  assetPath: Assets/CyberRevolution/BreakableObjectsSystem/Examples/Example2/BrokenMonkey/BrokenMonkey/BrokenMonkey_0/Broken_Monkey_0_part_29.asset
+  uploadId: 474285

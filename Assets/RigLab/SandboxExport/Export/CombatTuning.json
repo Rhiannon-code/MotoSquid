@@ -1,0 +1,73 @@
+{
+    "blendIn": 0.11999999731779099,
+    "blendOut": 0.18000000715255738,
+    "blendShape": {
+        "serializedVersion": "2",
+        "m_Curve": [
+            {
+                "serializedVersion": "3",
+                "time": 0.0,
+                "value": 0.0,
+                "inSlope": 0.0,
+                "outSlope": 1.0,
+                "tangentMode": 0,
+                "weightedMode": 0,
+                "inWeight": 0.0,
+                "outWeight": 0.0
+            },
+            {
+                "serializedVersion": "3",
+                "time": 1.0,
+                "value": 1.0,
+                "inSlope": 1.0,
+                "outSlope": 0.0,
+                "tangentMode": 0,
+                "weightedMode": 0,
+                "inWeight": 0.0,
+                "outWeight": 0.0
+            }
+        ],
+        "m_PreInfinity": 2,
+        "m_PostInfinity": 2,
+        "m_RotationOrder": 4
+    },
+    "switchBlend": 0.09000000357627869,
+    "releaseAt": 1.0,
+    "handHold": 1.0,
+    "footHold": 1.0,
+    "anchoredLimbPose": 1.0,
+    "amount": 1.0,
+    "hips": {
+        "weight": 1.0,
+        "amount": 1.0
+    },
+    "spine": {
+        "weight": 1.0,
+        "amount": 1.0
+    },
+    "head": {
+        "weight": 1.0,
+        "amount": 1.0
+    },
+    "leftArm": {
+        "weight": 1.0,
+        "amount": 1.0
+    },
+    "rightArm": {
+        "weight": 1.0,
+        "amount": 1.0
+    },
+    "leftLeg": {
+        "weight": 1.0,
+        "amount": 1.0
+    },
+    "rightLeg": {
+        "weight": 1.0,
+        "amount": 1.0
+    },
+    "meleeSpeed": 1.0,
+    "kickSpeed": 1.0,
+    "repeat": false,
+    "freeze": false,
+    "freezeAt": 0.4000000059604645
+}

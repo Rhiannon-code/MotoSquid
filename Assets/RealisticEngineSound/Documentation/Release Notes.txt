@@ -1,0 +1,191 @@
+Realistic Engine Sounds 2 - Pro Edition release notes:
+
+v2.3.1
+- Fixed an issue where the Master Volume was not correctly applied to engine prefabs.
+----------------------------------------
+v2.3.0
+- The asset's default Unity Editor version is now set to Unity 6.0, but it can still be used with older versions of Unity.
+- The asset's default render pipeline is now set to URP.
+- The asset's default input system is now set to the new Input System.
+- Updated the demo scene scripts to support the new Input System.
+- Fixed an issue in the prefab tester demo scene where the Aggressiveness SFX UI value was not updated to the current value.
+- Fixed the Pitch Multiplier UI value in the prefab tester demo scene to round to two decimal places.
+- Fixed an issue with RCCP compatibility where, after the RCCP car's engine was turned off and then back on, the RES2 engine sound prefab remained off.
+- Fixed an issue where changing an engine prefab's Master Volume had no effect on the Wind SFX volume.
+- Fixed an issue with the i6_German_free sound pack where the engine sound would randomly cut out for a moment.
+- Fixed an issue with the Supercharger Sound Controller where the sound continued playing after the RES2 script was disabled.
+- Moved the wind SFX Audio Source into the "Audio Sources Unfiltered" GameObject for improved results.
+- Redesigned and fine-tuned parts of the distance acoustics system for more realistic sound attenuation over distance.
+- Redesigned Engine Load feature for more realistic engine load behavior. Engine audio now responds more dynamically to changes in engine workload, resulting in more natural sound variation during acceleration, gear changes, and high-RPM operation.
+- Redesigned the RES2 custom editor with a fresh look by introducing a new color palette.
+- Supercharger load now responds to engine workload.
+- Straight Cut Gearbox load now responds to engine workload.
+- City Car Gearbox load now responds to engine workload.
+- Minor performance optimization to the editor script.
+- Minor text and naming improvements to the editor script.
+- Improved the Reverse Gear SFX pitch in all engine sound prefabs.
+- Set the Current RPM and Current Speed values of all engine prefabs to 0 by default to prevent brief unwanted engine sounds at startup.
+- Set the Minimum Distance default value to 1.5, engine sounds can now become louder under heavier load.
+- Set the Wind Master Volume's default value to 0.7 to make the wind sound less dominant in the overall mix.
+- Updated RCCP compatibility to support the latest version of RCCP.
+- Updated RCC compatibility to support the latest version of RCC.
+- Updated Documentation.pdf
+- Experimental: Added SKILL.md file to help AI agents add RES2 prefabs to vehicles.
+----------------------------------------
+v2.2.0
+- Added Distance Acoustics feature, which dynamically adjusts audio effects based on the distance between the vehicle and the listener to create a more realistic sense of space and environmental acoustics.
+- Added Intake SFX feature to the engine sound controller (can be heard in HQ prefabs when the camera is facing the front of the vehicle engine, and also in interior mode).
+- Added 200 WAV files for Intake SFX (100 for exterior view and 100 for interior view - each engine sound pack includes 4 intake SFX WAV files).
+- Added 10 WAV files for Intake "Open" SFX (used universaly by all engine sound packs).
+- Completely remade the Engine Sound Tester demo scenes with a much more realistic engine RPM simulation and unique RPM behavior for different vehicle types.
+- Improved interior prefabs' spread effect
+- Gear-shifting SFX now bypasses reverb zones for added realism.
+- Minor pitch adjustments to the Bike_600ccm_HQ prefab for improved sound quality.
+- Minor pitch adjustments to the Boxer_Japanese_1_HQ prefab for improved sound quality.
+- Minor pitch adjustments to the Rotary_x3_HQ prefab for improved sound quality.
+- Repolished multiple exterior sound clips in the Boxer_German engine sound pack.
+- Repolished multiple exterior sound clips in the i6_German_Sport_3 engine sound pack.
+- Fixed an issue where the engine "Shake FX" simulation was affected by the game's framerate and did not produce the desired result.
+- Updated Documentation.pdf
+----------------------------------------
+v2.1.16
+- Added a new script to simulate city car gearbox whine sound, using the sound clips originally made for reverse gear. This noise is often heard in older city cars, but some newer, affordable cars have it as well.
+- Added 6 new prefabs for City Car Gearbox Whine SFX (3 prefabs for exterior view and 3 prefabs for interior view).
+- All previously private AudioSources are now serialized, making them accessible from other scripts as read-only.
+- Updated the Documentation.pdf
+----------------------------------------
+v2.1.15
+- Updated ASH VP compatibility to the latest version.
+- Fixed an issue in Vehicle Physics Pro compatibility where the gas pedal value was incorrectly reported as positive when it was actually 0.
+- Fixed a bug in the Straight Cut Gearbox script, which played a "frozen" gearbox sound after the Realistic Engine Sounds script got disabled.
+- Fixed a bug in the Muffler Crackle scripts, which occasionally attempted to access the audio source while it was null.
+- Added an option to the demo scene controller script to preset the first sound pack to be chosen.
+----------------------------------------
+v2.1.14
+- Small improvement to support custom parent folders (dynamic folder routing)
+- Updated UVC compatibility for the new input system (the old one is also kept in a separate .unitypackage)
+- Updated RCC compatibility to support the latest version 
+- Added compatibility for ASH Vehicle Physics
+- Added compatibility for Ushi Arcade Car Physics
+- Added compatibility for Semi-Realistic Car Physics
+- Added compatibility for Arcade Vehicle Physics
+- Added compatibility for Quick And Easy Car Racing
+- Added compatibility for Multiversal Vehicle Controller Pro
+- Fixed a bug where the Audio Listener was obtained automatically even if set in the custom editor
+- Slightly improved the sound of the i6_German engine sound pack, removing some barely noticeable audio artifacts from certain sound clips
+- Improved the compatibility for RCCP, now, engine sound prefabs are completely disabled when the vehicle engine is off
+- Added minimum and maximum distance values to the Supercharger.cs script, previously it got these values automatically from the engine sound prefab
+- Updated the Documentation.pdf
+----------------------------------------
+v2.1.13
+- Updated the custom editor to support custom parent folder for the asset. You can now move the RealisticEngineSound folder into another folder without encountering any errors.
+----------------------------------------
+v2.1.12
+- Fixed a bug where Muffler Crackle Sounds were not playing under any condition when "Play During Shifting" was disabled
+----------------------------------------
+v2.1.11
+- Added a prevention to show errors when the Audio Listener could not find at scene start
+- Small fixes and text changes in editor script, it can now import interior sound clips if the folder is named 'Helmet' as well
+- Small fixes in DemoGameController.cs: added a delay for selecting an engine sound at scene start
+- Fixed a bug in ACC compatibility script and demo scene script
+- Updated the compatibility for UVC
+- Updated the compatibility for Sim-Cade Vehicle Physics
+- Updated the demo scenes made for RCC
+- Updated the demo scenes made for RCCP
+- Added compatibility for Highroad Engine
+- Added compatibility for Arcade Bike Physics Pro
+- Added compatibility for Racing Game Starter Kit
+- Updated the Documentation.pdf
+----------------------------------------
+v2.1.10a
+- Fixed typos in editor script
+- Updated information in About menu
+----------------------------------------
+v2.1.10
+- Remastered all wind sound clips to minimise their overlap with the car sounds
+- Remade some muffler crackle sound clips (long_crackles 1-20)
+- Removed the warning message for the missing Audio Listener when "Optimize Audio Sources" is turned off
+- Changed the wording of a warning message for "Dynamic Audio Mixer"
+- Added skid sound clips: 8 looping skid sound clips have been added (4 for exterior and 4 for interior views), does not come with a controller script
+- Added compatibility for Simple Motorcycle Physics Pro
+- Added compatibility for Simple Motocross Physics
+- Added compatibility for Realistic Car Kit
+- Added compatibility for Sim-Cade Vehicle Physics
+- Added compatibility for Motorbike Physics Tool
+- Updated the Documentation.pdf
+----------------------------------------
+v2.1.9
+- Added compatibility for Realistic Traffic Controller
+- Added a compatibility example for custom made car physics controllers, with a tutorial included in the Documentation.pdf
+- Added an option to MufflerCrackleRandom.cs script to randomly not to play any sound
+- Improved the looping of some sound clips in "German 2" engine sound pack, also polished it's sound too
+- Normalized all audio clips on peak meters from 0.0dB to -0.3dB, as required by the new Submission Guidelines
+- Updated the Documentation.pdf
+----------------------------------------
+v2.1.8
+- Added compatibility for Arcade Car Controller
+- Added "Is Audible" and "Max Speed" variables to debug log
+- Small changes in editor script, now it will replace "very_high" audio clip with "high" audio clip if "very_high" audio clip is missing during new prefab creation
+- Fixed a bug where other small SFX prefabs were not producing any sound when audio optimization was disabled
+- Small SFX prefabs will use the same audio-velocity-update mode as the engine sound prefab
+- In some engine sound prefabs, the maximum speed value was mistakenly set to an unrealistically high number. It has now been corrected and set to 250 km/h
+- Updated the Documentation.pdf
+----------------------------------------
+v2.1.7
+- Updated NWH2 compatibility to the latest version
+----------------------------------------
+v2.1.6
+- Fixed a bug in the editor script where, in curve editor mode, some curves were not visible when engine sound levels were set to "Seven" mode
+----------------------------------------
+v2.1.5
+- Added compatibility for RCC Pro asset
+- Added compatibility for custom audio mixers
+- Added compatibility for one sound clip engine sound prefabs (included one example prefab)
+- Added an option to change Audio Velocity Update Mode (this will help to fix audio stuttering, a rare problem that appeared only with some car physics controllers)
+- Changed "Optimise Audio Sources" "Pause" mode, it is now renamed to "Pause Fastly" (which sometime cause small click and pop noises), and added another mode "Pause Slowly" which will optimise the audio slower, but without any click and pop noises
+- Slightly improved "Pause Fastly" mode of "Optimise Audio Sources" (previously it was named as "Pause" mode), it will less likely cause click and pop noises
+- Fixed a bug in turbo SFX controller when blow off one shoot sound were still playing after gas pedal got pressed down
+- Fixed a bug that broke the "Rev Limiter Tweaker" (bug was exist since v2.1.3)
+- Fixed a competibility issue between RES2 and my other asset "Electric Car Sounds"
+- Fixed audio stuttering bug with FGear vehicles. Change "Audio Velocity Update Mode" between "Dynamic" and "Fixed" mode to see which one will solve the problem. Different type vehicles may need different "Audio Velocity Update Mode". I not recomend to use the built in "Auto" mode.
+- Small changes in custom error and warning messages, changed the logic of when they will appear
+- Other prefab controller scripts got changed slighly to make them compatible with the updated engine sound controller
+- Updated the compatibility for NWH2
+- Updated the compatibility for FGear
+- Updated the Documentation.pdf
+----------------------------------------
+v2.1.4
+- Hotfix for IRDS compatibility: fixed a bug that caused errors in IRDS car selection scene
+----------------------------------------
+v2.1.3
+- Added compatibility for IRDS (both source and closed source versions)
+- Updated Documentation.pdf
+- Fixed a bug in medium and low quality prefabs when "Max RPM" sound clip were using the wrong pitch values
+- Audio Sources will try to fadeout their volume to 0 before they get paused or destroyed, it's slightly reduces the chance of audio "click" noises when Audio Optimisation is enabled in engine sound prefabs - mostly noticeable in interior prefabs.
+  Temporary solution is to disable Audio Optimisation in interior prefabs. It seem like this is a bug in Unity's audio - audio pause will cause a "click" noise even when audio source's volume is faded out to 0.
+----------------------------------------
+v2.1.2
+- Fixed a bug in demo controller scripts, not detecting disabled engine sound prefabs
+- Fixed a bug in VPP_RES2.cs script, not disabling exterior or interior engine sound prefab at scene start
+- Fixed a bug in UVC_RES2.cs script, value conversion not worked when PlayerController is used instead of GameController_WithCarSelector
+- Fixed a bug in NWH2_RES2.cs script, not disabling engine sound prefabs when car's engine is not running
+- Small fixes in editor script
+----------------------------------------
+v2.1.1
+- Repaired two looping audio clips from turbo's interior sounds because they had artifacts in their sound
+- Updated the compatibility made for UVC
+- Updated the Documentation.pdf
+----------------------------------------
+v2.1.0
+- Re-made all off-load sound clips with a new sound mixing technique, it will give a much better feeling when decelerating (800 audio files has been re-made)
+- Small changes in demo scenes
+- Optimised "i4 Japanese 1" engine sound pack, reduced the audioclips lenght while the clips looping became nicer
+- Tweaked some curve values in few prefabs to make them sound even nicer
+- Modified the code made for RCC compatibility to stop the engine sound playing when RCC car's engine got turned off - with this modification it will work better with RCC's enter/exit feature
+- Added compatibility for FGear asset
+- Added MinimumDistance and MaximumDistance values to muffler crackle controller scripts - it helps to make louder muffler crackle sounds
+- Updated Documentation.pdf
+----------------------------------------
+v2.0.0
+- First release.
+- Since old version v1.11 sound controller script has been rewriten from zero, new features has been added, all wav files has been re-recorded or remastered + 1850 new wav files has been added.

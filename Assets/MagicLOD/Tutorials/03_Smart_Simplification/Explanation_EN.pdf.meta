@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 10935c28e40092a4d9d977f25d81fff8
+DefaultImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 402168
+  packageName: 'Magic LOD: Burst Mesh Optimizer'
+  packageVersion: 1.0.5
+  assetPath: Assets/MagicLOD/Tutorials/03_Smart_Simplification/Explanation_EN.pdf
+  uploadId: 997198

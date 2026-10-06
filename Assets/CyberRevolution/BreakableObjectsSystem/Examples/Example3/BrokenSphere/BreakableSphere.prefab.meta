@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 772fe0e34f18b994c81dfa2fe4a7a432
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 205206
+  packageName: 'Breakable glass and objects system: Simple procedural solution'
+  packageVersion: 1.2
+  assetPath: Assets/CyberRevolution/BreakableObjectsSystem/Examples/Example3/BrokenSphere/BreakableSphere.prefab
+  uploadId: 474285

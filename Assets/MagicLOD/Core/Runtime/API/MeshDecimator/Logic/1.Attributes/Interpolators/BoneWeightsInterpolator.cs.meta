@@ -1,0 +1,9 @@
+fileFormatVersion: 2
+guid: eebc7d059d085ac468ee8a34fecf7de5
+AssetOrigin:
+  serializedVersion: 1
+  productId: 402168
+  packageName: 'Magic LOD: Burst Mesh Optimizer'
+  packageVersion: 1.0.5
+  assetPath: Assets/MagicLOD/Core/Runtime/API/MeshDecimator/Logic/1.Attributes/Interpolators/BoneWeightsInterpolator.cs
+  uploadId: 997198

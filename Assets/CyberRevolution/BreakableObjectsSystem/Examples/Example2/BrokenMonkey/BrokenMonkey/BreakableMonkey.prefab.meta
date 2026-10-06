@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 79fa61dca695faa45bcf37e6f6574d18
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 205206
+  packageName: 'Breakable glass and objects system: Simple procedural solution'
+  packageVersion: 1.2
+  assetPath: Assets/CyberRevolution/BreakableObjectsSystem/Examples/Example2/BrokenMonkey/BrokenMonkey/BreakableMonkey.prefab
+  uploadId: 474285

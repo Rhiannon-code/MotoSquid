@@ -1,0 +1,33 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e3f4d1ca0a079f991bfdbf1605cb11fa, type: 3}
+  m_Name: CharacterDefinition_Mace
+  m_EditorClassIdentifier: 
+  characterName: Mace
+  description: Nobody remembers Mace entering the syndicate when exactly. He just
+    showed up one night on a cruiser the size of a small car, wearing enough metal
+    jewellery to stock a boutique and flattened three riders in the first ten seconds.
+    The syndicate paid him out his money and prayed.
+  portrait: {fileID: 0}
+  riderPrefab: {fileID: 4944699647282024404, guid: 3f0acc118f4879257ad015e092128c86, type: 3}
+  bikePrefab: {fileID: 5197997506643850418, guid: 477e6db440c5aacbda39593cbcab84fe, type: 3}
+  ragdollPrefab: {fileID: 5017101317170906018, guid: ef5539b2c5aa14e32bfb201bb5944bf0, type: 3}
+  style: 1
+  defaultWeapon: {fileID: 11400000, guid: da9a76b50d8fad73bb9364ada7e16365, type: 2}
+  voice: {fileID: 11400000, guid: f997fbdd821edd978b9f8836fc6159bc, type: 2}
+  score: {fileID: 0}
+  playerDonor: {fileID: 0}
+  aiDonor: {fileID: 0}
+  outputFolder: Assets/Collaborators/Rhiannon/Prefabs/Characters
+  builtPlayerPrefab: {fileID: 686833561629624480, guid: 8d76701e5ed0efb5fbc77d9ba472e19d, type: 3}
+  builtAIPrefab: {fileID: 4302457265827401305, guid: 38a03d7dbb0a7426190c320cdd9786fc, type: 3}
+  previewPrefab: {fileID: 0}

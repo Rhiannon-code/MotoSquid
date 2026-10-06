@@ -1,0 +1,19 @@
+fileFormatVersion: 2
+guid: 6b2682e3b60cc7c4e93ab763d4f6fbf4
+timeCreated: 1516467143
+licenseType: Store
+MonoImporter:
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 224783
+  packageName: Realistic Engine Sounds 2 - Pro Edition
+  packageVersion: 2.3.1
+  assetPath: Assets/RealisticEngineSound/Assets/Scripts/MufflerCrackleRandom.cs
+  uploadId: 1008566

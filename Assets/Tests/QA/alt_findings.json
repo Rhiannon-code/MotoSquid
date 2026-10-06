@@ -1,0 +1,35 @@
+﻿[
+  {
+    "title": "Bike_AcceleratesWithThrottle",
+    "category": "Physics",
+    "priority": "Critical",
+    "assignedTo": "QA",
+    "sceneComponent": "Main",
+    "stepsToReproduce": "Set canMove=true; apply full throttle",
+    "expectedBehaviour": "Speed > 0.5",
+    "actualBehaviour": "Speed 0.000, bike did not accelerate",
+    "notes": "" 
+  },
+  {
+    "title": "Bike_SteeringChangesHeading",
+    "category": "Physics",
+    "priority": "High",
+    "assignedTo": "QA",
+    "sceneComponent": "Main",
+    "stepsToReproduce": "Apply left steer for 2s",
+    "expectedBehaviour": "Y angle changes > 2°",
+    "actualBehaviour": "Rotation delta 0.00°, bike did not turn",
+    "notes": "" 
+  },
+  {
+    "title": "SplitScreen_P1InputDoesNotMoveP2",
+    "category": "Multiplayer",
+    "priority": "Critical",
+    "assignedTo": "QA",
+    "sceneComponent": "Main",
+    "stepsToReproduce": "Apply throttle to P1 only",
+    "expectedBehaviour": "P1 moves, P2 stays still",
+    "actualBehaviour": "P1=0.000 P2=0.010",
+    "notes": "" 
+  }
+]

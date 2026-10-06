@@ -1,0 +1,29 @@
+fileFormatVersion: 2
+guid: 8738d2bbd3b02054196bf9afffcc7b01
+AudioImporter:
+  externalObjects: {}
+  serializedVersion: 6
+  defaultSettings:
+    loadType: 0
+    sampleRateSetting: 0
+    sampleRateOverride: 44100
+    compressionFormat: 1
+    quality: 1
+    conversionMode: 0
+  platformSettingOverrides: {}
+  forceToMono: 0
+  normalize: 1
+  preloadAudioData: 1
+  loadInBackground: 0
+  ambisonic: 0
+  3D: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 288782
+  packageName: Arcade Bike Physics Pro - Fast Paced Fun Mechanism
+  packageVersion: 1.5
+  assetPath: Assets/Ash Assets/Arcade Bike Physics Pro/Audios/f1 engine 3.wav
+  uploadId: 968076

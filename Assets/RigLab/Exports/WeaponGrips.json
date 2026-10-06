@@ -1,0 +1,88 @@
+{
+    "grips": [
+        {
+            "model": "WeaponBlissHockeyStick",
+            "position": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            },
+            "euler": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            },
+            "scale": 1.0
+        },
+        {
+            "model": "WeaponMaceWrench",
+            "position": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            },
+            "euler": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            },
+            "scale": 1.0
+        },
+        {
+            "model": "WeaponSlickBat",
+            "position": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            },
+            "euler": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            },
+            "scale": 1.0
+        },
+        {
+            "model": "WeaponSoulPoliceBat",
+            "position": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            },
+            "euler": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            },
+            "scale": 1.0
+        },
+        {
+            "model": "WeaponTorqLeadpipe",
+            "position": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            },
+            "euler": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            },
+            "scale": 1.0
+        },
+        {
+            "model": "WeaponVoodooNunchucks_",
+            "position": {
+                "x": -0.23000000417232514,
+                "y": 0.699999988079071,
+                "z": 0.18000000715255738
+            },
+            "euler": {
+                "x": 202.60000610351563,
+                "y": -52.369998931884769,
+                "z": 0.0
+            },
+            "scale": 1.0
+        }
+    ]
+}

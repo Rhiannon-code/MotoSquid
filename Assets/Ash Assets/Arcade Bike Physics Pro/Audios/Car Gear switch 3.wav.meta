@@ -1,0 +1,26 @@
+fileFormatVersion: 2
+guid: baac40007cdc0a74c8d91cf1945c619c
+AudioImporter:
+  serializedVersion: 6
+  defaultSettings:
+    loadType: 1
+    sampleRateSetting: 0
+    sampleRateOverride: 0
+    compressionFormat: 0
+    quality: 0
+    conversionMode: 0
+  platformSettingOverrides: {}
+  forceToMono: 0
+  preloadAudioData: 1
+  loadInBackground: 0
+  3D: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 288782
+  packageName: Arcade Bike Physics Pro - Fast Paced Fun Mechanism
+  packageVersion: 1.5
+  assetPath: Assets/Ash Assets/Arcade Bike Physics Pro/Audios/Car Gear switch 3.wav
+  uploadId: 968076

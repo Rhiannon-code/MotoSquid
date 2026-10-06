@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 575878a4371aa3f459d557e4972d5ad5
+DefaultImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 277220
+  packageName: Motorbike Engine Sounds
+  packageVersion: 2.0.0
+  assetPath: Assets/Motorbike_Engine_Sounds/Documentation/Motorbike Engine Sounds
+    - Documentation.pdf
+  uploadId: 677133

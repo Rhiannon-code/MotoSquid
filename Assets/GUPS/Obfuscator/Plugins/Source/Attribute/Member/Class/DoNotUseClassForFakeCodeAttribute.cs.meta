@@ -1,0 +1,18 @@
+fileFormatVersion: 2
+guid: e9e361e1c19c77a499d85da0c29e944c
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 89589
+  packageName: Obfuscator Pro | Plug and Play Code Protection | v2026
+  packageVersion: 2026.7.1
+  assetPath: Assets/GUPS/Obfuscator/Plugins/Source/Attribute/Member/Class/DoNotUseClassForFakeCodeAttribute.cs
+  uploadId: 1010556

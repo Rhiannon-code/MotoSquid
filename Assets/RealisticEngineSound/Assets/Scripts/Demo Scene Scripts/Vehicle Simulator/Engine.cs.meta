@@ -1,0 +1,19 @@
+fileFormatVersion: 2
+guid: d401b437fd613f441a0e466ea4900edd
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 224783
+  packageName: Realistic Engine Sounds 2 - Pro Edition
+  packageVersion: 2.3.1
+  assetPath: Assets/RealisticEngineSound/Assets/Scripts/Demo Scene Scripts/Vehicle
+    Simulator/Engine.cs
+  uploadId: 1008566

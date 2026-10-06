@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 0aba12d4a4678604f9ae0e0c67fe2cf5
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 402168
+  packageName: 'Magic LOD: Burst Mesh Optimizer'
+  packageVersion: 1.0.5
+  assetPath: Assets/MagicLOD/Third-Party/Materials/Props/mat_barrel_01.mat
+  uploadId: 997198

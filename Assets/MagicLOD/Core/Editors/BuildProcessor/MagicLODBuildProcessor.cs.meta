@@ -1,0 +1,18 @@
+fileFormatVersion: 2
+guid: f2df0b1d089cd9c4e88502f65ee76fec
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 402168
+  packageName: 'Magic LOD: Burst Mesh Optimizer'
+  packageVersion: 1.0.5
+  assetPath: Assets/MagicLOD/Core/Editors/BuildProcessor/MagicLODBuildProcessor.cs
+  uploadId: 997198

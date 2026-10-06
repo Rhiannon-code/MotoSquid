@@ -1,0 +1,16 @@
+fileFormatVersion: 2
+guid: 1802aa1671aee6e469568f608a78fe9a
+ShaderImporter:
+  externalObjects: {}
+  defaultTextures: []
+  nonModifiableTextures: []
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 242573
+  packageName: Trails VFX - HDRP
+  packageVersion: 1.0.2026.067
+  assetPath: Assets/Vefects/Trails VFX HDRP/Demo/Resources/Character/Shaders/SH_Vefects_HDRP_VFX_Character_Showoff.shader
+  uploadId: 1002058

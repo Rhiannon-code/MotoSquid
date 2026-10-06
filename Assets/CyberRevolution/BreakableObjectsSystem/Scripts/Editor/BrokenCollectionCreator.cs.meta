@@ -1,0 +1,10 @@
+﻿fileFormatVersion: 2
+guid: c8349a48288948859311d37534f1bab2
+timeCreated: 1632681797
+AssetOrigin:
+  serializedVersion: 1
+  productId: 205206
+  packageName: 'Breakable glass and objects system: Simple procedural solution'
+  packageVersion: 1.2
+  assetPath: Assets/CyberRevolution/BreakableObjectsSystem/Scripts/Editor/BrokenCollectionCreator.cs
+  uploadId: 474285

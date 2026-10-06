@@ -1,0 +1,134 @@
+﻿[
+  {
+    "title": "Null material slot on 'Grass 2x2' in Grass 2x2",
+    "category": "Art/Rendering",
+    "priority": "High",
+    "assignedTo": "Nathan",
+    "sceneComponent": "Collaborators/Nathan/Prefabs/Grass 2x2.prefab to Grass 2x2",
+    "stepsToReproduce": "Place prefab in scene and view in Game or Scene view",
+    "expectedBehaviour": "Object renders with correct material",
+    "actualBehaviour": "Material slot is null, object renders as pink (HDRP error material)",
+    "notes": "Reassign the material in the Inspector"
+  },
+  {
+    "title": "Missing script reference(s) in prefab: Biker Rig",
+    "category": "Gameplay",
+    "priority": "Critical",
+    "assignedTo": "Rhiannon",
+    "sceneComponent": "Collaborators/Rhiannon/Animations/Biker Rig.prefab",
+    "stepsToReproduce": "Select the prefab in the Project window and inspect its components",
+    "expectedBehaviour": "All MonoBehaviour scripts resolve correctly",
+    "actualBehaviour": "1 missing script stub(s), class not found",
+    "notes": "Reimport the script or reattach the MonoBehaviour; check if the class was renamed"
+  },
+  {
+    "title": "Null material slot on 'Dummy_Mannequin' in BikePrefab",
+    "category": "Art/Rendering",
+    "priority": "High",
+    "assignedTo": "Rhiannon",
+    "sceneComponent": "Collaborators/Rhiannon/Prefabs/BikePrefab.prefab to Dummy_Mannequin",
+    "stepsToReproduce": "Place prefab in scene and view in Game or Scene view",
+    "expectedBehaviour": "Object renders with correct material",
+    "actualBehaviour": "Material slot is null, object renders as pink (HDRP error material)",
+    "notes": "Reassign the material in the Inspector"
+  },
+  {
+    "title": "Missing script reference(s) in prefab: Camera Controller",
+    "category": "Gameplay",
+    "priority": "Critical",
+    "assignedTo": "Rhiannon",
+    "sceneComponent": "Collaborators/Rhiannon/Prefabs/Camera Controller.prefab",
+    "stepsToReproduce": "Select the prefab in the Project window and inspect its components",
+    "expectedBehaviour": "All MonoBehaviour scripts resolve correctly",
+    "actualBehaviour": "1 missing script stub(s), class not found",
+    "notes": "Reimport the script or reattach the MonoBehaviour; check if the class was renamed"
+  },
+  {
+    "title": "Null material slot on 'PilotLight' in CrownFirePillar",
+    "category": "Art/Rendering",
+    "priority": "High",
+    "assignedTo": "Rhiannon",
+    "sceneComponent": "Collaborators/Rhiannon/Prefabs/CrownFirePillar.prefab to PilotLight",
+    "stepsToReproduce": "Place prefab in scene and view in Game or Scene view",
+    "expectedBehaviour": "Object renders with correct material",
+    "actualBehaviour": "Material slot is null, object renders as pink (HDRP error material)",
+    "notes": "Reassign the material in the Inspector"
+  },
+  {
+    "title": "Missing script reference(s) in prefab: Ragdoll_Dummy_Mannequin",
+    "category": "Gameplay",
+    "priority": "Critical",
+    "assignedTo": "Rhiannon",
+    "sceneComponent": "Collaborators/Rhiannon/Prefabs/Ragdoll_Dummy_Mannequin.prefab",
+    "stepsToReproduce": "Select the prefab in the Project window and inspect its components",
+    "expectedBehaviour": "All MonoBehaviour scripts resolve correctly",
+    "actualBehaviour": "2 missing script stub(s), class not found",
+    "notes": "Reimport the script or reattach the MonoBehaviour; check if the class was renamed"
+  },
+  {
+    "title": "Null material slot on 'Dummy_Mannequin' in Ragdoll_Dummy_Mannequin",
+    "category": "Art/Rendering",
+    "priority": "High",
+    "assignedTo": "Rhiannon",
+    "sceneComponent": "Collaborators/Rhiannon/Prefabs/Ragdoll_Dummy_Mannequin.prefab to Dummy_Mannequin",
+    "stepsToReproduce": "Place prefab in scene and view in Game or Scene view",
+    "expectedBehaviour": "Object renders with correct material",
+    "actualBehaviour": "Material slot is null, object renders as pink (HDRP error material)",
+    "notes": "Reassign the material in the Inspector"
+  },
+  {
+    "title": "Null material slot on 'BodyMesh' in DummyBike_Futuristic_Bike",
+    "category": "Art/Rendering",
+    "priority": "High",
+    "assignedTo": "Rhiannon",
+    "sceneComponent": "Collaborators/Rhiannon/Prefabs/Ragdolls/DummyBike_Futuristic_Bike.prefab to BodyMesh",
+    "stepsToReproduce": "Place prefab in scene and view in Game or Scene view",
+    "expectedBehaviour": "Object renders with correct material",
+    "actualBehaviour": "Material slot is null, object renders as pink (HDRP error material)",
+    "notes": "Reassign the material in the Inspector"
+  },
+  {
+    "title": "Null material slot on 'Skidmark Controller' in Skidmark Controller",
+    "category": "Art/Rendering",
+    "priority": "High",
+    "assignedTo": "Rhiannon",
+    "sceneComponent": "Collaborators/Rhiannon/Prefabs/Skidmark Controller.prefab to Skidmark Controller",
+    "stepsToReproduce": "Place prefab in scene and view in Game or Scene view",
+    "expectedBehaviour": "Object renders with correct material",
+    "actualBehaviour": "Material slot is null, object renders as pink (HDRP error material)",
+    "notes": "Reassign the material in the Inspector"
+  },
+  {
+    "title": "Null material slot on 'Overhead sign R' in Overhead sign R",
+    "category": "Art/Rendering",
+    "priority": "High",
+    "assignedTo": "Unassigned",
+    "sceneComponent": "Collaborators/Rovindu/Models/Prefabs/Overhead sign R.prefab to Overhead sign R",
+    "stepsToReproduce": "Place prefab in scene and view in Game or Scene view",
+    "expectedBehaviour": "Object renders with correct material",
+    "actualBehaviour": "Material slot is null, object renders as pink (HDRP error material)",
+    "notes": "Reassign the material in the Inspector"
+  },
+  {
+    "title": "Null material slot on 'City1:Mesh.007' in Melbourne",
+    "category": "Art/Rendering",
+    "priority": "High",
+    "assignedTo": "Unassigned",
+    "sceneComponent": "Prefabs/Melbourne.prefab to City1:Mesh.007",
+    "stepsToReproduce": "Place prefab in scene and view in Game or Scene view",
+    "expectedBehaviour": "Object renders with correct material",
+    "actualBehaviour": "Material slot is null, object renders as pink (HDRP error material)",
+    "notes": "Reassign the material in the Inspector"
+  },
+  {
+    "title": "AudioListener in non camera prefab: MyMotorBike",
+    "category": "Audio",
+    "priority": "High",
+    "assignedTo": "Unassigned",
+    "sceneComponent": "MyBike/MyMotorBike.prefab to Main Camera",
+    "stepsToReproduce": "Place multiple instances of this prefab in a scene; enter Play Mode",
+    "expectedBehaviour": "No duplicate AudioListener warnings",
+    "actualBehaviour": "Multiple prefab instances each carry an AudioListener, Unity warns and uses only one",
+    "notes": "Remove AudioListener from this prefab; it belongs only on the Main Camera"
+  }
+]

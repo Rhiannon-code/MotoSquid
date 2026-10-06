@@ -1,0 +1,214 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:editor="UnityEditor.UIElements">
+    <ui:VisualElement name="tab-rail" class="magic-lod-overlay__rail">
+        <ui:Button name="settings-tab" text="S" tooltip="Settings" class="overlay-tab" />
+        <ui:Button name="selection-tab" text="+" tooltip="Scene selection" class="overlay-tab" />
+        <ui:Button name="management-tab" text="M" tooltip="Scene management" class="overlay-tab" />
+        <ui:Button name="object-tab" text="O" tooltip="Selected object" class="overlay-tab" />
+    </ui:VisualElement>
+
+    <ui:VisualElement name="overlay-panel" class="magic-lod magic-lod-overlay__panel">
+        <ui:VisualElement name="overlay-header" class="magic-lod__header magic-lod-overlay__header">
+            <ui:Label name="magic-lod-overlay-title" text="MAGIC LOD" class="magic-lod__title" />
+        </ui:VisualElement>
+
+        <ui:ScrollView name="settings-page" class="magic-lod-overlay__page">
+            <ui:VisualElement class="card global-apply-card">
+                <ui:VisualElement class="global-apply-card__copy">
+                    <ui:Label text="Apply To All Pending" class="card__title" />
+                    <ui:Label text="Keep pending MagicLOD components synchronized with these settings." class="card__hint" />
+                </ui:VisualElement>
+                <ui:Toggle name="apply-to-all-pending-toggle" tooltip="Apply every global settings change to all pending MagicLOD components." class="standalone-toggle global-apply-card__toggle" />
+            </ui:VisualElement>
+
+            <ui:VisualElement class="mode-toolbar">
+                <ui:Button name="generate-mode-button" text="GENERATE LODS" class="mode-toolbar__item" />
+                <ui:Button name="simplify-mode-button" text="SIMPLIFY" class="mode-toolbar__item" />
+            </ui:VisualElement>
+
+            <ui:VisualElement class="card">
+                <ui:Label text="Decimation Settings" class="card__title" />
+                <ui:Label text="Defaults applied to newly added MagicLOD components." class="card__hint" />
+                <editor:PropertyField name="default-borders-penalty-field" label="Borders Penalty" />
+                <editor:PropertyField name="default-uv-seams-penalty-field" label="UV Seams Penalty" />
+                <editor:PropertyField name="default-normal-seams-penalty-field" label="Normal Seams Penalty" />
+
+                <ui:Foldout text="Vertex Attributes" value="false" class="nested-foldout">
+                    <editor:PropertyField name="default-uv-field" label="UV" />
+                    <editor:PropertyField name="default-uv2-field" label="UV2" />
+                    <editor:PropertyField name="default-uv3-field" label="UV3" />
+                    <editor:PropertyField name="default-uv4-field" label="UV4" />
+                    <editor:PropertyField name="default-normals-field" label="Normals" />
+                    <editor:PropertyField name="default-tangents-field" label="Tangents" />
+                    <editor:PropertyField name="default-colors-field" label="Colors" />
+                    <editor:PropertyField name="default-bone-weights-field" label="Bone Weights" />
+                </ui:Foldout>
+            </ui:VisualElement>
+
+            <ui:VisualElement name="default-autolod-card" class="card">
+                <ui:Label text="AutoLOD Settings" class="card__title" />
+                <ui:Label text="Screen-space defaults used for generated LOD groups." class="card__hint" />
+                <editor:PropertyField name="default-fade-mode-field" label="Fade Mode" />
+                <editor:PropertyField name="default-target-triangles-field" label="Target Triangles / 100 px" />
+                <editor:PropertyField name="default-min-mesh-quality-field" label="Min Mesh Quality" />
+                <editor:PropertyField name="default-min-reduction-field" label="Min Reduction" />
+                <editor:PropertyField name="default-max-lods-field" label="Max LODs" />
+                <editor:PropertyField name="default-cull-height-field" label="Cull Height" />
+                <editor:PropertyField name="default-no-cull-size-field" label="Never Cull Size" />
+            </ui:VisualElement>
+
+            <ui:VisualElement name="default-simplify-card" class="card is-hidden">
+                <ui:Label text="Simplify Settings" class="card__title" />
+                <editor:PropertyField name="default-max-error-field" label="Max Simplification Error" />
+            </ui:VisualElement>
+
+            <ui:VisualElement class="card">
+                <ui:Label text="Export" class="card__title" />
+                <ui:Label text="Persist generated meshes as project assets." class="card__hint" />
+                <editor:PropertyField name="export-meshes-field" label="Export Meshes" />
+                <editor:PropertyField name="export-folder-field" label="Folder" />
+                <ui:Button name="browse-export-button" text="BROWSE" class="button button--secondary button--small export-browse-button" />
+            </ui:VisualElement>
+        </ui:ScrollView>
+
+        <ui:ScrollView name="selection-page" class="magic-lod-overlay__page is-hidden">
+            <ui:VisualElement class="card">
+                <ui:Label text="Info" class="card__title" />
+                <ui:Toggle name="pending-gizmos-toggle" label="Draw Gizmos" />
+
+                <ui:VisualElement class="overlay-value-row">
+                    <ui:Label text="Pending Simplification" class="overlay-value-row__label" />
+                    <ui:Label name="pending-simplification-value" text="0" class="overlay-value-row__value" />
+                </ui:VisualElement>
+                <ui:VisualElement class="overlay-value-row">
+                    <ui:Label text="Pending LOD Generation" class="overlay-value-row__label" />
+                    <ui:Label name="pending-lod-generation-value" text="0" class="overlay-value-row__value" />
+                </ui:VisualElement>
+            </ui:VisualElement>
+
+            <ui:VisualElement class="card card--compact">
+                <ui:Label text="Selection Scope" class="card__title" />
+                <ui:Label text="Use the outermost prefab root for both Auto and Manual Selection." class="card__hint" />
+                <editor:PropertyField name="consider-prefabs-field" label="Consider Prefabs" />
+            </ui:VisualElement>
+
+            <ui:VisualElement class="card">
+                <ui:Label text="Auto Selection" class="card__title" />
+                <ui:Label text="Find renderers that meet the selected scene filter." class="card__hint" />
+                <editor:PropertyField name="selection-filter-field" label="Filter" />
+                <editor:PropertyField name="min-triangles-field" label="Min Triangles Count" />
+                <editor:PropertyField name="min-mesh-density-field" label="Min Mesh Density" />
+                <ui:Button name="find-and-add-button" text="FIND AND ADD" class="button button--primary" />
+                <ui:Button name="clear-auto-added-button" text="CLEAR ADDED" class="button button--secondary" />
+            </ui:VisualElement>
+
+            <ui:VisualElement class="card">
+                <ui:Label text="Manual Selection" class="card__title" />
+                <ui:Label text="Add or remove MagicLOD components under the current Unity selection." class="card__hint" />
+                <ui:Button name="add-selection-button" text="ADD SELECTION" class="button button--primary" />
+                <ui:Button name="remove-selection-button" text="REMOVE SELECTION" class="button button--secondary" />
+                <ui:Button name="clear-all-pending-button" text="CLEAR ALL PENDING" class="button button--danger is-hidden" />
+            </ui:VisualElement>
+        </ui:ScrollView>
+
+        <ui:ScrollView name="management-page" class="magic-lod-overlay__page is-hidden">
+            <ui:VisualElement name="management-content">
+                <ui:VisualElement class="card">
+                    <ui:Label text="Statistic" class="card__title" />
+                    <ui:Toggle name="statistic-gizmos-toggle" label="Draw Gizmos" />
+
+                    <ui:VisualElement class="overlay-value-row">
+                        <ui:Label text="Created LOD Groups" class="overlay-value-row__label" />
+                        <ui:Label name="created-lod-groups-value" text="0" class="overlay-value-row__value" />
+                    </ui:VisualElement>
+                    <ui:VisualElement class="overlay-value-row">
+                        <ui:Label text="Created Simplified Meshes" class="overlay-value-row__label" />
+                        <ui:Label name="created-simplified-meshes-value" text="0" class="overlay-value-row__value" />
+                    </ui:VisualElement>
+                    <ui:VisualElement class="overlay-value-row">
+                        <ui:Label text="Pending Simplification" class="overlay-value-row__label" />
+                        <ui:Label name="management-pending-simplification-value" text="0" class="overlay-value-row__value" />
+                    </ui:VisualElement>
+                    <ui:VisualElement class="overlay-value-row">
+                        <ui:Label text="Pending LOD Generation" class="overlay-value-row__label" />
+                        <ui:Label name="management-pending-lod-generation-value" text="0" class="overlay-value-row__value" />
+                    </ui:VisualElement>
+                    <ui:VisualElement class="overlay-value-row">
+                        <ui:Label text="Sources With Errors" class="overlay-value-row__label" />
+                        <ui:Label name="sources-with-errors-value" text="0" class="overlay-value-row__value" />
+                    </ui:VisualElement>
+                    <ui:VisualElement class="overlay-value-row">
+                        <ui:Label text="Simplify Sources Triangles" class="overlay-value-row__label" />
+                        <ui:Label name="simplify-source-triangles-value" text="0" class="overlay-value-row__value" />
+                    </ui:VisualElement>
+                    <ui:VisualElement class="overlay-value-row">
+                        <ui:Label text="Total Simplified Triangles" class="overlay-value-row__label" />
+                        <ui:Label name="simplified-triangles-value" text="0" class="overlay-value-row__value" />
+                    </ui:VisualElement>
+                    <ui:VisualElement class="overlay-value-row">
+                        <ui:Label text="LOD Sources Triangles" class="overlay-value-row__label" />
+                        <ui:Label name="lod-source-triangles-value" text="0" class="overlay-value-row__value" />
+                    </ui:VisualElement>
+                    <ui:VisualElement class="overlay-value-row">
+                        <ui:Label text="Total Lowest LOD Triangles" class="overlay-value-row__label" />
+                        <ui:Label name="lowest-lod-triangles-value" text="0" class="overlay-value-row__value" />
+                    </ui:VisualElement>
+                </ui:VisualElement>
+
+                <ui:VisualElement name="baking-card" class="card is-hidden">
+                    <ui:Label text="Baking" class="card__title" />
+                    <ui:Button name="bake-all-button" text="BAKE ALL" class="button button--primary" />
+                    <ui:Button name="bake-selected-button" text="BAKE SELECTED" class="button button--secondary" />
+                </ui:VisualElement>
+
+                <ui:VisualElement name="replace-meshes-card" class="card">
+                    <ui:Label text="Apply Simplified Meshes" class="card__title" />
+                    <ui:Label text="Permanently apply completed simplified results to their source meshes." class="card__hint" />
+                    <ui:Button name="replace-selected-button" text="APPLY SELECTED" class="button button--secondary" />
+                    <ui:Button name="replace-all-button" text="APPLY ALL" class="button button--primary" />
+                </ui:VisualElement>
+
+                <ui:VisualElement name="backup-card" class="card">
+                    <ui:Label text="Backup" class="card__title" />
+                    <ui:Label text="Restore baked sources from their MagicLOD backups." class="card__hint" />
+                    <ui:Button name="revert-selected-button" text="REVERT SELECTED" class="button button--secondary" />
+                    <ui:Button name="revert-with-errors-button" text="REVERT WITH ERRORS" class="button button--danger is-hidden" />
+                    <ui:Button name="revert-all-button" text="REVERT ALL" class="button button--danger" />
+                </ui:VisualElement>
+            </ui:VisualElement>
+
+            <ui:VisualElement name="management-progress" class="is-hidden">
+                <ui:VisualElement class="card">
+                    <ui:Label text="Progress" class="card__title" />
+                    <ui:Label text="MagicLOD is processing scene meshes." class="card__hint" />
+                    <ui:ProgressBar name="management-progress-bar" low-value="0" high-value="100" value="0" class="progress-bar" />
+                    <ui:Label name="management-progress-detail" text="Preparing requests…" class="card__hint" />
+                    <ui:Button name="cancel-management-button" text="CANCEL" class="button button--danger" />
+                </ui:VisualElement>
+            </ui:VisualElement>
+        </ui:ScrollView>
+
+        <ui:ScrollView name="object-page" class="magic-lod-overlay__page is-hidden">
+            <ui:VisualElement name="object-content">
+                <ui:VisualElement name="object-empty-state" class="empty-state">
+                    <ui:Label text="No scene object selected" class="empty-state__title" />
+                    <ui:Label text="Select an object to edit its MagicLOD component." class="empty-state__hint" />
+                </ui:VisualElement>
+
+                <ui:VisualElement name="object-add-view" class="card is-hidden">
+                    <ui:Label text="Selected Object" class="card__title" />
+                    <ui:Label name="object-add-hint" class="card__hint" />
+                    <ui:Button name="add-magiclod-button" text="ADD MAGICLOD…" class="button button--primary" />
+                </ui:VisualElement>
+
+                <ui:VisualElement name="object-inspector-host" class="is-hidden">
+                    <ui:VisualElement name="object-remove-card" class="card card--danger-zone object-remove-card is-hidden">
+                        <ui:Label text="MagicLOD Component" class="card__title" />
+                        <ui:Label text="Remove MagicLOD from the selected object. The GameObject will be kept." class="card__hint" />
+                        <ui:Button name="remove-magiclod-button" text="REMOVE MAGICLOD" tooltip="Remove MagicLOD from the selected object." class="button button--danger" />
+                    </ui:VisualElement>
+                </ui:VisualElement>
+            </ui:VisualElement>
+        </ui:ScrollView>
+    </ui:VisualElement>
+</ui:UXML>

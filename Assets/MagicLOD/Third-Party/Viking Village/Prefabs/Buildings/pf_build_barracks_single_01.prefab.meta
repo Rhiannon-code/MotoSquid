@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 15a4be37a8517f94abaf3ad28701434e
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 402168
+  packageName: 'Magic LOD: Burst Mesh Optimizer'
+  packageVersion: 1.0.5
+  assetPath: Assets/MagicLOD/Third-Party/Viking Village/Prefabs/Buildings/pf_build_barracks_single_01.prefab
+  uploadId: 997198

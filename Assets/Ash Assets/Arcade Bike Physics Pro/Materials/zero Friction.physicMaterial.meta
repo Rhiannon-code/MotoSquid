@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 03c74235c19cee7499320f668644d6dc
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 13400000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 288782
+  packageName: Arcade Bike Physics Pro - Fast Paced Fun Mechanism
+  packageVersion: 1.5
+  assetPath: Assets/Ash Assets/Arcade Bike Physics Pro/Materials/zero Friction.physicMaterial
+  uploadId: 968076

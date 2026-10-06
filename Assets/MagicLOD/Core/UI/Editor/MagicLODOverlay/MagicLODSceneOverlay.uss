@@ -1,0 +1,518 @@
+.magic-lod-overlay {
+    min-width: 0;
+    min-height: 0;
+    flex-grow: 1;
+    flex-shrink: 1;
+    align-self: stretch;
+    flex-direction: row;
+    overflow: hidden;
+    border-radius: 6px;
+    background-color: #1b1d20;
+}
+
+.magic-lod-overlay__rail {
+    width: 42px;
+    min-width: 42px;
+    flex-shrink: 0;
+    padding: 6px 4px;
+    border-right-width: 1px;
+    border-right-color: #34383d;
+    background-color: #202225;
+}
+
+.magic-lod-overlay__panel {
+    min-width: 0;
+    min-height: 0;
+    flex-grow: 1;
+    flex-shrink: 1;
+    padding-top: 8px;
+    padding-left: 8px;
+    padding-right: 8px;
+    padding-bottom: 12px;
+}
+
+.magic-lod-overlay__header {
+    min-height: 34px;
+    margin-bottom: 6px;
+    justify-content: center;
+}
+
+.magic-lod-overlay__header .magic-lod__title {
+    flex-grow: 1;
+    -unity-text-align: middle-center;
+}
+
+.magic-lod-overlay__page {
+    min-width: 0;
+    min-height: 0;
+    flex-grow: 1;
+    flex-shrink: 1;
+    flex-basis: 0;
+}
+
+.magic-lod-overlay__page > .unity-scroll-view__content-viewport,
+.magic-lod-overlay__page > .unity-scroll-view__content-viewport > .unity-scroll-view__content-container {
+    min-width: 0;
+}
+
+.global-apply-card {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.global-apply-card__copy {
+    min-width: 0;
+    flex-grow: 1;
+    flex-shrink: 1;
+    margin-right: 12px;
+}
+
+.global-apply-card__toggle {
+    flex-shrink: 0;
+    margin-top: 0;
+    margin-right: 0;
+}
+
+.overlay-tab {
+    width: 34px;
+    height: 34px;
+    min-width: 34px;
+    min-height: 34px;
+    margin: 2px 0 5px 0;
+    padding: 7px;
+    border-width: 1px;
+    border-color: #3d4146;
+    border-radius: 6px;
+    background-color: #2b2e32;
+    color: #b9bcc0;
+    -unity-font-style: bold;
+    -unity-text-align: middle-center;
+}
+
+.overlay-tab:hover {
+    border-color: #5a6067;
+    background-color: #3a3e43;
+    color: #ffffff;
+}
+
+.overlay-tab--active,
+.overlay-tab--active:hover,
+.overlay-tab--active:focus,
+.overlay-tab--active:active {
+    border-color: #d78a4d;
+    background-color: #674229;
+    color: #ffffff;
+}
+
+.overlay-tab__icon {
+    width: 18px;
+    height: 18px;
+    align-self: center;
+    -unity-background-image-tint-color: #d5d7da;
+}
+
+.overlay-tab--active .overlay-tab__icon {
+    -unity-background-image-tint-color: #ffffff;
+}
+
+.overlay-value-row {
+    min-height: 22px;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom-width: 1px;
+    border-bottom-color: #34383d;
+}
+
+.overlay-value-row__label {
+    flex-grow: 1;
+    color: #b9bcc0;
+    font-size: 10px;
+}
+
+.overlay-value-row__value {
+    min-width: 66px;
+    color: #f0f0f1;
+    -unity-font-style: bold;
+    -unity-text-align: middle-right;
+}
+
+.overlay-action-row {
+    margin-top: 5px;
+    flex-direction: row;
+}
+
+.overlay-action-row .button {
+    flex-grow: 1;
+    margin-left: 2px;
+    margin-right: 2px;
+}
+
+.magic-lod-overlay .unity-base-field {
+    margin-top: 3px;
+}
+
+.export-browse-button {
+    margin-top: 5px;
+}
+
+.magic-lod-overlay .unity-foldout {
+    margin-top: 5px;
+}
+
+.magic-lod-overlay .unity-foldout__content {
+    margin-left: 8px;
+}
+
+.magic-lod-overlay .empty-state {
+    margin-top: 4px;
+}
+
+.magic-lod-overlay .progress-bar {
+    margin-bottom: 6px;
+}
+
+.magic-lod-overlay--narrow .magic-lod-overlay__panel {
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+.magic-lod-overlay--narrow .card {
+    padding-left: 9px;
+    padding-right: 9px;
+}
+
+.magic-lod-overlay--narrow .mode-toolbar__item {
+    font-size: 9px;
+}
+
+.magic-lod-overlay--narrow .overlay-value-row {
+    padding-top: 3px;
+    padding-bottom: 3px;
+    align-items: stretch;
+    flex-direction: column;
+}
+
+.magic-lod-overlay--narrow .overlay-value-row__label {
+    white-space: normal;
+}
+
+.magic-lod-overlay--narrow .overlay-value-row__value {
+    min-width: 0;
+    margin-top: 2px;
+    -unity-text-align: middle-left;
+}
+
+.magic-lod-overlay--narrow .unity-base-field {
+    flex-direction: column;
+}
+
+.magic-lod-overlay--narrow .unity-base-field__label {
+    width: auto;
+    min-width: 0;
+    margin-bottom: 2px;
+    white-space: normal;
+}
+
+.magic-lod-overlay--narrow .unity-base-field__input {
+    min-width: 0;
+}
+
+
+.magic-lod-overlay #object-content,
+.magic-lod-overlay #object-inspector-host,
+.magic-lod-overlay #object-inspector-host .magic-lod,
+.magic-lod-overlay .object-remove-card,
+.magic-lod-overlay .card__header,
+.magic-lod-overlay .error-banner__content,
+.magic-lod-overlay .lod-configurator-mode__copy,
+.magic-lod-overlay .manual-lod-toolbar__summary,
+.magic-lod-overlay .lod-stats__summary-value,
+.magic-lod-overlay .lod-stats__row-values {
+    min-width: 0;
+}
+
+.magic-lod-overlay .button,
+.magic-lod-overlay .card__title,
+.magic-lod-overlay .magic-lod__title,
+.magic-lod-overlay .value-pill,
+.magic-lod-overlay .progress-percent {
+    min-width: 0;
+}
+
+.magic-lod-overlay #object-inspector-host .magic-lod {
+    padding-bottom: 0;
+}
+
+.magic-lod-overlay .object-remove-card {
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-bottom: 18px;
+}
+
+.magic-lod-overlay__page > .unity-scroll-view__content-viewport {
+    min-height: 0;
+    overflow: hidden;
+    border-bottom-left-radius: 6px;
+    border-bottom-right-radius: 6px;
+}
+
+.magic-lod-overlay__page > .unity-scroll-view__content-viewport > .unity-scroll-view__content-container {
+    padding-bottom: 8px;
+}
+
+.magic-lod-overlay--narrow #object-inspector-host .magic-lod {
+    padding-left: 0;
+    padding-right: 0;
+}
+
+.magic-lod-overlay--narrow .object-remove-card {
+    margin-left: 0;
+    margin-right: 0;
+}
+
+.magic-lod-overlay--narrow .magic-lod__header,
+.magic-lod-overlay--narrow .card__header--row,
+.magic-lod-overlay--narrow .error-banner,
+.magic-lod-overlay--narrow .list-actions,
+.magic-lod-overlay--narrow .path-row,
+.magic-lod-overlay--narrow .stat-grid,
+.magic-lod-overlay--narrow .preview-stats__header,
+.magic-lod-overlay--narrow .lod-stats__summary,
+.magic-lod-overlay--narrow .lod-stats__row,
+.magic-lod-overlay--narrow .lod-configurator-mode,
+.magic-lod-overlay--narrow .manual-lod-toolbar,
+.magic-lod-overlay--narrow .manual-lod-toolbar__summary,
+.magic-lod-overlay--narrow .manual-lod-editor__header,
+.magic-lod-overlay--narrow .manual-lod-editor__slider-hint {
+    align-items: stretch;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+.magic-lod-overlay--narrow .magic-lod__header {
+    min-height: 30px;
+}
+
+.magic-lod-overlay--narrow .magic-lod__title,
+.magic-lod-overlay--narrow .card__title,
+.magic-lod-overlay--narrow .error-banner__title,
+.magic-lod-overlay--narrow .error-banner__message,
+.magic-lod-overlay--narrow .button,
+.magic-lod-overlay--narrow .value-pill,
+.magic-lod-overlay--narrow .progress-percent,
+.magic-lod-overlay--narrow .progress-legend,
+.magic-lod-overlay--narrow .preview-stats__title,
+.magic-lod-overlay--narrow .stat__label,
+.magic-lod-overlay--narrow .stat__value,
+.magic-lod-overlay--narrow .stat__unit,
+.magic-lod-overlay--narrow .lod-stats__row-label,
+.magic-lod-overlay--narrow .lod-stats__value,
+.magic-lod-overlay--narrow .lod-stats__row-value,
+.magic-lod-overlay--narrow .lod-configurator-mode__title,
+.magic-lod-overlay--narrow .manual-lod-toolbar__title,
+.magic-lod-overlay--narrow .manual-lod-editor__title,
+.magic-lod-overlay--narrow .manual-lod-editor__hint,
+.magic-lod-overlay--narrow .manual-lod-bar-header__key,
+.magic-lod-overlay--narrow .manual-lod-editor__slider-hint {
+    white-space: normal;
+}
+
+.magic-lod-overlay--narrow .button {
+    padding-left: 7px;
+    padding-right: 7px;
+}
+
+.magic-lod-overlay--narrow .error-banner__icon {
+    margin-right: 0;
+    margin-bottom: 6px;
+}
+
+.magic-lod-overlay--narrow .list-actions__add,
+.magic-lod-overlay--narrow .list-actions__remove {
+    margin-left: 0;
+    margin-right: 0;
+}
+
+.magic-lod-overlay--narrow .list-actions__remove {
+    margin-top: 4px;
+}
+
+.magic-lod-overlay--narrow .path-row__field {
+    width: auto;
+}
+
+.magic-lod-overlay--narrow .path-row__button {
+    width: auto;
+    margin-left: 0;
+    margin-top: 4px;
+}
+
+.magic-lod-overlay--narrow .stat,
+.magic-lod-overlay--narrow .stat--right {
+    margin-left: 0;
+    margin-right: 0;
+}
+
+.magic-lod-overlay--narrow .stat--right {
+    margin-top: 5px;
+}
+
+.magic-lod-overlay--narrow .card__header--row > .value-pill,
+.magic-lod-overlay--narrow .preview-stats__header > .value-pill,
+.magic-lod-overlay--narrow .manual-lod-editor__header > .value-pill,
+.magic-lod-overlay--narrow .manual-lod-stepper {
+    align-self: stretch;
+    margin-top: 5px;
+}
+
+.magic-lod-overlay--narrow .lod-stats__summary-value,
+.magic-lod-overlay--narrow .lod-stats__row-values {
+    align-self: stretch;
+    justify-content: flex-end;
+    margin-top: 3px;
+}
+
+.magic-lod-overlay--narrow .lod-stats__row-label {
+    min-width: 0;
+}
+
+.magic-lod-overlay--narrow .lod-configurator-mode__copy {
+    margin-right: 0;
+    margin-bottom: 6px;
+}
+
+.magic-lod-overlay--narrow .lod-configurator-mode .standalone-toggle {
+    align-self: flex-start;
+}
+
+.magic-lod-overlay--narrow .manual-lod-toolbar__title {
+    margin-right: 0;
+    margin-bottom: 4px;
+}
+
+.magic-lod-overlay--narrow .manual-lod-count {
+    align-self: flex-start;
+}
+
+.magic-lod-overlay--narrow .manual-lod-stepper__button {
+    width: auto;
+    flex-grow: 1;
+}
+
+.magic-lod-overlay--narrow .manual-lod-editor {
+    padding-left: 7px;
+    padding-right: 7px;
+}
+
+.magic-lod-overlay--narrow .manual-lod-slider .unity-base-slider__text-field {
+    min-width: 44px;
+    width: 44px;
+    margin-left: 4px;
+}
+
+.magic-lod-overlay--short .magic-lod-overlay__panel {
+    padding-top: 4px;
+    padding-bottom: 5px;
+}
+
+.magic-lod-overlay--short .magic-lod__header {
+    min-height: 28px;
+    margin-bottom: 4px;
+}
+
+.magic-lod-overlay--short .card {
+    margin-bottom: 6px;
+    padding-top: 8px;
+    padding-bottom: 8px;
+}
+
+.magic-lod-overlay--short .card__header {
+    margin-bottom: 6px;
+}
+
+.magic-lod-overlay--short .button {
+    min-height: 27px;
+    margin-top: 4px;
+    padding-top: 4px;
+    padding-bottom: 4px;
+}
+
+.magic-lod-overlay--short .magic-lod-overlay__page > .unity-scroll-view__content-viewport > .unity-scroll-view__content-container {
+    padding-bottom: 12px;
+}
+
+.magic-lod-overlay--extra-narrow .magic-lod-overlay__rail {
+    width: 36px;
+    min-width: 36px;
+    padding-left: 3px;
+    padding-right: 3px;
+}
+
+.magic-lod-overlay--extra-narrow .overlay-tab {
+    width: 28px;
+    height: 30px;
+    min-width: 28px;
+    min-height: 30px;
+    padding: 5px;
+}
+
+.magic-lod-overlay--extra-narrow .overlay-tab__icon {
+    width: 16px;
+    height: 16px;
+}
+
+.magic-lod-overlay--extra-narrow .magic-lod-overlay__panel {
+    padding-left: 3px;
+    padding-right: 3px;
+}
+
+.magic-lod-overlay--extra-narrow .card {
+    padding-left: 7px;
+    padding-right: 7px;
+}
+
+.magic-lod-overlay--extra-narrow .mode-toolbar {
+    height: auto;
+    flex-direction: column;
+}
+
+.magic-lod-overlay--extra-narrow .global-apply-card {
+    align-items: stretch;
+    flex-direction: column;
+}
+
+.magic-lod-overlay--extra-narrow .global-apply-card__copy {
+    margin-right: 0;
+}
+
+.magic-lod-overlay--extra-narrow .global-apply-card__toggle {
+    align-self: flex-start;
+    margin-top: 7px;
+}
+
+.magic-lod-overlay--extra-narrow .mode-toolbar__item {
+    min-height: 26px;
+    height: auto;
+    flex-grow: 0;
+    flex-basis: auto;
+    margin-top: 1px;
+    margin-bottom: 1px;
+    white-space: normal;
+}
+
+.magic-lod-overlay--extra-narrow .subsection__body {
+    margin-left: 0;
+    padding-left: 4px;
+}
+
+.magic-lod-overlay--extra-narrow .unity-foldout__content {
+    margin-left: 3px;
+}
+
+.is-hidden {
+    display: none;
+}

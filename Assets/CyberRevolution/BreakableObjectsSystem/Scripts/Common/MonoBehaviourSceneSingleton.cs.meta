@@ -1,0 +1,10 @@
+﻿fileFormatVersion: 2
+guid: fe60f5e06e334078b57ce2fdcb6ae87f
+timeCreated: 1631733550
+AssetOrigin:
+  serializedVersion: 1
+  productId: 205206
+  packageName: 'Breakable glass and objects system: Simple procedural solution'
+  packageVersion: 1.2
+  assetPath: Assets/CyberRevolution/BreakableObjectsSystem/Scripts/Common/MonoBehaviourSceneSingleton.cs
+  uploadId: 474285

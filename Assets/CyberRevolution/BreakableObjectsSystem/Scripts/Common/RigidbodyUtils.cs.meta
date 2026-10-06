@@ -1,0 +1,10 @@
+﻿fileFormatVersion: 2
+guid: 7f5d596e078a4448a94d8706cd0d4462
+timeCreated: 1639250720
+AssetOrigin:
+  serializedVersion: 1
+  productId: 205206
+  packageName: 'Breakable glass and objects system: Simple procedural solution'
+  packageVersion: 1.2
+  assetPath: Assets/CyberRevolution/BreakableObjectsSystem/Scripts/Common/RigidbodyUtils.cs
+  uploadId: 474285

@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: eb6a145223dd321499595984beafe20c
+DefaultImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 402168
+  packageName: 'Magic LOD: Burst Mesh Optimizer'
+  packageVersion: 1.0.5
+  assetPath: Assets/MagicLOD/Tutorials/06_Export_Apply_And_Revert/Explanation_EN.pdf
+  uploadId: 997198

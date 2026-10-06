@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 2c37e3a8e463b1c40a04fe35644b9ada
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 402168
+  packageName: 'Magic LOD: Burst Mesh Optimizer'
+  packageVersion: 1.0.5
+  assetPath: Assets/MagicLOD/Third-Party/Materials/Buildings/mat_dragonhead_01.mat
+  uploadId: 997198

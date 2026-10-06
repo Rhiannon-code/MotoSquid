@@ -1,0 +1,39 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 483a28175ea85af60b17ee9fcc0fc3cf, type: 3}
+  m_Name: WeaponGrips
+  m_EditorClassIdentifier: Assembly-CSharp::RigLab.WeaponGrips_Rhiannon
+  grips:
+  - model: {fileID: 919132149155446097, guid: 896e9718be51f66abb0da928d96c7cd9, type: 3}
+    position: {x: 0, y: 0, z: 0}
+    euler: {x: 0, y: 0, z: 0}
+    scale: 1
+  - model: {fileID: 919132149155446097, guid: 1d6cbb4e7386cfd4496cc3cce0ae4b94, type: 3}
+    position: {x: 0, y: 0, z: 0}
+    euler: {x: 0, y: 0, z: 0}
+    scale: 1
+  - model: {fileID: 919132149155446097, guid: 8f96d6053b89f2c74bb85cf139a73992, type: 3}
+    position: {x: 0, y: 0, z: 0}
+    euler: {x: 0, y: 0, z: 0}
+    scale: 1
+  - model: {fileID: 919132149155446097, guid: 3171b2f8facd089528b560a0eae5be3c, type: 3}
+    position: {x: 0, y: 0, z: 0}
+    euler: {x: 0, y: 0, z: 0}
+    scale: 1
+  - model: {fileID: 919132149155446097, guid: a37fa1c79a3c0e6c49cd0df2bbfb5c4b, type: 3}
+    position: {x: 0, y: 0, z: 0}
+    euler: {x: 0, y: 0, z: 0}
+    scale: 1
+  - model: {fileID: 919132149155446097, guid: d090dd404ac660909a6b739f71751563, type: 3}
+    position: {x: -0.23, y: 0.7, z: 0.18}
+    euler: {x: 202.6, y: -52.37, z: 0}
+    scale: 1

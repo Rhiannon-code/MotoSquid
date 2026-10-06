@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 941d6d2e4fdb0f641835be01a9c65a5e
+AssemblyDefinitionImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 89589
+  packageName: Obfuscator Pro | Plug and Play Code Protection | v2026
+  packageVersion: 2026.7.1
+  assetPath: Assets/GUPS/Obfuscator/Plugins/GUPS.Obfuscator.asmdef
+  uploadId: 1010556

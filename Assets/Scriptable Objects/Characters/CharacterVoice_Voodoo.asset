@@ -1,0 +1,52 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9bfdbcd304175267cad4b81013c988da, type: 3}
+  m_Name: CharacterVoice_Voodoo
+  m_EditorClassIdentifier: 
+  characterName: Voodoo
+  startTaunt:
+  - {fileID: 8300000, guid: c04935cb2aa0f4f12937bcfaf24cbcca, type: 3}
+  - {fileID: 8300000, guid: e46d81c8577c56be8ae66cf130b3edde, type: 3}
+  - {fileID: 8300000, guid: 05a2e37adaf05a26fb89c3e4854b6225, type: 3}
+  attacking:
+  - {fileID: 8300000, guid: 9edaab8274fe48338a8f50b8575531ca, type: 3}
+  - {fileID: 8300000, guid: bf07b315c4351d546a523b1e89c7d37d, type: 3}
+  - {fileID: 8300000, guid: c227b0d52f10f82909c9d6ae9f4e886d, type: 3}
+  swingGrunt:
+  - {fileID: 8300000, guid: 0a3bf03347982c7958eb1097a5bac50f, type: 3}
+  - {fileID: 8300000, guid: 244908ebfc32a8d3da34f094de73c1c5, type: 3}
+  - {fileID: 8300000, guid: 8aa9486ece94c7a85a36f59bcf881440, type: 3}
+  beingAttacked:
+  - {fileID: 8300000, guid: ef428dcaae1a2172099827c1a7814833, type: 3}
+  - {fileID: 8300000, guid: 025361e59f2d9bce7bef904640d7d577, type: 3}
+  - {fileID: 8300000, guid: 0fec38c65014a06aa975bc0a6e0312bf, type: 3}
+  - {fileID: 8300000, guid: 3f356e192c8ab5288ae0115bf4740577, type: 3}
+  - {fileID: 8300000, guid: d9bfa84d67448cb89ad7396bb0e3c034, type: 3}
+  - {fileID: 8300000, guid: 4e379d0cd747bf90e9e38a42620a6760, type: 3}
+  overtaking:
+  - {fileID: 8300000, guid: 477e8fe3732dbb146a2c7e8870cd7478, type: 3}
+  - {fileID: 8300000, guid: cd84d7e7e4708c1e3af188751b6569ee, type: 3}
+  - {fileID: 8300000, guid: 718d93a79625a6bd0ab380cce4fd7709, type: 3}
+  beingOvertaken:
+  - {fileID: 8300000, guid: 65dcc25c7dddaf50eafae0085dc79253, type: 3}
+  - {fileID: 8300000, guid: b514cc690322b0540a28980b07f883ec, type: 3}
+  - {fileID: 8300000, guid: 579ca0a36a67c06258a6a6ad7bd3320d, type: 3}
+  crash:
+  - {fileID: 8300000, guid: dcc38df12b7389854ae38294a1c6aeca, type: 3}
+  loseRace:
+  - {fileID: 8300000, guid: d77400fa9998e7f7b83be8ad83863a87, type: 3}
+  - {fileID: 8300000, guid: ef3f535d08a9c8e51bc6531f70834b29, type: 3}
+  - {fileID: 8300000, guid: ca38468eabc5602dfa2fc0889a79b4bb, type: 3}
+  winRace:
+  - {fileID: 8300000, guid: cb982593403938a03b05ce7d86dd0d45, type: 3}
+  - {fileID: 8300000, guid: 721a269fcb61f6feaa8a1ba59c508588, type: 3}
+  - {fileID: 8300000, guid: c76efd46da6c293fd82d7b42f5de98c6, type: 3}

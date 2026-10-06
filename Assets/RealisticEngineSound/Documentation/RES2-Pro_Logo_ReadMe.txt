@@ -1,0 +1,1 @@
+You can include RES2-Pro_Logo.png in your game's intro, loading screen or credits menu if you want to show your customers that you're using "Realistic Engine Sounds 2 - Pro Edition" Unity asset in your game.

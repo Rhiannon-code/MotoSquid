@@ -1,0 +1,46 @@
+﻿[
+  {
+    "title": "MusicManager_PlaylistUsesSafeEndDetection",
+    "category": "Audio",
+    "priority": "Critical",
+    "assignedTo": "QA",
+    "sceneComponent": "Main",
+    "stepsToReproduce": "Open MusicManager_Nathan.cs:~69; start a race and let a track finish",
+    "expectedBehaviour": "Playlist advances to next track reliably",
+    "actualBehaviour": "Exact float equality 'musicSource.time == 0' used for end-of-track detection, unreliable, playlist may never advance",
+    "notes": "Replace with '!musicSource.isPlaying' check" 
+  },
+  {
+    "title": "ColourBlindFilter_DontDestroyOnRoot",
+    "category": "Code Quality",
+    "priority": "Medium",
+    "assignedTo": "QA",
+    "sceneComponent": "Main",
+    "stepsToReproduce": "Attach ColourBlindFilter to a child GameObject; enter Play Mode",
+    "expectedBehaviour": "DontDestroyOnLoad only called on root GameObjects",
+    "actualBehaviour": "DontDestroyOnLoad(gameObject) called without checking transform.parent == null, Unity logs an error if called on a non-root",
+    "notes": "Add 'if (transform.parent != null) transform.SetParent(null);' before the call" 
+  },
+  {
+    "title": "RaceManager_P1P2EqualForwardDistanceOnGrid",
+    "category": "Multiplayer",
+    "priority": "High",
+    "assignedTo": "QA",
+    "sceneComponent": "Main",
+    "stepsToReproduce": "Load Main scene in split-screen mode; observe P1 and P2 starting positions",
+    "expectedBehaviour": "P1 and P2 start at equal forward distance, offset only laterally",
+    "actualBehaviour": "P1 and P2 are 29.30m apart along the forward axis, unfair advantage",
+    "notes": "Check startOffset multiplier in SetupStartingGrid() for P2" 
+  },
+  {
+    "title": "TrafficSpawner_NoInfiniteSpawnWithoutRace",
+    "category": "Performance",
+    "priority": "Medium",
+    "assignedTo": "QA",
+    "sceneComponent": "Main",
+    "stepsToReproduce": "Load Main scene; do NOT start the race; wait 5 seconds",
+    "expectedBehaviour": "Traffic only spawns after race reaches Racing state",
+    "actualBehaviour": "5 traffic vehicle(s) spawned despite race not reaching Racing state, indicates spawn coroutine runs unconditionally",
+    "notes": "Add a RaceState.Racing check at the top of the traffic spawn coroutine" 
+  }
+]

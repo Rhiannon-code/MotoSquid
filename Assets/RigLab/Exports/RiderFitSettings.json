@@ -1,0 +1,316 @@
+{
+    "forward": 0.0,
+    "rise": 0.0,
+    "tuck": 0.0,
+    "includeAirTarget": false,
+    "perBike": [
+        {
+            "bike": "ABP_ProFuturistic_Bike",
+            "forward": 0.0,
+            "rise": 0.0,
+            "tuck": 0.0,
+            "custom": false
+        },
+        {
+            "bike": "ABP_Pro_Super_Moto",
+            "forward": 0.0,
+            "rise": 0.0,
+            "tuck": 0.0,
+            "custom": false
+        },
+        {
+            "bike": "ABP_Pro_Moto_Cross",
+            "forward": 0.0,
+            "rise": 0.0,
+            "tuck": 0.0,
+            "custom": false
+        },
+        {
+            "bike": "ABP_Pro_VoodooBike_R",
+            "forward": 0.0,
+            "rise": 0.0,
+            "tuck": 0.0,
+            "custom": false
+        },
+        {
+            "bike": "ABP_Pro_SportBike",
+            "forward": 0.0,
+            "rise": 0.0,
+            "tuck": 0.0,
+            "custom": false
+        },
+        {
+            "bike": "ABP_Pro_Scooter",
+            "forward": 0.0,
+            "rise": 0.0,
+            "tuck": 0.0,
+            "custom": false
+        },
+        {
+            "bike": "ABP_Pro_Street_Bike",
+            "forward": 0.0,
+            "rise": 0.0,
+            "tuck": 0.0,
+            "custom": false
+        },
+        {
+            "bike": "ABP_Pro_Cafe_Racer",
+            "forward": 0.0,
+            "rise": 0.0,
+            "tuck": 0.0,
+            "custom": false
+        },
+        {
+            "bike": "ABP_Pro_Chopper",
+            "forward": 0.0,
+            "rise": 0.0,
+            "tuck": 0.0,
+            "custom": false
+        },
+        {
+            "bike": "ABP_Pro_Cruiser_MotorCycles",
+            "forward": 0.0,
+            "rise": 0.0,
+            "tuck": 0.0,
+            "custom": false
+        },
+        {
+            "bike": "ABP_Pro_Police_Bike",
+            "forward": 0.0,
+            "rise": 0.0,
+            "tuck": 0.0,
+            "custom": false
+        },
+        {
+            "bike": "ABP_Pro_Cafe_Racer / VoodooRigged",
+            "forward": 0.0,
+            "rise": 0.0,
+            "tuck": 0.0,
+            "custom": false
+        },
+        {
+            "bike": "ABP_Pro_Cafe_Racer / Mace_CharacterRigged",
+            "forward": 0.0,
+            "rise": 0.0,
+            "tuck": 0.0,
+            "custom": false
+        },
+        {
+            "bike": "ABP_Pro_Cafe_Racer / Bliss_Rigged",
+            "forward": 0.0,
+            "rise": 0.0,
+            "tuck": 0.0,
+            "custom": false
+        },
+        {
+            "bike": "ABP_Pro_Chopper / VoodooRigged",
+            "forward": 0.0,
+            "rise": 0.0,
+            "tuck": 0.0,
+            "custom": false
+        },
+        {
+            "bike": "ABP_Pro_Chopper / Mace_CharacterRigged",
+            "forward": 0.0,
+            "rise": 0.0,
+            "tuck": 0.0,
+            "custom": false
+        },
+        {
+            "bike": "ABP_Pro_Chopper / Bliss_Rigged",
+            "forward": 0.0,
+            "rise": 0.0,
+            "tuck": 0.0,
+            "custom": false
+        },
+        {
+            "bike": "ABP_Pro_Cruiser_MotorCycles / VoodooRigged",
+            "forward": 0.0,
+            "rise": 0.0,
+            "tuck": 0.0,
+            "custom": false
+        },
+        {
+            "bike": "ABP_Pro_Cruiser_MotorCycles / Mace_CharacterRigged",
+            "forward": 0.0,
+            "rise": 0.0,
+            "tuck": 0.0,
+            "custom": false
+        },
+        {
+            "bike": "ABP_Pro_Cruiser_MotorCycles / Bliss_Rigged",
+            "forward": 0.0,
+            "rise": 0.0,
+            "tuck": 0.0,
+            "custom": false
+        },
+        {
+            "bike": "ABP_Pro_Moto_Cross / VoodooRigged",
+            "forward": 0.0,
+            "rise": 0.0,
+            "tuck": 0.0,
+            "custom": false
+        },
+        {
+            "bike": "ABP_Pro_Moto_Cross / Mace_CharacterRigged",
+            "forward": 0.0,
+            "rise": 0.0,
+            "tuck": 0.0,
+            "custom": false
+        },
+        {
+            "bike": "ABP_Pro_Moto_Cross / Bliss_Rigged",
+            "forward": 0.0,
+            "rise": 0.0,
+            "tuck": 0.0,
+            "custom": false
+        },
+        {
+            "bike": "ABP_Pro_Police_Bike / VoodooRigged",
+            "forward": 0.0,
+            "rise": 0.0,
+            "tuck": 0.0,
+            "custom": false
+        },
+        {
+            "bike": "ABP_Pro_Police_Bike / Mace_CharacterRigged",
+            "forward": 0.0,
+            "rise": 0.0,
+            "tuck": 0.0,
+            "custom": false
+        },
+        {
+            "bike": "ABP_Pro_Police_Bike / Bliss_Rigged",
+            "forward": 0.0,
+            "rise": 0.0,
+            "tuck": 0.0,
+            "custom": false
+        },
+        {
+            "bike": "ABP_Pro_Scooter / VoodooRigged",
+            "forward": 0.0,
+            "rise": 0.0,
+            "tuck": 0.0,
+            "custom": false
+        },
+        {
+            "bike": "ABP_Pro_Scooter / Mace_CharacterRigged",
+            "forward": 0.0,
+            "rise": 0.0,
+            "tuck": 0.0,
+            "custom": false
+        },
+        {
+            "bike": "ABP_Pro_Scooter / Bliss_Rigged",
+            "forward": 0.0,
+            "rise": 0.0,
+            "tuck": 0.0,
+            "custom": false
+        },
+        {
+            "bike": "ABP_Pro_SportBike / VoodooRigged",
+            "forward": 0.0,
+            "rise": 0.0,
+            "tuck": 0.0,
+            "custom": false
+        },
+        {
+            "bike": "ABP_Pro_SportBike / Mace_CharacterRigged",
+            "forward": 0.0,
+            "rise": 0.0,
+            "tuck": 0.0,
+            "custom": false
+        },
+        {
+            "bike": "ABP_Pro_SportBike / Bliss_Rigged",
+            "forward": 0.0,
+            "rise": 0.0,
+            "tuck": 0.0,
+            "custom": false
+        },
+        {
+            "bike": "ABP_Pro_Street_Bike / VoodooRigged",
+            "forward": 0.0,
+            "rise": 0.0,
+            "tuck": 0.0,
+            "custom": false
+        },
+        {
+            "bike": "ABP_Pro_Street_Bike / Mace_CharacterRigged",
+            "forward": 0.0,
+            "rise": 0.0,
+            "tuck": 0.0,
+            "custom": false
+        },
+        {
+            "bike": "ABP_Pro_Street_Bike / Bliss_Rigged",
+            "forward": 0.0,
+            "rise": 0.0,
+            "tuck": 0.0,
+            "custom": false
+        },
+        {
+            "bike": "ABP_Pro_Super_Moto / VoodooRigged",
+            "forward": 0.0,
+            "rise": 0.0,
+            "tuck": 0.0,
+            "custom": false
+        },
+        {
+            "bike": "ABP_Pro_Super_Moto / Mace_CharacterRigged",
+            "forward": 0.0,
+            "rise": 0.0,
+            "tuck": 0.0,
+            "custom": false
+        },
+        {
+            "bike": "ABP_Pro_Super_Moto / Bliss_Rigged",
+            "forward": 0.0,
+            "rise": 0.0,
+            "tuck": 0.0,
+            "custom": false
+        },
+        {
+            "bike": "ABP_ProFuturistic_Bike / VoodooRigged",
+            "forward": 0.0,
+            "rise": 0.0,
+            "tuck": 0.0,
+            "custom": false
+        },
+        {
+            "bike": "ABP_ProFuturistic_Bike / Mace_CharacterRigged",
+            "forward": 0.0,
+            "rise": 0.0,
+            "tuck": 0.0,
+            "custom": false
+        },
+        {
+            "bike": "ABP_ProFuturistic_Bike / Bliss_Rigged",
+            "forward": 0.0,
+            "rise": 0.0,
+            "tuck": 0.0,
+            "custom": false
+        },
+        {
+            "bike": "ABP_Pro_VoodooBike_R / VoodooRigged",
+            "forward": 0.0,
+            "rise": 0.0,
+            "tuck": 0.0,
+            "custom": false
+        },
+        {
+            "bike": "ABP_Pro_VoodooBike_R / Mace_CharacterRigged",
+            "forward": 0.0,
+            "rise": 0.0,
+            "tuck": 0.0,
+            "custom": false
+        },
+        {
+            "bike": "ABP_Pro_VoodooBike_R / Bliss_Rigged",
+            "forward": 0.0,
+            "rise": 0.0,
+            "tuck": 0.0,
+            "custom": false
+        }
+    ]
+}

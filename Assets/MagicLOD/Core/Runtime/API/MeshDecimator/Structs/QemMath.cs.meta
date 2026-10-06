@@ -1,0 +1,9 @@
+fileFormatVersion: 2
+guid: f21397ab7e6f07142a30c4c2ad9e876f
+AssetOrigin:
+  serializedVersion: 1
+  productId: 402168
+  packageName: 'Magic LOD: Burst Mesh Optimizer'
+  packageVersion: 1.0.5
+  assetPath: Assets/MagicLOD/Core/Runtime/API/MeshDecimator/Structs/QemMath.cs
+  uploadId: 997198

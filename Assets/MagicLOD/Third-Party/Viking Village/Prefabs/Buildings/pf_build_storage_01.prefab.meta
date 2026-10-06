@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 9ac557bbc39bdda4ab5d844355cdb201
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 402168
+  packageName: 'Magic LOD: Burst Mesh Optimizer'
+  packageVersion: 1.0.5
+  assetPath: Assets/MagicLOD/Third-Party/Viking Village/Prefabs/Buildings/pf_build_storage_01.prefab
+  uploadId: 997198

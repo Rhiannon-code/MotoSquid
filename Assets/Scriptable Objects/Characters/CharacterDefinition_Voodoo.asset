@@ -1,0 +1,35 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e3f4d1ca0a079f991bfdbf1605cb11fa, type: 3}
+  m_Name: CharacterDefinition_Voodoo
+  m_EditorClassIdentifier: 
+  characterName: Voodoo
+  description: 'Voodoo is Neo Melbourne''s most recognisable rider, not because she
+    wants the attention, but because she''s always at the front and she''s always
+    angry about something. The tattoos covering her body aren''t decorative; they''re
+    a record of every bad decision she''s survived. An orphan left to the fate of
+    forever wandering the brutal streets that raised her, she now races through them
+    through the night. '
+  portrait: {fileID: 0}
+  riderPrefab: {fileID: 1841809784436153183, guid: b2cf880acbe206f9cb7c0a2281496f00, type: 3}
+  bikePrefab: {fileID: 3315552812638709812, guid: 38f4e510d3c75ba53aa3b0ef77f9f649, type: 3}
+  ragdollPrefab: {fileID: 3673823225597605343, guid: ea1f5d4f4b8a475b7988dfe9d53d6438, type: 3}
+  style: 0
+  defaultWeapon: {fileID: 11400000, guid: eec0d27519836d5a1899d54045c13cc8, type: 2}
+  voice: {fileID: 11400000, guid: b03233dd10db64daab47b00e572236f5, type: 2}
+  score: {fileID: 0}
+  playerDonor: {fileID: 0}
+  aiDonor: {fileID: 0}
+  outputFolder: Assets/Collaborators/Rhiannon/Prefabs/Characters
+  builtPlayerPrefab: {fileID: 1002410155612888467, guid: ecc33b6a5d0fa556dbdee7d143273b8f, type: 3}
+  builtAIPrefab: {fileID: 7266543153010188841, guid: 70eb3b092977179fd8afaed1f7f2953f, type: 3}
+  previewPrefab: {fileID: 0}

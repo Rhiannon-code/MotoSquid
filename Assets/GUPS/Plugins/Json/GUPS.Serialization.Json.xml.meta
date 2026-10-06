@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: ae949343449a98645bdeea70f426552b
+TextScriptImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 89589
+  packageName: Obfuscator Pro | Plug and Play Code Protection | v2026
+  packageVersion: 2026.7.1
+  assetPath: Assets/GUPS/Plugins/Json/GUPS.Serialization.Json.xml
+  uploadId: 1010556

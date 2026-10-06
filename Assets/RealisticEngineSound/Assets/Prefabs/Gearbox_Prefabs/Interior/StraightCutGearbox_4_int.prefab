@@ -1,0 +1,152 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &2931865598671855955
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2935075145923122289}
+  - component: {fileID: 2966873347606925235}
+  m_Layer: 0
+  m_Name: StraightCutGearbox_4_int
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2935075145923122289
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2931865598671855955}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2966873347606925235
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2931865598671855955}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 44ef94cd26ce9b54f8d9b7586eeb0b3b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  masterVolume: 0.2
+  audioMixer: {fileID: 0}
+  onLoopClip: {fileID: 8300000, guid: e6506b249408d9a42a4af6fda7d1bdcd, type: 3}
+  offLoopClip: {fileID: 8300000, guid: 74d02e7aea9469546a4b5fd8c42e0b8a, type: 3}
+  useOneShotClips: 1
+  oneShotOnClips:
+  - {fileID: 8300000, guid: 967b8099aa1559f4095d1dd2c58e62eb, type: 3}
+  - {fileID: 8300000, guid: f3b17d8b207931749992bea3ab5175ae, type: 3}
+  - {fileID: 8300000, guid: f8b5a61628e2a3a4085b4d651440e8cf, type: 3}
+  - {fileID: 8300000, guid: bf814295bd92b5e49900985528edd7f9, type: 3}
+  oneShotOffClips:
+  - {fileID: 8300000, guid: 5f6b24dea99a97441b3d30f0fab89741, type: 3}
+  - {fileID: 8300000, guid: 0e5b3fd546222474cab56873ae6ed6f2, type: 3}
+  - {fileID: 8300000, guid: 9327f16bede3b6546a85cf30f802e580, type: 3}
+  - {fileID: 8300000, guid: 88683eeb64823894b96bcd3d1cb40aea, type: 3}
+  onLoadVolCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 3.0528312
+      outSlope: 3.0528312
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0.031452358
+    - serializedVersion: 3
+      time: 0.5010603
+      value: 1
+      inSlope: 0.030966923
+      outSlope: 0.030966923
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.15268973
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  offLoadVolCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 1.2061867
+      outSlope: 1.2061867
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0.038852915
+    - serializedVersion: 3
+      time: 0.5
+      value: 0.5
+      inSlope: 0.017785894
+      outSlope: 0.017785894
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.13181311
+    - serializedVersion: 3
+      time: 0.9994567
+      value: 0.5
+      inSlope: 0.02345373
+      outSlope: 0.02345373
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.09996165
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  loopPitchCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0.5
+      inSlope: 2
+      outSlope: 2
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 2.5
+      inSlope: 2
+      outSlope: 2
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
+  minDistance: 1
+  maxDistance: 150

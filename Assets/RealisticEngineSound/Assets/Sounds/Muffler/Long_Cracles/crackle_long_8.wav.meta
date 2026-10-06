@@ -1,0 +1,29 @@
+fileFormatVersion: 2
+guid: 204caecbddfa54541afa2f7b5c0db879
+timeCreated: 1516389512
+licenseType: Store
+AudioImporter:
+  serializedVersion: 6
+  defaultSettings:
+    loadType: 0
+    sampleRateSetting: 0
+    sampleRateOverride: 44100
+    compressionFormat: 1
+    quality: 1
+    conversionMode: 0
+  platformSettingOverrides: {}
+  forceToMono: 0
+  normalize: 1
+  preloadAudioData: 1
+  loadInBackground: 0
+  3D: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 224783
+  packageName: Realistic Engine Sounds 2 - Pro Edition
+  packageVersion: 2.3.1
+  assetPath: Assets/RealisticEngineSound/Assets/Sounds/Muffler/Long_Cracles/crackle_long_8.wav
+  uploadId: 1008566

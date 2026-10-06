@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 68d09628a32384371bb295c3e02edf8f
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 402168
+  packageName: 'Magic LOD: Burst Mesh Optimizer'
+  packageVersion: 1.0.5
+  assetPath: Assets/MagicLOD/Third-Party/Materials/Buildings/mat_building_02.mat
+  uploadId: 997198

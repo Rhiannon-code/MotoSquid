@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 80f061be4d8fab7408dafc0d097599e7
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 205206
+  packageName: 'Breakable glass and objects system: Simple procedural solution'
+  packageVersion: 1.2
+  assetPath: Assets/CyberRevolution/BreakableObjectsSystem/Examples/Example2/Effect/ExplosionEffect.prefab
+  uploadId: 474285

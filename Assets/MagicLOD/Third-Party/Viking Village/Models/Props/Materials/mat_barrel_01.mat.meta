@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 39793ab79f6a07a4e8c3f7a5a1b7d843
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 2100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 402168
+  packageName: 'Magic LOD: Burst Mesh Optimizer'
+  packageVersion: 1.0.5
+  assetPath: Assets/MagicLOD/Third-Party/Viking Village/Models/Props/Materials/mat_barrel_01.mat
+  uploadId: 997198

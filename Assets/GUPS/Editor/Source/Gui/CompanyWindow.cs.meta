@@ -1,0 +1,18 @@
+fileFormatVersion: 2
+guid: 78b59a6230f019847bb1ada9fc50c544
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 89589
+  packageName: Obfuscator Pro | Plug and Play Code Protection | v2026
+  packageVersion: 2026.7.1
+  assetPath: Assets/GUPS/Editor/Source/Gui/CompanyWindow.cs
+  uploadId: 1010556

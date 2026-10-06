@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: d53ea2ca748a33946a0d56fb3693c542
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 2100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 402168
+  packageName: 'Magic LOD: Burst Mesh Optimizer'
+  packageVersion: 1.0.5
+  assetPath: Assets/MagicLOD/Third-Party/Viking Village/Models/Props/Materials/mat_skull_01.mat
+  uploadId: 997198

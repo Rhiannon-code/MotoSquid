@@ -1,0 +1,10 @@
+﻿fileFormatVersion: 2
+guid: 87026870fcc74c4f9f9ea4d4ef6b78dc
+timeCreated: 1633863331
+AssetOrigin:
+  serializedVersion: 1
+  productId: 205206
+  packageName: 'Breakable glass and objects system: Simple procedural solution'
+  packageVersion: 1.2
+  assetPath: Assets/CyberRevolution/BreakableObjectsSystem/Scripts/Breakable/BreakAbstractTrigger.cs
+  uploadId: 474285

@@ -1,0 +1,2 @@
+Image.psd and Skybox Material is retained for add-on sound packs that still use the old scene type.
+This texture and material will be removed once all add-on sound packs have been updated to support the latest version of RES2 (v2.2.0+).

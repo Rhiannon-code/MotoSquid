@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 83cb8c8cf2a25f4b8f3aed1b902c3357
+DefaultImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 402168
+  packageName: 'Magic LOD: Burst Mesh Optimizer'
+  packageVersion: 1.0.5
+  assetPath: Assets/MagicLOD/Tutorials/01_Scene_Optimization/Scene_Optimization.unity
+  uploadId: 997198

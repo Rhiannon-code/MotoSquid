@@ -1,0 +1,33 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e3f4d1ca0a079f991bfdbf1605cb11fa, type: 3}
+  m_Name: CharacterDefinition_Bliss
+  m_EditorClassIdentifier: 
+  characterName: Bliss
+  description: "Bliss didn\u2019t find underground racing, the underground kept finding
+    her. Through a friend\u2019s cousin\u2019s message at 1am, through a flyer folded
+    in a jacket pocket, through a stranger who said she looked like she knew how
+    to be a rider. She didn\u2019t at the time, but she learned fast."
+  portrait: {fileID: 0}
+  riderPrefab: {fileID: 8497809835358633769, guid: f2c9a64304e690b63a411c17f6fdb22a, type: 3}
+  bikePrefab: {fileID: 3315552812638709812, guid: 38f4e510d3c75ba53aa3b0ef77f9f649, type: 3}
+  ragdollPrefab: {fileID: 5466959866220785279, guid: e5401affc42f9e6169d81c1c2f86bfce, type: 3}
+  style: 0
+  defaultWeapon: {fileID: 11400000, guid: 6d10e3d8773738d0eaa2039afccc532c, type: 2}
+  voice: {fileID: 11400000, guid: c8f28a2ba31ea17d186118f69736acb0, type: 2}
+  score: {fileID: 0}
+  playerDonor: {fileID: 0}
+  aiDonor: {fileID: 0}
+  outputFolder: Assets/Collaborators/Rhiannon/Prefabs/Characters
+  builtPlayerPrefab: {fileID: 2387666218343914999, guid: 97e1ac0f9d2f2d87d97e7f456be9a164, type: 3}
+  builtAIPrefab: {fileID: 4055880908066400325, guid: 9322a98c7bd2009459dea4c640dd539d, type: 3}
+  previewPrefab: {fileID: 0}

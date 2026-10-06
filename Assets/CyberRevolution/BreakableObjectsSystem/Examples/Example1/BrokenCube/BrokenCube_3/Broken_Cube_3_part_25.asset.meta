@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: eb3ae3b0bd5f8e5478b92a9f1e34e826
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 4300000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 205206
+  packageName: 'Breakable glass and objects system: Simple procedural solution'
+  packageVersion: 1.2
+  assetPath: Assets/CyberRevolution/BreakableObjectsSystem/Examples/Example1/BrokenCube/BrokenCube_3/Broken_Cube_3_part_25.asset
+  uploadId: 474285

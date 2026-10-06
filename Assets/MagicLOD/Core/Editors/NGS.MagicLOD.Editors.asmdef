@@ -1,0 +1,16 @@
+{
+    "name": "NGS.MagicLOD.Editors",
+    "rootNamespace": "NGS.MagicLOD.Editors",
+    "references": [
+        "GUID:cf5448d688dbf879aecdedeba55d2454"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 46859d73aae67b74d90e744e031f5001
+DefaultImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 402168
+  packageName: 'Magic LOD: Burst Mesh Optimizer'
+  packageVersion: 1.0.5
+  assetPath: Assets/MagicLOD/Tutorials/05_Prefabs_And_Shared_Meshes/Explanation_CN.pdf
+  uploadId: 997198

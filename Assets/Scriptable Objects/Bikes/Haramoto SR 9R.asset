@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 40b56fc2b6fcda74e9c3107e9b25bc37, type: 3}
+  m_Name: Haramoto SR 9R
+  m_EditorClassIdentifier: 
+  bikeName: Haramoto SR 9R
+  bikeSprite: {fileID: 21300000, guid: e201e3c4219daf34d8bb4a04ad30c96b, type: 3}
+  playerPrefab: {fileID: 8645441682903859430, guid: bf625cc05863abc52976f3de27e0e2d9, type: 3}
+  aiPrefab: {fileID: 6408960829948841528, guid: c1cb6910b96a6f0f1b60d21622a9e194, type: 3}

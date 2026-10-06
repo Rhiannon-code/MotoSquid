@@ -1,0 +1,55 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9bfdbcd304175267cad4b81013c988da, type: 3}
+  m_Name: CharacterVoice_Torq
+  m_EditorClassIdentifier: 
+  characterName: Torq
+  startTaunt:
+  - {fileID: 8300000, guid: ab123186bf7b65989ac53eda91696cc7, type: 3}
+  - {fileID: 8300000, guid: ac6792d8bf1ecf1b9b5ed4607fdc37e4, type: 3}
+  - {fileID: 8300000, guid: 5dd7a288216af8ed796f087b5e98c476, type: 3}
+  attacking:
+  - {fileID: 8300000, guid: a113c42a7ac37d472891525053c329fa, type: 3}
+  - {fileID: 8300000, guid: c3c059c6d073a61aba1ccac8fd731e2b, type: 3}
+  - {fileID: 8300000, guid: 35931d67bdab3f687b09abc60fd0e57d, type: 3}
+  swingGrunt:
+  - {fileID: 8300000, guid: a4c281541be1d5d898a386180107715e, type: 3}
+  - {fileID: 8300000, guid: 48a69e16e98542401a09e54ca4fe79a9, type: 3}
+  - {fileID: 8300000, guid: 6db0000b0e556c691800926a1b641e38, type: 3}
+  beingAttacked:
+  - {fileID: 8300000, guid: edd44e9965f35ffbbb5b92ea87146601, type: 3}
+  - {fileID: 8300000, guid: 714775ba4a1ee4dbb9d1b2e57aaf46c7, type: 3}
+  - {fileID: 8300000, guid: 1e03babee512b42dfaf022b2fe3364e1, type: 3}
+  - {fileID: 8300000, guid: 21e68cc288f07e37c8d6f15bbd57004a, type: 3}
+  - {fileID: 8300000, guid: 7b727dbca0ae7008b86883eca7c91396, type: 3}
+  - {fileID: 8300000, guid: 474e9ab11ba0144acaec54ea2d5427b4, type: 3}
+  - {fileID: 8300000, guid: c828caf1a471413baab90a339d4152ae, type: 3}
+  overtaking:
+  - {fileID: 8300000, guid: ad32145ab1228f53888c28224c537236, type: 3}
+  - {fileID: 8300000, guid: 98594dfc29e98cb3ba5d83f0d984be55, type: 3}
+  - {fileID: 8300000, guid: c4e4bcef78fd4b096a4b9fd77e373e13, type: 3}
+  - {fileID: 8300000, guid: 9b2eef5966f5083a4b19e6315b4a8393, type: 3}
+  beingOvertaken:
+  - {fileID: 8300000, guid: c4f50c8a6788f715fa3f1b5ef2beaf76, type: 3}
+  - {fileID: 8300000, guid: 3a2ea6dc04ffbf06bb059ba00116aaab, type: 3}
+  - {fileID: 8300000, guid: c13ff402aa901ff97acaf0f5734e446b, type: 3}
+  crash:
+  - {fileID: 8300000, guid: e7485346b875bbd96a39a35c7244607d, type: 3}
+  loseRace:
+  - {fileID: 8300000, guid: 400a787b0a2f3ce7193d3b259b1f7b0c, type: 3}
+  - {fileID: 8300000, guid: b2eeaba4e234d8b25923e67e8fd2b289, type: 3}
+  - {fileID: 8300000, guid: 0634d7502d4e8a4488c84c2d50f31431, type: 3}
+  - {fileID: 8300000, guid: e4818ccf17df54ffd9885190d2726b31, type: 3}
+  winRace:
+  - {fileID: 8300000, guid: b91949425b255a7a8b9a06183ec1c72f, type: 3}
+  - {fileID: 8300000, guid: e7354e27d67995ff798c4fb7e485d796, type: 3}
+  - {fileID: 8300000, guid: dbe2ef9a3e3d67608a6298916830fb59, type: 3}

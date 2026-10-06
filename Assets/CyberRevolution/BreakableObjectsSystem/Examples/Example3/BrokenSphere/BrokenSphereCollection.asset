@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: abc36625e9091d74aad06d99ce8a4832, type: 3}
+  m_Name: BrokenSphereCollection
+  m_EditorClassIdentifier: 
+  _breakableObjectPrefabs:
+  - {fileID: 3648803653411017823, guid: 6d06a17dca003b6459afdb1af7607793, type: 3}
+  - {fileID: 872601480543468467, guid: 5d36e28b9ca0afe419501768eeffcc9e, type: 3}
+  - {fileID: 4092479574297018830, guid: ef03fe659875ec94596c5deb207829d3, type: 3}
+  _poolCapacity: 0

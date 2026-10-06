@@ -1,0 +1,1124 @@
+{
+    "entries": [
+        {
+            "bike": "ABP_Pro_Moto_Cross",
+            "target": "hipIdleTarget",
+            "pos": {
+                "x": -0.12099999934434891,
+                "y": 0.9279999732971191,
+                "z": -0.13699999451637269
+            },
+            "euler": {
+                "x": 5.000002384185791,
+                "y": 5.3564676250061896e-8,
+                "z": 11.820001602172852
+            }
+        },
+        {
+            "bike": "ABP_Pro_Moto_Cross",
+            "target": "hipNormalSpeedTarget",
+            "pos": {
+                "x": 6.485174088265562e-17,
+                "y": 0.9300005435943604,
+                "z": -0.22298823297023774
+            },
+            "euler": {
+                "x": 14.99999713897705,
+                "y": 0.0,
+                "z": 0.0
+            }
+        },
+        {
+            "bike": "ABP_Pro_Moto_Cross",
+            "target": "hipHighSpeedTarget",
+            "pos": {
+                "x": 3.2753374406894708e-17,
+                "y": 0.9330002665519714,
+                "z": -0.2969784736633301
+            },
+            "euler": {
+                "x": 30.00000762939453,
+                "y": 0.0,
+                "z": 0.0
+            }
+        },
+        {
+            "bike": "ABP_Pro_Moto_Cross",
+            "target": "hipReverseTarget",
+            "pos": {
+                "x": 1.3100175166288057e-18,
+                "y": 0.9430001974105835,
+                "z": -0.21696971356868745
+            },
+            "euler": {
+                "x": 5.000002384185791,
+                "y": 0.0,
+                "z": 0.0
+            }
+        },
+        {
+            "bike": "ABP_Pro_Moto_Cross",
+            "target": "spineIdleTarget",
+            "pos": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            },
+            "euler": {
+                "x": 14.99999713897705,
+                "y": 0.0,
+                "z": 0.0
+            }
+        },
+        {
+            "bike": "ABP_Pro_Moto_Cross",
+            "target": "spineNormalSpeedTarget",
+            "pos": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            },
+            "euler": {
+                "x": 30.00000762939453,
+                "y": 0.0,
+                "z": 0.0
+            }
+        },
+        {
+            "bike": "ABP_Pro_Moto_Cross",
+            "target": "spineHighSpeedTarget",
+            "pos": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            },
+            "euler": {
+                "x": 45.0,
+                "y": 0.0,
+                "z": 0.0
+            }
+        },
+        {
+            "bike": "ABP_Pro_Moto_Cross",
+            "target": "spineReverseTarget",
+            "pos": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            },
+            "euler": {
+                "x": 14.99999713897705,
+                "y": 0.0,
+                "z": 0.0
+            }
+        },
+        {
+            "bike": "ABP_Pro_SportBike",
+            "target": "hipIdleTarget",
+            "pos": {
+                "x": -0.12000708281993866,
+                "y": 0.9410004019737244,
+                "z": -0.2789933979511261
+            },
+            "euler": {
+                "x": 24.999998092651368,
+                "y": -5.88771804643784e-8,
+                "z": 4.116998195648193
+            }
+        },
+        {
+            "bike": "ABP_Pro_SportBike",
+            "target": "hipNormalSpeedTarget",
+            "pos": {
+                "x": 0.0,
+                "y": 0.9700000286102295,
+                "z": -0.35199999809265139
+            },
+            "euler": {
+                "x": 30.00000762939453,
+                "y": 0.0,
+                "z": 0.0
+            }
+        },
+        {
+            "bike": "ABP_Pro_SportBike",
+            "target": "hipHighSpeedTarget",
+            "pos": {
+                "x": 0.0,
+                "y": 0.9700000286102295,
+                "z": -0.40700000524520876
+            },
+            "euler": {
+                "x": 65.00001525878906,
+                "y": 0.0,
+                "z": 0.0
+            }
+        },
+        {
+            "bike": "ABP_Pro_SportBike",
+            "target": "hipReverseTarget",
+            "pos": {
+                "x": -0.0010000000474974514,
+                "y": 0.9409999847412109,
+                "z": -0.27900001406669619
+            },
+            "euler": {
+                "x": 5.000002384185791,
+                "y": 0.0,
+                "z": 0.0
+            }
+        },
+        {
+            "bike": "ABP_Pro_SportBike",
+            "target": "spineIdleTarget",
+            "pos": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            },
+            "euler": {
+                "x": 40.0,
+                "y": 0.0,
+                "z": 0.0
+            }
+        },
+        {
+            "bike": "ABP_Pro_SportBike",
+            "target": "spineNormalSpeedTarget",
+            "pos": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            },
+            "euler": {
+                "x": 45.0,
+                "y": 0.0,
+                "z": 0.0
+            }
+        },
+        {
+            "bike": "ABP_Pro_SportBike",
+            "target": "spineHighSpeedTarget",
+            "pos": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            },
+            "euler": {
+                "x": 70.0,
+                "y": 0.0,
+                "z": 0.0
+            }
+        },
+        {
+            "bike": "ABP_Pro_SportBike",
+            "target": "spineReverseTarget",
+            "pos": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            },
+            "euler": {
+                "x": 20.000024795532228,
+                "y": 3.647227940544181e-21,
+                "z": -5.5169061370229934e-21
+            }
+        },
+        {
+            "bike": "ABP_ProFuturistic_Bike",
+            "target": "hipIdleTarget",
+            "pos": {
+                "x": -0.11900000274181366,
+                "y": 0.9449999928474426,
+                "z": -0.39800000190734866
+            },
+            "euler": {
+                "x": 5.000022888183594,
+                "y": -2.410410502307059e-7,
+                "z": 4.117255210876465
+            }
+        },
+        {
+            "bike": "ABP_ProFuturistic_Bike",
+            "target": "hipNormalSpeedTarget",
+            "pos": {
+                "x": -6.092165359118348e-16,
+                "y": 0.9300001263618469,
+                "z": -0.49300408363342287
+            },
+            "euler": {
+                "x": 25.0,
+                "y": 0.0,
+                "z": 0.0
+            }
+        },
+        {
+            "bike": "ABP_ProFuturistic_Bike",
+            "target": "hipHighSpeedTarget",
+            "pos": {
+                "x": -6.092165359118348e-16,
+                "y": 0.9300001263618469,
+                "z": -0.49300408363342287
+            },
+            "euler": {
+                "x": 40.0,
+                "y": 0.0,
+                "z": 0.0
+            }
+        },
+        {
+            "bike": "ABP_ProFuturistic_Bike",
+            "target": "hipReverseTarget",
+            "pos": {
+                "x": 0.0,
+                "y": 0.9449999928474426,
+                "z": -0.39800000190734866
+            },
+            "euler": {
+                "x": 5.000002384185791,
+                "y": 0.0,
+                "z": 0.0
+            }
+        },
+        {
+            "bike": "ABP_ProFuturistic_Bike",
+            "target": "spineIdleTarget",
+            "pos": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            },
+            "euler": {
+                "x": 20.000024795532228,
+                "y": 3.647227940544181e-21,
+                "z": -5.5169061370229934e-21
+            }
+        },
+        {
+            "bike": "ABP_ProFuturistic_Bike",
+            "target": "spineNormalSpeedTarget",
+            "pos": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            },
+            "euler": {
+                "x": 35.00001907348633,
+                "y": 3.762092550692896e-21,
+                "z": 4.3665963846847186e-21
+            }
+        },
+        {
+            "bike": "ABP_ProFuturistic_Bike",
+            "target": "spineHighSpeedTarget",
+            "pos": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            },
+            "euler": {
+                "x": 59.999996185302737,
+                "y": 0.0,
+                "z": 0.0
+            }
+        },
+        {
+            "bike": "ABP_ProFuturistic_Bike",
+            "target": "spineReverseTarget",
+            "pos": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            },
+            "euler": {
+                "x": 20.000024795532228,
+                "y": 3.647227940544181e-21,
+                "z": -5.5169061370229934e-21
+            }
+        },
+        {
+            "bike": "ABP_Pro_Cafe_Racer",
+            "target": "hipIdleTarget",
+            "pos": {
+                "x": 0.0,
+                "y": 0.8849999904632568,
+                "z": -0.25999999046325686
+            },
+            "euler": {
+                "x": 34.999996185302737,
+                "y": 0.0,
+                "z": 0.0
+            }
+        },
+        {
+            "bike": "ABP_Pro_Cafe_Racer",
+            "target": "hipNormalSpeedTarget",
+            "pos": {
+                "x": 9.433032047934269e-17,
+                "y": 0.8849999904632568,
+                "z": -0.26000604033470156
+            },
+            "euler": {
+                "x": 45.0,
+                "y": 0.0,
+                "z": 0.0
+            }
+        },
+        {
+            "bike": "ABP_Pro_Cafe_Racer",
+            "target": "hipHighSpeedTarget",
+            "pos": {
+                "x": -7.926326532635869e-17,
+                "y": 0.8869993686676025,
+                "z": -0.2580259144306183
+            },
+            "euler": {
+                "x": 55.00000762939453,
+                "y": 0.0,
+                "z": 0.0
+            }
+        },
+        {
+            "bike": "ABP_Pro_Cafe_Racer",
+            "target": "hipReverseTarget",
+            "pos": {
+                "x": 3.07885855327873e-17,
+                "y": 0.89799964427948,
+                "z": -0.25398752093315127
+            },
+            "euler": {
+                "x": 20.0,
+                "y": 0.0,
+                "z": 0.0
+            }
+        },
+        {
+            "bike": "ABP_Pro_Cafe_Racer",
+            "target": "spineIdleTarget",
+            "pos": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            },
+            "euler": {
+                "x": 34.999996185302737,
+                "y": 0.0,
+                "z": 0.0
+            }
+        },
+        {
+            "bike": "ABP_Pro_Cafe_Racer",
+            "target": "spineNormalSpeedTarget",
+            "pos": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            },
+            "euler": {
+                "x": 45.0,
+                "y": 0.0,
+                "z": 0.0
+            }
+        },
+        {
+            "bike": "ABP_Pro_Cafe_Racer",
+            "target": "spineHighSpeedTarget",
+            "pos": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            },
+            "euler": {
+                "x": 55.00000762939453,
+                "y": 0.0,
+                "z": 0.0
+            }
+        },
+        {
+            "bike": "ABP_Pro_Cafe_Racer",
+            "target": "spineReverseTarget",
+            "pos": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            },
+            "euler": {
+                "x": 30.00000762939453,
+                "y": 0.0,
+                "z": 0.0
+            }
+        },
+        {
+            "bike": "ABP_Pro_Chopper",
+            "target": "hipIdleTarget",
+            "pos": {
+                "x": 0.0,
+                "y": 0.7059999704360962,
+                "z": -0.4020000100135803
+            },
+            "euler": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            }
+        },
+        {
+            "bike": "ABP_Pro_Chopper",
+            "target": "hipNormalSpeedTarget",
+            "pos": {
+                "x": 2.1158808907029538e-16,
+                "y": 0.706000030040741,
+                "z": -0.40200427174568179
+            },
+            "euler": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            }
+        },
+        {
+            "bike": "ABP_Pro_Chopper",
+            "target": "hipHighSpeedTarget",
+            "pos": {
+                "x": 3.7994503264593998e-17,
+                "y": 0.7079994082450867,
+                "z": -0.4000241458415985
+            },
+            "euler": {
+                "x": 5.000002384185791,
+                "y": 0.0,
+                "z": 0.0
+            }
+        },
+        {
+            "bike": "ABP_Pro_Chopper",
+            "target": "hipReverseTarget",
+            "pos": {
+                "x": 1.4804635081501754e-16,
+                "y": 0.7189996838569641,
+                "z": -0.39598575234413149
+            },
+            "euler": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            }
+        },
+        {
+            "bike": "ABP_Pro_Chopper",
+            "target": "spineIdleTarget",
+            "pos": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            },
+            "euler": {
+                "x": 10.000003814697266,
+                "y": 0.0,
+                "z": 0.0
+            }
+        },
+        {
+            "bike": "ABP_Pro_Chopper",
+            "target": "spineNormalSpeedTarget",
+            "pos": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            },
+            "euler": {
+                "x": 14.99999713897705,
+                "y": 0.0,
+                "z": 0.0
+            }
+        },
+        {
+            "bike": "ABP_Pro_Chopper",
+            "target": "spineHighSpeedTarget",
+            "pos": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            },
+            "euler": {
+                "x": 20.0,
+                "y": 0.0,
+                "z": 0.0
+            }
+        },
+        {
+            "bike": "ABP_Pro_Chopper",
+            "target": "spineReverseTarget",
+            "pos": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            },
+            "euler": {
+                "x": 10.000003814697266,
+                "y": 0.0,
+                "z": 0.0
+            }
+        },
+        {
+            "bike": "ABP_Pro_Super_Moto",
+            "target": "hipIdleTarget",
+            "pos": {
+                "x": -0.1589999943971634,
+                "y": 1.0520000457763672,
+                "z": -0.1080000028014183
+            },
+            "euler": {
+                "x": 5.000002384185791,
+                "y": 5.3564676250061896e-8,
+                "z": 11.820001602172852
+            }
+        },
+        {
+            "bike": "ABP_Pro_Super_Moto",
+            "target": "hipNormalSpeedTarget",
+            "pos": {
+                "x": -1.3103768232073834e-18,
+                "y": 1.0310003757476807,
+                "z": -0.1960107386112213
+            },
+            "euler": {
+                "x": 20.0,
+                "y": 0.0,
+                "z": 0.0
+            }
+        },
+        {
+            "bike": "ABP_Pro_Super_Moto",
+            "target": "hipHighSpeedTarget",
+            "pos": {
+                "x": -6.740686076667354e-16,
+                "y": 1.029000163078308,
+                "z": -0.28499627113342287
+            },
+            "euler": {
+                "x": 30.00000762939453,
+                "y": 0.0,
+                "z": 0.0
+            }
+        },
+        {
+            "bike": "ABP_Pro_Super_Moto",
+            "target": "hipReverseTarget",
+            "pos": {
+                "x": -6.485209822468024e-17,
+                "y": 1.0440000295639039,
+                "z": -0.18999220430850984
+            },
+            "euler": {
+                "x": 5.000002384185791,
+                "y": 0.0,
+                "z": 0.0
+            }
+        },
+        {
+            "bike": "ABP_Pro_Super_Moto",
+            "target": "spineIdleTarget",
+            "pos": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            },
+            "euler": {
+                "x": 10.000003814697266,
+                "y": 0.0,
+                "z": 0.0
+            }
+        },
+        {
+            "bike": "ABP_Pro_Super_Moto",
+            "target": "spineNormalSpeedTarget",
+            "pos": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            },
+            "euler": {
+                "x": 20.0,
+                "y": 0.0,
+                "z": 0.0
+            }
+        },
+        {
+            "bike": "ABP_Pro_Super_Moto",
+            "target": "spineHighSpeedTarget",
+            "pos": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            },
+            "euler": {
+                "x": 34.999996185302737,
+                "y": 0.0,
+                "z": 0.0
+            }
+        },
+        {
+            "bike": "ABP_Pro_Super_Moto",
+            "target": "spineReverseTarget",
+            "pos": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            },
+            "euler": {
+                "x": 5.000002384185791,
+                "y": 0.0,
+                "z": 0.0
+            }
+        },
+        {
+            "bike": "ABP_Pro_Police_Bike",
+            "target": "hipIdleTarget",
+            "pos": {
+                "x": 0.0,
+                "y": 0.9190000295639038,
+                "z": -0.44200000166893008
+            },
+            "euler": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            }
+        },
+        {
+            "bike": "ABP_Pro_Police_Bike",
+            "target": "hipNormalSpeedTarget",
+            "pos": {
+                "x": 7.205781412441748e-17,
+                "y": 0.9190000891685486,
+                "z": -0.44198235869407656
+            },
+            "euler": {
+                "x": 5.000002384185791,
+                "y": 0.0,
+                "z": 0.0
+            }
+        },
+        {
+            "bike": "ABP_Pro_Police_Bike",
+            "target": "hipHighSpeedTarget",
+            "pos": {
+                "x": -1.015357584463941e-16,
+                "y": 0.9209994673728943,
+                "z": -0.4400022327899933
+            },
+            "euler": {
+                "x": 10.000003814697266,
+                "y": 0.0,
+                "z": 0.0
+            }
+        },
+        {
+            "bike": "ABP_Pro_Police_Bike",
+            "target": "hipReverseTarget",
+            "pos": {
+                "x": 8.516094894293725e-18,
+                "y": 0.9319997429847717,
+                "z": -0.43596383929252627
+            },
+            "euler": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            }
+        },
+        {
+            "bike": "ABP_Pro_Police_Bike",
+            "target": "spineIdleTarget",
+            "pos": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            },
+            "euler": {
+                "x": 10.000003814697266,
+                "y": 0.0,
+                "z": 0.0
+            }
+        },
+        {
+            "bike": "ABP_Pro_Police_Bike",
+            "target": "spineNormalSpeedTarget",
+            "pos": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            },
+            "euler": {
+                "x": 14.99999713897705,
+                "y": 0.0,
+                "z": 0.0
+            }
+        },
+        {
+            "bike": "ABP_Pro_Police_Bike",
+            "target": "spineHighSpeedTarget",
+            "pos": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            },
+            "euler": {
+                "x": 25.0,
+                "y": 0.0,
+                "z": 0.0
+            }
+        },
+        {
+            "bike": "ABP_Pro_Police_Bike",
+            "target": "spineReverseTarget",
+            "pos": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            },
+            "euler": {
+                "x": 10.000003814697266,
+                "y": 0.0,
+                "z": 0.0
+            }
+        },
+        {
+            "bike": "ABP_Pro_Scooter",
+            "target": "hipIdleTarget",
+            "pos": {
+                "x": 0.0,
+                "y": 0.9589999914169312,
+                "z": -0.22300000488758088
+            },
+            "euler": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            }
+        },
+        {
+            "bike": "ABP_Pro_Scooter",
+            "target": "hipNormalSpeedTarget",
+            "pos": {
+                "x": 4.585510136401191e-17,
+                "y": 0.9589998722076416,
+                "z": -0.22298821806907655
+            },
+            "euler": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            }
+        },
+        {
+            "bike": "ABP_Pro_Scooter",
+            "target": "hipHighSpeedTarget",
+            "pos": {
+                "x": -1.2773847120679968e-16,
+                "y": 0.9609992504119873,
+                "z": -0.22100809216499329
+            },
+            "euler": {
+                "x": 5.000002384185791,
+                "y": 0.0,
+                "z": 0.0
+            }
+        },
+        {
+            "bike": "ABP_Pro_Scooter",
+            "target": "hipReverseTarget",
+            "pos": {
+                "x": -1.768664019998838e-17,
+                "y": 0.9719995260238648,
+                "z": -0.21696969866752625
+            },
+            "euler": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            }
+        },
+        {
+            "bike": "ABP_Pro_Scooter",
+            "target": "spineIdleTarget",
+            "pos": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            },
+            "euler": {
+                "x": 10.000003814697266,
+                "y": 0.0,
+                "z": 0.0
+            }
+        },
+        {
+            "bike": "ABP_Pro_Scooter",
+            "target": "spineNormalSpeedTarget",
+            "pos": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            },
+            "euler": {
+                "x": 14.99999713897705,
+                "y": 0.0,
+                "z": 0.0
+            }
+        },
+        {
+            "bike": "ABP_Pro_Scooter",
+            "target": "spineHighSpeedTarget",
+            "pos": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            },
+            "euler": {
+                "x": 20.0,
+                "y": 0.0,
+                "z": 0.0
+            }
+        },
+        {
+            "bike": "ABP_Pro_Scooter",
+            "target": "spineReverseTarget",
+            "pos": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            },
+            "euler": {
+                "x": 10.000003814697266,
+                "y": 0.0,
+                "z": 0.0
+            }
+        },
+        {
+            "bike": "ABP_Pro_Street_Bike",
+            "target": "hipIdleTarget",
+            "pos": {
+                "x": -0.12099999934434891,
+                "y": 0.9779999852180481,
+                "z": -0.20900000631809236
+            },
+            "euler": {
+                "x": 5.000002384185791,
+                "y": 5.3564676250061896e-8,
+                "z": 11.820001602172852
+            }
+        },
+        {
+            "bike": "ABP_Pro_Street_Bike",
+            "target": "hipNormalSpeedTarget",
+            "pos": {
+                "x": 3.2098366475760917e-17,
+                "y": 0.9800002574920654,
+                "z": -0.2950097322463989
+            },
+            "euler": {
+                "x": 14.99999713897705,
+                "y": 0.0,
+                "z": 0.0
+            }
+        },
+        {
+            "bike": "ABP_Pro_Street_Bike",
+            "target": "hipHighSpeedTarget",
+            "pos": {
+                "x": 0.0,
+                "y": 0.9829999804496765,
+                "z": -0.36899998784065249
+            },
+            "euler": {
+                "x": 30.00000762939453,
+                "y": 0.0,
+                "z": 0.0
+            }
+        },
+        {
+            "bike": "ABP_Pro_Street_Bike",
+            "target": "hipReverseTarget",
+            "pos": {
+                "x": -3.1443358544627127e-17,
+                "y": 0.9929999113082886,
+                "z": -0.28899121284484866
+            },
+            "euler": {
+                "x": 5.000002384185791,
+                "y": 0.0,
+                "z": 0.0
+            }
+        },
+        {
+            "bike": "ABP_Pro_Street_Bike",
+            "target": "spineIdleTarget",
+            "pos": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            },
+            "euler": {
+                "x": 14.99999713897705,
+                "y": 0.0,
+                "z": 0.0
+            }
+        },
+        {
+            "bike": "ABP_Pro_Street_Bike",
+            "target": "spineNormalSpeedTarget",
+            "pos": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            },
+            "euler": {
+                "x": 30.00000762939453,
+                "y": 0.0,
+                "z": 0.0
+            }
+        },
+        {
+            "bike": "ABP_Pro_Street_Bike",
+            "target": "spineHighSpeedTarget",
+            "pos": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            },
+            "euler": {
+                "x": 45.0,
+                "y": 0.0,
+                "z": 0.0
+            }
+        },
+        {
+            "bike": "ABP_Pro_Street_Bike",
+            "target": "spineReverseTarget",
+            "pos": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            },
+            "euler": {
+                "x": 14.99999713897705,
+                "y": 0.0,
+                "z": 0.0
+            }
+        },
+        {
+            "bike": "ABP_Pro_Cruiser_MotorCycles",
+            "target": "hipIdleTarget",
+            "pos": {
+                "x": 0.0,
+                "y": 0.7620000243186951,
+                "z": -0.4020000100135803
+            },
+            "euler": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            }
+        },
+        {
+            "bike": "ABP_Pro_Cruiser_MotorCycles",
+            "target": "hipNormalSpeedTarget",
+            "pos": {
+                "x": 1.749040847414467e-16,
+                "y": 0.7620000243186951,
+                "z": -0.40200430154800417
+            },
+            "euler": {
+                "x": 5.000002384185791,
+                "y": 0.0,
+                "z": 0.0
+            }
+        },
+        {
+            "bike": "ABP_Pro_Cruiser_MotorCycles",
+            "target": "hipHighSpeedTarget",
+            "pos": {
+                "x": 1.3105084483223559e-18,
+                "y": 0.7639994025230408,
+                "z": -0.4000241756439209
+            },
+            "euler": {
+                "x": 10.000003814697266,
+                "y": 0.0,
+                "z": 0.0
+            }
+        },
+        {
+            "bike": "ABP_Pro_Cruiser_MotorCycles",
+            "target": "hipReverseTarget",
+            "pos": {
+                "x": 1.1136235972105866e-16,
+                "y": 0.7749996781349182,
+                "z": -0.39598578214645388
+            },
+            "euler": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            }
+        },
+        {
+            "bike": "ABP_Pro_Cruiser_MotorCycles",
+            "target": "spineIdleTarget",
+            "pos": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            },
+            "euler": {
+                "x": 10.000003814697266,
+                "y": 0.0,
+                "z": 0.0
+            }
+        },
+        {
+            "bike": "ABP_Pro_Cruiser_MotorCycles",
+            "target": "spineNormalSpeedTarget",
+            "pos": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            },
+            "euler": {
+                "x": 14.99999713897705,
+                "y": 0.0,
+                "z": 0.0
+            }
+        },
+        {
+            "bike": "ABP_Pro_Cruiser_MotorCycles",
+            "target": "spineHighSpeedTarget",
+            "pos": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            },
+            "euler": {
+                "x": 25.0,
+                "y": 0.0,
+                "z": 0.0
+            }
+        },
+        {
+            "bike": "ABP_Pro_Cruiser_MotorCycles",
+            "target": "spineReverseTarget",
+            "pos": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            },
+            "euler": {
+                "x": 10.000003814697266,
+                "y": 0.0,
+                "z": 0.0
+            }
+        }
+    ]
+}

@@ -1,0 +1,18 @@
+fileFormatVersion: 2
+guid: 35591a3dd4199fd42ac76bcd8c03096c
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 224783
+  packageName: Realistic Engine Sounds 2 - Pro Edition
+  packageVersion: 2.3.1
+  assetPath: Assets/RealisticEngineSound/Assets/Scripts/Demo Scene Scripts/UIDragComponent.cs
+  uploadId: 1008566
