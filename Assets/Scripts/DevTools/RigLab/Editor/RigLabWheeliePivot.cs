@@ -8,9 +8,9 @@ namespace MotoSquid.DevTools
     public static class RigLabWheeliePivot
     {
         const float PivotZ = -0.49f;
-        const string Dir = "Assets/Prefabs/Characters/New";
+        const string Dir = "Assets/Prefabs/Characters/Player";
 
-        [MenuItem("Tools/Rig Lab/37. Restore ABP Wheelie Pivots", false, 370)]
+        [MenuItem("MotoSquid/Rig Lab/37. Restore ABP Wheelie Pivots", false, 370)]
         static void Restore()
         {
             if (!AssetDatabase.IsValidFolder(Dir)) { Debug.LogError("Rig Lab: " + Dir + " not found."); return; }

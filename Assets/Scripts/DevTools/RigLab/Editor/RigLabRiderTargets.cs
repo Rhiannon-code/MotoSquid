@@ -14,7 +14,7 @@ namespace MotoSquid.DevTools
     {
         const string Prefix = RiderSwitch.SetPrefix;
 
-        [MenuItem("Tools/Rig Lab/2c. Give Each Rider Its Own Targets", false, 3)]
+        [MenuItem("MotoSquid/Rig Lab/2c. Give Each Rider Its Own Targets", false, 3)]
         internal static void Split()
         {
             var bikes = RigLabScope.Bikes(true);

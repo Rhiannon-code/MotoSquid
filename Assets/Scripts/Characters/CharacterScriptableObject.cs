@@ -2,7 +2,7 @@ using UnityEngine;
 
 namespace MotoSquid.Characters
 {
-    [CreateAssetMenu(fileName = "New Character", menuName = "Selector/Character")]
+    [CreateAssetMenu(fileName = "New Character", menuName = "MotoSquid/Selector/Character")]
     public class CharacterScriptableObject : ScriptableObject
     {
         public string characterName;

@@ -118,7 +118,7 @@ namespace MotoSquid.UI
             };
         }
 
-        [MenuItem("MotoSquid/UI/Fix Logo Layer Imports")]
+        [MenuItem("MotoSquid/Menu/UI/Fix Logo Layer Imports")]
         static void FixImports()
         {
             List<Layer> all = LoadingScreenLayers();
@@ -168,13 +168,13 @@ namespace MotoSquid.UI
             return true;
         }
 
-        [MenuItem("MotoSquid/UI/Build Loading Screen Logo (Selected Parent)")]
+        [MenuItem("MotoSquid/Menu/UI/Build Loading Screen Logo (Selected Parent)")]
         static void BuildLoadingScreen()
         {
             Build("MotoSquidLogo", LoadingScreenLayers());
         }
 
-        [MenuItem("MotoSquid/UI/Build Splash Logo (Selected Parent)")]
+        [MenuItem("MotoSquid/Menu/UI/Build Splash Logo (Selected Parent)")]
         static void BuildSplash()
         {
             Build("MotoSquidSplashLogo", SplashLayers());

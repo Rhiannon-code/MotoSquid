@@ -9,7 +9,7 @@ namespace MotoSquid.DevTools
 {
     public static class RigLabDeriveTargets
     {
-        [MenuItem("Tools/Rig Lab/19c. Derive Targets From Anchors (all bikes)", false, 192)]
+        [MenuItem("MotoSquid/Rig Lab/19c. Derive Targets From Anchors (all bikes)", false, 192)]
         static void Derive()
         {
             var found = Object.FindObjectsByType<BikeController>(FindObjectsInactive.Include, FindObjectsSortMode.None);

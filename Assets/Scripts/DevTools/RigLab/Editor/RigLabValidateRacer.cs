@@ -14,7 +14,7 @@ namespace MotoSquid.DevTools
 {
     public static class RigLabValidateRacer
     {
-        [MenuItem("Tools/Rig Lab/0b. Validate Racers (scene)", false, 2)]
+        [MenuItem("MotoSquid/Rig Lab/0b. Validate Racers (scene)", false, 2)]
         static void ValidateScene()
         {
             var roots = RigLabScope.BikeRoots().ToList();
@@ -22,18 +22,18 @@ namespace MotoSquid.DevTools
             if (roots.Count == 0)
             {
                 Debug.LogError("Rig Lab: no racers in the open scene. A racer is a GameObject carrying " +
-                               "BikeController or BikeAIController, at any depth.");
+                               "BikeController at any depth (an AI racer also carries BikeAILogic).");
                 return;
             }
             Report(roots.Select(r => { var n = new List<string>(); return (r.name, Check(r, n), n); }).ToList(), "open scene");
         }
 
-        [MenuItem("Tools/Rig Lab/0c. Validate Racer Prefabs", false, 3)]
+        [MenuItem("MotoSquid/Rig Lab/0c. Validate Racer Prefabs", false, 3)]
         static void ValidatePrefabs()
         {
             var dirs = new[]
             {
-                "Assets/MotoSquid/Resources/Racers",
+                "Assets/Resources/Racers",
                 "Assets/Prefabs/Characters/AI",
                 "Assets/Prefabs/Characters/Player",
             }.Where(AssetDatabase.IsValidFolder).ToArray();
@@ -72,11 +72,8 @@ namespace MotoSquid.DevTools
         {
             var p = new List<string>();
             var player = root.GetComponent<BikeController>();
-            var ai = root.GetComponent<BikeAIController>();
-
-            if (player == null && ai == null) { p.Add("no bike controller at all"); return p; }
-            if (player != null && ai != null) p.Add("BOTH player and AI controllers, pick one");
-            bool isAI = ai != null && player == null;
+            if (player == null) { p.Add("no BikeController"); return p; }
+            bool isAI = root.GetComponentInChildren<BikeAILogic>(true) != null;
 
             Need<BikeAnimationController>(root, p, "the rider is never posed");
             Need<BikerRigReferences>(root, p, "no rig to pose it with");
@@ -117,8 +114,7 @@ namespace MotoSquid.DevTools
             {
                 string who = anim.gameObject.name + ": ";
 
-                if (isAI && anim.bikeAIRhiannon == null) p.Add(who + "bikeAIRhiannon unset, throws on Start");
-                if (!isAI && anim.bikeControllerRhiannon == null) p.Add(who + "bikeControllerRhiannon unset");
+                if (anim.bikeControllerRhiannon == null) p.Add(who + "bikeControllerRhiannon unset");
                 if (anim.hipTargetRig == null || anim.spineRootTargetRig == null) p.Add(who + "rig targets unset, run the rig builder");
                 if (anim.hipIdleTarget == null || anim.hipNormalSpeedTarget == null || anim.hipHighSpeedTarget == null)
                     p.Add(who + "pose targets unset, the rider will not blend with speed");
@@ -162,8 +158,8 @@ namespace MotoSquid.DevTools
             }
 
             foreach (var rag in root.GetComponentsInChildren<RagdollActivator>(true))
-                if (rag.bikeController == null && rag.bikeAIRhiannon == null)
-                    p.Add("RagdollActivator has neither controller, NullReference every frame");
+                if (rag.bikeController == null)
+                    p.Add("RagdollActivator.bikeController unset, it disables itself on Start");
 
             foreach (var combat in root.GetComponentsInChildren<CombatSystem>(true))
             {

@@ -32,7 +32,7 @@ namespace MotoSquid.DevTools
         private Transform leftUpperArm;
         private Transform head;
 
-        [MenuItem("Tools/Rig Lab/2d. Biker Animation Creator (vendor rig builder)")]
+        [MenuItem("MotoSquid/Rig Lab/2d. Biker Animation Creator (vendor rig builder)")]
         public static void ShowWindow()
         {
             GetWindow(typeof(BikerAnimationCreator));

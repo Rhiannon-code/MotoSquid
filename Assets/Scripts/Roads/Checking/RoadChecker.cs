@@ -21,7 +21,8 @@ namespace MotoSquid.Roads
         [Tooltip("Largest angle between neighbouring surface normals (degrees).")]
         public float maxNormalTurn = 2f;
         public float maxNormalTurnOnJumps = 4f;
-        public float maxGrade = 0.055f;
+        [Tooltip("How far over each road's own maximum grade the built surface may go (1.1 = 10%).")]
+        public float gradeTolerance = 1.1f;
         public float maxGradeOnJumps = 0.3f;
         public float bankTolerance = 0.5f;
         public float rollRateTolerance = 1.1f;
@@ -31,9 +32,11 @@ namespace MotoSquid.Roads
         public float clearance = 6f;
         [Tooltip("How far the built surface may sit from the road's own design height (m).")]
         public float offSurfaceTolerance = 0.1f;
+        [Tooltip("Also fail on dead ends, roads cut off from the network and one-way pockets. Off for proof-of-concept pieces that end at the scene edge.")]
+        public bool connectivity = true;
     }
 
-    public enum IssueKind { Gap, Bump, Kink, OffSurface, Grade, Bank, RollRate, Air, Landing, Clearance }
+    public enum IssueKind { Gap, Bump, Kink, OffSurface, Grade, Bank, RollRate, Air, Landing, Clearance, DeadEnd, Disconnected, OneWayTrap, Conflict, TightCorner }
 
     public struct RoadIssue
     {
@@ -44,9 +47,11 @@ namespace MotoSquid.Roads
         public Vector3 Position;
         public float Value;
         public float Limit;
+        public string Detail;
 
-        public override string ToString() =>
-            $"{Kind} on {Road} lane {Lane + 1} at {Station:0} m: {Value:0.###} (limit {Limit:0.###})";
+        public override string ToString() => Detail != null
+            ? $"{Kind} on {Road} at {Station:0} m: {Detail}"
+            : $"{Kind} on {Road} lane {Lane + 1} at {Station:0} m: {Value:0.###} (limit {Limit:0.###})";
     }
 
     public struct AirEvent
@@ -89,6 +94,7 @@ namespace MotoSquid.Roads
         const float Gravity = 9.81f;
         const float MinAirTime = 0.02f;
         const float IssueGap = 5f;
+        const float ProbeNudge = 0.02f;
 
         public static RoadCheckResult Run(IReadOnlyList<RoadPath> paths, IReadOnlyList<JunctionZone> zones,
                                           ISurfaceProbe probe, RoadCheckSettings cfg)
@@ -101,6 +107,7 @@ namespace MotoSquid.Roads
                 foreach (var (offset, forward) in path.Settings.Lanes())
                     CheckLane(path, zones, lane++, offset, forward, probe, cfg, result);
             }
+            if (cfg.connectivity) result.Issues.AddRange(RoadConnectivity.Check(paths, zones));
             return result;
         }
 
@@ -142,7 +149,7 @@ namespace MotoSquid.Roads
                 float s = forward ? k * cfg.step : path.Length - k * cfg.step;
                 stations[k] = s;
                 Vector3 design = path.PointAt(s, offset);
-                hit[k] = probe.Raycast(design + Vector3.up * 2f, Vector3.down, 4f, out Vector3 point, out normals[k]);
+                hit[k] = Probe(probe, path, s, offset, design, out Vector3 point, out normals[k]);
                 result.Samples++;
                 Run(IssueKind.Gap).Report(!hit[k], IssueKind.Gap, s, design, 1f, 0f);
                 if (!hit[k]) { point = design; }
@@ -164,7 +171,7 @@ namespace MotoSquid.Roads
                 bool jump = ClassAt(path, zones, stations[k]) == AirClass.Jump;
                 float run = Mathf.Max(distance[k] - distance[k - 1], 1e-4f);
                 float grade = (heights[k] - heights[k - 1]) / run;
-                float gradeLimit = jump ? cfg.maxGradeOnJumps : cfg.maxGrade;
+                float gradeLimit = jump ? cfg.maxGradeOnJumps : path.Settings.maxGrade * cfg.gradeTolerance;
                 Run(IssueKind.Grade).Report(Mathf.Abs(grade) > gradeLimit, IssueKind.Grade, stations[k], At(path, stations[k], offset, heights[k]), grade, gradeLimit);
 
                 float turn = Vector3.Angle(normals[k - 1], normals[k]);
@@ -237,6 +244,19 @@ namespace MotoSquid.Roads
                 if (angle > cfg.maxLandingAngle)
                     result.Issues.Add(new RoadIssue { Kind = IssueKind.Landing, Road = path.Name, Lane = lane, Station = stations[k], Position = path.PointAt(stations[k], 0f), Value = angle, Limit = cfg.maxLandingAngle });
             }
+        }
+
+        // A ray landing exactly on a mesh vertex or edge can slip through a collider; a real hole is wider than
+        // the nudge, so a miss is retried a couple of centimetres off it diagonally before it counts as a gap.
+        static bool Probe(ISurfaceProbe probe, RoadPath path, float station, float offset, Vector3 design, out Vector3 point, out Vector3 normal)
+        {
+            if (probe.Raycast(design + Vector3.up * 2f, Vector3.down, 4f, out point, out normal)) return true;
+            foreach (var (along, across) in new[] { (ProbeNudge, ProbeNudge), (-ProbeNudge, -ProbeNudge), (ProbeNudge, -ProbeNudge), (-ProbeNudge, ProbeNudge) })
+            {
+                Vector3 beside = path.PointAt(station + along, offset + across);
+                if (probe.Raycast(beside + Vector3.up * 2f, Vector3.down, 4f, out point, out normal)) return true;
+            }
+            return false;
         }
 
         static AirClass ClassAt(RoadPath path, IReadOnlyList<JunctionZone> zones, float station)

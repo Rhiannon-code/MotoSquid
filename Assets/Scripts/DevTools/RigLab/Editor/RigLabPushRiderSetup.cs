@@ -16,7 +16,7 @@ namespace MotoSquid.DevTools
         string status = "";
         Vector2 scroll;
 
-        [MenuItem("Tools/Rig Lab/17. Push Rider Setup To Prefabs", false, 195)]
+        [MenuItem("MotoSquid/Rig Lab/17. Push Rider Setup To Prefabs", false, 195)]
         static void Open()
         {
             GetWindow<RigLabPushRiderSetup>("Push Rider Setup").minSize = new Vector2(440, 320);

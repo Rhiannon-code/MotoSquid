@@ -14,6 +14,7 @@ namespace MotoSquid.Roads
             public string Name;
             public BezierKnot[] Knots;
             public RoadSettings Settings;
+            public RoadRecipe Recipe;
         }
 
         const float KnotSpacing = 10f;
@@ -92,14 +93,6 @@ namespace MotoSquid.Roads
 
         internal static VerticalProfile Level() => new VerticalProfile().Point(0f, 0f);
 
-        // Every knot carries explicit tangents, so the curve is fully defined by the knots alone.
-        public static Spline ToSpline(BezierKnot[] knots)
-        {
-            var spline = new Spline();
-            foreach (var knot in knots) spline.Add(knot, TangentMode.Broken);
-            return spline;
-        }
-
         internal static BezierKnot[] FromPlan(PlanPath plan, VerticalProfile profile)
         {
             int count = Mathf.CeilToInt(plan.Length / KnotSpacing);
@@ -112,7 +105,7 @@ namespace MotoSquid.Roads
                 var tangent = new float3(dir.x, slope, dir.y) * (spacing / 3f);
                 var position = new float3(xz.x, y, xz.y);
                 if (k == count && math.distance(position, knots[0].Position) < 0.01f) position = knots[0].Position;
-                knots[k] = new BezierKnot(position, k > 0 ? -tangent : float3.zero, k < count ? tangent : float3.zero);
+                knots[k] = new BezierKnot(position, -tangent, tangent);
             }
             return knots;
         }

@@ -6,7 +6,7 @@ namespace MotoSquid.DevTools
 {
     public static class RigLabRestoreReverse
     {
-        [MenuItem("Tools/Rig Lab/18. Restore Reverse Leg Targets", false, 202)]
+        [MenuItem("MotoSquid/Rig Lab/18. Restore Reverse Leg Targets", false, 202)]
         static void Restore()
         {
             if (Application.isPlaying) { Debug.LogError("Rig Lab: restore in edit mode."); return; }

@@ -25,7 +25,7 @@ namespace MotoSquid.DevTools
             get { return Path.GetFullPath(Path.Combine(Application.dataPath, "../RigLabData")); }
         }
 
-        [MenuItem("Tools/Rig Lab/12. Sample Animation Clips", false, 140)]
+        [MenuItem("MotoSquid/Rig Lab/12. Sample Animation Clips", false, 140)]
         static void Open()
         {
             GetWindow<RigLabClipSampler>("Clip Sampler").minSize = new Vector2(430, 300);

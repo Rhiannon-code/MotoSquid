@@ -17,7 +17,7 @@ namespace MotoSquid.DevTools
         bool keepExisting;
         Vector2 scroll;
 
-        [MenuItem("Tools/Rig Lab/2. Swap Riders", false, 1)]
+        [MenuItem("MotoSquid/Rig Lab/2. Swap Riders", false, 1)]
         static void Open()
         {
             GetWindow<RigLabRiders>("Swap Riders").minSize = new Vector2(420, 300);

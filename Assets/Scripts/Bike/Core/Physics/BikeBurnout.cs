@@ -22,6 +22,8 @@ namespace MotoSquid.Bike
 
         public void Start() => wasCanMove = bike.canMove;
 
+        public void MarkReleased() => burnoutReleaseTime = Time.time;
+
         public void HandleBurnoutAndRotation()
         {
             var input = bike.bikeInput;

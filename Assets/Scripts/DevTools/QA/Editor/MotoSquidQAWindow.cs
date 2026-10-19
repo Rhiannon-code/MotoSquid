@@ -22,8 +22,8 @@ namespace MotoSquid.DevTools
         static string AppendScript   => Path.Combine(QADir, "append_bugs.py");
 
         // Prefab/asset folders to scan (third party assets excluded to avoid noise)
-        static readonly string[] ScanFolders = { "Assets/MotoSquid", "Assets/Prefabs" };
-        static readonly string   ScriptRoot  = "Assets/MotoSquid/Scripts";
+        static readonly string[] ScanFolders = { "Assets/Scripts", "Assets/Prefabs", "Assets/Scriptable Objects" };
+        static readonly string   ScriptRoot  = "Assets/Scripts";
 
         // State
         class Finding
@@ -38,7 +38,7 @@ namespace MotoSquid.DevTools
         string  _status = "Click 'Run Checks' to scan the project.";
 
         // Window
-        [MenuItem("MotoSquid/QA Checker")]
+        [MenuItem("MotoSquid/QA/QA Checker")]
         public static void Open() => GetWindow<MotoSquidQAWindow>("MotoSquid QA");
 
         void OnGUI()

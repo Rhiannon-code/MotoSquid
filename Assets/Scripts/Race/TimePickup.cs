@@ -1,3 +1,5 @@
+using MotoSquid.AI;
+using MotoSquid.Bike;
 using UnityEngine;
 
 namespace MotoSquid.Race
@@ -15,7 +17,9 @@ namespace MotoSquid.Race
 
         private void OnTriggerEnter(Collider other)
         {
-            if (other.CompareTag("Player"))
+            // A human racer: a bike with no AI brain. The bikes carry no Player tag
+            var bike = other.GetComponentInParent<BikeController>();
+            if (bike != null && bike.GetComponentInChildren<BikeAILogic>(true) == null)
             {
                 if (timer != null)
                 {

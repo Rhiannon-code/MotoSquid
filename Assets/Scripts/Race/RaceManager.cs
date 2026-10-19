@@ -35,7 +35,7 @@ namespace MotoSquid.Race
         public Transform playerTransform2;
         public BikeController playerBike2;
 
-        public BikeAIController[] aiOpponents;
+        public BikeAILogic[] aiOpponents;
 
         [Header("AI Spawning")]
         public GameObject aiPrefab;
@@ -83,7 +83,7 @@ namespace MotoSquid.Race
         public class RacerInfo
         {
             public Transform   transform;
-            public BikeAIController ai;   // Null for the player
+            public BikeAILogic ai;   // Null for the player
             public int         laps;
             public float       splineT;
             public float       lastT;
@@ -177,10 +177,10 @@ namespace MotoSquid.Race
 
             if (disableLiveAI)
             {
-                var allAI = FindObjectsByType<BikeAIController>(FindObjectsInactive.Include, FindObjectsSortMode.None);
+                var allAI = FindObjectsByType<BikeAILogic>(FindObjectsInactive.Include, FindObjectsSortMode.None);
                 foreach (var ai in allAI)
                     if (ai != null) ai.gameObject.SetActive(false);
-                aiOpponents = System.Array.Empty<BikeAIController>();
+                aiOpponents = System.Array.Empty<BikeAILogic>();
                 aiCount     = 0;
             }
             else
@@ -191,8 +191,8 @@ namespace MotoSquid.Race
                 if ((aiPrefab != null || canRandomise) && aiCount > 0 && !hasSceneBikes)
                     SpawnAIBikes();
 
-                var sceneAI = FindObjectsByType<BikeAIController>(FindObjectsInactive.Exclude, FindObjectsSortMode.InstanceID);
-                var merged = new System.Collections.Generic.List<BikeAIController>();
+                var sceneAI = FindObjectsByType<BikeAILogic>(FindObjectsInactive.Exclude, FindObjectsSortMode.InstanceID);
+                var merged = new System.Collections.Generic.List<BikeAILogic>();
                 if (aiOpponents != null)
                     foreach (var ai in aiOpponents)
                         if (ai != null && !merged.Contains(ai)) merged.Add(ai);
@@ -242,40 +242,32 @@ namespace MotoSquid.Race
             foreach (var ai in aiOpponents)
             {
                 if (ai == null) continue;
-
-                // Wire race manager reference into the logic component
-                if (ai.aiLogic != null)
+                var bike = ai.controller;
+                if (bike == null)
                 {
-                    ai.aiLogic.raceManager      = this;
-                    ai.aiLogic.playerTransform  = playerTransform;
-
-                    // BikeAILogic.Awake falls back to FindFirstObjectByType, which skips inactive
-                    // objects, and a spawned AI with no route graph never leaves the grid
-                    if (routeGraph != null) ai.aiLogic.routeGraph = routeGraph;
-
-                    if (ai.aiLogic.routeGraph == null)
-                        Debug.LogError($"[RaceManager] '{ai.name}' has no RouteGraph, it cannot navigate " +
-                                       "the track. Assign one on this RaceManager.", ai);
+                    Debug.LogError($"[RaceManager] '{ai.name}' has no BikeController for its BikeAILogic, it cannot race.", ai);
+                    continue;
                 }
 
+                ai.raceManager     = this;
+                ai.playerTransform = playerTransform;
 
-                ai.canAccelerate = false;
-                ai.SetCanMove(false);
-                ai.isRevving     = _gridWarmedUp;
-                MuteEngine(ai, !_gridWarmedUp);
+                // BikeAILogic.Awake falls back to FindFirstObjectByType, which skips inactive
+                // objects, and a spawned AI with no route graph never leaves the grid
+                if (routeGraph != null) ai.routeGraph = routeGraph;
+                if (ai.routeGraph == null)
+                    Debug.LogError($"[RaceManager] '{ai.name}' has no RouteGraph, it cannot navigate " +
+                                   "the track. Assign one on this RaceManager.", ai);
+
+                bike.canAccelerate = false;
+                bike.canMove       = false;
+                ai.isRevving       = _gridWarmedUp;
+                MuteEngine(bike, !_gridWarmedUp);
                 // Roll whether this AI burns out on the grid this race (for a launch shove at GO)
                 ai.willStartBurnout = UnityEngine.Random.value < aiBurnoutChance;
 
-                Transform t = ai.bikeReferences.Rotator != null
-                    ? ai.bikeReferences.Rotator
-                    : ai.transform;
-
-                _racers.Add(new RacerInfo
-                {
-                    transform  = t,
-                    ai         = ai,
-                    splineT    = SampleT(t.position),
-                });
+                Transform t = bike.bikeReferences.Rotator != null ? bike.bikeReferences.Rotator : bike.transform;
+                _racers.Add(new RacerInfo { transform = t, ai = ai, splineT = SampleT(t.position) });
             }
 
             // Seed last T so first frame lap detection is clean
@@ -291,7 +283,7 @@ namespace MotoSquid.Race
                 var racers = new List<Transform>();
                 // P2 is not playerTransform, so without this the spawner never builds a band around them
                 if (_isSplitScreen && playerTransform2 != null) racers.Add(playerTransform2);
-                foreach (var ai in aiOpponents) if (ai != null) racers.Add(ai.transform);
+                foreach (var ai in aiOpponents) if (ai != null && ai.controller != null) racers.Add(ai.controller.transform);
                 traffic.allRacerTransforms = racers.ToArray();
                 if (traffic.playerTransform == null) traffic.playerTransform = playerTransform;
                 traffic.RefreshAnchors();
@@ -310,24 +302,22 @@ namespace MotoSquid.Race
             }
             foreach (var ai in aiOpponents)
             {
-                if (ai?.bikeReferences.BikeRb != null)
-                    racerBodies.Add(ai.bikeReferences.BikeRb);
+                if (ai?.controller?.bikeReferences.BikeRb != null)
+                    racerBodies.Add(ai.controller.bikeReferences.BikeRb);
             }
             foreach (var ai in aiOpponents)
             {
-                if (ai?.aiLogic != null)
-                {
-                    // excludedBodies, traffic avoidance skips these (all racers move fast, handle separately)
-                    ai.aiLogic.excludedBodies = racerBodies;
-                    // racerBodies, used by the dedicated overtaking system
-                    ai.aiLogic.racerBodies = racerBodies;
-                }
+                if (ai == null) continue;
+                // excludedBodies, traffic avoidance skips these (all racers move fast, handle separately)
+                ai.excludedBodies = racerBodies;
+                // racerBodies, used by the dedicated overtaking system
+                ai.racerBodies = racerBodies;
             }
 
             foreach (var ai in aiOpponents)
             {
-                if (ai?.bikeReferences?.BikeRb != null)
-                    ai.bikeReferences.BikeRb.maxDepenetrationVelocity = 2f;
+                if (ai?.controller?.bikeReferences?.BikeRb != null)
+                    ai.controller.bikeReferences.BikeRb.maxDepenetrationVelocity = 2f;
             }
 
             if (autoStartWithoutPlayer && playerTransform == null)
@@ -401,8 +391,8 @@ namespace MotoSquid.Race
             r.finishTime = RaceElapsedTime;
             _finishOrder.Add(r);
 
-            if (r.ai != null)
-                r.ai.canAccelerate = false;
+            if (r.ai != null && r.ai.controller != null)
+                r.ai.controller.canAccelerate = false;
 
             OnRacerFinished?.Invoke(r);
 
@@ -417,8 +407,8 @@ namespace MotoSquid.Race
 
             // Stop all remaining AI racers
             foreach (var remaining in _racers)
-                if (remaining.ai != null)
-                    remaining.ai.canAccelerate = false;
+                if (remaining.ai != null && remaining.ai.controller != null)
+                    remaining.ai.controller.canAccelerate = false;
 
             // Anyone who didn't cross is ranked behind the finishers by track progress
             var ranked = new List<RacerInfo>(_racers);
@@ -466,8 +456,8 @@ namespace MotoSquid.Race
                 r.beforeStart = false;
             }
 
-            return r.ai != null && r.ai.aiLogic != null
-                ? r.ai.aiLogic.SplineT
+            return r.ai != null
+                ? r.ai.SplineT
                 : SampleT(r.transform.position);
         }
 
@@ -477,7 +467,7 @@ namespace MotoSquid.Race
             var combos = randomiser != null ? randomiser.Draw(aiCount) : null;
             bool randomised = combos != null && combos.Length == aiCount;
 
-            var spawned = new System.Collections.Generic.List<BikeAIController>(aiCount);
+            var spawned = new System.Collections.Generic.List<BikeAILogic>(aiCount);
             var log = new System.Text.StringBuilder();
 
             for (int i = 0; i < aiCount; i++)
@@ -497,10 +487,10 @@ namespace MotoSquid.Race
                 if (go.scene != gameObject.scene)
                     SceneManager.MoveGameObjectToScene(go, gameObject.scene);
 
-                var ai = go.GetComponent<BikeAIController>();
+                var ai = go.GetComponentInChildren<BikeAILogic>(true);
                 if (ai == null)
                 {
-                    Debug.LogError($"[RaceManager] '{prefab.name}' is missing BikeAIController.", go);
+                    Debug.LogError($"[RaceManager] '{prefab.name}' is missing BikeAILogic, it is not an AI racer.", go);
                     Destroy(go);
                     continue;
                 }
@@ -631,7 +621,8 @@ namespace MotoSquid.Race
             for (int i = 0; i < aiOpponents.Length; i++)
             {
                 var ai = aiOpponents[i];
-                if (ai == null || ai.aiLogic == null) continue;
+                if (ai == null || ai.controller == null) continue;
+                var bike = ai.controller;
 
                 // Alternate lanes, even indices left (-0.5), odd right (+0.5)
                 float laneOffset = (i % 2 == 0) ? -0.5f : 0.5f;
@@ -644,7 +635,7 @@ namespace MotoSquid.Race
 
                 // Teleport via Rigidbody so physics stays in sync with the transform
                 Quaternion targetRotation = Quaternion.LookRotation(forward, Vector3.up);
-                Rigidbody rb = ai.bikeReferences.BikeRb;
+                Rigidbody rb = bike.bikeReferences.BikeRb;
                 if (rb != null)
                 {
                     rb.linearVelocity  = Vector3.zero;
@@ -652,23 +643,20 @@ namespace MotoSquid.Race
                     rb.position        = position;
                     rb.rotation        = targetRotation;
                 }
-                ai.transform.SetPositionAndRotation(position, targetRotation);
+                bike.transform.SetPositionAndRotation(position, targetRotation);
 
-                if (ai.bikeReferences.Rotator != null)
-                    ai.bikeReferences.Rotator.rotation = targetRotation;
+                if (bike.bikeReferences.Rotator != null)
+                    bike.bikeReferences.Rotator.rotation = targetRotation;
 
                 // Prevent ragdoll activation during grid settling
-                if (ai.bikeReferences.ragdollActivator != null)
-                    ai.bikeReferences.ragdollActivator.IsInvulnerable = true;
+                if (bike.bikeReferences.ragdollActivator != null)
+                    bike.bikeReferences.ragdollActivator.IsInvulnerable = true;
 
             }
 
             // Re sync spline tracking to match grid positions after teleport
             foreach (var ai in aiOpponents)
-            {
-                if (ai?.aiLogic != null)
-                    ai.aiLogic.ResetTracking();
-            }
+                ai?.ResetTracking();
 
             foreach (var r in _racers)
                 r.beforeStart = true;
@@ -772,7 +760,7 @@ namespace MotoSquid.Race
             playerBike2?.GetComponentInChildren<BikeInput>(true)?.UnlockForCountdown();
 
             foreach (var ai in aiOpponents)
-                if (ai != null) { MuteEngine(ai, false); ai.isRevving = true; }
+                if (ai != null) { MuteEngine(ai.controller, false); ai.isRevving = true; }
         }
 
         // Mute/unmute a bike's engine via its BikeAudioController child (player or AI)
@@ -790,13 +778,13 @@ namespace MotoSquid.Race
 
             foreach (var ai in aiOpponents)
             {
-                if (ai == null) continue;
-                ai.canAccelerate = true;
-                ai.SetCanMove(true);
-                ai.isRevving     = false;
-                ai.ApplyStartBurnoutLaunch();   // Getaway shove for AIs that burned out on the grid
-                if (ai.bikeReferences.ragdollActivator != null)
-                    ai.bikeReferences.ragdollActivator.IsInvulnerable = false;
+                if (ai == null || ai.controller == null) continue;
+                var bike = ai.controller;
+                bike.canAccelerate = true;
+                ai.OnGo();
+                bike.canMove = true;
+                if (bike.bikeReferences.ragdollActivator != null)
+                    bike.bikeReferences.ragdollActivator.IsInvulnerable = false;
             }
 
             if (playerBike  != null)

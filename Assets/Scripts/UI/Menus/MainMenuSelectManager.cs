@@ -65,6 +65,7 @@ namespace MotoSquid.UI
 
                 session.SelectedTrackScene = raceScene;
                 session.SelectedTrackType  = raceTrackType;
+                session.HasTrackSelection  = true;
                 session.IsSplitScreen      = twoPlayer;
 
                 if (twoPlayer)

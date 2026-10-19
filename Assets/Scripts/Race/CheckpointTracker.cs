@@ -7,6 +7,7 @@ namespace MotoSquid.Race
 {
 public class CheckpointTracker : MonoBehaviour
 {
+    [UnityEngine.Serialization.FormerlySerializedAs("waypointGenerator")]
     public WaypointPath waypointPath;
 
     [Header("Shortcut Awareness (optional)")]

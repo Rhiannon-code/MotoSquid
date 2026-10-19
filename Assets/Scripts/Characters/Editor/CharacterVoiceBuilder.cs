@@ -11,7 +11,7 @@ namespace MotoSquid.Characters
     public static class CharacterVoiceBuilder
     {
         const string VoicesRoot      = "Assets/Audio/Voices";
-        const string DefinitionsRoot = "Assets/MotoSquid/Data/Characters";
+        const string DefinitionsRoot = "Assets/Scriptable Objects/Characters";
 
         static readonly (string folder, string field)[] Mapping =
         {

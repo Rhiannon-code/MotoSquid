@@ -2,7 +2,7 @@ using UnityEngine;
 
 namespace MotoSquid.Bike
 {
-    [CreateAssetMenu(fileName = "New Bike", menuName = "Selector/Bike")]
+    [CreateAssetMenu(fileName = "New Bike", menuName = "MotoSquid/Selector/Bike")]
     public class BikeScriptableObject : ScriptableObject
     {
         public string bikeName;

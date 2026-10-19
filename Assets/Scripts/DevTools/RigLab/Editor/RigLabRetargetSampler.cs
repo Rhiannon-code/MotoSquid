@@ -15,7 +15,7 @@ namespace MotoSquid.DevTools
     public class RigLabRetargetSampler : EditorWindow
     {
         const string ClipFolder = "Assets/Animations";
-        const string OutFolder = "Assets/MotoSquid/Data/RigLab/Tracks";
+        const string OutFolder = "Assets/RigLab/Tracks";
 
         // Driven by IK: target position, plus the joint that sets the bend plane.
         static readonly (HumanBodyBones tip, HumanBodyBones hint, string name)[] Chains =
@@ -43,7 +43,7 @@ namespace MotoSquid.DevTools
         string status = "";
         Vector2 scroll;
 
-        [MenuItem("Tools/Rig Lab/20. Sample Clips Onto Rider", false, 215)]
+        [MenuItem("MotoSquid/Rig Lab/20. Sample Clips Onto Rider", false, 215)]
         static void Open()
         {
             GetWindow<RigLabRetargetSampler>("Retarget Sampler").minSize = new Vector2(440, 300);

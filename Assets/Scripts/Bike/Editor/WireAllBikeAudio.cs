@@ -13,7 +13,7 @@ namespace MotoSquid.Bike
         const string EngineGroup = "Engine";
         const string WorldGroup  = "World SFX";
 
-        [MenuItem("MotoSquid/Wire All Bike Audio")]
+        [MenuItem("MotoSquid/Audio/Wire All Bike Audio")]
         static void WireAll()
         {
             var mixer     = AssetDatabase.LoadAssetAtPath<AudioMixer>(MixerPath);

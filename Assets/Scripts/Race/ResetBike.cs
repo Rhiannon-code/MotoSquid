@@ -1,3 +1,4 @@
+using MotoSquid.AI;
 using MotoSquid.Bike;
 using MotoSquid.Controls;
 using MotoSquid.Rider;
@@ -12,8 +13,10 @@ namespace MotoSquid.Race
 
 public class ResetBike : MonoBehaviour
 {
-    public BikeController    bikeController;
-    public BikeAIController  aiController;
+    public BikeController bikeController;
+    // Present on AI bikes only, so it is also what makes this the AI flavour of the reset
+    public BikeAILogic    aiLogic;
+    bool IsAI => aiLogic != null;
 
     [Header("Input")]
     [SerializeField] private InputActionAsset inputActions;
@@ -82,7 +85,6 @@ public class ResetBike : MonoBehaviour
     public float wrongWayWarningDelay     = 0.5f;
     public float wrongWayClearDelay      = 0.6f;
     private RagdollActivator _ragdoll;
-    private RagdollActivator _aiRagdoll;
     private GameObject _pendingPlayerReset;
     private GameObject _pendingAIReset;
     private float _resetLockedUntil = -1f;
@@ -115,11 +117,8 @@ public class ResetBike : MonoBehaviour
 
     private void Start()
     {
-        if (bikeController == null && aiController == null)
-        {
-            bikeController = GetComponent<BikeController>();
-            aiController   = GetComponent<BikeAIController>();
-        }
+        if (bikeController == null) bikeController = GetComponent<BikeController>();
+        if (aiLogic == null)        aiLogic        = GetComponent<BikeAILogic>();
 
         if (raceManager == null) raceManager = FindFirstObjectByType<RaceManager>();
 
@@ -129,7 +128,7 @@ public class ResetBike : MonoBehaviour
 
         if (hud == null) hud = FindFirstObjectByType<HUDManager>();
 
-        if (bikeController != null)
+        if (bikeController != null && !IsAI)
         {
             if (checkpointTracker == null)
                 Debug.LogWarning($"[ResetBike] '{name}' has no CheckpointTracker, so off-track and " +
@@ -142,14 +141,11 @@ public class ResetBike : MonoBehaviour
         if (bikeController != null)
             _ragdoll = bikeController.bikeReferences.ragdollActivator;
 
-        if (aiController != null)
-            _aiRagdoll = aiController.bikeReferences.ragdollActivator;
-
         if (_ragdoll != null && autoResetDelay > 0f)
-            _ragdoll.onRagdollActivated.AddListener(OnRagdollActivated);
-
-        if (_aiRagdoll != null && autoResetDelay > 0f)
-            _aiRagdoll.onRagdollActivated.AddListener(OnAIRagdollActivated);
+        {
+            if (IsAI) _ragdoll.onRagdollActivated.AddListener(OnAIRagdollActivated);
+            else      _ragdoll.onRagdollActivated.AddListener(OnRagdollActivated);
+        }
 
         if (raceManager != null)
         {
@@ -163,7 +159,7 @@ public class ResetBike : MonoBehaviour
     private void UpdateResetPrompt()
     {
         if (resetPromptUI == null) return;
-        bool canReset = bikeController != null && _ragdoll != null &&
+        bool canReset = !IsAI && _ragdoll != null &&
                         _ragdoll.IsRagdollActive && Time.time >= _resetLockedUntil;
         if (resetPromptUI.activeSelf != canReset) resetPromptUI.SetActive(canReset);
     }
@@ -171,10 +167,10 @@ public class ResetBike : MonoBehaviour
     private void OnDestroy()
     {
         if (_ragdoll != null)
+        {
             _ragdoll.onRagdollActivated.RemoveListener(OnRagdollActivated);
-
-        if (_aiRagdoll != null)
-            _aiRagdoll.onRagdollActivated.RemoveListener(OnAIRagdollActivated);
+            _ragdoll.onRagdollActivated.RemoveListener(OnAIRagdollActivated);
+        }
 
         if (raceManager != null)
             raceManager.OnRaceStart -= OnRaceStarted;
@@ -185,8 +181,8 @@ public class ResetBike : MonoBehaviour
         _resetLockedUntil = Time.time + raceStartLockDuration;
         checkpointTracker?.Initialise();
 
-        if (aiController != null)
-            _aiStuckAnchor = aiController.transform.position;
+        if (IsAI)
+            _aiStuckAnchor = bikeController.transform.position;
         _aiStuckTimer = 0f;
         _aiOffTrackTimer = 0f;
         _playerOffTrackTimer = 0f;
@@ -231,7 +227,7 @@ public class ResetBike : MonoBehaviour
         CancelPendingReset(ref _pendingAIReset);
         _pendingAIReset = ResetBikeRunner.Spawn(PlayerLeads() ? aiResetDelayWhenPlayerLeads : autoResetDelay, () =>
         {
-            if (_aiRagdoll == null || !_aiRagdoll.IsRagdollActive)
+            if (_ragdoll == null || !_ragdoll.IsRagdollActive)
             {
                 Debug.LogWarning("[ResetBike] AI auto reset timer fired but ragdoll is not active, skipping.", this);
                 return;
@@ -264,7 +260,7 @@ public class ResetBike : MonoBehaviour
             Vector3.Distance(bikeController.transform.position, _cachedRespawnPos) > respawnAdvanceDistance * 2f)
             _hasRespawnCache = false;
 
-        if (bikeController != null && _reset != null && WasPressedThisFrame(_reset))
+        if (!IsAI && bikeController != null && _reset != null && WasPressedThisFrame(_reset))
         {
             if (resetPromptUI != null) resetPromptUI.SetActive(false);
             hud?.HideRespawnWarning(bikeController);
@@ -279,7 +275,7 @@ public class ResetBike : MonoBehaviour
         float dt = Time.deltaTime;
 
         // Player, off track only (with on screen countdown)
-        if (bikeController != null)
+        if (bikeController != null && !IsAI)
         {
             bool busy = (_ragdoll != null && _ragdoll.IsRagdollActive) || _pendingPlayerReset != null;
 
@@ -398,25 +394,24 @@ public class ResetBike : MonoBehaviour
         }
 
         // AI, off track and stuck
-        if (aiController != null)
+        if (IsAI && bikeController != null)
         {
-
-            bool busy = (_aiRagdoll != null && _aiRagdoll.IsRagdollActive) || _pendingAIReset != null
-                        || BikeAIController.DebugHoldForCombatTest;
+            bool busy = (_ragdoll != null && _ragdoll.IsRagdollActive) || _pendingAIReset != null
+                        || BikeAILogic.DebugHoldForCombatTest;
             if (busy)
             {
                 _aiOffTrackTimer = 0f;
                 _aiStuckTimer    = 0f;
-                _aiStuckAnchor   = aiController.transform.position;
+                _aiStuckAnchor   = bikeController.transform.position;
                 return;
             }
 
-            Vector3 aiPos = aiController.transform.position;
+            Vector3 aiPos = bikeController.transform.position;
 
             // Off track
-            if (enableOffTrackRespawn && aiController.aiLogic != null)
+            if (enableOffTrackRespawn)
             {
-                float dist = aiController.aiLogic.HorizontalDistanceFromPath();
+                float dist = aiLogic.HorizontalDistanceFromPath();
                 if (dist > offTrackDistance)
                 {
                     _aiOffTrackTimer += dt;
@@ -507,43 +502,43 @@ public class ResetBike : MonoBehaviour
 
     public void ResetAIBike()
     {
-        if (_aiRagdoll == null || !_aiRagdoll.IsRagdollActive) return;
+        if (_ragdoll == null || !_ragdoll.IsRagdollActive) return;
         CancelPendingReset(ref _pendingAIReset);
 
-        Vector3 crashVelocity = _aiRagdoll.CrashVelocity;
-        _aiRagdoll.ReEnableBike();
+        Vector3 crashVelocity = _ragdoll.CrashVelocity;
+        _ragdoll.ReEnableBike();
 
         // The tracker dead reckons and can be well ahead of a fast bike, so taking the respawn from it
         // unsynced put AI that crashed behind the player back on the road in front of them
-        aiController?.aiLogic?.ResetTracking();
+        aiLogic?.ResetTracking();
 
         // Prefer the AI's own waypoint tracking, it knows which road segment it's on
-        if (aiController?.aiLogic != null &&
-            aiController.aiLogic.GetRespawnPoint(respawnAdvanceDistance, out Vector3 pos, out Vector3 fwd))
+        if (aiLogic != null &&
+            aiLogic.GetRespawnPoint(respawnAdvanceDistance, out Vector3 pos, out Vector3 fwd))
         {
-            RespawnAtPoint(aiController.transform,
-                           aiController.bikeReferences.BikeRb,
-                           aiController.bikeReferences.Rotator,
-                           aiController.bikeReferences.LeanTransform,
+            RespawnAtPoint(bikeController.transform,
+                           bikeController.bikeReferences.BikeRb,
+                           bikeController.bikeReferences.Rotator,
+                           bikeController.bikeReferences.LeanTransform,
                            crashVelocity,
                            pos + Vector3.up * respawnHeightOffset,
                            fwd);
         }
         else
         {
-            RespawnOnWaypoints(aiController.transform,
-                               aiController.bikeReferences.BikeRb,
-                               aiController.bikeReferences.Rotator,
-                               aiController.bikeReferences.LeanTransform,
+            RespawnOnWaypoints(bikeController.transform,
+                               bikeController.bikeReferences.BikeRb,
+                               bikeController.bikeReferences.Rotator,
+                               bikeController.bikeReferences.LeanTransform,
                                crashVelocity);
         }
 
         if (checkpointTracker != null) checkpointTracker.enabled = true;
         checkpointTracker?.Initialise();
-        aiController.aiLogic?.ResetTracking();
+        aiLogic?.ResetTracking();
         // Kick off the catch-up window, extra cruise speed + auto spend boost for a few seconds
-        aiController.aiLogic?.BeginRecovery();
-        StartCoroutine(InvulnerabilityTimer(_aiRagdoll));
+        aiLogic?.BeginRecovery();
+        StartCoroutine(InvulnerabilityTimer(_ragdoll));
     }
 
     public void ForceRespawnPlayerOnTrack()
@@ -579,41 +574,41 @@ public class ResetBike : MonoBehaviour
     // Force an AI back onto the track without a crash (used by the stuck/off track recovery)
     public void ForceRespawnAIOnTrack()
     {
-        if (aiController == null) return;
+        if (!IsAI || bikeController == null) return;
         CancelPendingReset(ref _pendingAIReset);
 
-        var rb      = aiController.bikeReferences.BikeRb;
-        var rotator = aiController.bikeReferences.Rotator;
-        var lean    = aiController.bikeReferences.LeanTransform;
+        var rb      = bikeController.bikeReferences.BikeRb;
+        var rotator = bikeController.bikeReferences.Rotator;
+        var lean    = bikeController.bikeReferences.LeanTransform;
 
         Vector3 vel = rb != null ? rb.linearVelocity : Vector3.zero;
-        if (_aiRagdoll != null && _aiRagdoll.IsRagdollActive)
+        if (_ragdoll != null && _ragdoll.IsRagdollActive)
         {
-            vel = _aiRagdoll.CrashVelocity;
-            _aiRagdoll.ReEnableBike();
+            vel = _ragdoll.CrashVelocity;
+            _ragdoll.ReEnableBike();
         }
 
-        aiController.aiLogic?.ResetTracking();
-        if (aiController.aiLogic != null &&
-            aiController.aiLogic.GetRespawnPoint(respawnAdvanceDistance, out Vector3 pos, out Vector3 fwd))
+        aiLogic?.ResetTracking();
+        if (aiLogic != null &&
+            aiLogic.GetRespawnPoint(respawnAdvanceDistance, out Vector3 pos, out Vector3 fwd))
         {
-            RespawnAtPoint(aiController.transform, rb, rotator, lean, vel,
+            RespawnAtPoint(bikeController.transform, rb, rotator, lean, vel,
                            pos + Vector3.up * respawnHeightOffset, fwd);
         }
         else
         {
-            RespawnOnWaypoints(aiController.transform, rb, rotator, lean, vel);
+            RespawnOnWaypoints(bikeController.transform, rb, rotator, lean, vel);
         }
 
         if (checkpointTracker != null) checkpointTracker.enabled = true;
         checkpointTracker?.Initialise();
-        aiController.aiLogic?.ResetTracking();
+        aiLogic?.ResetTracking();
         // Kick off the catch up window so the recovered AI rejoins the pack
-        aiController.aiLogic?.BeginRecovery();
-        if (_aiRagdoll != null) StartCoroutine(InvulnerabilityTimer(_aiRagdoll));
+        aiLogic?.BeginRecovery();
+        if (_ragdoll != null) StartCoroutine(InvulnerabilityTimer(_ragdoll));
 
         // Reset the recovery monitors so we don't immediately re-trigger.
-        _aiStuckAnchor   = aiController.transform.position;
+        _aiStuckAnchor   = bikeController.transform.position;
         _aiStuckTimer    = 0f;
         _aiOffTrackTimer = 0f;
     }

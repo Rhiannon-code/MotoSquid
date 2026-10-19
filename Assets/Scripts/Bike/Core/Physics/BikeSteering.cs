@@ -87,8 +87,9 @@ namespace MotoSquid.Bike
                 float steerAngle = SteerAngle * Mathf.Lerp(1f, set.driftSteerGain, driftIntensity);
                 float steeringAngleRadians = SteerSmoother * Mathf.Deg2Rad * steerAngle;
 
-                // Avoid division by zero by ensuring there's a minimum steering angle
-                if (Mathf.Abs(steeringAngleRadians) < 0.01f)
+                // Only guards the Tan divide. At 0.01 rad every lane change the AI asked for at race pace,
+                // and any stick deflection under about 10%, was silently discarded
+                if (Mathf.Abs(steeringAngleRadians) < 1e-5f)
                     return;
 
                 float turningRadius = bike.Wheelbase / Mathf.Tan(steeringAngleRadians);

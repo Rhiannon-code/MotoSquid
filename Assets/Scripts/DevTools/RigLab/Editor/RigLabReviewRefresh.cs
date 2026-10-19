@@ -25,7 +25,7 @@ namespace MotoSquid.DevTools
             return false;
         }
 
-        [MenuItem("Tools/Rig Lab/1b. Refresh Review Bike List", false, 1)]
+        [MenuItem("MotoSquid/Rig Lab/1b. Refresh Review Bike List", false, 1)]
         static void Refresh()
         {
             var review = Object.FindFirstObjectByType<RigReview>();

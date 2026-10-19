@@ -11,7 +11,7 @@ namespace MotoSquid.DevTools
 {
     public static class RigLabBikeAnchors
     {
-        [MenuItem("Tools/Rig Lab/19b. Create Bike Anchors (all bikes)", false, 191)]
+        [MenuItem("MotoSquid/Rig Lab/19b. Create Bike Anchors (all bikes)", false, 191)]
         static void Create()
         {
             var found = Object.FindObjectsByType<BikeController>(FindObjectsInactive.Include, FindObjectsSortMode.None);

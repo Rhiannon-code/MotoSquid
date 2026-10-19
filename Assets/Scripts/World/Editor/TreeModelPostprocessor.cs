@@ -50,7 +50,7 @@ namespace MotoSquid.World
             mesh.RecalculateBounds();
         }
 
-        [MenuItem("Tools/Force Reimport Tree Models")]
+        [MenuItem("MotoSquid/World/Force Reimport Tree Models")]
         static void ForceReimport()
         {
             string[] guids = AssetDatabase.FindAssets(

@@ -16,14 +16,14 @@ namespace MotoSquid.DevTools
     public class RigLabFullSampler : EditorWindow
     {
         const string ClipFolder = "Assets/Animations";
-        const string OutFolder = "Assets/MotoSquid/Data/RigLab/FullPoses";
+        const string OutFolder = "Assets/RigLab/FullPoses";
 
         string filter = "Long_Weapon,Kick,Get_Hit,Turn_V2";
         Animator rider;
         string status = "";
         Vector2 scroll;
 
-        [MenuItem("Tools/Rig Lab/22. Full Skeleton Sample + Verify", false, 220)]
+        [MenuItem("MotoSquid/Rig Lab/22. Full Skeleton Sample + Verify", false, 220)]
         static void Open()
         {
             GetWindow<RigLabFullSampler>("Full Sampler").minSize = new Vector2(460, 340);

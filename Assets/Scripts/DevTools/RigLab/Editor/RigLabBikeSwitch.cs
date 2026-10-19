@@ -17,7 +17,7 @@ namespace MotoSquid.DevTools
         // Player 2 keeps its own bike, so it must never end up in a switch that deactivates the others
         const string PlayerTwoPrefix = "Player2";
 
-        [MenuItem("Tools/Rig Lab/60. Collect Player Bikes Into Switch", false, 600)]
+        [MenuItem("MotoSquid/Rig Lab/60. Collect Player Bikes Into Switch", false, 600)]
         static void Collect()
         {
             var candidates = Object.FindObjectsByType<BikeController>(FindObjectsInactive.Include, FindObjectsSortMode.None)
@@ -69,7 +69,7 @@ namespace MotoSquid.DevTools
                       Missing(host));
         }
 
-        [MenuItem("Tools/Rig Lab/61. Swap Player 1 Bike", false, 601)]
+        [MenuItem("MotoSquid/Rig Lab/61. Swap Player 1 Bike", false, 601)]
         static void SwapMenu() => Swap();
 
         [Shortcut("Rig Lab/Swap Player 1 Bike", KeyCode.B, ShortcutModifiers.Alt | ShortcutModifiers.Shift)]

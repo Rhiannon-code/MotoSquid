@@ -6,18 +6,13 @@ namespace MotoSquid.Rider
 public class BikeAnimationController : MonoBehaviour
 {
     public BikeController bikeControllerRhiannon;
-    public BikeAIController bikeAIRhiannon;
 
-    // One of the two is set, never both. The AI controller exposes the same six values under the same
-    // names, so the rider is posed identically whoever is riding - without this an AI racer has no
-    // procedural rider at all
-    bool OnAI => bikeControllerRhiannon == null && bikeAIRhiannon != null;
-    Vector3 BikeVelocity      => OnAI ? bikeAIRhiannon.localBikeVelocity          : bikeControllerRhiannon.localBikeVelocity;
-    float   BikeLeanAngle     => OnAI ? bikeAIRhiannon.currentLeanAngle           : bikeControllerRhiannon.currentLeanAngle;
-    bool    BikeIsBurningOut  => OnAI ? bikeAIRhiannon.isDoingBurnout             : bikeControllerRhiannon.isDoingBurnout;
-    int     BikeSteerInput    => OnAI ? bikeAIRhiannon.CurrentSteerInput          : bikeControllerRhiannon.CurrentSteerInput;
-    bool    BikeIsGrounded    => OnAI ? bikeAIRhiannon.bikeIsGrounded             : bikeControllerRhiannon.bikeIsGrounded;
-    float   BikeMaxLeanAngle  => OnAI ? bikeAIRhiannon.bikeSettings.maxLeanAngle  : bikeControllerRhiannon.bikeSettings.maxLeanAngle;
+    Vector3 BikeVelocity      => bikeControllerRhiannon.localBikeVelocity;
+    float   BikeLeanAngle     => bikeControllerRhiannon.currentLeanAngle;
+    bool    BikeIsBurningOut  => bikeControllerRhiannon.isDoingBurnout;
+    int     BikeSteerInput    => bikeControllerRhiannon.CurrentSteerInput;
+    bool    BikeIsGrounded    => bikeControllerRhiannon.bikeIsGrounded;
+    float   BikeMaxLeanAngle  => bikeControllerRhiannon.bikeSettings.maxLeanAngle;
 
     public float maxHipPosOffset = 0.2f;
 
@@ -125,7 +120,7 @@ public class BikeAnimationController : MonoBehaviour
         // Naming the empty fields rather than saying "one or more": the rig is wired by a build step,
         // and knowing WHICH reference is missing says which step did not finish
         var missing = new System.Collections.Generic.List<string>();
-        if (bikeControllerRhiannon == null && bikeAIRhiannon == null) missing.Add("a bike controller (player or AI)");
+        if (bikeControllerRhiannon == null) missing.Add("bikeControllerRhiannon");
         if (leftLegHintRig == null) missing.Add("leftLegHintRig");
         if (rightLegHintRig == null) missing.Add("rightLegHintRig");
         if (leftlegReverseTarget == null) missing.Add("leftlegReverseTarget");
@@ -203,7 +198,6 @@ public class BikeAnimationController : MonoBehaviour
     {
         float weight = forcedSpeedBlend >= 0f ? 0f : 1f;
         if (bikeControllerRhiannon != null) bikeControllerRhiannon.idleLeanWeight = weight;
-        if (bikeAIRhiannon != null) bikeAIRhiannon.idleLeanWeight = weight;
     }
 
     float leanLerp = 0.0f;

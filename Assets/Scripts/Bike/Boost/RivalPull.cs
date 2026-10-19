@@ -25,8 +25,7 @@ public class RivalPull : MonoBehaviour
     public float dodgeRelease = 0.33f;     // AI only, matches where the other racing biases zero out
     public float minSpeedKmh  = 80f;
 
-    BikeController   m_Player;
-    BikeAIController m_Ai;
+    BikeController   m_Bike;
     BikeAILogic      m_AiLogic;
     CombatAI         m_CombatAI;
     SlipstreamSystem m_Slip;
@@ -39,22 +38,13 @@ public class RivalPull : MonoBehaviour
         m_Slip   = GetComponentInParent<SlipstreamSystem>(true);
         m_Combat = GetComponentInChildren<CombatSystem>(true);
 
-        m_Player = GetComponentInParent<BikeController>(true);
-        if (m_Player != null)
+        m_Bike = GetComponentInParent<BikeController>(true);
+        if (m_Bike != null)
         {
-            m_Rb      = m_Player.bikeReferences.BikeRb;
-            m_Forward = m_Player.bikeReferences.Rotator;
-        }
-        else
-        {
-            m_Ai = GetComponentInParent<BikeAIController>(true);
-            if (m_Ai != null)
-            {
-                m_Rb       = m_Ai.bikeReferences.BikeRb;
-                m_Forward  = m_Ai.bikeReferences.Rotator;
-                m_AiLogic  = m_Ai.aiLogic;
-                m_CombatAI = m_Ai.GetComponentInChildren<CombatAI>(true);
-            }
+            m_Rb      = m_Bike.bikeReferences.BikeRb;
+            m_Forward = m_Bike.bikeReferences.Rotator;
+            m_AiLogic = GetComponentInParent<BikeAILogic>(true);
+            if (m_AiLogic != null) m_CombatAI = m_Bike.GetComponentInChildren<CombatAI>(true);
         }
 
         if (m_Rb == null || m_Forward == null)
@@ -65,8 +55,8 @@ public class RivalPull : MonoBehaviour
         }
     }
 
-    bool Grounded      => m_Player != null ? m_Player.bikeIsGrounded : m_Ai.bikeIsGrounded;
-    bool CanAccelerate => m_Player != null ? m_Player.canAccelerate  : m_Ai.canAccelerate;
+    bool Grounded      => m_Bike.bikeIsGrounded;
+    bool CanAccelerate => m_Bike.canAccelerate;
 
     void FixedUpdate()
     {
@@ -87,7 +77,7 @@ public class RivalPull : MonoBehaviour
 
     float Authority()
     {
-        float steer     = m_Player != null ? m_Player.AnalogSteer : m_Ai.steerInput;
+        float steer     = m_AiLogic != null ? m_AiLogic.SteerInput : m_Bike.AnalogSteer;
         float authority = 1f - Mathf.Clamp01(Mathf.Abs(steer) / Mathf.Max(steerRelease, 0.01f));
 
         if (m_AiLogic != null)

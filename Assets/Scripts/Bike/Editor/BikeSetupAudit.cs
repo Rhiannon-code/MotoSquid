@@ -49,7 +49,7 @@ namespace MotoSquid.Bike
         Vector2       _scroll;
         readonly Dictionary<string, bool> _expanded = new Dictionary<string, bool>();
 
-        [MenuItem("MotoSquid/Bike Setup Audit")]
+        [MenuItem("MotoSquid/QA/Bike Setup Audit")]
         static void Open()
         {
             var w = GetWindow<BikeSetupAudit>("Bike Setup");
@@ -216,7 +216,7 @@ namespace MotoSquid.Bike
                 }
 
                 bool hasSceneBikes = race.aiOpponents != null && race.aiOpponents.Length > 0 && race.aiOpponents[0] != null;
-                int  sceneAI = Object.FindObjectsByType<BikeAIController>(FindObjectsInactive.Exclude, FindObjectsSortMode.None).Length;
+                int  sceneAI = Object.FindObjectsByType<MotoSquid.AI.BikeAILogic>(FindObjectsInactive.Exclude, FindObjectsSortMode.None).Length;
                 bool willSpawn = !hasSceneBikes && race.aiPrefab != null && race.aiCount > 0;
 
                 string grid = willSpawn

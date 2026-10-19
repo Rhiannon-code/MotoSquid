@@ -31,7 +31,7 @@ namespace MotoSquid.Performance
         Vector2           scroll;
         readonly List<string> log = new List<string>();
 
-        [MenuItem("Tools/LOD Generator")]
+        [MenuItem("MotoSquid/Performance/LOD Generator")]
         static void Open() => GetWindow<LODGeneratorWindow>("LOD Generator");
 
         void OnGUI()

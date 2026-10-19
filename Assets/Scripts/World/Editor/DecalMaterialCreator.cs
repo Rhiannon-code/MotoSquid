@@ -24,7 +24,7 @@ namespace MotoSquid.World
             { "Metallic", "_MetallicGlossMap" }
         };
 
-        [MenuItem("Tools/HDRP/Decal Material Creator")]
+        [MenuItem("MotoSquid/World/Decal Material Creator")]
         public static void ShowWindow()
         {
             GetWindow<DecalMaterialCreator>("Decal Material Creator");

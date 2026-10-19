@@ -17,7 +17,7 @@ namespace MotoSquid.DevTools
         private GameObject NewBike;
         private GUIStyle titleStyle;
 
-        [MenuItem("Tools/Rig Lab/34. Bike Creator (vendor)")]
+        [MenuItem("MotoSquid/Rig Lab/34. Bike Creator (vendor)")]
         private static void OpenWindow()
         {
             ArcadeBikeCreator window = (ArcadeBikeCreator)GetWindow(typeof(ArcadeBikeCreator));
@@ -25,7 +25,7 @@ namespace MotoSquid.DevTools
             window.Show();
         }
 
-        [MenuItem("Tools/Rig Lab/34b. Bike Creator Documentation")]
+        [MenuItem("MotoSquid/Rig Lab/34b. Bike Creator Documentation")]
         private static void OpenDocumentationLink()
         {
             Application.OpenURL("https://soft-pilot-e91.notion.site/Documentation-40c4b6d5135b4fa080694e38d8a1b1d3");

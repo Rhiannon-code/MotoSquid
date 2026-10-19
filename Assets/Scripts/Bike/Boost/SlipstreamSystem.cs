@@ -67,25 +67,15 @@ namespace MotoSquid.Bike
         {
             ResolveTrails();
 
-            var player = GetComponentInParent<BikeController>(true);
-            if (player != null)
+            var bike = GetComponentInParent<BikeController>(true);
+            if (bike != null)
             {
-                m_Root        = player.transform;
-                m_Forward     = player.bikeReferences.Rotator;
-                m_Rb          = player.bikeReferences.BikeRb;
-                m_PlayerBoost = player.GetComponentInChildren<BoostSystem>(true);
-                m_IsHuman     = true;
-            }
-            else
-            {
-                var ai = GetComponentInParent<BikeAIController>(true);
-                if (ai != null)
-                {
-                    m_Root    = ai.transform;
-                    m_Forward = ai.bikeReferences.Rotator;
-                    m_Rb      = ai.bikeReferences.BikeRb;
-                    m_AiBoost = ai.GetComponentInChildren<AIBoostSystem>(true);
-                }
+                m_Root    = bike.transform;
+                m_Forward = bike.bikeReferences.Rotator;
+                m_Rb      = bike.bikeReferences.BikeRb;
+                m_IsHuman = GetComponentInParent<BikeAILogic>(true) == null;
+                if (m_IsHuman) m_PlayerBoost = bike.GetComponentInChildren<BoostSystem>(true);
+                else           m_AiBoost     = bike.GetComponentInChildren<AIBoostSystem>(true);
             }
 
             if (m_Forward == null || m_Rb == null)
@@ -252,23 +242,12 @@ namespace MotoSquid.Bike
             heading = Vector3.forward;
             if (col == null) return false;
 
-            var player = col.GetComponentInParent<BikeController>();
-            if (player != null)
-            {
-                root    = player.transform;
-                heading = Heading(player.bikeReferences.Rotator, root);
-                return true;
-            }
+            var bike = col.GetComponentInParent<BikeController>();
+            if (bike == null) return false;
 
-            var ai = col.GetComponentInParent<BikeAIController>();
-            if (ai != null)
-            {
-                root    = ai.transform;
-                heading = Heading(ai.bikeReferences.Rotator, root);
-                return true;
-            }
-
-            return false;
+            root    = bike.transform;
+            heading = Heading(bike.bikeReferences.Rotator, root);
+            return true;
         }
 
         static Vector3 Heading(Transform rotator, Transform root)

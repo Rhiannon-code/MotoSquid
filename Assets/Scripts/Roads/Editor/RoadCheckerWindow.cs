@@ -46,8 +46,10 @@ namespace MotoSquid.Roads
                 EditorGUILayout.LabelField(kv.Key.ToString(), $"{kv.Value.count} places, worst {kv.Value.worst:0.###}");
 
             scroll = EditorGUILayout.BeginScrollView(scroll);
+            var listed = result.Air.Where(a => a.Class != AirClass.Grounded || a.Seconds > settings.groundedMaxAir).ToList();
             EditorGUILayout.LabelField("Air time", EditorStyles.boldLabel);
-            foreach (var air in result.Air.Where(a => a.Lane == 0))
+            EditorGUILayout.LabelField($"{result.Air.Count - listed.Count} micro-hops within the grounded limit not listed.", EditorStyles.miniLabel);
+            foreach (var air in listed)
                 EditorGUILayout.LabelField(air.ToString());
 
             EditorGUILayout.LabelField("Breaches", EditorStyles.boldLabel);
@@ -69,7 +71,8 @@ namespace MotoSquid.Roads
             try
             {
                 var surface = network.transform.Find(RoadNetworkBuild.SurfaceName);
-                if (surface == null || !surface.TryGetComponent(out MeshCollider collider) || collider.sharedMesh == null)
+                var colliders = surface != null ? surface.GetComponentsInChildren<MeshCollider>() : new MeshCollider[0];
+                if (colliders.Length == 0)
                 {
                     error = "No generated surface yet: press Rebuild surface on the Road Network first.";
                     return;
@@ -79,7 +82,7 @@ namespace MotoSquid.Roads
                 var zones = RoadSurfaceBuilder.Prepare(paths);
                 bool backfaces = Physics.queriesHitBackfaces;
                 Physics.queriesHitBackfaces = true;
-                try { result = RoadChecker.Run(paths, zones, new ColliderProbe(collider), settings); }
+                try { result = RoadChecker.Run(paths, zones, new ColliderProbe(colliders), settings); }
                 finally { Physics.queriesHitBackfaces = backfaces; }
 
                 Debug.Log($"[Roads] Checker: {(result.Passed ? "PASSED" : $"{result.Issues.Count} breaches")} over {result.Samples:N0} samples.");

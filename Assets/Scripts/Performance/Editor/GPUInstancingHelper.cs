@@ -37,7 +37,7 @@ namespace MotoSquid.Performance
         private Vector2 scroll;
         private static readonly string[] Tabs = { "Materials", "Batch Groups", "Issues" };
 
-        [MenuItem("Tools/GPU Instancing Helper")]
+        [MenuItem("MotoSquid/Performance/GPU Instancing Helper")]
         public static void Open() => GetWindow<GPUInstancingHelper>("GPU Instancing Helper");
 
         private void OnGUI()

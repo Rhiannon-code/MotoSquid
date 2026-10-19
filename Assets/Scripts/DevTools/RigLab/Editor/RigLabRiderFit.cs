@@ -14,8 +14,8 @@ namespace MotoSquid.DevTools
 {
     public class RigLabRiderFit : EditorWindow
     {
-        const string BaselinePath = "Assets/MotoSquid/Data/RigLab/Data/RiderFitBaseline.json";
-        const string SettingsPath = "Assets/MotoSquid/Data/RigLab/Data/RiderFitSettings.json";
+        const string BaselinePath = "Assets/RigLab/Data/RiderFitBaseline.json";
+        const string SettingsPath = "Assets/RigLab/Data/RiderFitSettings.json";
 
         [System.Serializable] class Entry { public string bike; public string target; public Vector3 pos; public Vector3 euler; }
         [System.Serializable] class Baseline { public List<Entry> entries = new List<Entry>(); }
@@ -50,7 +50,7 @@ namespace MotoSquid.DevTools
         readonly HashSet<string> warnedMissing = new HashSet<string>();
         float comfort = 0.90f;
 
-        [MenuItem("Tools/Rig Lab/9. Rider Fit", false, 80)]
+        [MenuItem("MotoSquid/Rig Lab/9. Rider Fit", false, 80)]
         static void Open()
         {
             GetWindow<RigLabRiderFit>("Rider Fit").minSize = new Vector2(430, 380);

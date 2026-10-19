@@ -129,17 +129,13 @@ public class CombatSystem : MonoBehaviour
         if (audioController == null) audioController = GetComponentInChildren<BikeAudioController>(true);
         if (weaponHolder == null)    weaponHolder    = GetComponentInChildren<MeleeWeaponHolder>(true);
 
-        var player = GetComponent<BikeController>();
-        var ai     = GetComponent<BikeAIController>();
-        _facing = player != null && player.bikeReferences != null && player.bikeReferences.Rotator != null
-            ? player.bikeReferences.Rotator
-            : ai != null && ai.bikeReferences != null && ai.bikeReferences.Rotator != null
-                ? ai.bikeReferences.Rotator
-                : transform;
+        var bike = GetComponent<BikeController>();
+        _facing = bike != null && bike.bikeReferences != null && bike.bikeReferences.Rotator != null
+            ? bike.bikeReferences.Rotator
+            : transform;
 
         if (bikeRigidbody == null)
-            bikeRigidbody = player != null && player.bikeReferences != null ? player.bikeReferences.BikeRb
-                          : ai     != null && ai.bikeReferences     != null ? ai.bikeReferences.BikeRb
+            bikeRigidbody = bike != null && bike.bikeReferences != null ? bike.bikeReferences.BikeRb
                           : GetComponent<Rigidbody>();
 
         BindRider(riderAnimator, rigDriver);

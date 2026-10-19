@@ -1,0 +1,30 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fc2e7652c3005c116a1a5b5e558484ac, type: 3}
+  m_Name: Corridor Layout
+  m_EditorClassIdentifier: Assembly-CSharp::MotoSquid.Roads.CorridorLayoutAsset
+  settings:
+    version: 2
+    sunkenDiamond:
+      freewayHeight: -7
+      eastboundOffRamp: 0.08
+      eastboundOnRamp: 0.07
+      westboundOffRamp: 0.08
+      westboundOnRamp: 0.07
+    raisedDiamond:
+      freewayHeight: 7
+      eastboundOffRamp: 0.07
+      eastboundOnRamp: 0.08
+      westboundOffRamp: 0.07
+      westboundOnRamp: 0.08
+    connectorHeight: 7
+    connectorGrade: 0.07

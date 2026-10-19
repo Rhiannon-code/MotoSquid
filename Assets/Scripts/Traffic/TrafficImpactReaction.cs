@@ -42,8 +42,7 @@ namespace MotoSquid.Traffic
             Rigidbody hitter = collision.rigidbody;
             if (hitter == null || hitter.isKinematic) return;
 
-            bool isRacer = collision.gameObject.GetComponentInParent<BikeController>() != null
-                        || collision.gameObject.GetComponentInParent<BikeAIController>() != null;
+            bool isRacer = collision.gameObject.GetComponentInParent<BikeController>() != null;
             if (!isRacer) return;
 
             Knock(hitter);

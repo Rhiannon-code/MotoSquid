@@ -33,7 +33,6 @@ public class BurnoutVFX : MonoBehaviour
     [Range(0f, 1f)] public float driftShare = 0.6f;
 
     BikeController   m_Player;
-    BikeAIController m_Ai;
     bool m_Playing;
 
     Gradient m_Source;
@@ -44,9 +43,8 @@ public class BurnoutVFX : MonoBehaviour
         if (effect == null) effect = GetComponentInChildren<VisualEffect>(true);
 
         m_Player = GetComponentInParent<BikeController>(true);
-        if (m_Player == null) m_Ai = GetComponentInParent<BikeAIController>(true);
 
-        if (effect == null || (m_Player == null && m_Ai == null))
+        if (effect == null || m_Player == null)
         {
             Debug.LogError("BurnoutVFX: needs a bike controller in its parents and a " +
                            "VisualEffect on it or a child.", this);
@@ -54,8 +52,7 @@ public class BurnoutVFX : MonoBehaviour
             return;
         }
 
-        if (m_Player != null) m_Player.burnoutSmokeSuppressed = true;
-        else                  m_Ai.burnoutSmokeSuppressed     = true;
+        m_Player.burnoutSmokeSuppressed = true;
 
         if (!string.IsNullOrEmpty(gradientProperty) && effect.HasGradient(gradientProperty))
             m_Source = effect.GetGradient(gradientProperty);
@@ -65,10 +62,8 @@ public class BurnoutVFX : MonoBehaviour
 
     void LateUpdate()
     {
-        bool burning = m_Player != null ? m_Player.IsDoingBurnout : m_Ai.IsDoingBurnout;
-        float drift  = !smokeWhileDrifting ? 0f
-                     : m_Player != null ? (m_Player.isDrifting ? m_Player.DriftIntensity : 0f)
-                     : (m_Ai.isAIDrifting ? 1f : 0f);
+        bool burning = m_Player.IsDoingBurnout;
+        float drift  = !smokeWhileDrifting ? 0f : (m_Player.isDrifting ? m_Player.DriftIntensity : 0f);
 
         if (!burning && drift <= 0f)
         {

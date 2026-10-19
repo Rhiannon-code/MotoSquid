@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace MotoSquid.Rider
 {
-    [CreateAssetMenu(fileName = "PoseTrack", menuName = "Rig Lab/Pose Track")]
+    [CreateAssetMenu(fileName = "PoseTrack", menuName = "MotoSquid/Rig Lab/Pose Track")]
     public class PoseTrack : ScriptableObject
     {
         [Serializable]

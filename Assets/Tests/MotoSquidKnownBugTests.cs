@@ -698,7 +698,7 @@ namespace MotoSquid.Tests
                 "rawLeanZ > 180f ? rawLeanZ - 360f",
                 "Physics", "Medium", "Lean hard right while grounded",
                 "Wrapped 0-360 euler makes a right lean read ~340° and can reverse the suspension force",
-                "Lean angle normalised to [-180,180]", "Keep the rawLeanZ normalisation (also in BikeAIController)");
+                "Lean angle normalised to [-180,180]", "Keep the rawLeanZ normalisation");
 
             Check("BUG-044_TrafficSpeedUnitsMetresPerSecond", "TrafficSpawner.cs", true,
                 "Metres per second (NOT km/h)",
@@ -735,7 +735,7 @@ namespace MotoSquid.Tests
                 "set.frictionCoefficient / dt",
                 "Physics", "Medium", "Drive at different physics timesteps",
                 "Friction not normalised by dt becomes frame-rate dependent",
-                "Per-step lateral velocity change is dt-independent", "Keep the / Time.fixedDeltaTime (also in BikeAIController)");
+                "Per-step lateral velocity change is dt-independent", "Keep the / Time.fixedDeltaTime");
 
             Check("BUG-050_CombatInstancesCleared", "CombatSystem.cs", true,
                 "_allInstances.Clear()",

@@ -261,9 +261,9 @@ namespace MotoSquid.Tests
             RunRuntimeKnownBugProbesOnce();
 
             // Wait for AI bikes to spawn
-            yield return WaitUntil(() => FindObjectOfType<BikeAIController>() != null, 5f);
+            yield return WaitUntil(() => FindObjectOfType<MotoSquid.AI.BikeAILogic>() != null, 5f);
 
-            var aiBikes = FindObjectsOfType<BikeAIController>();
+            var aiBikes = FindObjectsOfType<MotoSquid.AI.BikeAILogic>();
             Debug.Log($"  [SOAK] Race {raceNumber}: {aiBikes.Length} AI bike(s) racing");
 
             // Monitoring loop
@@ -275,7 +275,7 @@ namespace MotoSquid.Tests
                 elapsed += SAMPLE_INTERVAL;
 
                 // Re query in case bikes were spawned mid race
-                aiBikes = FindObjectsOfType<BikeAIController>();
+                aiBikes = FindObjectsOfType<MotoSquid.AI.BikeAILogic>();
 
                 foreach (var ai in aiBikes)
                 {

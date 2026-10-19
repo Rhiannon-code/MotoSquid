@@ -8,7 +8,7 @@ namespace MotoSquid.DevTools
 {
     public static class RigLabBikeArtClean
     {
-        [MenuItem("Tools/Rig Lab/31. Clean Bike Art (selected prefabs)", false, 310)]
+        [MenuItem("MotoSquid/Rig Lab/31. Clean Bike Art (selected prefabs)", false, 310)]
         static void CleanSelected()
         {
             var prefabs = Selection.objects.OfType<GameObject>()

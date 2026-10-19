@@ -8,7 +8,7 @@ namespace MotoSquid.DevTools
 {
     public static class RigLabZeroInput
     {
-        [MenuItem("Tools/Rig Lab/38. Zero Stale Bike Input (scene)", false, 380)]
+        [MenuItem("MotoSquid/Rig Lab/38. Zero Stale Bike Input (scene)", false, 380)]
         static void ZeroScene()
         {
             var bikes = Object.FindObjectsByType<BikeController>(FindObjectsInactive.Include, FindObjectsSortMode.None);

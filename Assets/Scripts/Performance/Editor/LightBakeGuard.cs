@@ -26,7 +26,7 @@ namespace MotoSquid.Performance
             Lightmapping.bakeStarted += OnBakeStarted;
         }
 
-        [MenuItem("MotoSquid/Lighting/Validate Light Bake Modes")]
+        [MenuItem("MotoSquid/Performance/Lighting/Validate Light Bake Modes")]
         public static void ValidateAll()
         {
             var scene = ScanOpenScenes();

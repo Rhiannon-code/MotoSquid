@@ -22,7 +22,7 @@ namespace MotoSquid.Bike
         const float WAKE_SECONDS = LAMP_SECONDS * 2f;      // ~33 m
         const float LAMP_START   = LAMP_SECONDS * 0.3f;
 
-        [MenuItem("MotoSquid/Trails/Apply Trail Shapes")]
+        [MenuItem("MotoSquid/Bike/Trails/Apply Trail Shapes")]
         static void Run()
         {
             PrefabStage stage = PrefabStageUtility.GetCurrentPrefabStage();

@@ -2,7 +2,7 @@ using UnityEngine;
 
 namespace MotoSquid.Cameras
 {
-    [CreateAssetMenu(fileName = "CameraFitTuning", menuName = "Rig Lab/Camera Fit Tuning")]
+    [CreateAssetMenu(fileName = "CameraFitTuning", menuName = "MotoSquid/Rig Lab/Camera Fit Tuning")]
     public class CameraFitTuning : ScriptableObject
     {
         [Header("Third person")]

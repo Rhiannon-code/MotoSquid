@@ -11,9 +11,9 @@ namespace MotoSquid.DevTools
 {
     public static class RigLabCompletePlayer
     {
-        const string DonorPath = "Assets/Prefabs/Player1.prefab";
+        const string DonorPath = "Assets/Prefabs/Characters/Player/Senshi Renegade 900 RR.prefab";
 
-        [MenuItem("Tools/Rig Lab/42. Complete Player Bikes (from donor)", false, 420)]
+        [MenuItem("MotoSquid/Rig Lab/42. Complete Player Bikes (from donor)", false, 420)]
         static void Complete()
         {
             var donor = AssetDatabase.LoadAssetAtPath<GameObject>(DonorPath);

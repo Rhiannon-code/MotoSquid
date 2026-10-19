@@ -43,7 +43,7 @@ namespace MotoSquid.World
             "_BaseMap"
         };
 
-        [MenuItem("Tools/Decal Stamper")]
+        [MenuItem("MotoSquid/World/Decal Stamper")]
         public static void ShowWindow()
         {
             GetWindow<DecalStamperWindow>("Decal Stamper");

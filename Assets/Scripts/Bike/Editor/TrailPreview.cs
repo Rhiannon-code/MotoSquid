@@ -19,7 +19,7 @@ namespace MotoSquid.Bike
         double  m_LastTime;
         float   m_Travelled;
 
-        [MenuItem("MotoSquid/Trails/Preview Trails")]
+        [MenuItem("MotoSquid/Bike/Trails/Preview Trails")]
         static void Open() => GetWindow<TrailPreview>("Trail Preview").minSize = new Vector2(320f, 260f);
 
         void OnGUI()

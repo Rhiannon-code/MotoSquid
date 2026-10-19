@@ -9,7 +9,7 @@ namespace MotoSquid.AI
     public class AIBoostSystem : MonoBehaviour
     {
         [Header("References")]
-        public BikeAIController bikeController;
+        public BikeController bikeController;
 
         [Header("Boost Feel")]
         public float boostDuration        = 4f;
@@ -56,7 +56,7 @@ namespace MotoSquid.AI
         [HideInInspector] public float boostMeter;
         [HideInInspector] public bool  isBoosting;
 
-        BikeAILogic m_AiLogic;   // Resolved from bikeController.aiLogic in Start
+        BikeAILogic m_AiLogic;   // The brain on the same bike, resolved in Start
         CombatSystem m_Combat;   // Sibling combat system, for knockoff/forced crash boost
         float m_RaceTime;                 // Seconds the AI has been racing (counts only while it can accelerate)
         float m_BaseMaxSpeed;             // Original (pre rubber band) top speed, restored on disable
@@ -76,18 +76,20 @@ namespace MotoSquid.AI
         void Start()
         {
             if (bikeController == null)
-                bikeController = GetComponentInParent<BikeAIController>(true);
+                bikeController = GetComponentInParent<BikeController>(true);
+            m_AiLogic = GetComponentInParent<BikeAILogic>(true);
+            if (m_AiLogic == null && bikeController != null)
+                m_AiLogic = bikeController.GetComponentInChildren<BikeAILogic>(true);
 
-            if (bikeController == null)
+            if (bikeController == null || m_AiLogic == null)
             {
-                Debug.LogError("AIBoostSystem: BikeAIController not found.", this);
+                Debug.LogError("AIBoostSystem: needs a BikeController and a BikeAILogic on this bike.", this);
                 enabled = false;
                 return;
             }
 
             m_BaseMaxSpeed = bikeController.bikeSettings.maxSpeed;
             boostMeter     = Mathf.Clamp01(startMeter);
-            m_AiLogic      = bikeController.aiLogic;
 
             // Fall back to the AI logic's traffic mask so near-miss detection works without
             // separately assigning the mask on this component in the Inspector
@@ -123,7 +125,7 @@ namespace MotoSquid.AI
         {
             if (!bikeController.canAccelerate) return;
 
-            if (driftRegenRate > 0f && bikeController.isAIDrifting)
+            if (driftRegenRate > 0f && bikeController.isDrifting)
                 boostMeter = Mathf.Min(1f, boostMeter + driftRegenRate * Time.deltaTime);
 
             if (passiveRegenRate > 0f &&
@@ -151,22 +153,22 @@ namespace MotoSquid.AI
             bool baseOk = !dodging
                        && bikeController.bikeIsGrounded
                        && bikeController.canAccelerate
-                       && !bikeController.isBraking
-                       && bikeController.throttle > 0f;
+                       && !m_AiLogic.IsBraking
+                       && m_AiLogic.Throttle > 0f;
 
             bool overtaking  = boostToOvertake && m_AiLogic != null && m_AiLogic.IsOvertaking;
             bool recovering  = m_RecoveryTimer > 0f;
 
             // Overtaking and recovery bypass the straight only steer limit (both inherently steer)
             bool contextOk = overtaking || recovering
-                          || (!requireOvertakeToBoost && Mathf.Abs(bikeController.steerInput) <= maxSteerToBoost);
+                          || (!requireOvertakeToBoost && Mathf.Abs(m_AiLogic.SteerInput) <= maxSteerToBoost);
 
             // No boost at all for the opening seconds of the race.
             bool startWindowOver = m_RaceTime >= noBoostAtStartSeconds;
 
             // Hard steer cut, even overtaking/recovering must not boost into a sharp turn, or the
             // forward shove pushes the bike wide and it spins out
-            bool steerWithinHardLimit = Mathf.Abs(bikeController.steerInput) <= maxSteerHardCutoff;
+            bool steerWithinHardLimit = Mathf.Abs(m_AiLogic.SteerInput) <= maxSteerHardCutoff;
 
             bool canBoost = baseOk && contextOk && startWindowOver && steerWithinHardLimit;
 

@@ -12,8 +12,8 @@ namespace MotoSquid.Characters
 {
     public static class CharacterBuilder
     {
-        const string DefaultPlayerDonor = "Assets/Prefabs/Player1.prefab";
-        const string DefaultAIDonor     = "Assets/Prefabs/Voodoo.prefab";
+        const string DefaultPlayerDonor = "Assets/Prefabs/Characters/Player/Senshi Renegade 900 RR.prefab";
+        const string DefaultAIDonor     = "Assets/Prefabs/Characters/AI/Senshi Renegade 900 RR_AI.prefab";
         const string ControllerDir      = "Assets/Animations/Test";
 
         static readonly string[] FunctionalNamePrefixes =
@@ -176,8 +176,7 @@ namespace MotoSquid.Characters
                 SetFloat(sso, "frontRadius", frontR);     SetFloat(sso, "rearRadius", rearR);
                 sso.ApplyModifiedPropertiesWithoutUndo();
 
-                var controller = (Component)root.GetComponent<BikeController>()
-                              ?? root.GetComponent<BikeAIController>();
+                var controller = root.GetComponent<BikeController>();
                 if (controller != null)
                 {
                     var so = new SerializedObject(controller);

@@ -11,9 +11,9 @@ namespace MotoSquid.DevTools
 {
     public static class RigLabRacerMatrix
     {
-        const string OutDir = "Assets/MotoSquid/Resources/Racers";
+        const string OutDir = "Assets/Resources/Racers";
 
-        [MenuItem("Tools/Rig Lab/50. Build Racer Matrix (from roster)", false, 500)]
+        [MenuItem("MotoSquid/Rig Lab/50. Build Racer Matrix (from roster)", false, 500)]
         static void Build()
         {
             var roster = AssetDatabase.FindAssets("t:RacerRoster")

@@ -13,7 +13,7 @@ namespace MotoSquid.DevTools
 {
     public class RigLabPoseTuner : EditorWindow
     {
-        const string CapturePath = "Assets/MotoSquid/Data/RigLab/Data/LiveCapture.json";
+        const string CapturePath = "Assets/RigLab/Data/LiveCapture.json";
 
         [System.Serializable] class Pose { public string bike; public string target; public Vector3 pos; public Vector3 euler; }
         [System.Serializable] class Capture { public string taken; public List<Pose> poses = new List<Pose>(); }
@@ -35,7 +35,7 @@ namespace MotoSquid.DevTools
         readonly Dictionary<BikeAnimationController, Vector2> savedThresholds =
             new Dictionary<BikeAnimationController, Vector2>();
 
-        [MenuItem("Tools/Rig Lab/11. Live Pose Tuner", false, 120)]
+        [MenuItem("MotoSquid/Rig Lab/11. Live Pose Tuner", false, 120)]
         static void Open()
         {
             GetWindow<RigLabPoseTuner>("Pose Tuner").minSize = new Vector2(400, 330);

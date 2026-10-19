@@ -1,3 +1,4 @@
+using MotoSquid.AI;
 using MotoSquid.Bike;
 using MotoSquid.Combat;
 using System.Collections.Generic;
@@ -10,7 +11,7 @@ namespace MotoSquid.DevTools
 {
     public static class RigLabFinishRacer
     {
-        [MenuItem("Tools/Rig Lab/44. Finish Racers (wheels, weapon, speed FX)", false, 440)]
+        [MenuItem("MotoSquid/Rig Lab/44. Finish Racers (wheels, weapon, speed FX)", false, 440)]
         static void FinishScene()
         {
             var found = RigLabScope.Bikes(true);
@@ -18,7 +19,7 @@ namespace MotoSquid.DevTools
             var bikes = RigLabScope.Narrow(found);
 
             var gaps = new List<string>();
-            foreach (var bike in bikes) Finish(bike.gameObject, bike, null, gaps);
+            foreach (var bike in bikes) Finish(bike.gameObject, bike, gaps);
 
             RigLabScope.MarkDirty();
             Debug.Log("Rig Lab: finished " + bikes.Length + " racer(s) in " + RigLabScope.Where() + "." +
@@ -26,7 +27,7 @@ namespace MotoSquid.DevTools
                       Report(gaps) + "\n   AI prefabs are done separately, run 45.");
         }
 
-        [MenuItem("Tools/Rig Lab/45. Finish AI Racer Prefabs", false, 450)]
+        [MenuItem("MotoSquid/Rig Lab/45. Finish AI Racer Prefabs", false, 450)]
         static void FinishAI()
         {
             const string dir = "Assets/Prefabs/Characters/AI";
@@ -40,8 +41,7 @@ namespace MotoSquid.DevTools
                 var root = PrefabUtility.LoadPrefabContents(path);
                 try
                 {
-                    var ai = root.GetComponent<BikeAIController>();
-                    Finish(root, null, ai, gaps);
+                    Finish(root, root.GetComponent<BikeController>(), gaps);
                     PrefabUtility.SaveAsPrefabAsset(root, path);
                     n++;
                 }
@@ -54,17 +54,17 @@ namespace MotoSquid.DevTools
         static string Report(List<string> gaps) =>
             gaps.Count > 0 ? "\n\nNeeds attention:\n   " + string.Join("\n   ", gaps.Distinct()) : "\n   everything resolved.";
 
-        static void Finish(GameObject root, BikeController player, BikeAIController ai, List<string> gaps)
+        static void Finish(GameObject root, BikeController bike, List<string> gaps)
         {
-            var refs = player != null ? player.bikeReferences : null;
-            var aiRefs = ai != null ? ai.bikeReferences : null;
+            var refs = bike != null ? bike.bikeReferences : null;
+            bool isAI = root.GetComponentInChildren<BikeAILogic>(true) != null;
 
-            Transform frontWheel = refs != null ? refs.FrontWheel : aiRefs != null ? aiRefs.FrontWheel : null;
-            Transform rearWheel = refs != null ? refs.RearWheel : aiRefs != null ? aiRefs.RearWheel : null;
-            Transform frontAxle = refs != null ? refs.FrontWheelParent : aiRefs != null ? aiRefs.FrontWheelParent : null;
-            Transform rearAxle = refs != null ? refs.RearWheelParent : aiRefs != null ? aiRefs.RearWheelParent : null;
-            float frontR = player != null ? player.bikeGeometry.FrontWheelRadius : ai != null ? ai.bikeGeometry.FrontWheelRadius : 0.3f;
-            float rearR = player != null ? player.bikeGeometry.RearWheelRadius : ai != null ? ai.bikeGeometry.RearWheelRadius : 0.3f;
+            Transform frontWheel = refs != null ? refs.FrontWheel : null;
+            Transform rearWheel = refs != null ? refs.RearWheel : null;
+            Transform frontAxle = refs != null ? refs.FrontWheelParent : null;
+            Transform rearAxle = refs != null ? refs.RearWheelParent : null;
+            float frontR = bike != null ? bike.bikeGeometry.FrontWheelRadius : 0.3f;
+            float rearR = bike != null ? bike.bikeGeometry.RearWheelRadius : 0.3f;
 
             var spin = root.GetComponentInChildren<WheelVisualSpin>(true) ?? root.AddComponent<WheelVisualSpin>();
             spin.frontWheel = frontWheel; spin.rearWheel = rearWheel;
@@ -108,10 +108,10 @@ namespace MotoSquid.DevTools
                     gaps.Add(root.name + ": MeleeWeaponHolder has no starting weapon, pick one from Definitions/Weapons");
             }
 
-            if (player != null)
+            if (bike != null && !isAI)
             {
                 var fx = root.GetComponentInChildren<BikeSpeedFX>(true) ?? root.AddComponent<BikeSpeedFX>();
-                fx.bikeController = player;
+                fx.bikeController = bike;
                 fx.boostSystem = root.GetComponentInChildren<BoostSystem>(true);
                 EditorUtility.SetDirty(fx);
                 if (fx.postProcessVolume == null)

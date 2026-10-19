@@ -17,7 +17,7 @@ namespace MotoSquid.World
         List<string> preview = new List<string>();
         bool scanned;
 
-        [MenuItem("Tools/Tree Prefab LOD Fixer")]
+        [MenuItem("MotoSquid/World/Tree Prefab LOD Fixer")]
         static void Open() => GetWindow<TreePrefabLODFixer>("Tree LOD Fixer");
 
         void OnGUI()

@@ -10,7 +10,7 @@ namespace MotoSquid.DevTools
 {
     public static class RigLabMeasureModels
     {
-        [MenuItem("Tools/Rig Lab/6b. Measure All Character Models", false, 41)]
+        [MenuItem("MotoSquid/Rig Lab/6b. Measure All Character Models", false, 41)]
         static void Measure()
         {
             const string MannequinPath = "Assets/Models/Dummy_Mannequin/Dummy_Mannequin.fbx";

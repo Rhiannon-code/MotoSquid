@@ -11,7 +11,7 @@ namespace MotoSquid.DevTools
 {
     public static class RigLabBasePose
     {
-        [MenuItem("Tools/Rig Lab/15. Capture Base Pose (all riders)", false, 180)]
+        [MenuItem("MotoSquid/Rig Lab/15. Capture Base Pose (all riders)", false, 180)]
         static void Capture()
         {
             if (Application.isPlaying) { Debug.LogError("Rig Lab: capture in edit mode."); return; }
@@ -83,7 +83,7 @@ namespace MotoSquid.DevTools
 
         static void Add(HashSet<Transform> set, Transform t) { if (t != null) set.Add(t); }
 
-        [MenuItem("Tools/Rig Lab/16. Go Clip Free (clear Animator Controllers)", false, 181)]
+        [MenuItem("MotoSquid/Rig Lab/16. Go Clip Free (clear Animator Controllers)", false, 181)]
         static void GoClipFree()
         {
             var bikes = RigLabScope.Bikes(true);

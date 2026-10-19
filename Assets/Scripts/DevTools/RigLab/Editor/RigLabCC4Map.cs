@@ -36,7 +36,7 @@ namespace MotoSquid.DevTools
             { HumanBodyBones.RightToes, "CC_Base_R_ToeBase" },
         };
 
-        [MenuItem("Tools/Rig Lab/2b. Repair CC4 Humanoid Mapping (selected models)", false, 2)]
+        [MenuItem("MotoSquid/Rig Lab/2b. Repair CC4 Humanoid Mapping (selected models)", false, 2)]
         static void Repair()
         {
             var models = Selection.objects

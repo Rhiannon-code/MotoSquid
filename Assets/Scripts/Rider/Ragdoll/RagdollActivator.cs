@@ -1,3 +1,4 @@
+using MotoSquid.AI;
 using MotoSquid.Bike;
 using MotoSquid.Cameras;
 using MotoSquid.Combat;
@@ -8,8 +9,8 @@ namespace MotoSquid.Rider
 {
 public class RagdollActivator : MonoBehaviour
 {
-    public BikeController   bikeController;
-    public BikeAIController bikeAIRhiannon;
+    public BikeController bikeController;
+    BikeAILogic _aiLogic;
 
     public CameraController cameraControllerRhiannon;
     public GameObject dummyBikePrefab;
@@ -44,20 +45,9 @@ public class RagdollActivator : MonoBehaviour
         }
     }
 
-    private Transform LeanTransform =>
-        bikeController != null
-            ? bikeController.bikeReferences.LeanTransform
-            : bikeAIRhiannon.bikeReferences.LeanTransform;
-
-    private Collider BikeCollider =>
-        bikeController != null
-            ? bikeController.bikeReferences.collider
-            : bikeAIRhiannon.bikeReferences.collider;
-
-    private Rigidbody BikeRb =>
-        bikeController != null
-            ? bikeController.bikeReferences.BikeRb
-            : bikeAIRhiannon.bikeReferences.BikeRb;
+    private Transform LeanTransform => bikeController.bikeReferences.LeanTransform;
+    private Collider  BikeCollider  => bikeController.bikeReferences.collider;
+    private Rigidbody BikeRb        => bikeController.bikeReferences.BikeRb;
 
     private bool isRagdollActivated = false;
     private GameObject bikeRagdollInstance;
@@ -82,11 +72,12 @@ public class RagdollActivator : MonoBehaviour
 
     void Start()
     {
-        if (bikeController == null && bikeAIRhiannon == null)
+        if (bikeController == null)
         {
             enabled = false;
             return;
         }
+        _aiLogic = bikeController.GetComponentInChildren<BikeAILogic>(true);
 
         if (onRagdollActivated == null) onRagdollActivated = new UnityEvent();
         if (onBikeReEnabled    == null) onBikeReEnabled    = new UnityEvent();
@@ -126,8 +117,7 @@ public class RagdollActivator : MonoBehaviour
                       $"(layer {LayerMask.LayerToName(collision.gameObject.layer)}) " +
                       $"lateral Δv={lateralImpulse.magnitude / BikeRb.mass:F1} m/s " +
                       $"threshold={impactThreshold}" +
-                      (bikeAIRhiannon != null && bikeAIRhiannon.aiLogic != null
-                          ? $" | {bikeAIRhiannon.aiLogic.PlannerDebug(collision.collider)}" : ""),
+                      (_aiLogic != null ? $" | {_aiLogic.PlannerDebug(collision.collider)}" : ""),
                       collision.gameObject);
             ActivateRagdoll();
         }
@@ -235,10 +225,7 @@ public class RagdollActivator : MonoBehaviour
         BikeRb.linearVelocity  = Vector3.zero;
         BikeRb.angularVelocity = Vector3.zero;
 
-        if (bikeController != null)
-            bikeController.canAccelerate = false;
-        else if (bikeAIRhiannon != null)
-            bikeAIRhiannon.canAccelerate = false;
+        bikeController.canAccelerate = false;
 
         // Taken now, not in Start, switching rider or equipping a weapon destroys and respawns
         // renderers, and a Start time list goes stale. Destroyed entries still compare != null
@@ -300,29 +287,15 @@ public class RagdollActivator : MonoBehaviour
         BikeCollider.enabled = true;
         BikeTrails.Clear(transform);
 
-        if (bikeController != null)
-        {
-            bikeController.canAccelerate = true;
-            var playerBikeAudio = bikeController.GetComponentInChildren<BikeAudioController>();
-            if (playerBikeAudio != null) playerBikeAudio.SilenceEngine();
-            bikeController.bikeReferences.LeanTransform.localRotation = Quaternion.identity;
+        bikeController.canAccelerate = true;
+        var bikeAudio = bikeController.GetComponentInChildren<BikeAudioController>();
+        if (bikeAudio != null) bikeAudio.SilenceEngine();
+        bikeController.bikeReferences.LeanTransform.localRotation = Quaternion.identity;
 
-            var rb = bikeController.bikeReferences.BikeRb;
-            rb.linearVelocity  = Vector3.zero;
-            rb.angularVelocity = Vector3.zero;
-        }
-        else
-        {
-            bikeAIRhiannon.canAccelerate = true;
-            var aiBikeAudio = bikeAIRhiannon.GetComponentInChildren<BikeAudioController>();
-            if (aiBikeAudio != null) aiBikeAudio.SilenceEngine();
-            bikeAIRhiannon.bikeReferences.LeanTransform.localRotation = Quaternion.identity;
-
-            var rb = bikeAIRhiannon.bikeReferences.BikeRb;
-            rb.linearVelocity  = Vector3.zero;
-            rb.angularVelocity = Vector3.zero;
-            bikeAIRhiannon.aiLogic?.ResetTracking();
-        }
+        var rb = bikeController.bikeReferences.BikeRb;
+        rb.linearVelocity  = Vector3.zero;
+        rb.angularVelocity = Vector3.zero;
+        _aiLogic?.ResetTracking();
 
         isRagdollActivated = false;
         onBikeReEnabled.Invoke();

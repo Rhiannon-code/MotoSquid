@@ -3,39 +3,45 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 3
-  tags: []
+  tags:
+  - Stair
+  - WallRun
+  - Climb
+  - Fly
+  - AI
+  - Selector
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Traffic
   - Water
   - UI
+  - Barriers
+  - TurnBarrier
+  - Road
+  - Intersection
+  - Prefab Line
+  - RacingAI
+  - Road
+  - Buildings
+  - P1Cam
+  - P2Cam
+  - Player1FX
+  - Player2FX
+  - Player
+  - BikePreview
+  - Animal
+  - 
+  - 
+  - Enemy
   - 
   - 
   - 
   - 
   - 
   - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
+  - Item
   - 
   m_SortingLayers:
   - name: Default

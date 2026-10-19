@@ -24,7 +24,7 @@ namespace MotoSquid.DevTools
         readonly List<Quaternion> restRot = new List<Quaternion>();
         readonly List<Vector3> restPos = new List<Vector3>();
 
-        [MenuItem("Tools/Rig Lab/23. Preview Captured Pose", false, 221)]
+        [MenuItem("MotoSquid/Rig Lab/23. Preview Captured Pose", false, 221)]
         static void Open()
         {
             GetWindow<RigLabPosePreview>("Pose Preview").minSize = new Vector2(420, 230);

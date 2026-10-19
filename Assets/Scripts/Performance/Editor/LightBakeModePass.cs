@@ -8,10 +8,10 @@ namespace MotoSquid.Performance
 
     public static class LightBakeModePass
     {
-        [MenuItem("MotoSquid/Lighting/Audit Light Bake Modes")]
+        [MenuItem("MotoSquid/Performance/Lighting/Audit Light Bake Modes")]
         public static void Audit() => Run(false);
 
-        [MenuItem("MotoSquid/Lighting/Apply Light Bake Modes")]
+        [MenuItem("MotoSquid/Performance/Lighting/Apply Light Bake Modes")]
         public static void Apply() => Run(true);
 
         static void Run(bool apply)

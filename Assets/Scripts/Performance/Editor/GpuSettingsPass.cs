@@ -74,7 +74,7 @@ namespace MotoSquid.Performance
         Vector2 _scroll;
         readonly List<string> _log = new List<string>();
 
-        [MenuItem("Tools/GPU Settings Pass")]
+        [MenuItem("MotoSquid/Performance/GPU Settings Pass")]
         static void Open() => GetWindow<GpuSettingsPass>("GPU Settings Pass");
 
         void OnGUI()

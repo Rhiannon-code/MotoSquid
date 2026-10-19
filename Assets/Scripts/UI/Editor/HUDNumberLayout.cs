@@ -31,7 +31,7 @@ namespace MotoSquid.UI
             new Slot(490f, 224f,   330f, 37f, false),
         };
 
-        [MenuItem("MotoSquid/HUD/Apply HUD Number Layout")]
+        [MenuItem("MotoSquid/Menu/HUD/Apply HUD Number Layout")]
         static void Apply()
         {
             if (EditorApplication.isPlaying)

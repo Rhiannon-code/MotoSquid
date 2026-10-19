@@ -24,7 +24,7 @@ namespace MotoSquid.DevTools
             HumanBodyBones.RightUpperLeg, HumanBodyBones.RightLowerLeg, HumanBodyBones.RightFoot,
         };
 
-        [MenuItem("Tools/Rig Lab/13. Build Combat Rig Layer (all bikes)", false, 160)]
+        [MenuItem("MotoSquid/Rig Lab/13. Build Combat Rig Layer (all bikes)", false, 160)]
         static void Build()
         {
             var bikes = RigLabScope.Bikes(true);
@@ -192,7 +192,7 @@ namespace MotoSquid.DevTools
 
         static WeaponGrips Grips()
         {
-            const string path = "Assets/MotoSquid/Data/Combat/WeaponGrips.asset";
+            const string path = "Assets/Scriptable Objects/Combat/WeaponGrips.asset";
             var a = AssetDatabase.LoadAssetAtPath<WeaponGrips>(path);
             bool made = a == null;
             if (made)
@@ -265,7 +265,7 @@ namespace MotoSquid.DevTools
 
         static CombatTuning Tuning()
         {
-            const string path = "Assets/MotoSquid/Data/Combat/CombatTuning.asset";
+            const string path = "Assets/Scriptable Objects/Combat/CombatTuning.asset";
             var t = AssetDatabase.LoadAssetAtPath<CombatTuning>(path);
             if (t != null) return t;
 
@@ -350,7 +350,7 @@ namespace MotoSquid.DevTools
         static FullPose Pose(string name)
         {
             if (string.IsNullOrEmpty(name)) return null;
-            var t = AssetDatabase.LoadAssetAtPath<FullPose>("Assets/MotoSquid/Data/RigLab/FullPoses/" + name + ".asset");
+            var t = AssetDatabase.LoadAssetAtPath<FullPose>("Assets/RigLab/FullPoses/" + name + ".asset");
             if (t == null) Debug.LogWarning("Rig Lab: no pose '" + name + "', run 22. Full Skeleton Sample + Verify.");
             return t;
         }

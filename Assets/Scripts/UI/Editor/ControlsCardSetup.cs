@@ -14,7 +14,7 @@ namespace MotoSquid.UI
         static readonly Vector2 CardAnchorMin = new Vector2(0.05f, 0.26f);
         static readonly Vector2 CardAnchorMax = new Vector2(0.95f, 0.95f);
 
-        [MenuItem("MotoSquid/Loading/Set Up Controls Cards")]
+        [MenuItem("MotoSquid/Menu/Loading/Set Up Controls Cards")]
         static void SetUp()
         {
             var loader = Object.FindFirstObjectByType<SceneLoader>();

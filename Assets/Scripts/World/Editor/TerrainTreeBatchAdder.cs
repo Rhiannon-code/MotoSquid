@@ -16,7 +16,7 @@ namespace MotoSquid.World
         Vector2 scrollResults;
         bool    scanned;
 
-        [MenuItem("Tools/Terrain Tree Batch Adder")]
+        [MenuItem("MotoSquid/World/Terrain Tree Batch Adder")]
         static void Open() => GetWindow<TerrainTreeBatchAdder>("Tree Batch Adder");
 
         void OnGUI()

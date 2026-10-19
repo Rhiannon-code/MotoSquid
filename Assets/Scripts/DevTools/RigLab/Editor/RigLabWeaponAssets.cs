@@ -11,14 +11,14 @@ namespace MotoSquid.DevTools
 {
     public static class RigLabWeaponAssets
     {
-        const string GripsJson = "Assets/MotoSquid/Data/RigLab/Exports/WeaponGrips.json";
-        const string OutDir = "Assets/MotoSquid/Data/Combat/Weapons";
-        const string DefDir = "Assets/MotoSquid/Data/Characters";
+        const string GripsJson = "Assets/RigLab/Exports/WeaponGrips.json";
+        const string OutDir = "Assets/Scriptable Objects/Combat/Weapons";
+        const string DefDir = "Assets/Scriptable Objects/Characters";
 
         [Serializable] class Grip { public string model; public Vector3 position, euler; public float scale; }
         [Serializable] class Grips { public List<Grip> grips = new List<Grip>(); }
 
-        [MenuItem("Tools/Rig Lab/32. Create Weapon Assets From Grips", false, 320)]
+        [MenuItem("MotoSquid/Rig Lab/32. Create Weapon Assets From Grips", false, 320)]
         static void Create()
         {
             if (!File.Exists(GripsJson))

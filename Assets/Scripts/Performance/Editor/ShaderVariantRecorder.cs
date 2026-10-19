@@ -48,7 +48,7 @@ namespace MotoSquid.Performance
             return true;
         }
 
-        const string SessionPath = "Assets/MotoSquid/Data/Performance/_ShaderVariant_Session.shadervariants";
+        const string SessionPath = "Assets/Scriptable Objects/Performance/_ShaderVariant_Session.shadervariants";
 
         // Unity can only write the CURRENT session's variants, and it overwrites whatever is at the path.
         // Comparing counts and skipping the save (what this used to do) meant a lap that exercised 30 new
@@ -157,17 +157,17 @@ namespace MotoSquid.Performance
             SaveCollection(shaders, variants);
         }
 
-        [MenuItem("MotoSquid/Shaders/Auto-Record On Play Exit", priority = 0)]
+        [MenuItem("MotoSquid/Performance/Shaders/Auto-Record On Play Exit", priority = 0)]
         static void ToggleAuto() => AutoRecord = !AutoRecord;
 
-        [MenuItem("MotoSquid/Shaders/Auto-Record On Play Exit", true)]
+        [MenuItem("MotoSquid/Performance/Shaders/Auto-Record On Play Exit", true)]
         static bool ToggleAutoValidate()
         {
             Menu.SetChecked("MotoSquid/Shaders/Auto-Record On Play Exit", AutoRecord);
             return true;
         }
 
-        [MenuItem("MotoSquid/Shaders/Report Tracked Variants", priority = 20)]
+        [MenuItem("MotoSquid/Performance/Shaders/Report Tracked Variants", priority = 20)]
         static void Report()
         {
             if (!TryCounts(out int shaders, out int variants)) return;
@@ -175,7 +175,7 @@ namespace MotoSquid.Performance
                       $"Collection on disk holds {CurrentCollectionVariants()}.");
         }
 
-        [MenuItem("MotoSquid/Shaders/Clear Tracked Variants", priority = 21)]
+        [MenuItem("MotoSquid/Performance/Shaders/Clear Tracked Variants", priority = 21)]
         static void Clear()
         {
             MethodInfo clear = Find("ClearCurrentShaderVariantCollection");
@@ -189,7 +189,7 @@ namespace MotoSquid.Performance
             Debug.Log("[ShaderVariantRecorder] Cleared tracked variants.");
         }
 
-        [MenuItem("MotoSquid/Shaders/Save Tracked Variants To Collection", priority = 22)]
+        [MenuItem("MotoSquid/Performance/Shaders/Save Tracked Variants To Collection", priority = 22)]
         static void Save()
         {
             if (!TryCounts(out int shaders, out int variants)) return;

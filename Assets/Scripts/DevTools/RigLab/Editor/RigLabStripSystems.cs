@@ -10,7 +10,7 @@ namespace MotoSquid.DevTools
 {
     public static class RigLabStripSystems
     {
-        [MenuItem("Tools/Rig Lab/35. Strip Game Systems From Review Bikes", false, 350)]
+        [MenuItem("MotoSquid/Rig Lab/35. Strip Game Systems From Review Bikes", false, 350)]
         static void Strip()
         {
             var bikes = Object.FindObjectsByType<BikeController>(FindObjectsInactive.Include, FindObjectsSortMode.None);

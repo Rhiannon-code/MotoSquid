@@ -26,6 +26,8 @@ namespace MotoSquid.Core
         public bool      IsSplitScreen     { get; set; } = false;
         public TrackType SelectedTrackType { get; set; } = TrackType.PointToPoint;
         public GameMode  SelectedGameMode  { get; set; } = GameMode.Race;
+        // False until a menu chose the track, so a scene opened directly keeps its own course's type and mode
+        public bool      HasTrackSelection { get; set; }
 
         // Difficulty
         public int   DifficultyPreset { get; set; } = 1;  // 0=Easy  1=Normal  2=Hard

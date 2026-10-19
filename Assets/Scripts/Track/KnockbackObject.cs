@@ -1,6 +1,5 @@
 using MotoSquid.Audio;
 using MotoSquid.Bike;
-using MotoSquid.Controls;
 using UnityEngine;
 using UnityEngine.Audio;
 
@@ -44,26 +43,13 @@ namespace MotoSquid.Track
         {
             if (hasBeenHit) return;
 
-            BikeInput playerInput = collision.gameObject.GetComponentInParent<BikeInput>();
-            if (playerInput != null)
-            {
-                BikeController ctrl = playerInput.bikeControllerRhiannon;
-                if (ctrl == null) return;
+            BikeController ctrl = collision.gameObject.GetComponentInParent<BikeController>();
+            if (ctrl == null) return;
 
-                hasBeenHit = true;
-                LaunchSelf(ctrl.bikeReferences.BikeRb);
-                ctrl.bikeReferences.BikeRb.linearVelocity *= playerSlowMultiplier;
-                return;
-            }
-
-            BikeAIController aiCtrl = collision.gameObject.GetComponentInParent<BikeAIController>();
-            if (aiCtrl != null)
-            {
-                hasBeenHit = true;
-                LaunchSelf(aiCtrl.bikeReferences.BikeRb);
-                // Slow the AI on impact too, so props are fair to everyone (not just the player).
-                aiCtrl.bikeReferences.BikeRb.linearVelocity *= playerSlowMultiplier;
-            }
+            hasBeenHit = true;
+            LaunchSelf(ctrl.bikeReferences.BikeRb);
+            // Player and AI alike, so props are fair to everyone
+            ctrl.bikeReferences.BikeRb.linearVelocity *= playerSlowMultiplier;
         }
 
         private void LaunchSelf(Rigidbody bikeRb)

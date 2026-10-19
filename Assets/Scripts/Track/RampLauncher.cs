@@ -1,3 +1,4 @@
+using MotoSquid.AI;
 using MotoSquid.Bike;
 using MotoSquid.Race;
 using MotoSquid.Rider;
@@ -26,26 +27,15 @@ namespace MotoSquid.Track
             public float entrySpeed;
         }
 
-        private readonly Dictionary<BikeController,    RampData> _players = new();
-        private readonly Dictionary<BikeAIController,  RampData> _ais     = new();
+        private readonly Dictionary<BikeController, RampData> _bikes = new();
 
         private void FixedUpdate()
         {
-            foreach (var pair in _players)
+            foreach (var pair in _bikes)
             {
-                BikeController player = pair.Key;
-                Rigidbody rb  = player.bikeReferences.BikeRb;
-                Vector3   fwd = player.bikeReferences.Rotator.forward;
-                float deficit = pair.Value.entrySpeed - Vector3.Dot(rb.linearVelocity, fwd);
-                if (deficit > 0f)
-                    rb.AddForce(fwd * deficit * speedMaintenanceGain * rb.mass, ForceMode.Force);
-            }
-
-            foreach (var pair in _ais)
-            {
-                BikeAIController ai = pair.Key;
-                Rigidbody rb  = ai.bikeReferences.BikeRb;
-                Vector3   fwd = ai.bikeReferences.Rotator.forward;
+                BikeController bike = pair.Key;
+                Rigidbody rb  = bike.bikeReferences.BikeRb;
+                Vector3   fwd = bike.bikeReferences.Rotator.forward;
                 float deficit = pair.Value.entrySpeed - Vector3.Dot(rb.linearVelocity, fwd);
                 if (deficit > 0f)
                     rb.AddForce(fwd * deficit * speedMaintenanceGain * rb.mass, ForceMode.Force);
@@ -54,76 +44,49 @@ namespace MotoSquid.Track
 
         private void OnTriggerEnter(Collider other)
         {
-            var player = other.GetComponentInParent<BikeController>();
-            if (player != null)
-            {
-                Rigidbody rb = player.bikeReferences.BikeRb;
-                _players[player] = new RampData
-                {
-                    savedBump  = player.bikeSuspension.maxBumpUpwardVelocity,
-                    entrySpeed = Vector3.Dot(rb.linearVelocity, player.bikeReferences.Rotator.forward),
-                };
-                player.bikeSuspension.maxBumpUpwardVelocity = maxBumpVelocityOverride;
+            var bike = other.GetComponentInParent<BikeController>();
+            if (bike == null) return;
 
+            Rigidbody rb = bike.bikeReferences.BikeRb;
+            _bikes[bike] = new RampData
+            {
+                savedBump  = bike.bikeSuspension.maxBumpUpwardVelocity,
+                entrySpeed = Vector3.Dot(rb.linearVelocity, bike.bikeReferences.Rotator.forward),
+            };
+            bike.bikeSuspension.maxBumpUpwardVelocity = maxBumpVelocityOverride;
+            bike.isOnRamp = true;
+
+            var aiLogic = other.GetComponentInParent<BikeAILogic>();
+            if (aiLogic == null)
+            {
                 if (shortcutPlayerRoadIndex >= 0)
-                    other.GetComponentInParent<CheckpointTracker>()
-                         ?.ForceRoad(shortcutPlayerRoadIndex);
+                    other.GetComponentInParent<CheckpointTracker>()?.ForceRoad(shortcutPlayerRoadIndex);
                 return;
             }
 
-            var ai = other.GetComponentInParent<BikeAIController>();
-            if (ai != null)
+            // With AI shortcuts off, clipping this trigger committed the AI to the off road jump route anyway,
+            // and it pinned itself on the barrier steering at a line 350 m away
+            bool shortcutsAllowed = aiLogic.routeGraph == null || aiLogic.routeGraph.aiShortcutsEnabled;
+            if (shortcutsAllowed)
             {
-                Rigidbody rb = ai.bikeReferences.BikeRb;
-                _ais[ai] = new RampData
-                {
-                    savedBump  = ai.bikeSuspension.maxBumpUpwardVelocity,
-                    entrySpeed = Vector3.Dot(rb.linearVelocity, ai.bikeReferences.Rotator.forward),
-                };
-                ai.bikeSuspension.maxBumpUpwardVelocity = maxBumpVelocityOverride;
-                ai.isOnRamp = true;
-
-                // With AI shortcuts off, clipping this trigger committed the AI to the off road jump route anyway,
-                // and it pinned itself on the barrier steering at a line 350 m away
-                var aiLogic = ai.aiLogic;
-                bool shortcutsAllowed = aiLogic != null &&
-                                        (aiLogic.routeGraph == null || aiLogic.routeGraph.aiShortcutsEnabled);
-                if (shortcutsAllowed)
-                {
-                    if (shortcutSegmentIndex >= 0) aiLogic.ForceCommitSegment(shortcutSegmentIndex);
-                    // Aim the AI toward the landing zone so it launches on the correct trajectory
-                    aiLogic.rampLandingTarget = landingTarget;
-                }
+                if (shortcutSegmentIndex >= 0) aiLogic.ForceCommitSegment(shortcutSegmentIndex);
+                // Aim the AI toward the landing zone so it launches on the correct trajectory
+                aiLogic.rampLandingTarget = landingTarget;
             }
         }
 
         private void OnTriggerExit(Collider other)
         {
-            var player = other.GetComponentInParent<BikeController>();
-            if (player != null)
-            {
-                if (_players.TryGetValue(player, out RampData data))
-                {
-                    ApplyLaunchImpulse(player.bikeReferences.BikeRb);
-                    player.bikeSuspension.maxBumpUpwardVelocity = data.savedBump;
-                    _players.Remove(player);
-                }
-                return;
-            }
+            var bike = other.GetComponentInParent<BikeController>();
+            if (bike == null || !_bikes.TryGetValue(bike, out RampData data)) return;
 
-            var ai = other.GetComponentInParent<BikeAIController>();
-            if (ai != null)
-            {
-                if (_ais.TryGetValue(ai, out RampData data))
-                {
-                    ApplyLaunchImpulse(ai.bikeReferences.BikeRb);
-                    ai.bikeSuspension.maxBumpUpwardVelocity = data.savedBump;
-                    _ais.Remove(ai);
-                    ai.isOnRamp = false;
-                    if (ai.aiLogic != null)
-                        ai.aiLogic.rampLandingTarget = null;
-                }
-            }
+            ApplyLaunchImpulse(bike.bikeReferences.BikeRb);
+            bike.bikeSuspension.maxBumpUpwardVelocity = data.savedBump;
+            _bikes.Remove(bike);
+            bike.isOnRamp = false;
+
+            var aiLogic = other.GetComponentInParent<BikeAILogic>();
+            if (aiLogic != null) aiLogic.rampLandingTarget = null;
         }
 
         private void ApplyLaunchImpulse(Rigidbody rb)

@@ -17,7 +17,7 @@ namespace MotoSquid.World
         private List<string> successObjects = new List<string>();
         private List<string> failedObjects = new List<string>();
 
-        [MenuItem("Custom/Replace GameObjects With Prefabs")]
+        [MenuItem("MotoSquid/World/Replace GameObjects With Prefabs")]
         static void ShowWindow()
         {
             EditorWindow.GetWindow(typeof(ReplaceGameObjectsWithPrefabs), false, "Replace GameObjects");

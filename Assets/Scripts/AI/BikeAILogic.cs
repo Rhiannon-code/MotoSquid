@@ -10,6 +10,10 @@ namespace MotoSquid.AI
 {
     public enum AIDifficulty { Easy, Normal, Hard }
 
+    // The AI brain. It drives a BikeController through the same six inputs a player's device gives it
+    // (ADR 0006), from its own FixedUpdate, which runs before the bike's (order 0) so this step's
+    // inputs are in place when the physics reads them
+    [DefaultExecutionOrder(-10)]
     public class BikeAILogic : MonoBehaviour
     {
         [Header("Racing")]
@@ -46,9 +50,25 @@ namespace MotoSquid.AI
 
         // References
         public Transform       bikeTransform;
-        public BikeAIController controller;
+        public BikeController   controller;
+
+        // Set by RaceManager through the countdown: zero input, or a held burnout for the chosen few
+        [System.NonSerialized] public bool isRevving;
+        [System.NonSerialized] public bool willStartBurnout;
+
+        // What this brain asked of the bike this step, read by AIBoostSystem and the debug log
+        public float Throttle   { get; private set; }
+        public float SteerInput { get; private set; }
+        public bool  IsBraking  { get; private set; }
+        bool _driftRequested;
+
+        // F9 or MotoSquid > Debug: the AI stands still but still attacks and takes hits
+        public static bool DebugHoldForCombatTest;
+        bool _debugHeld;
         public RaceManager      raceManager;
+        [UnityEngine.Serialization.FormerlySerializedAs("splineGenerator")]
         public TrafficLaneNetwork laneNetwork;
+        [UnityEngine.Serialization.FormerlySerializedAs("waypointGenerator")]
         public WaypointPath waypointPath;
         public int roadIndex = 0;
 
@@ -414,6 +434,9 @@ namespace MotoSquid.AI
 
         private void Awake()
         {
+            if (controller == null) controller = GetComponent<BikeController>() ?? GetComponentInParent<BikeController>(true);
+            if (controller != null && controller.bikeReferences != null && controller.bikeReferences.Rotator != null)
+                bikeTransform = controller.bikeReferences.Rotator;
 
             if (routeGraph == null)        routeGraph        = FindFirstObjectByType<RouteGraph>();
             if (laneNetwork == null)   laneNetwork   = FindFirstObjectByType<TrafficLaneNetwork>();
@@ -691,11 +714,71 @@ namespace MotoSquid.AI
                 : 0f;
         }
 
-        public void OnPhysicsUpdated()
+        void FixedUpdate()
         {
             if (controller == null) return;
+            if (DebugHold()) return;
             if (!TryInitializeWaypoints()) return;
             Tick(controller.localBikeVelocity.z);
+        }
+
+        bool DebugHold()
+        {
+            if (DebugHoldForCombatTest)
+            {
+                if (!_debugHeld) { _debugHeld = true; controller.canMove = false; }
+                Throttle = 0f; SteerInput = 0f; IsBraking = true; _driftRequested = false;
+                controller.ProvideInput(0f, 0f, 0f, 0f, 0f, 0f);
+                return true;
+            }
+            if (_debugHeld) { _debugHeld = false; controller.canMove = true; }
+            return false;
+        }
+
+#if UNITY_EDITOR
+        static int _debugKeyFrame = -1;
+        static BikeAILogic _debugGuiOwner;
+
+        void Update()
+        {
+            if (Time.frameCount == _debugKeyFrame) return;
+            var kb = UnityEngine.InputSystem.Keyboard.current;
+            if (kb == null || !kb.f9Key.wasPressedThisFrame) return;
+            _debugKeyFrame = Time.frameCount;
+            DebugHoldForCombatTest = !DebugHoldForCombatTest;
+            Debug.Log($"[CombatTest] AI hold {(DebugHoldForCombatTest ? "ON, AI bikes stand still but still attack and take hits" : "OFF, AI racing normally")}.");
+        }
+
+        void OnGUI()
+        {
+            if (!DebugHoldForCombatTest) return;
+            if (_debugGuiOwner == null) _debugGuiOwner = this;
+            if (_debugGuiOwner != this) return;
+            GUI.Label(new Rect(10f, 10f, 500f, 24f), "[CombatTest] AI HOLD ACTIVE, F9 to toggle");
+        }
+#endif
+
+        // GO. A held grid burnout is dropped on the beat so BikeBurnout pays the launch out when canMove flips
+        public void OnGo()
+        {
+            isRevving = false;
+            if (willStartBurnout && controller != null) controller.Burnout.MarkReleased();
+            willStartBurnout = false;
+        }
+
+        void Apply(float fwdSpeed)
+        {
+            // Reverse is the brake while rolling forward; below walking pace it would reverse the bike
+            float reverse = IsBraking && fwdSpeed > 0.5f ? 1f : 0f;
+            controller.ProvideInput(Throttle, reverse, _driftRequested ? 1f : 0f,
+                                    Mathf.Max(0f, -SteerInput), Mathf.Max(0f, SteerInput), 0f);
+        }
+
+        // Throttle and reverse together on a held grid is the start line burnout
+        void ApplyGrid()
+        {
+            float burnout = willStartBurnout ? 1f : 0f;
+            controller.ProvideInput(burnout, burnout, 0f, 0f, 0f, 0f);
         }
 
         public void ResetTracking()
@@ -1096,21 +1179,17 @@ namespace MotoSquid.AI
 
         private void Tick(float fwdSpeed)
         {
-            bool revving = controller == null || controller.isRevving;
+            bool revving = isRevving;
 
             // Detect lights out, revving just ended, start the straight line launch phase
-            if (_wasRevving && !revving && controller != null)
+            if (_wasRevving && !revving)
                 _launchTimer = launchStraightTime;
             _wasRevving = revving;
 
             if (revving)
             {
-                if (controller != null)
-                {
-                    controller.steerInput = 0f;
-                    controller.throttle   = 0f;
-                    controller.isBraking  = false;
-                }
+                SteerInput = 0f; Throttle = 0f; IsBraking = false; _driftRequested = false;
+                ApplyGrid();
                 return;
             }
 
@@ -1397,7 +1476,7 @@ namespace MotoSquid.AI
             }
 
             float rawSteer;
-            if (usePurePursuitSteering && controller.Wheelbase > 0.01f && controller.CurrentSteerAngle > 0.01f)
+            if (usePurePursuitSteering && controller.Wheelbase > 0.01f && controller.SteerAngle > 0.01f)
             {
                 Vector3 toAim = aimPoint - bikeTransform.position;
                 toAim.y = 0f;
@@ -1406,14 +1485,14 @@ namespace MotoSquid.AI
                 float alpha    = predictedError * Mathf.Deg2Rad;
                 float deltaDeg = Mathf.Atan2(2f * controller.Wheelbase * Mathf.Sin(alpha), lookDist) * Mathf.Rad2Deg;
 
-                rawSteer = Mathf.Clamp(deltaDeg / controller.CurrentSteerAngle, -1f, 1f);
+                rawSteer = Mathf.Clamp(deltaDeg / controller.SteerAngle, -1f, 1f);
             }
             else
             {
                 rawSteer = Mathf.Clamp(predictedError * yawGain / 20f, -1f, 1f);
             }
             float effectiveSmoothing = Mathf.Lerp(steerSmoothing, steerSmoothing * 4f, DodgeUrgency);
-            controller.steerInput = Mathf.MoveTowards(controller.steerInput, rawSteer, effectiveSmoothing * Time.fixedDeltaTime);
+            SteerInput = Mathf.MoveTowards(SteerInput, rawSteer, effectiveSmoothing * Time.fixedDeltaTime);
 
             if (planning && plannerTrace)
             {
@@ -1428,7 +1507,7 @@ namespace MotoSquid.AI
                               $"lateral {lateralNow:F1} target {_planner.TargetLateral:F1} carriageway {_planMinLat:F1}..{_planMaxLat:F1} | " +
                               $"aim wanted {lateralDisp:F1} got {clampedDisp:F1} (slew from {_lastLateralDisp:F1}) | " +
                               $"heading err {headingError - effectiveWallCorrection:F1} wall {effectiveWallCorrection:F1} | " +
-                              $"rawSteer {rawSteer:F2} steerInput {controller.steerInput:F2} maxSteer {controller.CurrentSteerAngle:F1} | " +
+                              $"rawSteer {rawSteer:F2} steerInput {SteerInput:F2} maxSteer {controller.SteerAngle:F1} | " +
                               $"blocked {_planner.Blocked} ramp {controller.isOnRamp}", this);
                 }
             }
@@ -1616,19 +1695,19 @@ namespace MotoSquid.AI
             float effectiveOvertakeScale = 1f;
 
             bool fullBrake = cornerBraking || (trafficBrakeNeeded && Mathf.Abs(fwdSpeed) > 4f);
-            controller.throttle  = fullBrake
+            Throttle  = fullBrake
                 ? 0f
                 : Mathf.Max(trafficThrottle, 0.05f) * effectiveOvertakeScale;
-            controller.isBraking = fullBrake;
+            IsBraking = fullBrake;
 
             if (fwdSpeed < 5f)
-                controller.steerInput *= Mathf.Clamp01(fwdSpeed / 5f);
+                SteerInput *= Mathf.Clamp01(fwdSpeed / 5f);
 
             // Launch phase, pin throttle and prevent corner braking; steering follows path naturally
             if (launchSuppression > 0f)
             {
-                controller.throttle  = Mathf.Max(controller.throttle, launchSuppression);
-                controller.isBraking = false;
+                Throttle  = Mathf.Max(Throttle, launchSuppression);
+                IsBraking = false;
             }
 
             // Ramp trigger, hold full throttle and suppress braking while physically on a ramp collider.
@@ -1641,15 +1720,15 @@ namespace MotoSquid.AI
 
             if (controller.isOnRamp || onShortcutSegNow)
             {
-                controller.throttle  = 1f;
-                controller.isBraking = false;
+                Throttle  = 1f;
+                IsBraking = false;
             }
 
             // Drift decision, slide through a genuine corner when committed to it at speed, but never while
             // dodging traffic (don't slide into a car) or on a ramp. The controller smooths/enacts it
-            controller.driftRequested = enableAIDrift
+            _driftRequested = enableAIDrift
                 && _upcomingCornerAngle >= aiDriftCornerAngle
-                && Mathf.Abs(controller.steerInput) >= aiDriftMinSteer
+                && Mathf.Abs(SteerInput) >= aiDriftMinSteer
                 && Mathf.Abs(fwdSpeed) * 3.6f >= aiDriftMinSpeedKmh
                 && DodgeUrgency < 0.5f
                 && !controller.isOnRamp;
@@ -1660,13 +1739,15 @@ namespace MotoSquid.AI
             {
                 Debug.Log(
                     $"[AIdbg] spd={fwdSpeed:F1} cruiseKmh={cruiseSpeedKmh:F0} cruiseMs={cruiseMs:F1} " +
-                    $"THR={controller.throttle:F2} brake={controller.isBraking} || " +
+                    $"THR={Throttle:F2} brake={IsBraking} || " +
                     $"cornerBrake={cornerBraking} allowApproach={allowedApproach:F1} cornerDist={_cachedCornerDist:F1} " +
                     $"safeCorner={safeCornerSpeedMs:F1} || trafBrake={trafficBrakeNeeded} boxed={_boxedIn} " +
                     $"urgency={DodgeUrgency:F2} || launch={launchSuppression:F2} grounded={controller.bikeIsGrounded} " +
-                    $"canAcc={controller.canAccelerate} revving={controller.isRevving} onRamp={controller.isOnRamp}",
+                    $"canAcc={controller.canAccelerate} revving={isRevving} onRamp={controller.isOnRamp}",
                     this);
             }
+
+            Apply(fwdSpeed);
         }
 
     #endregion

@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace MotoSquid.Combat
 {
-    [CreateAssetMenu(fileName = "CombatTuning", menuName = "Rig Lab/Combat Tuning")]
+    [CreateAssetMenu(fileName = "CombatTuning", menuName = "MotoSquid/Rig Lab/Combat Tuning")]
     public class CombatTuning : ScriptableObject
     {
         public enum Group { Hips, Spine, Head, LeftArm, RightArm, LeftLeg, RightLeg }

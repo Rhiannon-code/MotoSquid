@@ -55,7 +55,7 @@ namespace MotoSquid.Combat
         private float _proximityLoseTimer;
         private bool  _engageState;
         private BikeAILogic _aiLogic;
-        private BikeAIController _aiController;
+        private BikeController _bike;
 
         // BikeAILogic reads this to steer toward the combat target when engaged
         public CombatSystem EngageTarget { get; private set; }
@@ -67,7 +67,7 @@ namespace MotoSquid.Combat
         {
             _checkTimer = Random.Range(0f, attackCheckInterval);
             _aiLogic      = GetComponentInParent<BikeAILogic>();
-            _aiController = GetComponentInParent<BikeAIController>();
+            _bike = GetComponentInParent<BikeController>();
 
             if (combatSystem != null)
                 combatSystem.onHitReceived.AddListener(OnHitReceived);
@@ -126,7 +126,7 @@ namespace MotoSquid.Combat
                 return false;
 
             Rigidbody rb = combatSystem.bikeRigidbody;
-            float speedMs = _aiController != null ? _aiController.SpeedMs
+            float speedMs = _bike != null ? _bike.SpeedMs
                           : rb != null ? rb.linearVelocity.magnitude
                           : float.MaxValue;
             return speedMs * 3.6f >= minEngageSpeedKmh;

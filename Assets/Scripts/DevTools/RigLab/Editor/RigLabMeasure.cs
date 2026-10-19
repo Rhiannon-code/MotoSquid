@@ -16,7 +16,7 @@ namespace MotoSquid.DevTools
         internal const float RefFootY = 0.1039f;
         internal const float RefFootX = 0.1017f;
 
-        [MenuItem("Tools/Rig Lab/6. Measure Riders", false, 40)]
+        [MenuItem("MotoSquid/Rig Lab/6. Measure Riders", false, 40)]
         static void Measure()
         {
             var bikes = Object.FindObjectsByType<BikeController>(FindObjectsInactive.Include, FindObjectsSortMode.None);

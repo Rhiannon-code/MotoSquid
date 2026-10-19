@@ -1,4 +1,4 @@
-using MotoSquid.Bike;
+using MotoSquid.AI;
 using UnityEditor;
 using UnityEngine;
 
@@ -13,12 +13,12 @@ namespace MotoSquid.Combat
 
         static DebugCombatTestMenu()
         {
-            BikeAIController.DebugHoldForCombatTest = SessionState.GetBool(SessionKey, false);
+            BikeAILogic.DebugHoldForCombatTest = SessionState.GetBool(SessionKey, false);
             EditorApplication.playModeStateChanged += state =>
             {
                 if (state != PlayModeStateChange.EnteredPlayMode) return;
-                BikeAIController.DebugHoldForCombatTest = SessionState.GetBool(SessionKey, false);
-                if (BikeAIController.DebugHoldForCombatTest)
+                BikeAILogic.DebugHoldForCombatTest = SessionState.GetBool(SessionKey, false);
+                if (BikeAILogic.DebugHoldForCombatTest)
                     Debug.Log("[CombatTest] AI hold is ON, AI bikes stand still but still attack and take hits.");
             };
         }
@@ -26,8 +26,8 @@ namespace MotoSquid.Combat
         [MenuItem(MenuPath)]
         static void Toggle()
         {
-            bool on = !BikeAIController.DebugHoldForCombatTest;
-            BikeAIController.DebugHoldForCombatTest = on;
+            bool on = !BikeAILogic.DebugHoldForCombatTest;
+            BikeAILogic.DebugHoldForCombatTest = on;
             SessionState.SetBool(SessionKey, on);
             Menu.SetChecked(MenuPath, on);
             Debug.Log($"[CombatTest] AI hold {(on ? "ON, AI bikes stand still but still attack and take hits" : "OFF, AI racing normally")}.");
@@ -36,7 +36,7 @@ namespace MotoSquid.Combat
         [MenuItem(MenuPath, true)]
         static bool Validate()
         {
-            Menu.SetChecked(MenuPath, BikeAIController.DebugHoldForCombatTest);
+            Menu.SetChecked(MenuPath, BikeAILogic.DebugHoldForCombatTest);
             return true;
         }
     }

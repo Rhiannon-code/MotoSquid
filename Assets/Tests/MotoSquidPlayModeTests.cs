@@ -235,7 +235,7 @@ namespace MotoSquid.Tests
             // 8. AI movement
             {
                 const string N = "AIBike_MovesAfterRaceStart";
-                var ai = FindObjectOfType<BikeAIController>();
+                var ai = FindObjectOfType<MotoSquid.AI.BikeAILogic>();
                 if (!ai) { Skip(N, "No AI bikes in scene (aiCount=0?)"); goto SP9; }
                 var rm = FindObjectOfType<RaceManager>();
                 Vector3 before = ai.transform.position;

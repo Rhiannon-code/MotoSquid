@@ -1,3 +1,4 @@
+using MotoSquid.AI;
 using MotoSquid.Bike;
 using MotoSquid.Cameras;
 using MotoSquid.Combat;
@@ -13,30 +14,34 @@ namespace MotoSquid.DevTools
 {
     public static class RigLabCameraRig
     {
-        const string DonorPath = "Assets/Prefabs/Characters/Voodoo_Player.prefab";
+        const string DonorPath = "Assets/Prefabs/Characters/Player/Senshi Renegade 900 RR.prefab";
 
-        [MenuItem("Tools/Rig Lab/47. Wire AI Bike References (scene)", false, 470)]
+        [MenuItem("MotoSquid/Rig Lab/47. Wire AI Bike References (scene)", false, 470)]
         static void WireAI()
         {
-            var foundAi = Object.FindObjectsByType<BikeAIController>(FindObjectsInactive.Include, FindObjectsSortMode.None);
+            var foundAi = Object.FindObjectsByType<BikeAILogic>(FindObjectsInactive.Include, FindObjectsSortMode.None);
             if (foundAi.Length == 0) { Debug.LogWarning("Rig Lab: no AI bikes in the open scene."); return; }
             var ais = RigLabScope.Narrow(foundAi);
 
-            int rag = 0, anim = 0;
+            int rag = 0, anim = 0, brains = 0;
             foreach (var ai in ais)
             {
-                foreach (var r in ai.GetComponentsInChildren<RagdollActivator>(true))
-                    if (r.bikeAIRhiannon == null) { r.bikeAIRhiannon = ai; EditorUtility.SetDirty(r); rag++; }
+                var bike = ai.GetComponentInParent<BikeController>(true);
+                if (bike == null) { Debug.LogError("Rig Lab: " + ai.name + " has BikeAILogic but no BikeController above it.", ai); continue; }
+                if (ai.controller == null) { ai.controller = bike; EditorUtility.SetDirty(ai); brains++; }
 
-                foreach (var a in ai.GetComponentsInChildren<BikeAnimationController>(true))
-                    if (a.bikeAIRhiannon == null) { a.bikeAIRhiannon = ai; EditorUtility.SetDirty(a); anim++; }
+                foreach (var r in bike.GetComponentsInChildren<RagdollActivator>(true))
+                    if (r.bikeController == null) { r.bikeController = bike; EditorUtility.SetDirty(r); rag++; }
+
+                foreach (var a in bike.GetComponentsInChildren<BikeAnimationController>(true))
+                    if (a.bikeControllerRhiannon == null) { a.bikeControllerRhiannon = bike; EditorUtility.SetDirty(a); anim++; }
             }
-            Debug.Log("Rig Lab: AI wiring, " + rag + " RagdollActivator(s), " + anim +
+            Debug.Log("Rig Lab: AI wiring, " + brains + " brain(s), " + rag + " RagdollActivator(s), " + anim +
                       " BikeAnimationController(s), across " + ais.Length + " AI bike(s)." +
                       RigLabScope.ScopeNote(ais.Length, foundAi.Length));
         }
 
-        [MenuItem("Tools/Rig Lab/46. Build Camera Rig + Fix Placements", false, 460)]
+        [MenuItem("MotoSquid/Rig Lab/46. Build Camera Rig + Fix Placements", false, 460)]
         static void Build()
         {
             var donor = AssetDatabase.LoadAssetAtPath<GameObject>(DonorPath);

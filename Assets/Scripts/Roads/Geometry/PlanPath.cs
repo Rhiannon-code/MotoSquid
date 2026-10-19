@@ -38,6 +38,18 @@ namespace MotoSquid.Roads
             }
         }
 
+        // Positive turns left; zero on straights.
+        public float CurvatureAt(float station)
+        {
+            float left = Mathf.Clamp(station, 0f, Length);
+            foreach (var (length, curvature) in segments)
+            {
+                if (left <= length) return curvature;
+                left -= length;
+            }
+            return segments.Count > 0 ? segments[segments.Count - 1].curvature : 0f;
+        }
+
         PlanPath Add(float length, float curvature)
         {
             segments.Add((length, curvature));

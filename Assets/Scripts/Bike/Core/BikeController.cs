@@ -19,6 +19,9 @@ namespace MotoSquid.Bike
 
         public bool burnoutSmokeSuppressed;
 
+        // Set by RampLauncher while inside its trigger, read by BikeAILogic
+        [System.NonSerialized] public bool isOnRamp;
+
         public BikeGroundContact Ground { get; private set; }
         public BikeSuspensionForces Suspension { get; private set; }
         public BikeTyreGrip Grip { get; private set; }
@@ -34,16 +37,17 @@ namespace MotoSquid.Bike
         internal float CachedSpeedRatio { get; private set; }      // CachedSpeed / maxSpeed, for LeanCurve and AccelerationCurve
         internal float CachedFwdSpeedRatio { get; private set; }   // Abs(z) / maxSpeed, for SteeringCurve
         internal float CachedSideRatio { get; private set; }       // Abs(x) / maxSpeed, for FrictionCurve
-        internal float Wheelbase { get; private set; }
+        public float Wheelbase { get; private set; }
 
         // A stationary burnout produces exactly 0.5 rear slip (forward 1, sideways 0, averaged), so a
-        // threshold of 0.5 rejects it by nothing at all. BikeAIController reads this rather than
-        // carrying its own copy, which is how the AI's burnout came to be invisible
+        // threshold of 0.5 rejects it by nothing at all
         public const float SMOKE_SLIP_THRESHOLD = 0.3f;
 
 
         void Awake()
         {
+            if (!ValidateReferences()) return;
+
             Ground = new BikeGroundContact(this);
             Suspension = new BikeSuspensionForces(this);
             Grip = new BikeTyreGrip(this);
@@ -124,6 +128,8 @@ namespace MotoSquid.Bike
         // Smoothed analog steer in [-1, 1] (gamepad deflection/eased keyboard). Read by the
         // camera to yaw the rider's view toward the corner apex
         public float AnalogSteer => Steering?.AnalogSteer ?? 0f;
+        // The steering lock available at the current speed, BikeAILogic solves its steer against it
+        public float SteerAngle => Steering?.SteerAngle ?? 0f;
 
         public bool isDrifting => Grip != null && Grip.IsDrifting;
         public float DriftAngle => Grip?.DriftAngle ?? 0f;
@@ -198,6 +204,26 @@ namespace MotoSquid.Bike
 
             if (velAlongUp < 0f)
                 bikeReferences.BikeRb.linearVelocity = vel - up * (velAlongUp * factor);
+        }
+
+        // One misconfigured bike would otherwise throw every physics step; disabled instead, with one error naming the gap
+        bool ValidateReferences()
+        {
+            string missing =
+                  bikeReferences.BikeRb           == null ? "BikeRb"
+                : bikeReferences.Rotator          == null ? "Rotator"
+                : bikeReferences.FrontWheelParent == null ? "FrontWheelParent"
+                : bikeReferences.RearWheelParent  == null ? "RearWheelParent"
+                : bikeReferences.FrontWheel       == null ? "FrontWheel"
+                : bikeReferences.RearWheel        == null ? "RearWheel"
+                : bikeReferences.LeanTransform    == null ? "LeanTransform"
+                : bikeReferences.BikeSteering     == null ? "BikeSteering"
+                : null;
+            if (missing == null) return true;
+            Debug.LogError($"BikeController on '{name}' is missing bikeReferences.{missing}, assign it in the Inspector. " +
+                           "Disabling this bike to stop per frame errors.", this);
+            enabled = false;
+            return false;
         }
 
         public void ProvideInput(float accelerate, float reverse, float handBrake, float steerLeft, float steerRight, float wheelie)

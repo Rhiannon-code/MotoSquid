@@ -15,6 +15,10 @@ namespace MotoSquid.Roads
         const string Folder = "Assets/Scenes/Road PoC";
         const string ScenePath = Folder + "/Road PoC.unity";
         const string InterchangeScenePath = Folder + "/Interchange PoC.unity";
+        const string CorridorScenePath = Folder + "/Corridor PoC.unity";
+        const string CloverstackScenePath = Folder + "/Cloverstack PoC.unity";
+        const string WorldScenePath = Folder + "/Open World Roads.unity";
+        const string CorridorLayoutPath = Folder + "/Corridor Layout.asset";
         const string GridTexturePath = Folder + "/Road Grid.png";
         const string RoadMaterialPath = Folder + "/Road Grid.mat";
         const string GroundMaterialPath = Folder + "/Ground.mat";
@@ -30,17 +34,40 @@ namespace MotoSquid.Roads
             new Vector3(0f, -0.05f, 0f), new Vector3(420f, 1f, 420f),
             new Vector3(-600f, 120f, -600f), Quaternion.Euler(20f, 45f, 0f)));
 
-        static void Confirm(string scenePath, Action build)
+        // The corridor stands on generated ground with cuttings and walls, so it has no ground plane.
+        [MenuItem("MotoSquid/Roads/Proof of Concept/Build Corridor Scene")]
+        static void BuildCorridor() => Confirm(CorridorScenePath, () => BuildScene(CorridorScenePath, RoadCorridorLayout.Roads(EnsureCorridorLayout().settings),
+            Vector3.zero, Vector3.zero, new Vector3(1300f, 260f, -700f), Quaternion.Euler(10f, -54f, 0f), earthworks: true));
+
+        [MenuItem("MotoSquid/Roads/Proof of Concept/Build Cloverstack Scene")]
+        static void BuildCloverstack() => Confirm(CloverstackScenePath, () => BuildScene(CloverstackScenePath, RoadCloverstackLayout.Roads(),
+            Vector3.zero, Vector3.zero, new Vector3(900f, 220f, -900f), Quaternion.Euler(12f, -45f, 0f), earthworks: true));
+
+        // The whole open world from RoadData/world_roads.txt (tools/roads/build_world.py), on generated ground.
+        [MenuItem("MotoSquid/Roads/Proof of Concept/Build Open World Scene")]
+        static void BuildWorld() => Confirm(WorldScenePath, () => BuildScene(WorldScenePath, WorldRoads(),
+            Vector3.zero, Vector3.zero, new Vector3(0f, 6000f, -6000f), Quaternion.Euler(45f, 0f, 0f), earthworks: true));
+
+        static List<RoadPocLayout.RoadDefinition> WorldRoads()
+        {
+            var report = new List<string>();
+            var roads = RoadWorldLayout.Roads(RoadWorldData.Load(RoadWorldData.DefaultFile), new WorldSettings(), report);
+            Debug.Log($"[Roads] Open world: {roads.Count} roads\n" + string.Join("\n", report));
+            return roads;
+        }
+
+        internal static void Confirm(string scenePath, Action build)
         {
             if (!EditorUtility.DisplayDialog("Road proof of concept",
-                    $"This creates (or replaces) {scenePath} and its road surface. Nothing else in the project is touched.",
+                    $"This creates (or replaces) {scenePath} and the generated meshes saved next to it. Nothing else in the project is touched.",
                     "Build", "Cancel"))
                 return;
             if (!EditorSceneManager.SaveCurrentModifiedScenesIfUserWantsTo()) return;
             EditorApplication.delayCall += () => build();
         }
 
-        // Replaces only the roads under the open scene's Road Network; the bike and everything else stay.
+        // Replaces the layout's own roads under the open scene's Road Network and adds any it is missing. Roads
+        // edited by hand, and roads the layout never made, are left alone; the bike and everything else stay.
         [MenuItem("MotoSquid/Roads/Proof of Concept/Update Roads In Open Scene")]
         static void UpdateRoads()
         {
@@ -50,19 +77,24 @@ namespace MotoSquid.Roads
                 EditorUtility.DisplayDialog("Road proof of concept", "No Road Network in the open scene. Build a test scene first.", "OK");
                 return;
             }
-            bool interchange = network.gameObject.scene.path == InterchangeScenePath;
+            string scenePath = network.gameObject.scene.path;
             EditorApplication.delayCall += () =>
             {
                 network.barrierMaterial = EnsureMaterial(BarrierMaterialPath, null, new Color(0.72f, 0.72f, 0.7f), 0.2f);
-                CreateRoads(network, interchange ? RoadInterchangeLayout.Roads() : RoadPocLayout.Roads());
+                PlaceRoads(network, scenePath == InterchangeScenePath ? RoadInterchangeLayout.Roads()
+                                   : scenePath == WorldScenePath ? WorldRoads()
+                                   : scenePath == WorldPlanBuilder.ScenePath ? WorldPlanBuilder.Roads()
+                                   : scenePath == CorridorScenePath ? RoadCorridorLayout.Roads(EnsureCorridorLayout().settings)
+                                   : scenePath == CloverstackScenePath ? RoadCloverstackLayout.Roads()
+                                   : RoadPocLayout.Roads());
                 RoadNetworkBuild.Rebuild(network);
                 EditorSceneManager.SaveScene(network.gameObject.scene);
                 Selection.activeGameObject = network.gameObject;
             };
         }
 
-        static void BuildScene(string scenePath, List<RoadPocLayout.RoadDefinition> definitions, Vector3 groundCentre, Vector3 groundScale,
-                               Vector3 cameraPosition, Quaternion cameraRotation)
+        internal static void BuildScene(string scenePath, List<RoadPocLayout.RoadDefinition> definitions, Vector3 groundCentre, Vector3 groundScale,
+                               Vector3 cameraPosition, Quaternion cameraRotation, bool earthworks = false)
         {
             if (!AssetDatabase.IsValidFolder(Folder)) AssetDatabase.CreateFolder("Assets/Scenes", "Road PoC");
             Scene scene = EditorSceneManager.NewScene(NewSceneSetup.DefaultGameObjects, NewSceneMode.Single);
@@ -72,23 +104,28 @@ namespace MotoSquid.Roads
             Material groundMaterial = EnsureMaterial(GroundMaterialPath, null, new Color(0.22f, 0.27f, 0.2f), 0.1f);
             Material barrierMaterial = EnsureMaterial(BarrierMaterialPath, null, new Color(0.72f, 0.72f, 0.7f), 0.2f);
 
-            var ground = GameObject.CreatePrimitive(PrimitiveType.Plane);
-            ground.name = "Ground";
-            ground.transform.position = groundCentre;
-            ground.transform.localScale = groundScale;
-            ground.GetComponent<MeshRenderer>().sharedMaterial = groundMaterial;
+            if (!earthworks)
+            {
+                var ground = GameObject.CreatePrimitive(PrimitiveType.Plane);
+                ground.name = "Ground";
+                ground.transform.position = groundCentre;
+                ground.transform.localScale = groundScale;
+                ground.GetComponent<MeshRenderer>().sharedMaterial = groundMaterial;
+            }
 
             var networkObject = new GameObject("Road Network");
             var network = networkObject.AddComponent<RoadNetwork>();
             network.surfaceMaterial = roadMaterial;
             network.barrierMaterial = barrierMaterial;
-            CreateRoads(network, definitions);
+            network.groundMaterial = groundMaterial;
+            network.earthworks.enabled = earthworks;
+            PlaceRoads(network, definitions);
 
             var camera = Camera.main;
             if (camera != null)
             {
                 camera.gameObject.AddComponent<Unity.Cinemachine.CinemachineBrain>();
-                camera.farClipPlane = 6000f;
+                camera.farClipPlane = 20000f;
                 camera.transform.SetPositionAndRotation(cameraPosition, cameraRotation);
             }
 
@@ -98,20 +135,75 @@ namespace MotoSquid.Roads
             Selection.activeGameObject = networkObject;
         }
 
-        static void CreateRoads(RoadNetwork network, List<RoadPocLayout.RoadDefinition> definitions)
+        static void PlaceRoads(RoadNetwork network, List<RoadPocLayout.RoadDefinition> definitions)
         {
-            var old = network.transform.Find("Roads");
-            if (old != null) UnityEngine.Object.DestroyImmediate(old.gameObject);
-            var roads = new GameObject("Roads").transform;
-            roads.SetParent(network.transform, false);
+            var root = network.transform.Find("Roads");
+            if (root == null)
+            {
+                root = new GameObject("Roads").transform;
+                root.SetParent(network.transform, false);
+            }
+            var existing = new Dictionary<string, Road>();
+            foreach (var road in network.Roads) existing[road.name] = road;
+
+            int added = 0, replaced = 0, kept = 0, removed = 0;
+            var wanted = new HashSet<string>();
             foreach (var definition in definitions)
             {
-                var go = new GameObject(definition.Name);
-                go.transform.SetParent(roads, false);
-                var container = go.AddComponent<SplineContainer>();
-                container.Splines = new[] { RoadPocLayout.ToSpline(definition.Knots) };
-                go.AddComponent<Road>().settings = definition.Settings;
+                wanted.Add(definition.Name);
+                if (existing.TryGetValue(definition.Name, out var road))
+                {
+                    if (road.edited) { kept++; continue; }
+                    replaced++;
+                }
+                else
+                {
+                    var go = new GameObject(definition.Name, typeof(SplineContainer));
+                    go.transform.SetParent(root, false);
+                    road = go.AddComponent<Road>();
+                    added++;
+                }
+                // The layout's knots are in the network's space, so a road moved as a whole goes back with them.
+                road.transform.localPosition = Vector3.zero;
+                road.transform.localRotation = Quaternion.identity;
+                road.transform.localScale = Vector3.one;
+                road.settings = definition.Settings;
+                road.recipe = definition.Recipe ?? new RoadRecipe();
+                road.generated = true;
+                road.edited = false;
+                road.handShaped = false;
+                road.SetKnots(definition.Knots);
+                EditorUtility.SetDirty(road);
             }
+            foreach (var road in existing.Values)
+                if (!wanted.Contains(road.name) && road.generated && !road.edited)
+                {
+                    UnityEngine.Object.DestroyImmediate(road.gameObject);
+                    removed++;
+                }
+            Debug.Log($"[Roads] Update: {added} added, {replaced} replaced from the layout, {kept} kept (edited by hand), {removed} removed.");
+        }
+
+        // The asset is the source of the corridor's tuning; rebuilding the roads reads it. It is only written
+        // when its numbers predate the current defaults (CorridorSettings.CurrentVersion), which resets them.
+        static CorridorLayoutAsset EnsureCorridorLayout()
+        {
+            var layout = AssetDatabase.LoadAssetAtPath<CorridorLayoutAsset>(CorridorLayoutPath);
+            if (layout == null)
+            {
+                if (!AssetDatabase.IsValidFolder(Folder)) AssetDatabase.CreateFolder("Assets/Scenes", "Road PoC");
+                layout = ScriptableObject.CreateInstance<CorridorLayoutAsset>();
+                AssetDatabase.CreateAsset(layout, CorridorLayoutPath);
+            }
+            if (layout.settings.version != CorridorSettings.CurrentVersion)
+            {
+                if (layout.settings.version != 0) Debug.Log($"[Roads] {CorridorLayoutPath} held version {layout.settings.version} numbers; reset to the current defaults.");
+                else Debug.Log($"[Roads] {CorridorLayoutPath} reset to the current (compact) defaults.");
+                layout.settings = new CorridorSettings { version = CorridorSettings.CurrentVersion };
+                EditorUtility.SetDirty(layout);
+                AssetDatabase.SaveAssets();
+            }
+            return layout;
         }
 
         // A 4 m tile with a line every metre, so bumps and kinks show in the Scene view.

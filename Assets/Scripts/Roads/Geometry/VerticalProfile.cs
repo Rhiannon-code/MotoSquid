@@ -49,6 +49,84 @@ namespace MotoSquid.Roads
             return this;
         }
 
+        // Level stretches joined by straight grades. Each change starts its rounding at `from` and runs at
+        // `grade` to `height`; the road stays level after the last one. A change too short to reach its grade
+        // between the two roundings uses the steepest grade at which they just meet.
+        public static VerticalProfile Stepped(float startHeight, float radius, params (float from, float height, float grade)[] changes)
+        {
+            var profile = new VerticalProfile().Point(0f, startHeight);
+            foreach (var (from, to, grade) in changes) profile.Step(from, to, grade, radius);
+            return profile.Level();
+        }
+
+        float LastHeight => pvis.Count > 0 ? pvis[pvis.Count - 1].height : 0f;
+        float LastStation => pvis.Count > 0 ? pvis[pvis.Count - 1].station : 0f;
+
+        // A change from the current height to `to`, its rounding starting at `from` (see Stepped).
+        public VerticalProfile Step(float from, float to, float grade, float radius)
+        {
+            float height = LastHeight;
+            if (Mathf.Approximately(to, height)) return this;
+            float g = ReachableGrade(to - height, grade, radius);
+            float first = from + radius * g / 2f;
+            return Point(first, height, radius).Point(first + Mathf.Abs(to - height) / g, to, radius);
+        }
+
+        // A rise and fall back to the current height over `length` metres from `from`. A crest tighter than
+        // v²/g gives air on purpose (a hop): the far side is the landing slope.
+        public VerticalProfile Bump(float from, float rise, float length, float crestRadius, float sagRadius)
+        {
+            float height = LastHeight;
+            return Point(from, height, sagRadius).Point(from + length / 2f, height + rise, crestRadius).Point(from + length, height, sagRadius);
+        }
+
+        // Level from the last point on.
+        public VerticalProfile Level() => Point(LastStation + 1e6f, LastHeight);
+
+        public static VerticalProfile FromPoints(IEnumerable<HeightPoint> points)
+        {
+            var profile = new VerticalProfile();
+            foreach (var p in points) profile.Point(p.station, p.height, p.radius);
+            return profile;
+        }
+
+        // The height points, the last one moved in to the road's end so it reads sensibly in an inspector.
+        public List<HeightPoint> HeightPoints(float roadLength)
+        {
+            var points = new List<HeightPoint>();
+            foreach (var p in pvis) points.Add(new HeightPoint { station = p.station, height = p.height, radius = p.radius });
+            if (points.Count > 1 && points[points.Count - 1].station > roadLength)
+            {
+                var last = points[points.Count - 1];
+                last.station = Mathf.Max(roadLength, points[points.Count - 2].station + 1f);
+                points[points.Count - 1] = last;
+            }
+            return points;
+        }
+
+        // Stations where the height stops being one straight grade or one rounding: where every rounding
+        // starts and ends, and at every sharp point.
+        public IEnumerable<float> Breaks()
+        {
+            for (int i = 1; i < pvis.Count - 1; i++)
+            {
+                float length = pvis[i].radius * Mathf.Abs(Grade(i) - Grade(i - 1));
+                yield return pvis[i].station - length / 2f;
+                if (length > 0f) yield return pvis[i].station + length / 2f;
+            }
+        }
+
+        // Metres from the start of a change's rounding to the end of it.
+        public static float ChangeLength(float rise, float grade, float radius)
+        {
+            if (Mathf.Approximately(rise, 0f)) return 0f;
+            float g = ReachableGrade(rise, grade, radius);
+            return radius * g + Mathf.Abs(rise) / g;
+        }
+
+        static float ReachableGrade(float rise, float grade, float radius) =>
+            radius > 0f ? Mathf.Min(grade, Mathf.Sqrt(Mathf.Abs(rise) / radius)) : grade;
+
         // The lip height that brings a jump back to `endHeight` once it levels out.
         public static float LipHeightFor(float endHeight, JumpShape shape) =>
             endHeight - shape.Ramp(shape.flight + shape.runOut) - shape.RampGrade * shape.SagLength / 2f;

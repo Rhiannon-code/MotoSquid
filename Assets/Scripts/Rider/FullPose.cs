@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace MotoSquid.Rider
 {
-    [CreateAssetMenu(fileName = "FullPose", menuName = "Rig Lab/Full Pose")]
+    [CreateAssetMenu(fileName = "FullPose", menuName = "MotoSquid/Rig Lab/Full Pose")]
     public class FullPose : ScriptableObject
     {
         public string sourceClip;

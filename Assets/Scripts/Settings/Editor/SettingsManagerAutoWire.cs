@@ -71,7 +71,7 @@ namespace MotoSquid.Settings
             { "Traffic Density",    ("trafficDensitySelector",   CompType.Selector) },
         };
 
-        [MenuItem("MotoSquid/Auto Wire Settings Manager")]
+        [MenuItem("MotoSquid/Menu/Auto Wire Settings Manager")]
         static void AutoWire()
         {
             var sm = Object.FindAnyObjectByType<SettingsManager>(FindObjectsInactive.Include);

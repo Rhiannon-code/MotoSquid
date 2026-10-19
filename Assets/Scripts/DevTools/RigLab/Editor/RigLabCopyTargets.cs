@@ -14,7 +14,7 @@ namespace MotoSquid.DevTools
         BikeController destination;
         bool copyHints = true;
 
-        [MenuItem("Tools/Rig Lab/10. Copy Targets Between Bikes", false, 100)]
+        [MenuItem("MotoSquid/Rig Lab/10. Copy Targets Between Bikes", false, 100)]
         static void Open()
         {
             GetWindow<RigLabCopyTargets>("Copy Targets").minSize = new Vector2(360, 170);

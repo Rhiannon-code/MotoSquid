@@ -13,9 +13,9 @@ namespace MotoSquid.DevTools
 {
     public static class RigLabAddSystems
     {
-        const string ActionsPath = "Assets/MotoSquid/Data/Controls/BikeInputActions.inputactions";
+        const string ActionsPath = "Assets/Controls/BikeInputActions.inputactions";
 
-        [MenuItem("Tools/Rig Lab/40. Add Combat + Reset + Boost To Review Bikes", false, 400)]
+        [MenuItem("MotoSquid/Rig Lab/40. Add Combat + Reset + Boost To Review Bikes", false, 400)]
         static void Add()
         {
             var actions = AssetDatabase.LoadAssetAtPath<InputActionAsset>(ActionsPath);

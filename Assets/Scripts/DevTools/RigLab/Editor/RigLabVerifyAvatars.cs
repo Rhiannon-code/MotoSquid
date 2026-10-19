@@ -29,7 +29,7 @@ namespace MotoSquid.DevTools
             (HumanBodyBones.RightFoot, "Ankle_R"),
         };
 
-        [MenuItem("Tools/Rig Lab/21. Verify Clip Avatars", false, 216)]
+        [MenuItem("MotoSquid/Rig Lab/21. Verify Clip Avatars", false, 216)]
         static void Verify()
         {
             var paths = AssetDatabase.FindAssets("t:Model", new[] { ClipFolder })

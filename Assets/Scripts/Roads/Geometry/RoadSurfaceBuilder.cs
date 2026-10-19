@@ -35,6 +35,10 @@ namespace MotoSquid.Roads
         public readonly List<Vector3> BarrierVertices = new List<Vector3>();
         public readonly List<int> BarrierTriangles = new List<int>();
         public readonly List<Vector2> BarrierUvs = new List<Vector2>();
+        public readonly List<BarrierLine> BarrierLines = new List<BarrierLine>();
+        public readonly List<Vector3> GroundVertices = new List<Vector3>();
+        public readonly List<int> GroundTriangles = new List<int>();
+        public readonly List<Vector2> GroundUvs = new List<Vector2>();
         public readonly List<JunctionZone> Zones = new List<JunctionZone>();
         public readonly List<string> Conflicts = new List<string>();
         public readonly List<string> Warnings = new List<string>();
@@ -55,8 +59,21 @@ namespace MotoSquid.Roads
         const float HashCell = 20f;
         const int ClusterGap = 3;
         const float CrossingAngle = 25f;
-        const int EndReach = 2;
+        internal const int EndReach = 2;
         const double Mm = 1000.0;
+        const float BlendFade = 2f;
+        const float SurfaceTolerance = 0.002f;
+        // How much the grade may change at one kept vertex: what the 1 m mesh did on a 1,500 m crest, which
+        // stays on the road at top speed. Coarser, each vertex is a small ramp the bike leaves.
+        const float MaxSlopeStep = 0.0007f;
+        // How far a banked surface's tilt may swing at one vertex as the road turns (degrees).
+        const float MaxNormalSwing = 1f;
+        // How far from flat a two-edge quad may be (m): where such a row meets a full row, a long fan of
+        // triangles on even a faintly twisted road misses it by millimetres.
+        const float FlatTolerance = 0.0002f;
+        const int MaxSpan = 50;
+        // Holes in a junction's merged surface smaller than this (m²) are filled rather than walled round.
+        const double MaxFilledHole = 400.0;
 
         // Finds the junction zones and flattens bank into them. Must run before building or checking.
         public static List<JunctionZone> Prepare(IReadOnlyList<RoadPath> paths) => Prepare(paths, new List<string>());
@@ -68,7 +85,7 @@ namespace MotoSquid.Roads
             return zones;
         }
 
-        public static RoadSurface Build(IReadOnlyList<RoadPath> paths, float uvTileSize)
+        public static RoadSurface Build(IReadOnlyList<RoadPath> paths, float uvTileSize, Earthworks earthworks = null)
         {
             var surface = new RoadSurface();
             surface.Zones.AddRange(Prepare(paths, surface.Conflicts));
@@ -85,6 +102,7 @@ namespace MotoSquid.Roads
                 try { AddJunction(mesh, barriers, surface.Zones[z], corners); }
                 catch (Exception e) { surface.Warnings.Add($"Junction {z + 1} ({Describe(surface.Zones[z])}) failed: {e.Message}"); }
             }
+            RoadStructures.Build(surface, paths, earthworks);
             return surface;
         }
 
@@ -95,7 +113,10 @@ namespace MotoSquid.Roads
             return string.Join(", ", names);
         }
 
-        static List<JunctionZone> FindZones(IReadOnlyList<RoadPath> paths, List<string> conflicts)
+        // Where roads at the same height join, and (in `conflicts`) where they overlap without joining. With
+        // `conflictsAt`, each conflict's road, station and position too.
+        public static List<JunctionZone> FindZones(IReadOnlyList<RoadPath> paths, List<string> conflicts,
+                                                   List<(RoadPath road, float station, Vector3 at)> conflictsAt = null)
         {
             var cells = new Dictionary<(int, int), List<(int path, int station)>>();
             float widest = 0f;
@@ -146,6 +167,7 @@ namespace MotoSquid.Roads
                     {
                         conflicts.Add($"{a.Name} {fromA * a.Spacing:0}-{toA * a.Spacing:0} m overlaps {b.Name} " +
                                       $"{fromB * b.Spacing:0}-{toB * b.Spacing:0} m without joining it");
+                        conflictsAt?.Add((a, (fromA + toA) / 2 * a.Spacing, a.Centre[(fromA + toA) / 2]));
                         continue;
                     }
                     zones.Add(new Dictionary<int, (int, int)>
@@ -155,22 +177,7 @@ namespace MotoSquid.Roads
                     });
                 }
 
-            for (bool merged = true; merged;)
-            {
-                merged = false;
-                for (int x = 0; x < zones.Count && !merged; x++)
-                for (int y = x + 1; y < zones.Count && !merged; y++)
-                {
-                    foreach (var kv in zones[y])
-                        if (zones[x].TryGetValue(kv.Key, out var r) && r.from <= kv.Value.to && kv.Value.from <= r.to)
-                            merged = true;
-                    if (!merged) continue;
-                    foreach (var kv in zones[y])
-                        zones[x][kv.Key] = zones[x].TryGetValue(kv.Key, out var r)
-                            ? (Mathf.Min(r.from, kv.Value.from), Mathf.Max(r.to, kv.Value.to)) : kv.Value;
-                    zones.RemoveAt(y);
-                }
-            }
+            MergeOverlapping(zones);
 
             var result = new List<JunctionZone>();
             foreach (var z in zones)
@@ -240,6 +247,51 @@ namespace MotoSquid.Roads
             return gap < Mathf.Max(a.Spacing, b.Spacing) && angle > CrossingAngle && angle < 180f - CrossingAngle;
         }
 
+        // Zones sharing a stretch of the same road become one zone. Repeated until nothing merges, because a merged
+        // zone's longer stretch can reach a zone that neither of its parts did.
+        static void MergeOverlapping(List<Dictionary<int, (int from, int to)>> zones)
+        {
+            for (bool merged = true; merged && zones.Count > 1;)
+            {
+                merged = false;
+                var parent = new int[zones.Count];
+                for (int i = 0; i < parent.Length; i++) parent[i] = i;
+                var byPath = new Dictionary<int, List<(int from, int to, int zone)>>();
+                for (int z = 0; z < zones.Count; z++)
+                    foreach (var kv in zones[z])
+                    {
+                        if (!byPath.TryGetValue(kv.Key, out var list)) byPath[kv.Key] = list = new List<(int, int, int)>();
+                        list.Add((kv.Value.from, kv.Value.to, z));
+                    }
+                foreach (var list in byPath.Values)
+                {
+                    list.Sort((a, b) => a.from.CompareTo(b.from));
+                    int reach = list[0].to, owner = list[0].zone;
+                    for (int i = 1; i < list.Count; i++)
+                    {
+                        if (list[i].from <= reach)
+                        {
+                            if (Find(parent, list[i].zone) != Find(parent, owner)) { Union(parent, list[i].zone, owner); merged = true; }
+                            reach = Mathf.Max(reach, list[i].to);
+                        }
+                        else { reach = list[i].to; owner = list[i].zone; }
+                    }
+                }
+                if (!merged) break;
+                var at = new Dictionary<int, int>();
+                var next = new List<Dictionary<int, (int from, int to)>>();
+                for (int z = 0; z < zones.Count; z++)
+                {
+                    int root = Find(parent, z);
+                    if (!at.TryGetValue(root, out int k)) { at[root] = k = next.Count; next.Add(new Dictionary<int, (int, int)>()); }
+                    foreach (var kv in zones[z])
+                        next[k][kv.Key] = next[k].TryGetValue(kv.Key, out var r) ? (Mathf.Min(r.from, kv.Value.from), Mathf.Max(r.to, kv.Value.to)) : kv.Value;
+                }
+                zones.Clear();
+                zones.AddRange(next);
+            }
+        }
+
         static int Find(int[] parent, int x)
         {
             while (parent[x] != x) x = parent[x] = parent[parent[x]];
@@ -301,36 +353,123 @@ namespace MotoSquid.Roads
             return offsets;
         }
 
+        // Only as many vertices as the surface needs: a station is kept where joining its neighbours with
+        // straight lines would miss the road by more than SurfaceTolerance, and a row keeps its vertex every
+        // metre across only where the road twists into its bank (or a long flat quad would fold); otherwise
+        // a row is just its two edges. Junction cut lines always keep every vertex, to weld to the junction.
         static void AddRibbon(Welder mesh, Barriers barriers, RoadPath path, int from, int to, Dictionary<(long, long), float> corners)
         {
             bool cutStart = from > 0, cutEnd = to < path.Count - 1;
-            var offsets = CrossOffsets(path);
-            int[] previous = null, current = new int[offsets.Length];
+            var full = CrossOffsets(path);
+            var edges = new[] { -path.HalfWidth, path.HalfWidth };
+            var kept = KeptStations(path, from, to);
+
+            var dense = new bool[kept.Count];
+            dense[0] |= cutStart;
+            dense[kept.Count - 1] |= cutEnd;
+            for (int k = 0; k + 1 < kept.Count; k++)
+                if (Twists(path, kept[k], kept[k + 1]))
+                    dense[k] = dense[k + 1] = true;
+
             var leftEdge = new List<Vector3>();
             var rightEdge = new List<Vector3>();
             var leftOut = new List<Vector3>();
             var rightOut = new List<Vector3>();
-            for (int i = from; i <= to; i++)
+            int[] previous = null;
+            float[] previousOffsets = null;
+            for (int k = 0; k < kept.Count; k++)
             {
-                bool cut = (i == from && cutStart) || (i == to && cutEnd);
+                int i = kept[k];
+                bool cut = (k == 0 && cutStart) || (k == kept.Count - 1 && cutEnd);
+                var offsets = dense[k] ? full : edges;
+                var row = new int[offsets.Length];
                 for (int j = 0; j < offsets.Length; j++)
                 {
                     Vector3 v = path.Point(i, offsets[j]);
                     if (cut) v = Corner(v, corners);
-                    current[j] = mesh.Vertex(v);
+                    row[j] = mesh.Vertex(v);
                     if (j == 0) { leftEdge.Add(v); leftOut.Add(-path.Right[i]); }
                     if (j == offsets.Length - 1) { rightEdge.Add(v); rightOut.Add(path.Right[i]); }
                 }
-                if (previous != null)
-                    for (int j = 0; j < offsets.Length - 1; j++)
-                    {
-                        mesh.Triangle(previous[j], current[j], previous[j + 1]);
-                        mesh.Triangle(previous[j + 1], current[j], current[j + 1]);
-                    }
-                previous = (int[])current.Clone();
+                if (previous != null) Stitch(mesh, previous, previousOffsets, row, offsets);
+                previous = row;
+                previousOffsets = offsets;
             }
             barriers.Add(leftEdge, leftOut, path.Settings.barrierHeight, path.Settings.barrierThickness);
             barriers.Add(rightEdge, rightOut, path.Settings.barrierHeight, path.Settings.barrierThickness);
+        }
+
+        static List<int> KeptStations(RoadPath path, int from, int to)
+        {
+            var lateral = new[] { -path.HalfWidth, -path.HalfWidth / 2f, 0f, path.HalfWidth / 2f, path.HalfWidth };
+            var before = new float[lateral.Length];
+            for (int l = 0; l < lateral.Length; l++)
+                before[l] = from > 0 ? Slope(path.Point(from - 1, lateral[l]), path.Point(from, lateral[l])) : Slope(path.Point(from, lateral[l]), path.Point(from + 1, lateral[l]));
+            var kept = new List<int> { from };
+            for (int a = from; a < to;)
+            {
+                int b = a + 1;
+                while (b + 1 <= to && b + 1 - a <= MaxSpan && Fits(path, a, b + 1, lateral, before)) b++;
+                for (int l = 0; l < lateral.Length; l++) before[l] = Slope(path.Point(a, lateral[l]), path.Point(b, lateral[l]));
+                kept.Add(b);
+                a = b;
+            }
+            return kept;
+        }
+
+        // Joining a to b with straight lines stays within SurfaceTolerance of the road, and the grade changes by
+        // no more than MaxSlopeStep at a from the span before it (`before`, per lateral line) nor at b into the
+        // metre after it, so a span never ends where even the shortest next one would turn too sharply.
+        static bool Fits(RoadPath path, int a, int b, float[] lateral, float[] before)
+        {
+            float bank = Mathf.Max(Mathf.Abs(path.Bank[a]), Mathf.Abs(path.Bank[b]));
+            float turn = Vector3.Angle(path.Forward[a], path.Forward[b]);
+            if (turn * Mathf.Sin(bank * Mathf.Deg2Rad) > MaxNormalSwing) return false;
+            for (int k = 0; k < lateral.Length; k++)
+            {
+                Vector3 pa = path.Point(a, lateral[k]), pb = path.Point(b, lateral[k]);
+                for (int i = a + 1; i < b; i++)
+                    if ((path.Point(i, lateral[k]) - Vector3.Lerp(pa, pb, (i - a) / (float)(b - a))).sqrMagnitude > SurfaceTolerance * SurfaceTolerance)
+                        return false;
+                float chord = Slope(pa, pb);
+                if (Mathf.Abs(chord - before[k]) > MaxSlopeStep) return false;
+                if (b + 1 < path.Count && Mathf.Abs(chord - Slope(pb, path.Point(b + 1, lateral[k]))) > MaxSlopeStep) return false;
+            }
+            return true;
+        }
+
+        static float Slope(Vector3 from, Vector3 to) => (to.y - from.y) / Mathf.Max(RoadPath.Flat(to - from).magnitude, 1e-4f);
+
+        // Whether a quad of just the two edges between these stations is too far from flat to be two
+        // triangles: its fourth corner's distance from the plane through the other three. That catches a bank
+        // that changes, a banked road turning and a road turning while it climbs alike.
+        static bool Twists(RoadPath path, int a, int b)
+        {
+            Vector3 la = path.Point(a, -path.HalfWidth), ra = path.Point(a, path.HalfWidth);
+            Vector3 lb = path.Point(b, -path.HalfWidth), rb = path.Point(b, path.HalfWidth);
+            Vector3 normal = Vector3.Cross(ra - la, lb - la);
+            if (normal.sqrMagnitude < 1e-12f) return false;
+            return Mathf.Abs(Vector3.Dot(rb - la, normal.normalized)) / 4f > FlatTolerance;
+        }
+
+        // Triangles between two rows across the road, which may hold different numbers of vertices: walks
+        // both from the left edge, always advancing the row whose next vertex is nearer.
+        static void Stitch(Welder mesh, int[] a, float[] la, int[] b, float[] lb)
+        {
+            int i = 0, j = 0;
+            while (i < a.Length - 1 || j < b.Length - 1)
+            {
+                if (j == b.Length - 1 || (i < a.Length - 1 && la[i + 1] <= lb[j + 1]))
+                {
+                    mesh.Triangle(a[i], b[j], a[i + 1]);
+                    i++;
+                }
+                else
+                {
+                    mesh.Triangle(a[i], b[j], b[j + 1]);
+                    j++;
+                }
+            }
         }
 
         // A ribbon end the junction polygon will share: snapped to the millimetre grid the polygon uses.
@@ -360,6 +499,13 @@ namespace MotoSquid.Roads
 
             var clipper = new Clipper64 { PreserveCollinear = true };
             clipper.AddSubject(outlines);
+            var merged = new Paths64();
+            clipper.Execute(ClipType.Union, FillRule.NonZero, merged);
+            // Overlapping roads can leave small holes in the merged surface, each of which would get a ring of wall in
+            // the middle of the road. Holes run clockwise (negative area); small ones are filled.
+            merged.RemoveAll(p => Clipper.Area(p) < 0 && -Clipper.Area(p) < MaxFilledHole * Mm * Mm);
+            clipper = new Clipper64 { PreserveCollinear = true };
+            clipper.AddSubject(merged);
             var tree = new PolyTree64();
             clipper.Execute(ClipType.Union, FillRule.NonZero, tree);
             for (int i = 0; i < tree.Count; i++)
@@ -506,7 +652,8 @@ namespace MotoSquid.Roads
             return dx * dx + dy * dy;
         }
 
-        // Height of a junction point: the roads it lies on, weighted by how far inside each one it is.
+        // Height of a junction point: the roads it lies on, weighted by how far inside each one it is. A road's
+        // pull fades to nothing within BlendFade of its edge, so a road beside a lane it never meets leaves it level.
         static float BlendedHeight(JunctionZone zone, float x, float z)
         {
             double sum = 0, weights = 0;
@@ -528,11 +675,26 @@ namespace MotoSquid.Roads
                 float lateral = Vector3.Dot(offset, path.Right[nearest]);
                 float height = path.PointAt(station, lateral).y;
                 float outside = Mathf.Abs(lateral) - path.HalfWidth;
-                double weight = outside <= 0f ? 1.0 - outside : 1.0 / (1.0 + outside * outside);
+                double fade = 1.0 - outside / BlendFade;
+                double weight = outside <= 0f ? 1.0 - outside : fade > 0.0 ? fade * fade : 0.0;
+                if (weight <= 0.0) continue;
                 sum += height * weight;
                 weights += weight;
             }
-            return (float)(sum / weights);
+            return weights > 0 ? (float)(sum / weights) : NearestHeight(zone, p);
+        }
+
+        // A point just outside every road (polygon rounding at an outline): take the road it is nearest.
+        static float NearestHeight(JunctionZone zone, Vector3 p)
+        {
+            float best = float.MaxValue, height = 0f;
+            foreach (var part in zone.Parts)
+                for (int i = part.From; i <= part.To; i++)
+                {
+                    float d = RoadPath.Flat(part.Path.Centre[i] - p).sqrMagnitude;
+                    if (d < best) { best = d; height = part.Path.Point(i, 0f).y; }
+                }
+            return height;
         }
 
         static List<P2T.TriPoint> ToTriPoints(Path64 path)
@@ -558,52 +720,15 @@ namespace MotoSquid.Roads
             public int GetHashCode(P2T.TriPoint p) => System.Runtime.CompilerServices.RuntimeHelpers.GetHashCode(p);
         }
 
-        // Concrete walls on the road edges: an inner face, a top and an outer face, each flat-shaded.
+        // Records each barrier line; RoadStructures turns them into walls once the whole surface exists.
         sealed class Barriers
         {
             readonly RoadSurface surface;
 
             public Barriers(RoadSurface surface) => this.surface = surface;
 
-            public void Add(List<Vector3> edge, List<Vector3> outward, float height, float thickness)
-            {
-                if (height <= 0f || edge.Count < 2) return;
-                var up = Vector3.up * height;
-                var faces = new (Func<int, Vector3> a, Func<int, Vector3> b, Func<int, Vector3> normal)[]
-                {
-                    (i => edge[i], i => edge[i] + up, i => -outward[i]),
-                    (i => edge[i] + up, i => edge[i] + up + outward[i] * thickness, i => Vector3.up),
-                    (i => edge[i] + up + outward[i] * thickness, i => edge[i] + outward[i] * thickness, i => outward[i]),
-                };
-                foreach (var (a, b, normal) in faces)
-                {
-                    int first = surface.BarrierVertices.Count;
-                    float along = 0f;
-                    for (int i = 0; i < edge.Count; i++)
-                    {
-                        if (i > 0) along += Vector3.Distance(edge[i], edge[i - 1]);
-                        surface.BarrierVertices.Add(a(i));
-                        surface.BarrierVertices.Add(b(i));
-                        surface.BarrierUvs.Add(new Vector2(along / 4f, 0f));
-                        surface.BarrierUvs.Add(new Vector2(along / 4f, Vector3.Distance(a(i), b(i)) / 4f));
-                    }
-                    for (int i = 0; i < edge.Count - 1; i++)
-                    {
-                        int p = first + 2 * i, q = p + 2;
-                        Triangle(p, p + 1, q, normal(i));
-                        Triangle(q, p + 1, q + 1, normal(i));
-                    }
-                }
-            }
-
-            void Triangle(int a, int b, int c, Vector3 facing)
-            {
-                var v = surface.BarrierVertices;
-                if (Vector3.Dot(Vector3.Cross(v[b] - v[a], v[c] - v[a]), facing) < 0f) (b, c) = (c, b);
-                surface.BarrierTriangles.Add(a);
-                surface.BarrierTriangles.Add(b);
-                surface.BarrierTriangles.Add(c);
-            }
+            public void Add(List<Vector3> edge, List<Vector3> outward, float height, float thickness) =>
+                surface.BarrierLines.Add(new BarrierLine { Edge = edge, Outward = outward, Height = height, Thickness = thickness });
         }
 
         // Shares vertices that land on the same millimetre, so ribbons and junctions weld into one mesh.

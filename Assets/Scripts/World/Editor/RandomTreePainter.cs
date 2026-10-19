@@ -31,7 +31,7 @@ namespace MotoSquid.World
 
         static RandomTreePainter instance;
 
-        [MenuItem("Tools/Random Tree Painter")]
+        [MenuItem("MotoSquid/World/Random Tree Painter")]
         static void Open()
         {
             instance = GetWindow<RandomTreePainter>("Random Tree Painter");

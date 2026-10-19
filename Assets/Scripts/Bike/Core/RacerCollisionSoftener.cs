@@ -127,7 +127,6 @@ namespace MotoSquid.Bike
             if (_racerCache.TryGetValue(other, out bool cached)) return cached;
 
             bool isRacer = other.GetComponentInParent<BikeController>()   != null
-                        || other.GetComponentInParent<BikeAIController>() != null
                         || other.GetComponentInParent<RagdollActivator>() != null;
 
             _racerCache[other] = isRacer;

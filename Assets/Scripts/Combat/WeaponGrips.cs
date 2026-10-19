@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace MotoSquid.Combat
 {
-    [CreateAssetMenu(fileName = "WeaponGrips", menuName = "Rig Lab/Weapon Grips")]
+    [CreateAssetMenu(fileName = "WeaponGrips", menuName = "MotoSquid/Rig Lab/Weapon Grips")]
     public class WeaponGrips : ScriptableObject
     {
         [Serializable]

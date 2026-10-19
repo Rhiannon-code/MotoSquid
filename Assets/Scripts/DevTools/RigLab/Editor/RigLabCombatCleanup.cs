@@ -12,7 +12,7 @@ namespace MotoSquid.DevTools
 {
     public static class RigLabCombatCleanup
     {
-        [MenuItem("Tools/Rig Lab/14. Remove Unused Combat Targets", false, 161)]
+        [MenuItem("MotoSquid/Rig Lab/14. Remove Unused Combat Targets", false, 161)]
         static void Cleanup()
         {
             var bikes = Object.FindObjectsByType<BikeController>(FindObjectsInactive.Include, FindObjectsSortMode.None);

@@ -18,18 +18,18 @@ namespace MotoSquid.DevTools
     public static class RigLab
     {
         const string PresetFolder = "Assets/Prefabs/Characters";
-        internal const string CustomBikeFolder = "Assets/MotoSquid/Data/RigLab/Bikes";
-        const string BaseScene = "Assets/OutdoorsScene.unity";
-        const string ReviewScene = "Assets/MotoSquid/Scenes/Tools/RigReview.unity";
+        internal const string CustomBikeFolder = "Assets/RigLab/Bikes";
+        const string BaseScene = "Assets/Scenes/OutdoorsScene.unity";
+        const string ReviewScene = "Assets/Scenes/Tools/RigReview.unity";
         internal static readonly string[] ModelFolders =
         {
             "Assets/Models",
         };
-        const string DataFolder = "Assets/MotoSquid/Data/RigLab/Data";
+        const string DataFolder = "Assets/RigLab/Data";
 
         internal const float Spacing = 7f;
 
-        [MenuItem("Tools/Rig Lab/1. Build Review Scene", false, 0)]
+        [MenuItem("MotoSquid/Rig Lab/1. Build Review Scene", false, 0)]
         static void BuildReviewScene()
         {
             var presets = LoadPresets();
@@ -90,7 +90,7 @@ namespace MotoSquid.DevTools
             Debug.Log("Rig Lab: built " + ReviewScene + " with " + bikes.Count + " bikes. Press Play, use [ and ] to cycle.");
         }
 
-        [MenuItem("Tools/Rig Lab/2. Swap Riders To Voodoo (open scene)", false, 1)]
+        [MenuItem("MotoSquid/Rig Lab/2. Swap Riders To Voodoo (open scene)", false, 1)]
         static void SwapRiders()
         {
             var rider = RigLabRiders.Characters()
@@ -113,7 +113,7 @@ namespace MotoSquid.DevTools
             Debug.Log("Rig Lab: rigged " + done + " bike(s), skipped " + skipped + ". Run 'Report Rig Status' to verify.");
         }
 
-        [MenuItem("Tools/Rig Lab/3. Report Rig Status (open scene)", false, 2)]
+        [MenuItem("MotoSquid/Rig Lab/3. Report Rig Status (open scene)", false, 2)]
         static void ReportRigStatus()
         {
             var bikes = Object.FindObjectsByType<BikeController>(FindObjectsInactive.Include, FindObjectsSortMode.None)
@@ -160,7 +160,7 @@ namespace MotoSquid.DevTools
             Debug.Log(report.ToString());
         }
 
-        [MenuItem("Tools/Rig Lab/4. Export Bike Target Data (JSON)", false, 20)]
+        [MenuItem("MotoSquid/Rig Lab/4. Export Bike Target Data (JSON)", false, 20)]
         static void ExportTargets()
         {
             var bikes = Object.FindObjectsByType<BikeController>(FindObjectsInactive.Include, FindObjectsSortMode.None)
@@ -194,7 +194,7 @@ namespace MotoSquid.DevTools
             catch { return 0; }
         }
 
-        [MenuItem("Tools/Rig Lab/5. Import Bike Target Data (JSON)", false, 21)]
+        [MenuItem("MotoSquid/Rig Lab/5. Import Bike Target Data (JSON)", false, 21)]
         static void ImportTargets()
         {
             string exported = DataFolder + "/BikeTargets.json";

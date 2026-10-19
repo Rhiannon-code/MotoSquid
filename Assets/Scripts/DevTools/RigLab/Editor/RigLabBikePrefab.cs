@@ -7,13 +7,13 @@ namespace MotoSquid.DevTools
 {
     public static class RigLabBikePrefab
     {
-        const string Reference = "Assets/Prefabs/Characters/Futuristic_Bike.prefab";
+        const string Reference = "Assets/Prefabs/Characters/Player/Senshi Renegade 900 RR.prefab";
         const string OutDir = "Assets/Prefabs/Characters";
 
         static readonly string[] Anchors =
             { "SeatAnchor", "GripAnchor_L", "GripAnchor_R", "FootPegGrip_L", "FootPegGrip_R" };
 
-        [MenuItem("Tools/Rig Lab/33. Make Bike Prefab With Anchors (selected models)", false, 330)]
+        [MenuItem("MotoSquid/Rig Lab/33. Make Bike Prefab With Anchors (selected models)", false, 330)]
         static void Make()
         {
             var models = Selection.objects.OfType<GameObject>()

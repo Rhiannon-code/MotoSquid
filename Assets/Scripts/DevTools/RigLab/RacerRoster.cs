@@ -5,7 +5,7 @@ using UnityEngine;
 
 namespace MotoSquid.DevTools
 {
-    [CreateAssetMenu(fileName = "RacerRoster", menuName = "Rig Lab/Racer Roster")]
+    [CreateAssetMenu(fileName = "RacerRoster", menuName = "MotoSquid/Rig Lab/Racer Roster")]
     public class RacerRoster : ScriptableObject
     {
         [Serializable]

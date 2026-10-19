@@ -1937,13 +1937,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5794c0901f0dbf847a70e831f9b6b7a3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bikeInput:
-    Accelerate: 119
-    Reverse: 115
-    HandBrake: 32
-    SteeringLeft: 97
-    SteeringRight: 100
-    Wheelie: 48
   bikeReferences:
     Rotator: {fileID: 7038541298953501455}
     WheelieTransform: {fileID: 1452897071800145461}
@@ -1979,7 +1972,7 @@ MonoBehaviour:
   bikeSettings:
     drivableLayerMask:
       serializedVersion: 2
-      m_Bits: 115
+      m_Bits: 51
     maxSpeed: 80
     reverseMaxSpeed: 3
     acceleration: 10

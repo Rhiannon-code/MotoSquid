@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using UnityEngine;
+using static MotoSquid.Roads.LayoutLegs;
 
 namespace MotoSquid.Roads
 {
@@ -18,18 +19,10 @@ namespace MotoSquid.Roads
         const float FreewayBRise = 230f;
         const float FreewayBPeak = 10f;   // the crest rounds this down to about 8.6 m over freeway A
 
-        struct Leg
-        {
-            public float radius, degrees, straight;
-            public static Leg S(float length) => new Leg { straight = length };
-            public static Leg A(float radius, float degrees) => new Leg { radius = radius, degrees = degrees };
-        }
-
-        const float TaperRadius = 1000f;
-        const float TaperDegrees = 3f;
         const float BarrierGap = 2f;
 
-        static readonly Leg[] TaperOut = { Leg.S(60f), Leg.A(TaperRadius, TaperDegrees), Leg.S(120f) };
+        // The taper this interchange was designed with, before the compact map-wide rules (RoadDesign).
+        static readonly Taper Original = new Taper(1000f, 3f);
 
         public static List<RoadPocLayout.RoadDefinition> Roads()
         {
@@ -62,14 +55,14 @@ namespace MotoSquid.Roads
         static RoadPocLayout.RoadDefinition Freeway(string name, Vector2 start, Vector2 direction, VerticalProfile profile, RoadSettings settings)
         {
             var plan = new PlanPath(start, direction).Straight(2f * HalfLength);
-            return new RoadPocLayout.RoadDefinition { Name = name, Knots = RoadPocLayout.FromPlan(plan, profile), Settings = Copy(settings) };
+            return new RoadPocLayout.RoadDefinition { Name = name, Knots = RoadPocLayout.FromPlan(plan, profile), Settings = settings.Clone() };
         }
 
         // Laid out once for the north-west quadrant (A eastbound to B northbound), then turned a quarter at a time.
         static RoadPocLayout.RoadDefinition LeftTurn(string name, int quarter, float carriageway, float leftLane, float clear, RoadSettings settings)
         {
-            var turn = Concat(TaperOut, new[] { Leg.A(300f, 87f) });
-            var taperIn = TaperIn(clear);
+            var turn = Concat(Original.Out, new[] { Leg.A(300f, 87f) });
+            var taperIn = Original.In(clear);
             Vector2 turned = Displacement(turn, Vector2.right);
             Vector2 tapered = Displacement(taperIn, Vector2.up);
             float startX = -(carriageway + leftLane) - tapered.x - turned.x;
@@ -77,15 +70,15 @@ namespace MotoSquid.Roads
             float run = RampEntryStart - (startZ + turned.y);
             var legs = Concat(turn, new[] { Leg.S(run) }, taperIn);
             var plan = Build(Rotate(new Vector2(startX, startZ), quarter), Rotate(Vector2.right, quarter), legs);
-            return new RoadPocLayout.RoadDefinition { Name = name, Knots = RoadPocLayout.FromPlan(plan, RoadPocLayout.Level()), Settings = Copy(settings) };
+            return new RoadPocLayout.RoadDefinition { Name = name, Knots = RoadPocLayout.FromPlan(plan, RoadPocLayout.Level()), Settings = settings.Clone() };
         }
 
         // Laid out for A eastbound to B southbound: out of the left lane, up to the third level, a right turn
         // over freeway A, an S-bend over freeway B, back down, and in on B southbound's left.
         static RoadPocLayout.RoadDefinition Flyover(string name, int quarter, float carriageway, float leftLane, float clear, RoadSettings settings)
         {
-            var exit = new[] { Leg.S(60f), Leg.A(TaperRadius, TaperDegrees), Leg.S(TaperStraight(clear)), Leg.A(TaperRadius, -TaperDegrees) };
-            var taperIn = TaperIn(clear);
+            var exit = new[] { Leg.S(60f), Leg.A(Original.radius, Original.degrees), Leg.S(Original.Straight(clear)), Leg.A(Original.radius, -Original.degrees) };
+            var taperIn = Original.In(clear);
             var overA = new[] { Leg.A(350f, -90f) };
             var overB = new[] { Leg.A(600f, 25f), Leg.A(600f, -25f), Leg.S(400f) };
             var withoutRun = Concat(exit, overA, overB, taperIn);
@@ -100,59 +93,7 @@ namespace MotoSquid.Roads
                 .Point(overBEnd, FlyoverHeight, 3000f).Point(overBEnd + FlyoverHeight / 0.05f, 0f, 3000f).Point(Length(legs), 0f);
 
             var plan = Build(Rotate(new Vector2(FlyoverStart, startZ), quarter), Rotate(Vector2.right, quarter), legs);
-            return new RoadPocLayout.RoadDefinition { Name = name, Knots = RoadPocLayout.FromPlan(plan, profile), Settings = Copy(settings) };
+            return new RoadPocLayout.RoadDefinition { Name = name, Knots = RoadPocLayout.FromPlan(plan, profile), Settings = settings.Clone() };
         }
-
-        // Joins a freeway from alongside it: a 3° turn in, a straight taper long enough to cover `shift`
-        // metres sideways, a 3° turn back, then a run inside the freeway's lane.
-        static Leg[] TaperIn(float shift) =>
-            new[] { Leg.A(TaperRadius, -TaperDegrees), Leg.S(TaperStraight(shift)), Leg.A(TaperRadius, TaperDegrees), Leg.S(60f) };
-
-        static float TaperStraight(float shift)
-        {
-            float a = TaperDegrees * Mathf.Deg2Rad;
-            return Mathf.Max(0f, (shift - 2f * TaperRadius * (1f - Mathf.Cos(a))) / Mathf.Sin(a));
-        }
-
-        static PlanPath Build(Vector2 start, Vector2 direction, Leg[] legs)
-        {
-            var plan = new PlanPath(start, direction);
-            foreach (var leg in legs)
-            {
-                if (leg.radius > 0f) plan.Arc(leg.radius, leg.degrees);
-                else plan.Straight(leg.straight);
-            }
-            return plan;
-        }
-
-        static Vector2 Displacement(Leg[] legs, Vector2 direction)
-        {
-            var plan = Build(Vector2.zero, direction, legs);
-            plan.Evaluate(plan.Length, out Vector2 end, out _);
-            return end;
-        }
-
-        static float Length(Leg[] legs) => Build(Vector2.zero, Vector2.right, legs).Length;
-
-        static Leg[] Concat(params Leg[][] parts)
-        {
-            var all = new List<Leg>();
-            foreach (var part in parts) all.AddRange(part);
-            return all.ToArray();
-        }
-
-        // Quarter turns anticlockwise seen from above: east becomes north.
-        static Vector2 Rotate(Vector2 v, int quarters)
-        {
-            for (int i = 0; i < quarters; i++) v = new Vector2(-v.y, v.x);
-            return v;
-        }
-
-        static RoadSettings Copy(RoadSettings s) => new RoadSettings
-        {
-            lanesForward = s.lanesForward, lanesBackward = s.lanesBackward, laneWidth = s.laneWidth, shoulder = s.shoulder,
-            maxBank = s.maxBank, fullBankRadius = s.fullBankRadius, maxRollRate = s.maxRollRate, bankSmoothing = s.bankSmoothing,
-            barrierHeight = s.barrierHeight, barrierThickness = s.barrierThickness, airClass = s.airClass,
-        };
     }
 }

@@ -18,7 +18,7 @@ namespace MotoSquid.DevTools
             return guid == null ? null : AssetDatabase.LoadAssetAtPath<CameraFitTuning>(AssetDatabase.GUIDToAssetPath(guid));
         }
 
-        [MenuItem("Tools/Rig Lab/48. Fit Camera Mounts (measured)", false, 480)]
+        [MenuItem("MotoSquid/Rig Lab/48. Fit Camera Mounts (measured)", false, 480)]
         static void Fit()
         {
             var bikes = Targets();

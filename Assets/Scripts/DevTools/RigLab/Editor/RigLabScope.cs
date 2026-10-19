@@ -28,8 +28,6 @@ namespace MotoSquid.DevTools
             return open;
         }
 
-        // Player bikes carry BikeController, AI bikes carry BikeAIController and never both, so
-        // anything that works on any racer has to ask for roots rather than for the player type
         internal static GameObject[] BikeRoots() => BikeRoots(false);
 
         internal static GameObject[] BikeRoots(bool forWriting)
@@ -46,30 +44,13 @@ namespace MotoSquid.DevTools
             return open;
         }
 
-        static GameObject[] AllBikeRoots()
-        {
-            var stage = PrefabStageUtility.GetCurrentPrefabStage();
-            if (stage != null)
-                return Roots(stage.prefabContentsRoot.GetComponentsInChildren<BikeController>(true),
-                             stage.prefabContentsRoot.GetComponentsInChildren<BikeAIController>(true));
+        static GameObject[] AllBikeRoots() => Bikes().Select(b => b.gameObject).Distinct().ToArray();
 
-            return Roots(Object.FindObjectsByType<BikeController>(FindObjectsInactive.Include, FindObjectsSortMode.None),
-                         Object.FindObjectsByType<BikeAIController>(FindObjectsInactive.Include, FindObjectsSortMode.None));
-        }
-
-        static GameObject[] Roots(BikeController[] player, BikeAIController[] ai) =>
-            player.Select(b => b.gameObject).Concat(ai.Select(b => b.gameObject)).Distinct().ToArray();
-
-        // The two controllers declare a BikeReferences each, so the model is the only shared handle.
         internal static Transform BikeModelOf(GameObject root)
         {
             if (root == null) return null;
-
-            var player = root.GetComponent<BikeController>();
-            if (player != null) return player.bikeReferences != null ? player.bikeReferences.BikeModel : null;
-
-            var ai = root.GetComponent<BikeAIController>();
-            return ai != null && ai.bikeReferences != null ? ai.bikeReferences.BikeModel : null;
+            var bike = root.GetComponent<BikeController>();
+            return bike != null && bike.bikeReferences != null ? bike.bikeReferences.BikeModel : null;
         }
 
         internal static bool IsSelected(GameObject go)

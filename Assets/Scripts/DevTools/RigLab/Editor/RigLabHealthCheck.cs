@@ -12,7 +12,7 @@ namespace MotoSquid.DevTools
 {
     public static class RigLabHealthCheck
     {
-        [MenuItem("Tools/Rig Lab/0. Check Everything", false, -1)]
+        [MenuItem("MotoSquid/Rig Lab/0. Check Everything", false, -1)]
         static void Check()
         {
             var sb = new System.Text.StringBuilder();

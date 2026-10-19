@@ -9,7 +9,7 @@ namespace MotoSquid.Performance
 {
     public class LODGroupCleaner : EditorWindow
     {
-        [MenuItem("Tools/LOD Group Cleaner")]
+        [MenuItem("MotoSquid/Performance/LOD Group Cleaner")]
         static void Open() => GetWindow<LODGroupCleaner>("LOD Cleaner");
 
         void OnGUI()

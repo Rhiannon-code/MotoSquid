@@ -170,7 +170,7 @@ namespace MotoSquid.Characters
             string path = EditorUtility.SaveFilePanelInProject(
                 "New Character Definition", "CharacterDefinition", "asset",
                 "Where should the definition asset live?",
-                "Assets/MotoSquid/Data/Characters");
+                "Assets/Scriptable Objects/Characters");
             if (string.IsNullOrEmpty(path)) return;
 
             var def = CreateInstance<CharacterDefinition>();

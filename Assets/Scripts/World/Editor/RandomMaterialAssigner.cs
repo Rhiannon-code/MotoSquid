@@ -20,7 +20,7 @@ namespace MotoSquid.World
 
         private Dictionary<GameObject, Material[]> originalMaterials = new Dictionary<GameObject, Material[]>();
 
-        [MenuItem("Tools/Random Material Assigner")]
+        [MenuItem("MotoSquid/World/Random Material Assigner")]
         public static void OpenWindow()
         {
             var window = GetWindow<RandomMaterialAssigner>("Random Material Assigner");

@@ -13,6 +13,8 @@ namespace MotoSquid.Cameras
 public class CameraController : MonoBehaviour
 {
     public CinemachineCamera[] cameras;
+    // The reorg dropped the author suffix; the ported bike prefabs still carry the old key
+    [UnityEngine.Serialization.FormerlySerializedAs("bikeController_Rhiannon")]
     [SerializeField] private BikeController bikeController;
     [Header("Speed Shake")]
     public float speedThresholdForShake = 50f;

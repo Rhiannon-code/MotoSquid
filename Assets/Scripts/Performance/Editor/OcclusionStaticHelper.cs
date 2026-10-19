@@ -21,7 +21,7 @@ namespace MotoSquid.Performance
             "Spline", "Waypoint", "Trigger", "Collider", "Volume"
         };
 
-        [MenuItem("Tools/Occlusion Static Helper")]
+        [MenuItem("MotoSquid/Performance/Occlusion Static Helper")]
         static void Open() => GetWindow<OcclusionStaticHelper>("Occlusion Static");
 
         void OnGUI()

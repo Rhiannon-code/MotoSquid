@@ -12,7 +12,7 @@ namespace MotoSquid.DevTools
 {
     public static class RigLabResetReview
     {
-        [MenuItem("Tools/Rig Lab/49. Reset Review Scene To Prefabs", false, 490)]
+        [MenuItem("MotoSquid/Rig Lab/49. Reset Review Scene To Prefabs", false, 490)]
         static void Reset()
         {
             var roots = Object.FindObjectsByType<Transform>(FindObjectsInactive.Include, FindObjectsSortMode.None)

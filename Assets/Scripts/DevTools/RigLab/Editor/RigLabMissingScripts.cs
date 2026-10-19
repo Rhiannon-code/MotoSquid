@@ -7,7 +7,7 @@ namespace MotoSquid.DevTools
 {
     public static class RigLabMissingScripts
     {
-        [MenuItem("Tools/Rig Lab/36. Remove Missing Scripts (scene + bike prefabs)", false, 360)]
+        [MenuItem("MotoSquid/Rig Lab/36. Remove Missing Scripts (scene + bike prefabs)", false, 360)]
         static void Clean()
         {
             int scene = 0, assets = 0;

@@ -11,8 +11,8 @@ namespace MotoSquid.DevTools
 {
     public static class RigLabHandAxis
     {
-        const string RefPath = "Assets/MotoSquid/Data/RigLab/Data/ReferenceHandAxis.json";
-        const string BaselinePath = "Assets/MotoSquid/Data/RigLab/Data/HandTargetBaseline.json";
+        const string RefPath = "Assets/RigLab/Data/ReferenceHandAxis.json";
+        const string BaselinePath = "Assets/RigLab/Data/HandTargetBaseline.json";
 
         [System.Serializable]
         class HandAxis { public Quaternion left = Quaternion.identity; public Quaternion right = Quaternion.identity; public string rider; }
@@ -23,7 +23,7 @@ namespace MotoSquid.DevTools
         static readonly string[] LeftFields = { "leftHandTarget", "leftHandReverseTarget" };
         static readonly string[] RightFields = { "rightHandTarget", "rightHandReverseTarget" };
 
-        [MenuItem("Tools/Rig Lab/7. Capture Reference Hand Axis (mannequin scene)", false, 60)]
+        [MenuItem("MotoSquid/Rig Lab/7. Capture Reference Hand Axis (mannequin scene)", false, 60)]
         static void Capture()
         {
             var bike = Object.FindFirstObjectByType<BikeController>();
@@ -42,7 +42,7 @@ namespace MotoSquid.DevTools
                       "\n   (read from mesh bindposes, not live transforms)");
         }
 
-        [MenuItem("Tools/Rig Lab/8. Apply Hand Axis Correction (all bikes)", false, 61)]
+        [MenuItem("MotoSquid/Rig Lab/8. Apply Hand Axis Correction (all bikes)", false, 61)]
         static void Apply()
         {
             if (!File.Exists(RefPath)) { Debug.LogError("Rig Lab: no reference at " + RefPath + ", run step 7 on the mannequin scene first."); return; }
@@ -102,7 +102,7 @@ namespace MotoSquid.DevTools
             Debug.Log("Rig Lab: corrected " + touched + " hand target(s). Re-running is safe, always applied from baseline.");
         }
 
-        [MenuItem("Tools/Rig Lab/8b. Revert Hand Axis Correction", false, 62)]
+        [MenuItem("MotoSquid/Rig Lab/8b. Revert Hand Axis Correction", false, 62)]
         static void Revert()
         {
             if (!File.Exists(BaselinePath)) { Debug.LogWarning("Rig Lab: no hand target baseline stored."); return; }

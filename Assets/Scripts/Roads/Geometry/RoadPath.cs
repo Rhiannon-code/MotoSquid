@@ -10,6 +10,10 @@ namespace MotoSquid.Roads
         const float DenseStep = 0.25f;
         const float StationStep = 1f;
         const float CurvatureSmoothing = 10f;
+        // A cross-section's direction comes from the centre points this far either side. Far from the map origin
+        // the points carry ~1 mm of float rounding; across neighbours 1 m apart that tilts the lanes enough to
+        // ripple a steep road's surface, while a centred chord this long still points exactly along an arc.
+        const float FrameReach = 3f;
         const float RollRounding = 60f;
         const float ClosedTolerance = 0.01f;
         const float BaseLift = 0.15f;
@@ -41,15 +45,50 @@ namespace MotoSquid.Roads
             Closed = centre.Length > 2 && (centre[0] - centre[centre.Length - 1]).magnitude < ClosedTolerance;
         }
 
-        public static RoadPath Sample(string name, Spline spline, Matrix4x4 toWorld, RoadSettings settings)
+        public static RoadPath Sample(Road road) =>
+            Sample(road.name, road.Spline, road.transform.localToWorldMatrix, road.settings, road.HandHeights);
+
+        // With `heights`, the spline gives only the plan and the height comes from the profile by distance along it.
+        public static RoadPath Sample(string name, Spline spline, Matrix4x4 toWorld, RoadSettings settings, VerticalProfile heights = null)
         {
             int dense = Mathf.Max(8, Mathf.CeilToInt(spline.GetLength() / DenseStep));
             var raw = new Vector3[dense + 1];
+            float along = 0f;
+            Vector3 previous = default;
             for (int i = 0; i <= dense; i++)
-                raw[i] = toWorld.MultiplyPoint3x4((Vector3)spline.EvaluatePosition(i / (float)dense));
+            {
+                Vector3 local = spline.EvaluatePosition(i / (float)dense);
+                if (heights != null)
+                {
+                    if (i > 0) along += Flat(local - previous).magnitude;
+                    previous = local;
+                    local.y = heights.Height(along, out _);
+                }
+                raw[i] = toWorld.MultiplyPoint3x4(local);
+            }
             return FromPoints(name, raw,
                 toWorld.MultiplyVector((Vector3)spline.EvaluateTangent(0f)),
                 toWorld.MultiplyVector((Vector3)spline.EvaluateTangent(1f)), settings);
+        }
+
+        // Distance in plan from the road's start to each knot, the stations its height points are measured in.
+        public static float[] KnotStations(Spline spline)
+        {
+            var stations = new float[spline.Count];
+            for (int c = 0; c < spline.Count - 1; c++)
+            {
+                int steps = Mathf.Max(8, Mathf.CeilToInt(spline.GetCurveLength(c) / DenseStep));
+                Vector3 previous = spline.EvaluatePosition(spline.CurveToSplineT(c));
+                float length = 0f;
+                for (int k = 1; k <= steps; k++)
+                {
+                    Vector3 p = spline.EvaluatePosition(spline.CurveToSplineT(c + k / (float)steps));
+                    length += Flat(p - previous).magnitude;
+                    previous = p;
+                }
+                stations[c + 1] = stations[c] + length;
+            }
+            return stations;
         }
 
         // From points densely spaced along the road (well under a metre apart), in world space.
@@ -134,11 +173,12 @@ namespace MotoSquid.Roads
 
         void ComputeFrames(Vector3 startTangent, Vector3 endTangent)
         {
+            int reach = Mathf.Max(1, Mathf.RoundToInt(FrameReach / Spacing));
             for (int i = 0; i < Count; i++)
             {
                 Vector3 d = i == 0 ? startTangent
                           : i == Count - 1 ? endTangent
-                          : Flat(Centre[i + 1] - Centre[i - 1]);
+                          : Flat(Centre[Mathf.Min(i + reach, Count - 1)] - Centre[Mathf.Max(i - reach, 0)]);
                 Forward[i] = d.sqrMagnitude > 1e-12f ? d.normalized : (i > 0 ? Forward[i - 1] : Vector3.forward);
                 Right[i] = Vector3.Cross(Vector3.up, Forward[i]);
             }
@@ -160,7 +200,8 @@ namespace MotoSquid.Roads
         {
             var s = Settings;
             for (int i = 0; i < Count; i++)
-                Bank[i] = Mathf.Sign(Curvature[i]) * s.maxBank * Mathf.Clamp01(s.fullBankRadius * Mathf.Abs(Curvature[i]));
+                Bank[i] = s.TryBankAt(i * Spacing, out float set) ? set
+                        : Mathf.Sign(Curvature[i]) * s.maxBank * Mathf.Clamp01(s.fullBankRadius * Mathf.Abs(Curvature[i]));
             var smoothed = MovingAverage(Bank, Window(s.bankSmoothing, Spacing), Closed);
             System.Array.Copy(smoothed, Bank, Count);
             ShapeRoll();

@@ -390,7 +390,7 @@ namespace MotoSquid.Traffic
         void AddAnchor(Transform racer)
         {
             _anchors.Add(racer);
-            _anchorIsHuman.Add(racer.GetComponentInChildren<BikeAIController>(true) == null);
+            _anchorIsHuman.Add(racer.GetComponentInChildren<BikeAILogic>(true) == null);
             _anchorAI.Add(racer.GetComponentInChildren<BikeAILogic>(true));
         }
 

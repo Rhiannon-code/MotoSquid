@@ -144,6 +144,7 @@ namespace MotoSquid.UI
                 GameSession.Instance.SelectedTrackScene = tracks[currentIndex].sceneName;
                 GameSession.Instance.SelectedTrackType  = tracks[currentIndex].trackType;
                 GameSession.Instance.SelectedGameMode   = selectedMode;
+                GameSession.Instance.HasTrackSelection  = true;
             }
 
             if (SaveManager.Instance != null)
